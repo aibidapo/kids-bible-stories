@@ -15,11 +15,24 @@ interface Props {
  */
 export function Quiz({ story, onDone }: Props) {
   const progress = useProgress();
+  // Story data lists the right answer first for readability; shuffle each
+  // question's choices once per quiz so the answer is never always the top one.
   const questions = useMemo(
     () =>
-      story.quiz.filter((q) =>
-        progress.mode === "big" ? true : q.level === "little",
-      ),
+      story.quiz
+        .filter((q) => (progress.mode === "big" ? true : q.level === "little"))
+        .map((q) => {
+          const order = q.choices.map((_, i) => i);
+          for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+          }
+          return {
+            ...q,
+            choices: order.map((i) => q.choices[i]),
+            answerIndex: order.indexOf(q.answerIndex),
+          };
+        }),
     [story.quiz, progress.mode],
   );
 

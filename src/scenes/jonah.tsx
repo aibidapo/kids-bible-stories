@@ -61,17 +61,17 @@ export function RunningAway({ found }: SceneArtProps) {
     <>
       <Backdrop src={runBg} />
       {/* the ship rides at the quay's edge, on the water */}
-      <g transform="translate(840 570)">
+      <g transform="translate(870 612)">
         <g className="a-rock">
-          <image href={runShip} x={-L.ship.w * 0.31} y={-L.ship.h * 0.62} width={L.ship.w * 0.62} height={L.ship.h * 0.62} />
+          <image href={runShip} x={-L.ship.w * 0.44} y={-L.ship.h * 0.88} width={L.ship.w * 0.88} height={L.ship.h * 0.88} />
         </g>
       </g>
-      <SoftShadow x={585} y={478} rx={130} ry={12} opacity={0.4} />
-      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={585} y={478} scale={0.5} className="a-breathe-slow">
+      <SoftShadow x={560} y={398} rx={120} ry={10} opacity={0.4} />
+      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={560} y={398} scale={0.44} className="a-breathe-slow">
         <Eyelids {...EYES.sailors} w={L.sailors.w} h={L.sailors.h} delay={2.1} />
       </Layer>
-      <SoftShadow x={260} y={560} rx={100} ry={12} opacity={0.4} />
-      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={260} y={560} scale={0.4} className="a-breathe">
+      <SoftShadow x={250} y={478} rx={100} ry={12} opacity={0.4} />
+      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={250} y={478} scale={0.4} className="a-breathe">
         <Eyelids {...EYES.jonahWalk} w={L["jonah-walk"].w} h={L["jonah-walk"].h} />
       </Layer>
       {found.includes("ship") && <Sparkle x={840} y={300} s={1.6} />}
