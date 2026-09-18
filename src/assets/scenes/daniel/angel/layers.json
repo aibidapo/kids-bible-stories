@@ -30,7 +30,54 @@
         854
       ],
       "source": "design/pipeline/raw/daniel/angel/lion-asleep-a.png",
-      "bytes": 46818
+      "bytes": 46818,
+      "body": {
+        "file": "lion-asleep-a-body.webp",
+        "bytes": 36558
+      },
+      "tail": {
+        "file": "lion-asleep-a-tail.webp",
+        "w": 379,
+        "h": 208,
+        "ox": 0,
+        "oy": 312,
+        "root": "tl",
+        "polygon": [
+          [
+            0,
+            315
+          ],
+          [
+            55,
+            315
+          ],
+          [
+            75,
+            455
+          ],
+          [
+            230,
+            455
+          ],
+          [
+            265,
+            435
+          ],
+          [
+            375,
+            445
+          ],
+          [
+            375,
+            520
+          ],
+          [
+            0,
+            520
+          ]
+        ],
+        "bytes": 10130
+      }
     },
     "lion-asleep-b": {
       "file": "lion-asleep-b.webp",
@@ -43,7 +90,46 @@
         778
       ],
       "source": "design/pipeline/raw/daniel/angel/lion-asleep-b.png",
-      "bytes": 47074
+      "bytes": 47074,
+      "body": {
+        "file": "lion-asleep-b-body.webp",
+        "bytes": 41272
+      },
+      "tail": {
+        "file": "lion-asleep-b-tail.webp",
+        "w": 182,
+        "h": 133,
+        "ox": 47,
+        "oy": 387,
+        "root": "tl",
+        "polygon": [
+          [
+            55,
+            390
+          ],
+          [
+            130,
+            390
+          ],
+          [
+            145,
+            440
+          ],
+          [
+            225,
+            445
+          ],
+          [
+            225,
+            520
+          ],
+          [
+            45,
+            520
+          ]
+        ],
+        "bytes": 5202
+      }
     }
   }
 }

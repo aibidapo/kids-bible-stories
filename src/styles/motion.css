@@ -459,6 +459,40 @@ svg [class*=" a-"] {
 }
 
 /*
+ * Tail flick. Still for most of a nine-second cycle, then two quick swishes.
+ * The tail is its own raster layer whose root sits at a corner of its box, so
+ * one class per root corner keeps the pivot in this file (rule 2). Calm mode
+ * drops the animation and the tail rests exactly where it was drawn.
+ */
+@keyframes tail-flick {
+  0%,
+  78%,
+  100% {
+    transform: rotate(0deg);
+  }
+  82% {
+    transform: rotate(-9deg);
+  }
+  86% {
+    transform: rotate(7deg);
+  }
+  90% {
+    transform: rotate(-6deg);
+  }
+  94% {
+    transform: rotate(3deg);
+  }
+}
+.a-tail-flick-tr {
+  animation: tail-flick 9s ease-in-out infinite;
+  transform-origin: 100% 0%;
+}
+.a-tail-flick-tl {
+  animation: tail-flick 9s ease-in-out infinite;
+  transform-origin: 0% 0%;
+}
+
+/*
  * Calm mode. `.calm` is set on the app root when the child (or their device)
  * asks for less motion: art holds a composed still frame instead of moving.
  */

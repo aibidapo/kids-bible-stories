@@ -31,7 +31,58 @@
         794
       ],
       "source": "design/pipeline/raw/daniel/den/lion-a.png",
-      "bytes": 48196
+      "bytes": 48196,
+      "body": {
+        "file": "lion-a-body.webp",
+        "bytes": 40584
+      },
+      "tail": {
+        "file": "lion-a-tail.webp",
+        "w": 368,
+        "h": 168,
+        "ox": 456,
+        "oy": 392,
+        "root": "tr",
+        "polygon": [
+          [
+            770,
+            395
+          ],
+          [
+            824,
+            400
+          ],
+          [
+            824,
+            560
+          ],
+          [
+            445,
+            560
+          ],
+          [
+            445,
+            485
+          ],
+          [
+            570,
+            485
+          ],
+          [
+            600,
+            510
+          ],
+          [
+            760,
+            510
+          ],
+          [
+            770,
+            470
+          ]
+        ],
+        "bytes": 7610
+      }
     },
     "king": {
       "file": "king.webp",
@@ -57,7 +108,54 @@
         825
       ],
       "source": "design/pipeline/raw/daniel/den/lion-b.png",
-      "bytes": 45216
+      "bytes": 45216,
+      "body": {
+        "file": "lion-b-body.webp",
+        "bytes": 38494
+      },
+      "tail": {
+        "file": "lion-b-tail.webp",
+        "w": 316,
+        "h": 108,
+        "ox": 372,
+        "oy": 452,
+        "root": "tr",
+        "polygon": [
+          [
+            590,
+            455
+          ],
+          [
+            688,
+            455
+          ],
+          [
+            688,
+            560
+          ],
+          [
+            375,
+            560
+          ],
+          [
+            375,
+            495
+          ],
+          [
+            470,
+            495
+          ],
+          [
+            520,
+            530
+          ],
+          [
+            590,
+            520
+          ]
+        ],
+        "bytes": 6862
+      }
     }
   }
 }

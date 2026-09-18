@@ -47,6 +47,54 @@ export function Layer({
   );
 }
 
+/**
+ * A detached tail (see design/pipeline/split_tail.py) drawn in the same local
+ * space as its body's Layer, so the two line up pixel for pixel at rest. The
+ * flick class pivots on the tail box's root corner; render this before the
+ * body so the body covers the join.
+ */
+export function Tail({
+  src,
+  tw,
+  th,
+  ox,
+  oy,
+  w,
+  h,
+  x,
+  y,
+  scale = 1,
+  flip = false,
+  root,
+  delay = 0,
+}: {
+  src: string;
+  /** Tail image size and its offset inside the original cutout. */
+  tw: number;
+  th: number;
+  ox: number;
+  oy: number;
+  /** Original cutout size, so the anchor matches the body Layer. */
+  w: number;
+  h: number;
+  x: number;
+  y: number;
+  scale?: number;
+  flip?: boolean;
+  root: "tl" | "tr";
+  /** Seconds to offset the flick cycle so lions don't twitch together. */
+  delay?: number;
+}) {
+  const sx = flip ? -scale : scale;
+  return (
+    <g transform={`translate(${x} ${y}) scale(${sx} ${scale})`}>
+      <g className={root === "tr" ? "a-tail-flick-tr" : "a-tail-flick-tl"} style={{ animationDelay: `${delay}s` }}>
+        <image href={src} x={ox - w / 2} y={oy - h} width={tw} height={th} />
+      </g>
+    </g>
+  );
+}
+
 /** Full-frame background image. */
 export function Backdrop({ src }: { src: string }) {
   return (

@@ -1,11 +1,13 @@
 import { HolyGlow, Sparkle } from "../art/base";
 import { Grain, LightShaft, Motes } from "../art/v2/effects";
-import { Backdrop, Eyelids, Layer } from "../art/raster";
+import { Backdrop, Eyelids, Layer, Tail } from "../art/raster";
 import denLayers from "../assets/scenes/daniel/den/layers.json";
 import denBg from "../assets/scenes/daniel/den/bg.webp";
 import denDaniel from "../assets/scenes/daniel/den/daniel.webp";
-import denLionA from "../assets/scenes/daniel/den/lion-a.webp";
-import denLionB from "../assets/scenes/daniel/den/lion-b.webp";
+import denLionA from "../assets/scenes/daniel/den/lion-a-body.webp";
+import denLionATail from "../assets/scenes/daniel/den/lion-a-tail.webp";
+import denLionB from "../assets/scenes/daniel/den/lion-b-body.webp";
+import denLionBTail from "../assets/scenes/daniel/den/lion-b-tail.webp";
 import denKing from "../assets/scenes/daniel/den/king.webp";
 import praysLayers from "../assets/scenes/daniel/prays/layers.json";
 import praysBg from "../assets/scenes/daniel/prays/bg.webp";
@@ -17,8 +19,10 @@ import trapOfficialScroll from "../assets/scenes/daniel/trap/official-scroll.web
 import trapOfficialPoint from "../assets/scenes/daniel/trap/official-point.webp";
 import angelLayers from "../assets/scenes/daniel/angel/layers.json";
 import angelCutout from "../assets/scenes/daniel/angel/angel.webp";
-import angelLionA from "../assets/scenes/daniel/angel/lion-asleep-a.webp";
-import angelLionB from "../assets/scenes/daniel/angel/lion-asleep-b.webp";
+import angelLionA from "../assets/scenes/daniel/angel/lion-asleep-a-body.webp";
+import angelLionATail from "../assets/scenes/daniel/angel/lion-asleep-a-tail.webp";
+import angelLionB from "../assets/scenes/daniel/angel/lion-asleep-b-body.webp";
+import angelLionBTail from "../assets/scenes/daniel/angel/lion-asleep-b-tail.webp";
 import rejoiceLayers from "../assets/scenes/daniel/rejoice/layers.json";
 import rejoiceBg from "../assets/scenes/daniel/rejoice/bg.webp";
 import rejoiceDaniel from "../assets/scenes/daniel/rejoice/daniel-raise.webp";
@@ -105,6 +109,20 @@ export function IntoTheDen() {
       <Layer src={denKing} w={L.king.w} h={L.king.h} x={500} y={74} scale={0.22} />
       {/* far lion, behind Daniel's shoulder */}
       <SoftShadow x={640} y={548} rx={95} ry={14} opacity={0.35} />
+      <Tail
+        src={denLionBTail}
+        tw={L["lion-b"].tail.w}
+        th={L["lion-b"].tail.h}
+        ox={L["lion-b"].tail.ox}
+        oy={L["lion-b"].tail.oy}
+        w={L["lion-b"].w}
+        h={L["lion-b"].h}
+        x={640}
+        y={548}
+        scale={0.34}
+        root="tr"
+        delay={0}
+      />
       <Layer
         src={denLionB}
         w={L["lion-b"].w}
@@ -151,6 +169,20 @@ export function IntoTheDen() {
         />
       </Layer>
       <SoftShadow x={255} y={612} rx={200} ry={20} opacity={0.4} />
+      <Tail
+        src={denLionATail}
+        tw={L["lion-a"].tail.w}
+        th={L["lion-a"].tail.h}
+        ox={L["lion-a"].tail.ox}
+        oy={L["lion-a"].tail.oy}
+        w={L["lion-a"].w}
+        h={L["lion-a"].h}
+        x={255}
+        y={612}
+        scale={0.5}
+        root="tr"
+        delay={3}
+      />
       <Layer
         src={denLionA}
         w={L["lion-a"].w}
@@ -174,6 +206,21 @@ export function IntoTheDen() {
         />
       </Layer>
       <SoftShadow x={760} y={618} rx={170} ry={20} opacity={0.4} />
+      <Tail
+        src={denLionBTail}
+        tw={L["lion-b"].tail.w}
+        th={L["lion-b"].tail.h}
+        ox={L["lion-b"].tail.ox}
+        oy={L["lion-b"].tail.oy}
+        w={L["lion-b"].w}
+        h={L["lion-b"].h}
+        x={760}
+        y={618}
+        scale={0.5}
+        flip
+        root="tr"
+        delay={6}
+      />
       <Layer
         src={denLionB}
         w={L["lion-b"].w}
@@ -248,6 +295,21 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
       </Layer>
       {/* second lion asleep behind the first, peeking over its back */}
       <SoftShadow x={560} y={548} rx={120} ry={14} opacity={0.35} />
+      <Tail
+        src={angelLionBTail}
+        tw={L["lion-asleep-b"].tail.w}
+        th={L["lion-asleep-b"].tail.h}
+        ox={L["lion-asleep-b"].tail.ox}
+        oy={L["lion-asleep-b"].tail.oy}
+        w={L["lion-asleep-b"].w}
+        h={L["lion-asleep-b"].h}
+        x={560}
+        y={548}
+        scale={0.32}
+        flip
+        root="tl"
+        delay={2}
+      />
       <Layer
         src={angelLionB}
         w={L["lion-asleep-b"].w}
@@ -259,6 +321,20 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
         className="a-breathe-slow"
       />
       <SoftShadow x={700} y={614} rx={190} ry={20} opacity={0.4} />
+      <Tail
+        src={angelLionATail}
+        tw={L["lion-asleep-a"].tail.w}
+        th={L["lion-asleep-a"].tail.h}
+        ox={L["lion-asleep-a"].tail.ox}
+        oy={L["lion-asleep-a"].tail.oy}
+        w={L["lion-asleep-a"].w}
+        h={L["lion-asleep-a"].h}
+        x={700}
+        y={614}
+        scale={0.5}
+        root="tl"
+        delay={5}
+      />
       <Layer
         src={angelLionA}
         w={L["lion-asleep-a"].w}
