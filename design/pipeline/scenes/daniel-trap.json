@@ -1,0 +1,28 @@
+{
+  "story": "daniel",
+  "scene": "trap",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The throne hall of a Persian palace, seen straight on: tall stone columns either side, a raised stone dais with steps at centre-right with NO throne on it, patterned floor, tall windows showing an evening sky in purple and rose. Completely EMPTY: no people, no furniture on the dais. Keep the floor in front of the dais clear."
+  },
+  "cutouts": {
+    "king-throne": {
+      "sheet": "king",
+      "aspect": "3:4",
+      "max_h": 700,
+      "prompt": "The king from the second reference image, seated on a large golden throne with red cushions, facing the viewer, leaning slightly forward with a worried, uncertain expression, one hand raised as if about to agree to something. Whole figure and whole throne visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "official-scroll": {
+      "sheet": "official",
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The official from the second reference image, standing in three-quarter view facing right, holding up an unrolled scroll with both hands, sly pleased smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "official-point": {
+      "sheet": "official",
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The official from the second reference image, standing in three-quarter view facing right, one arm stretched out pointing to the right, stern narrowed eyes and a thin scheming smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

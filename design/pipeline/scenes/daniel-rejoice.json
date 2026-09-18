@@ -1,0 +1,28 @@
+{
+  "story": "daniel",
+  "scene": "rejoice",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Outdoors at sunrise beside the lions' den: sandy rocky ground, the round dark mouth of a stone-lined pit set into the ground at centre-left with a large round stone rolled aside next to it, a palm tree at the far left, the walls and towers of a Persian city on the horizon at the right, a warm orange and gold dawn sky with a few soft clouds. Completely EMPTY: no people, no animals. Keep the ground around the pit clear."
+  },
+  "cutouts": {
+    "daniel-raise": {
+      "sheet": "daniel",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Daniel, standing facing the viewer with both arms raised high in joy, big happy smile, eyes open. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "king-run": {
+      "sheet": "king",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The king from the second reference image, running toward the right with robes flying and arms out, joyful relieved expression, crown slightly askew. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "crowd": {
+      "sheet": "official",
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Three happy townspeople of ancient Babylon standing close together and cheering with arms up: a woman in a teal dress, a man in a brown tunic, and a child in a yellow tunic, in the same style as the second reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

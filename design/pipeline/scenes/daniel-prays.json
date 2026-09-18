@@ -1,0 +1,16 @@
+{
+  "story": "daniel",
+  "scene": "prays",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Interior of a simple upstairs room in ancient Babylon, seen straight on. A large arched window with its wooden shutters open sits right of centre, showing a warm dawn sky and the distant rooftops of a city far away. Soft golden light falls through the window across a patterned rug on the wooden floor. A small oil lamp on a low table. Completely EMPTY: no people, no animals. Keep the floor in front of the window clear."
+  },
+  "cutouts": {
+    "daniel-kneel": {
+      "sheet": "daniel",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Daniel, kneeling in prayer seen in three-quarter view from behind-left so he faces to the right, hands together, head slightly bowed, eyes open, calm. Full figure including knees, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}
