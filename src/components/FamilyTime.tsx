@@ -1,5 +1,6 @@
 import { useNarration } from "../hooks/useNarration";
 import { FAMILY_HEADINGS, readAloudScript } from "../lib/devotional";
+import { SCRIPTURE_ABBREVIATION } from "../data/scripture";
 import { useProgress } from "../lib/store";
 import type { Story } from "../types";
 
@@ -44,7 +45,10 @@ export function FamilyTime({ story, onDone }: Props) {
         <div className="family__card">
           <h3>{FAMILY_HEADINGS.remember}</h3>
           <blockquote className="family__verse">
-            “{story.memoryVerse.text}”<cite>{story.memoryVerse.reference}</cite>
+            “{story.memoryVerse.text}”
+            <cite>
+              {story.memoryVerse.reference} · {SCRIPTURE_ABBREVIATION}
+            </cite>
           </blockquote>
         </div>
       )}

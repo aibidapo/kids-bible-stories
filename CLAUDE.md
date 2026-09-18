@@ -211,6 +211,10 @@ screenshots too.
 - **Calm mode must stay honest.** It disables all motion, so anything positioned
   only by its animation is invisible there. Elements need a sensible resting
   position of their own. (This is why birds take a real `x` and the rain tiles.)
+- **Verse text is NIV.** `memoryVerse.text` is quoted from the New International
+  Version. Wherever verse text is shown, name the translation beside it
+  (`SCRIPTURE_ABBREVIATION`) and keep the Biblica notice in Settings
+  (`SCRIPTURE_NOTICE`, `src/data/scripture.ts`). References alone need neither.
 - **The quiz cannot be failed.** Wrong answers grey out with a gentle sound; only
   first-time-right answers score. Never add a fail state or a buzzer.
 - **No network calls, no analytics, no account.** Progress is localStorage only.

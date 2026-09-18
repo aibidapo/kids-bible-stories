@@ -1,0 +1,6 @@
+     × shows the four sections with the little-level text and the verse 54ms
+     × shows the scripture translation notice 8ms
+     × shows the memory verse on the done page in big mode 16ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  3 failed | 10 passed (13)
+vitest exit=1

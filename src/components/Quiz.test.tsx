@@ -67,7 +67,7 @@ describe("Quiz", () => {
     expect(screen.getByText(daniel.lesson.little)).toBeTruthy();
     expect(progress().quizBest.daniel).toBe(total - 1);
     // Little mode does not show the memory verse on this page.
-    expect(screen.queryByText(daniel.memoryVerse!.reference)).toBeNull();
+    expect(document.querySelector(".quiz__verse")).toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: "Family time" }));
     expect(onFamily).toHaveBeenCalledTimes(1);
@@ -79,7 +79,9 @@ describe("Quiz", () => {
     setMode("big");
     render(<Quiz story={daniel} onDone={() => {}} onFamily={() => {}} />);
     for (let i = 0; i < daniel.quiz.length; i++) fireEvent.click(rightChoice());
-    expect(screen.getByText(daniel.memoryVerse!.reference)).toBeTruthy();
+    const cite = document.querySelector(".quiz__verse cite")!;
+    expect(cite.textContent).toContain(daniel.memoryVerse!.reference);
+    expect(cite.textContent).toContain("NIV");
     expect(screen.getByLabelText("3 out of 3 stars")).toBeTruthy();
   });
 

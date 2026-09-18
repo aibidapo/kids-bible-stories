@@ -12,7 +12,14 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Component and hook tests (roadmap phase 2c, local half).**
+Latest: **NIV notice** (`src/data/scripture.ts`; "· NIV" beside each quoted
+verse on the quiz done page and the Family time card; Biblica notice in a
+Scripture section of Settings; CLAUDE.md convention). **Phase 0 skipped by
+the owner**: local churches have requested the product
+(`docs/decisions/2026-09-18-phase-0-skipped.md`); roadmap now recommends
+2a → 5 (pilot with the current stories) → 4 → 6 → 7, owner to confirm.
+
+Before that: **Component and hook tests (roadmap phase 2c, local half).**
 happy-dom per test file plus Testing Library; every component and
 `useNarration` covered by behaviour tests; coverage include set widened to
 `src/components` and `src/hooks`, thresholds at the measured floor
@@ -126,7 +133,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the component-coverage commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the NIV-notice commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -139,8 +146,9 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 4. Next Steps
 
-- [ ] **User reviews Family time** with the checklist in `docs/evidence/2026-09-18-family-devotional/content-review.md`; decide the memory-verse translation notice (NIV wording, no notice shown today).
-- [ ] **Phase 0 interviews**: kit in `docs/discovery/interview-kit.md`; ten parents, three leaders; findings note to `docs/decisions/`.
+- [ ] **User reviews Family time** with the checklist in `docs/evidence/2026-09-18-family-devotional/content-review.md`; translation notice done (NIV).
+- [x] Phase 0 skipped by the owner (churches requested the product); kit kept for pilot sessions.
+- [ ] **Owner confirms the order** 2a → 5 → 4 → 6 → 7 and decides 2a (licensing incl. classroom display) so the church pilot can start.
 - [ ] Roadmap revised after a roast: **phase 0 discovery (interviews, no code) blocks phases 3+**; then 2a licensing (owner), 2b tablet crop, 2c CI and component coverage; phase 3 is the distribution decision. See `docs/roadmap.md`.
 - [ ] **User reviews the throne room** on `#/story/daniel/1` (throne, courtiers, background).
 - [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.

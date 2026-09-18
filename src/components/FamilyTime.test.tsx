@@ -23,6 +23,7 @@ describe("FamilyTime", () => {
     expect(html).not.toContain(daniel.devotional.question.big);
     expect(html).toContain(daniel.memoryVerse!.text);
     expect(html).toContain(daniel.memoryVerse!.reference);
+    expect(html).toMatch(new RegExp(`${daniel.memoryVerse!.reference}[^<]*NIV`));
     expect(html).toContain(daniel.devotional.activity);
     expect(html).toContain(daniel.title);
     expect(html).toMatch(/Done/);

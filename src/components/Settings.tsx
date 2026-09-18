@@ -8,6 +8,7 @@ import {
   useProgress,
 } from "../lib/store";
 import { setMuted } from "../lib/sound";
+import { SCRIPTURE_NOTICE } from "../data/scripture";
 
 /**
  * The grown-up panel. Deliberately plain and text-heavy so it reads as "not for
@@ -110,6 +111,11 @@ export function Settings({ onClose }: { onClose: () => void }) {
             </label>
           </li>
         </ul>
+
+        <section className="sheet__notice" aria-label="Scripture">
+          <h3>Scripture</h3>
+          <p>{SCRIPTURE_NOTICE}</p>
+        </section>
 
         <div className="sheet__danger">
           <p>

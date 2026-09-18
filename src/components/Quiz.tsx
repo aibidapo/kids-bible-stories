@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { shuffleChoices } from "../lib/quiz";
+import { SCRIPTURE_ABBREVIATION } from "../data/scripture";
 import { playCorrect, playTryAgain } from "../lib/sound";
 import { recordQuiz, useProgress } from "../lib/store";
 import type { Story } from "../types";
@@ -75,7 +76,10 @@ export function Quiz({ story, onDone, onFamily }: Props) {
 
         {progress.mode === "big" && story.memoryVerse && (
           <blockquote className="quiz__verse">
-            “{story.memoryVerse.text}”<cite>{story.memoryVerse.reference}</cite>
+            “{story.memoryVerse.text}”
+            <cite>
+              {story.memoryVerse.reference} · {SCRIPTURE_ABBREVIATION}
+            </cite>
           </blockquote>
         )}
 

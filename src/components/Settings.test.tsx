@@ -60,6 +60,12 @@ describe("Settings", () => {
     expect(onClose).toHaveBeenCalledTimes(3);
   });
 
+  it("shows the scripture translation notice", () => {
+    render(<Settings onClose={() => {}} />);
+    expect(screen.getByText(/New International Version/)).toBeTruthy();
+    expect(screen.getByText(/Biblica/)).toBeTruthy();
+  });
+
   it("clears progress only after the grown-up confirms", () => {
     recordQuiz("daniel", 3);
     const confirm = vi.fn(() => false);

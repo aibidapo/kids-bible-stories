@@ -47,8 +47,9 @@ A phase with an unfilled cost line is not scheduled.
 7. Professional narration
 8. Smaller additions
 
-Rationale: no build phase after 1 starts until phase 0 has named a buyer
-and a price; the blockers gate anything paid or classroom-facing; the
+Rationale (phase 0 skipped 2026-09-18, buyer = local churches by the
+owner's statement): the pilot should come before new content so the
+churches' asks shape it, hence the recommendation below to run 5 before 4; the blockers gate anything paid or classroom-facing; the
 distribution decision decides whether "paid" exists at all; Jesus stories
 precede the pilot because churches will ask for them; profiles and
 narration are the costliest for the least teaching value. Phases 4–7 are
@@ -74,8 +75,10 @@ narration are the costliest for the least teaching value. Phases 4–7 are
   items, and the price points heard. Phases 4–7 reordered from it.
 - **Kit:** `docs/discovery/interview-kit.md` (scripts, write-up template,
   findings note format).
-- **Status:** kit ready 2026-09-18; interviews not started. **Blocks every
-  phase from 3 onward.**
+- **Status:** **skipped by the owner 2026-09-18** (local churches have already
+  requested the product); see `docs/decisions/2026-09-18-phase-0-skipped.md`.
+  Buyer segment: local churches. Price and feature ranking unknown. The kit
+  is kept for the pilot's observed sessions.
 
 ## Phase 1: Family Devotional mode
 
@@ -103,8 +106,9 @@ narration are the costliest for the least teaching value. Phases 4–7 are
   items check out against the stories and references; **one finding for
   the owner: the memory verses are NIV wording and the app shows no
   translation notice; choose notice, public-domain translation, or
-  paraphrase before release.** Owner's read-through still open; checklist
-  in the review note.
+  paraphrase before release.** NIV notice added 2026-09-18 (Settings and
+  beside each verse, `docs/evidence/2026-09-18-niv-notice/record.md`).
+  Owner's read-through still open; checklist in the review note.
 
 ## Phase 2: Blockers before paid or classroom use
 
@@ -185,6 +189,9 @@ narration are the costliest for the least teaching value. Phases 4–7 are
 - **Done when:** a decision file in `docs/decisions/` names the option, its
   costs and what it removes from later phases.
 - **Status:** not started. Blocks any "paid" wording elsewhere.
+
+**Recommended order after the phase 0 decision:** 2a → 5 (pilot with the
+current five stories) → 4 → 6 → 7. Owner to confirm.
 
 ## Phase 4: Life of Jesus collection, with download-a-story
 
@@ -334,3 +341,5 @@ Kept here so the reasoning survives.
   set widened); CI blocked, owner has no GitHub Actions for now.
 - 2026-09-18: phase 1 content review pass written (NIV notice finding);
   phase 0 interview kit written.
+- 2026-09-18: phase 0 skipped by the owner (churches requested the product);
+  NIV notice being added to Settings and beside each verse.
