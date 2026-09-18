@@ -16,7 +16,7 @@ and gate inventory as the earlier records.
 - Branch `main`. Commits: `babbf54` sheet + manifests + 16 layers + plan,
   `8dcbf63` first compositions, `0fa70e6` review round (harbour rebuilt,
   heaving storm, swallow beat, sea life, crowd scale), `b4611a5` Jonah
-  head-first in the mouth, then the record commit.
+  head-first in the mouth, `edf0ae7` harbour figures on the quay + quiz shuffle, then the record commits.
 - Browser evidence tested at `b4611a5`: `dist/assets/index-BeGgKjfC.js`,
   served by `vite preview --port 4173`.
 - Story assets (bytes per `layers.json`): running 293,168; storm 303,808;
@@ -44,6 +44,8 @@ and gate inventory as the earlier records.
 | Browser: tablet ×5 | 21-* | layers positioned; sail top cropped on the storm | 282d8e916043f272, 02affa75ee147a3d, 5b61b7a309cf49c1, 4881a33f9bd51968, 1d2f37ae18d7ac4e |
 | Browser: first hotspot ×5 | 22-* | every page's first hotspot fires its sticker or bubble | 7a201a53057f45cd, d4a611f81c35fa10, 1da5b012dc16f023, da45ee8d5f103cab, 59b56ab5313681fe; `hotspots.png` |
 | Frame cost, storm (rain overlay, lightning, 4 heaving waves, rock, shake, 7 images) | rAF sampler, 4x throttle, single page, fresh isolated context on `index-BeGgKjfC.js` | 8 images; animations flash 1, heave 5, rock-boat 1, shake 1, blink 8, breathe 1, rainfall 1; 120 frames, avg 33.33 ms, p95 33.7, max 34.1. A first probe in an older context hit the stale service-worker build and was discarded. | this record |
+| Harbour, second review | user: figures floating, ship small | feet moved onto the quay top, ship 0.88 moored at the edge; commit `edf0ae7` | `running-render.png`, `browser/20-jonah-0-running-phone.png` badba296ffb2d89b |
+| Quiz shuffle | `Quiz.tsx` shuffles each question's choices once per mount; checked on `index-C22RKXah.js` by reading the first question's choices on five stories' quiz pages | right answer at position 3 (david), 3 (noah), 1 (jonah), 3 (daniel), 1 (creation): no longer always first | `browser/6-quiz.png` 9562314703974fb6; this record |
 | Offline | not repeated this story (precache strategy unchanged since the Daniel check) | — | — |
 
 ## Review

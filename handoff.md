@@ -17,7 +17,10 @@ Four of five stories migrated. Harbour with a full quay and a moored ship,
 storm on four heaving wave layers with the ship riding the near swell and the
 crew inside the hull, Jonah head-first into the great fish with a turtle, a
 fish school, a jellyfish and rising bubbles, prayer in the belly, Nineveh
-crowd at Jonah's height. New classes: `a-heave`, `a-swallow`, `a-bubble`.
+crowd at Jonah's height. Second review: harbour figures stood on the quay top and the
+ship enlarged (`edf0ae7`). New classes: `a-heave`, `a-swallow`, `a-bubble`.
+**Quiz choices are now shuffled per mount** (`Quiz.tsx`); story data still lists the
+right answer first, and `answerIndex` is remapped after the shuffle.
 Pattern fixed: `Eyelids` over a raw `<image>` must sit in a group scaled the
 same way as the image. Evidence: `docs/evidence/2026-09-18-jonah-story-raster/record.md`.
 
