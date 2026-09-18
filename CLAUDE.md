@@ -72,6 +72,7 @@ src/
     figures.tsx Person (poses + expressions), Crowd, Giant, Angel
     animals.tsx lions, sheep, birds, fish, the great fish, etc.
     props.tsx   trees, ark, ship, city, den, throne, sling
+    v2/         soft-shaded cutout kit: tone.ts, effects.tsx, den.tsx, lion.tsx, person.tsx
   scenes/       the 26 scenes; index.ts maps string key -> component
   data/
     stories.ts        library order + derived sticker total
@@ -131,10 +132,15 @@ OUT_DIR=scratch/scenes node scratch/render.mjs
 
 # Screenshot the running app across phone and tablet layouts.
 # Needs `npm run preview` on :4173 and a Chromium on --remote-debugging-port=9222.
-node scripts/shoot.mjs
+# `vite preview` binds to localhost (IPv6), so pass BASE explicitly.
+BASE=http://localhost:4173 node scripts/shoot.mjs
 ```
 
-Both write to `scratch/`, which is gitignored.
+Both write to `scratch/`, which is gitignored. Shots 10–14 cover the Daniel
+den scene at phone, tablet, Calm, hotspot-found and big mode; they are the
+reference for the v2 style. Known layout limit: at 1024x768 the stage frame
+is height-limited and `slice` crops the top ~225 viewBox units, so keep
+story-critical art below y=225 and inside x=90–910.
 
 `render-scenes.tsx` renders without CSS, so it **cannot** catch constraint 1
 above. `npm run check:motion` does catch it, mechanically, for every registered
@@ -145,6 +151,14 @@ screenshots too.
 
 - **Data-driven.** Stories are data; the player is generic. Resist adding
   per-story branches in components.
+- **Two art kits, temporarily.** `src/art/v2/` is the new soft-shaded cutout
+  style (reference: `design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg`);
+  `src/art/*.tsx` is the original flat style. A scene uses one or the other;
+  the only exception is a tiny background figure where v2 has no pose yet.
+  When every scene has migrated, delete v1 and fold v2 into `src/art/`. New
+  style work goes in v2 only. v2 rules: one bbox-relative `Shaded` gradient
+  per material, gradient-ellipse shadows (never `filter` on anything that
+  moves), rest state from attributes so Calm mode holds a composed still.
 - **Both reading levels, always.** A `Scene` needs `text.little` and `text.big`.
   Little: short sentences, concrete words, pre-reader. Big: fuller narrative,
   richer vocabulary, plus `verse`.
