@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 56554,
+    "source": "design/pipeline/raw/david/shepherd/bg.png"
+  },
+  "cutouts": {
+    "david-staff": {
+      "file": "david-staff.webp",
+      "w": 448,
+      "h": 900,
+      "trim": [
+        104,
+        69,
+        639,
+        1143
+      ],
+      "source": "design/pipeline/raw/david/shepherd/david-staff.png",
+      "bytes": 58270
+    },
+    "lamb": {
+      "file": "lamb.webp",
+      "w": 444,
+      "h": 400,
+      "trim": [
+        314,
+        199,
+        874,
+        704
+      ],
+      "source": "design/pipeline/raw/david/shepherd/lamb.png",
+      "bytes": 22502
+    }
+  }
+}

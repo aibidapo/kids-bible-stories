@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 55384,
+    "source": "design/pipeline/raw/david/stones/bg.png"
+  },
+  "cutouts": {
+    "david-sling": {
+      "file": "david-sling.webp",
+      "w": 642,
+      "h": 900,
+      "trim": [
+        88,
+        88,
+        822,
+        1117
+      ],
+      "source": "design/pipeline/raw/david/stones/david-sling.png",
+      "bytes": 82336
+    },
+    "goliath-loom": {
+      "file": "goliath-loom.webp",
+      "w": 659,
+      "h": 1000,
+      "trim": [
+        76,
+        61,
+        775,
+        1121
+      ],
+      "source": "design/pipeline/raw/david/stones/goliath-loom.png",
+      "bytes": 83872
+    },
+    "stones": {
+      "file": "stones.webp",
+      "w": 305,
+      "h": 200,
+      "trim": [
+        161,
+        159,
+        1039,
+        735
+      ],
+      "source": "design/pipeline/raw/david/stones/stones.png",
+      "bytes": 10114
+    }
+  }
+}

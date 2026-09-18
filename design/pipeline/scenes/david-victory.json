@@ -1,0 +1,22 @@
+{
+  "story": "david",
+  "scene": "victory",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The same dusty valley between two low hills seen from the Israelite side, cream tents on the left hill, a bright clear afternoon sky with a few clouds and warm light, Goliath's huge helmet and spear lying abandoned on the ground at the right. Completely EMPTY: no people, no animals. Keep the valley floor at the centre and left clear."
+  },
+  "cutouts": {
+    "david-victory": {
+      "sheet": "david",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, David, standing facing the viewer with both arms raised high in triumph, the sling held up in one hand, big joyful smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "army-cheer": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Three Israelite soldiers in simple bronze helmets and cream tunics cheering with arms and shields raised, big happy smiles, in the same soft cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

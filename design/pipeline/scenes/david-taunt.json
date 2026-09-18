@@ -1,0 +1,22 @@
+{
+  "story": "david",
+  "scene": "taunt",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A wide dusty valley between two low hills: on the left hill a cluster of small cream army tents with a banner, on the right hill a few dark red tents, dry ground with scattered rocks in the valley floor, a pale hazy morning sky. Completely EMPTY: no people, no animals. Keep the valley floor clear."
+  },
+  "cutouts": {
+    "goliath-taunt": {
+      "sheet": "goliath",
+      "aspect": "3:4",
+      "max_h": 1000,
+      "prompt": "The character from the second reference image, Goliath, standing in three-quarter view facing left, mouth wide open in a roaring shout, one fist raised, the other hand gripping his huge spear, boastful. Full figure including feet, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "army-afraid": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Three Israelite soldiers in simple bronze helmets and cream tunics with round shields, huddled together and cowering, peeking to the right with worried faces, in the same soft cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

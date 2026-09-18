@@ -1,0 +1,28 @@
+{
+  "story": "david",
+  "scene": "volunteers",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Inside the Israelite army camp: a large purple royal tent with gold trim and an open front at the right, smaller cream tents behind, a spear stuck in the ground, dry trampled ground, a soft afternoon sky. Completely EMPTY: no people, no animals, no armour. Keep the ground at the centre and left clear."
+  },
+  "cutouts": {
+    "saul-point": {
+      "sheet": "saul",
+      "aspect": "3:4",
+      "max_h": 950,
+      "prompt": "The character from the second reference image, King Saul, standing in three-quarter view facing left, one hand raised palm-up in doubt, eyebrows raised, uncertain expression. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "david-brave": {
+      "sheet": "david",
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The character from the second reference image, David, standing in three-quarter view facing right, chest out, one hand on his heart and the other pointing to himself, brave confident smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "armour-pile": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 400,
+      "prompt": "A pile of oversized bronze armour lying on the ground: a big empty bronze breastplate, an EMPTY bronze helmet with a plume lying on its side with nothing inside it and no face, and a sheathed sword leaning on them, in the same soft cutout illustration style as the reference image. No people, no faces, no eyes. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

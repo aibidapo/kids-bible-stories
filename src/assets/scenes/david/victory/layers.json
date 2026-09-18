@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 55496,
+    "source": "design/pipeline/raw/david/victory/bg.png"
+  },
+  "cutouts": {
+    "david-victory": {
+      "file": "david-victory.webp",
+      "w": 571,
+      "h": 900,
+      "trim": [
+        122,
+        69,
+        803,
+        1143
+      ],
+      "source": "design/pipeline/raw/david/victory/david-victory.png",
+      "bytes": 55866
+    },
+    "army-cheer": {
+      "file": "army-cheer.webp",
+      "w": 916,
+      "h": 586,
+      "trim": [
+        147,
+        195,
+        1063,
+        781
+      ],
+      "source": "design/pipeline/raw/david/victory/army-cheer.png",
+      "bytes": 69658
+    }
+  }
+}

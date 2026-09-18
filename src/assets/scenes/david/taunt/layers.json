@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 62306,
+    "source": "design/pipeline/raw/david/taunt/bg.png"
+  },
+  "cutouts": {
+    "goliath-taunt": {
+      "file": "goliath-taunt.webp",
+      "w": 716,
+      "h": 1000,
+      "trim": [
+        76,
+        61,
+        836,
+        1122
+      ],
+      "source": "design/pipeline/raw/david/taunt/goliath-taunt.png",
+      "bytes": 83120
+    },
+    "army-afraid": {
+      "file": "army-afraid.webp",
+      "w": 795,
+      "h": 640,
+      "trim": [
+        196,
+        157,
+        991,
+        797
+      ],
+      "source": "design/pipeline/raw/david/taunt/army-afraid.png",
+      "bytes": 62332
+    }
+  }
+}

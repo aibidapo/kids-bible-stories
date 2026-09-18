@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 83224,
+    "source": "design/pipeline/raw/david/volunteers/bg.png"
+  },
+  "cutouts": {
+    "saul-point": {
+      "file": "saul-point.webp",
+      "w": 573,
+      "h": 950,
+      "trim": [
+        110,
+        104,
+        713,
+        1103
+      ],
+      "source": "design/pipeline/raw/david/volunteers/saul-point.png",
+      "bytes": 56570
+    },
+    "david-brave": {
+      "file": "david-brave.webp",
+      "w": 290,
+      "h": 800,
+      "trim": [
+        279,
+        70,
+        668,
+        1143
+      ],
+      "source": "design/pipeline/raw/david/volunteers/david-brave.png",
+      "bytes": 37172
+    },
+    "armour-pile": {
+      "file": "armour-pile.webp",
+      "w": 521,
+      "h": 400,
+      "trim": [
+        228,
+        124,
+        1076,
+        775
+      ],
+      "source": "design/pipeline/raw/david/volunteers/armour-pile.png",
+      "bytes": 37124
+    }
+  }
+}
