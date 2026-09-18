@@ -133,8 +133,6 @@ export function TheStorm() {
 export function SwallowedWhole() {
   const L = swLayers.cutouts;
   const fishS = 0.55;
-  // the fish's mouth in viewBox units: its image's left edge sits at 660 - w*fishS/2
-  const mouthX = 660 - L["great-fish"].w * fishS * 0.5 + 70;
   const bubbles = Array.from({ length: 14 }, (_, i) => {
     const t = rand(11 + i);
     return { x: 120 + t * 760, y: 380 + rand(40 + i) * 220, r: 3 + rand(70 + i) * 6, d: -t * 7 };
@@ -146,20 +144,20 @@ export function SwallowedWhole() {
       <Layer src={swTurtle} w={L.turtle.w} h={L.turtle.h} x={200} y={300} scale={0.36} className="a-swim-slow" delay={-3} />
       <Layer src={swSchool} w={L["fish-school"].w} h={L["fish-school"].h} x={800} y={230} scale={0.4} className="a-swim" delay={-1} />
       <Layer src={swJelly} w={L.jellyfish.w} h={L.jellyfish.h} x={900} y={470} scale={0.42} className="a-float" delay={-2} />
-      {/* Jonah is drawn at the mouth; the beat replays his drift down into it */}
-      <g transform={`translate(${mouthX} 470)`}>
-        <g className="a-swallow">
-          <image href={swJonah} x={-L["jonah-fall"].w * 0.14} y={-L["jonah-fall"].h * 0.14} width={L["jonah-fall"].w * 0.28} height={L["jonah-fall"].h * 0.28} />
-          <g transform={`translate(${-L["jonah-fall"].w * 0.14} ${-L["jonah-fall"].h * 0.14}) scale(0.28)`}>
-            <Eyelids {...EYES.jonahFall} w={0} h={0} />
-          </g>
-        </g>
-      </g>
       <g transform="translate(660 500)">
         <g className="a-swim-slow">
           <image href={swFish} x={-L["great-fish"].w * fishS * 0.5} y={-L["great-fish"].h * fishS * 0.5} width={L["great-fish"].w * fishS} height={L["great-fish"].h * fishS} />
           <g transform={`translate(${-L["great-fish"].w * fishS * 0.5} ${-L["great-fish"].h * fishS * 0.5}) scale(${fishS})`}>
             <Eyelids {...EYES.greatFish} w={0} h={0} delay={2.8} />
+          </g>
+        </g>
+      </g>
+      {/* Jonah, head-first into the mouth and drawn in front of it so the swallowing shows; the beat replays his drift in */}
+      <g transform="translate(372 528)">
+        <g className="a-swallow">
+          <image href={swJonah} x={-L["jonah-fall"].w * 0.14} y={-L["jonah-fall"].h * 0.14} width={L["jonah-fall"].w * 0.28} height={L["jonah-fall"].h * 0.28} />
+          <g transform={`translate(${-L["jonah-fall"].w * 0.14} ${-L["jonah-fall"].h * 0.14}) scale(0.28)`}>
+            <Eyelids {...EYES.jonahFall} w={0} h={0} />
           </g>
         </g>
       </g>
