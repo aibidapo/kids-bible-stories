@@ -1,0 +1,24 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 83028,
+    "source": "design/pipeline/raw/daniel/prays/bg.png"
+  },
+  "cutouts": {
+    "daniel-kneel": {
+      "file": "daniel-kneel.webp",
+      "w": 545,
+      "h": 900,
+      "trim": [
+        148,
+        102,
+        750,
+        1096
+      ],
+      "source": "design/pipeline/raw/daniel/prays/daniel-kneel.png",
+      "bytes": 56688
+    }
+  }
+}
