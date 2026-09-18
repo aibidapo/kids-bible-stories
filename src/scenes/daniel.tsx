@@ -21,6 +21,8 @@ import {
   Scroll,
   Throne,
 } from "../art/props";
+import { Den2 } from "../art/v2/den";
+import { Grain, LightShaft } from "../art/v2/effects";
 import type { SceneArtProps } from "../types";
 
 /** Three times a day, at the open window. */
@@ -207,8 +209,8 @@ export function TheTrap() {
 export function IntoTheDen() {
   return (
     <>
-      <DenInterior />
-      <PitLight x={500} top={70} spread={170} />
+      <Den2 />
+      <LightShaft x={500} top={42} topWidth={90} bottomSpread={250} floorY={578} />
       <Person
         x={500}
         y={520}
@@ -227,7 +229,6 @@ export function IntoTheDen() {
       <Lion x={330} y={604} scale={0.48} />
       <Lion x={700} y={610} scale={0.46} flip />
       {/* the king's face at the opening, far above */}
-      <ellipse cx="500" cy="60" rx="80" ry="22" fill="#141021" />
       <Person
         x={500}
         y={62}
@@ -240,6 +241,7 @@ export function IntoTheDen() {
         face="sad"
         idle={false}
       />
+      <Grain />
     </>
   );
 }

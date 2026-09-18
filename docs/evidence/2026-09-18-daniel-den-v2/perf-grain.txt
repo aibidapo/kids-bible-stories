@@ -1,0 +1,17 @@
+Grain filter frame-cost probe (plan Task 2, step 3b)
+Date: 2026-09-18  Revision: working tree on d177cd4 + Task 1/2 files (pre-commit)
+Method: Chrome DevTools MCP, page http://localhost:5173 (vite dev), viewport 1024x768 @2x,
+        CPU throttling 4x. requestAnimationFrame sampler, 4 s window, after 1.5 s settle.
+        Metric = gap between consecutive rAF callbacks (ms).
+
+route              grain  frames  avg    p50    p95    max    >16.9ms  >33.4ms
+#/story/daniel/2   yes    119     33.61  33.3   33.7   66.8   119      51
+#/story/daniel/2   no     117     34.19  33.4   33.8   66.7   117      47
+#/story/daniel/3   n/a    114     35.09  33.3   33.8   166.7  114      36   (v1 scene, baseline)
+
+Reading: with 4x throttle every route sits at ~33 ms (30 fps cadence), including the
+untouched v1 scene. Removing <Grain /> changes nothing measurable. Decision: keep grain.
+Limitation: emulated throttle on a desktop GPU, not a real phone. Task 6 re-measures.
+Side finding (pre-existing, v1 too): at 1024x768 landscape the stage frame is height-limited
+to ~2.5:1 and preserveAspectRatio slice crops the top ~225 viewBox units, so the opening,
+the king and the king-above hotspot are off-screen. Not addressed in this slice.
