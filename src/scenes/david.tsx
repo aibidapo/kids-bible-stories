@@ -42,7 +42,7 @@ const EYES = {
   // measured by hand on a 10 px grid: the detector had found only the white crescents
   davidStaff: { points: [[249, 136], [320, 136]] as [number, number][], rx: 17, ry: 15, tone: "#d98050" },
   // the Noah sheep pair shows one eye per sheep; black faces
-  sheepPair: { points: [[457, 136], [703, 183]] as [number, number][], rx: 16, ry: 15, tone: "#1e1a1a" },
+  sheepPair: { points: [[456, 140], [702, 186]] as [number, number][], rx: 21, ry: 19, tone: "#1e1a1a" },
   goliathTaunt: { points: [[298, 234], [375, 237]] as [number, number][], rx: 16, ry: 16, tone: "#e4a578" },
   armyAfraid: {
     points: [[126, 183], [190, 182], [386, 164], [459, 156], [608, 178], [673, 176]] as [number, number][],
