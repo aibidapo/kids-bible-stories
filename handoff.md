@@ -12,7 +12,16 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: **David story, six pages, after two user review rounds** (`0219027`…`ceef0fd`).
+Latest: **Jonah story, five pages, after one review round** (`babbf54`…`b4611a5`).
+Four of five stories migrated. Harbour with a full quay and a moored ship,
+storm on four heaving wave layers with the ship riding the near swell and the
+crew inside the hull, Jonah head-first into the great fish with a turtle, a
+fish school, a jellyfish and rising bubbles, prayer in the belly, Nineveh
+crowd at Jonah's height. New classes: `a-heave`, `a-swallow`, `a-bubble`.
+Pattern fixed: `Eyelids` over a raw `<image>` must sit in a group scaled the
+same way as the image. Evidence: `docs/evidence/2026-09-18-jonah-story-raster/record.md`.
+
+Before that: **David story, six pages, after two user review rounds** (`0219027`…`ceef0fd`).
 New strike page (stone flies, giant staggers and collapses; Calm rests on the
 outcome), blinks on every face including sheep and lamb, shepherd hill with a
 swaying canopy, swaying tufts, three flapping birds and a flock of seven on the
@@ -144,9 +153,11 @@ Verification actually run (details, hashes, numbers in
 - [ ] **User reviews David**: `docs/evidence/2026-09-18-david-story-raster/story-sheet.png`, `phones.png`.
 - [ ] **Gate increment (recommended before Jonah):** Vitest, ESLint + security plugin, Prettier, staged
       secret scan, `npm audit` on demand; hook wiring; prove each fails; first unit tests on pure seams.
-- [ ] Remaining stories: Jonah (5: running, storm, swallowed, prayer, nineveh; needs Jonah, sailors, the
-      great fish, ship, city), Creation (6: light, sky-water, land, lights, creatures, people; mostly
-      backgrounds, Adam and Eve, birds/fish reuse). Then delete `src/art/*` v1 and `src/art/v2/{den,lion,person}.tsx`.
+- [x] Jonah migrated (five pages, 21 layers, no regeneration, one review round).
+- [ ] **User reviews Jonah**: `docs/evidence/2026-09-18-jonah-story-raster/story-sheet.png`, `phones.png`.
+- [ ] Last story: Creation (6: light, sky-water, land, lights, creatures, people; mostly backgrounds,
+      Adam and Eve, birds/fish/animal reuse). Then delete `src/art/*` v1 and `src/art/v2/{den,lion,person}.tsx`,
+      and `check:motion` still passes.
 - [ ] Blinks on the other Daniel pages (prays Daniel, trap king, rejoice king): measure pupils on the
       cutouts with the grid trick, add `Eyelids`.
 - [ ] Library thumbnails: covers use scene art; check the card size once a story is fully raster.
