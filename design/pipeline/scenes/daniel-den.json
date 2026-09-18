@@ -1,0 +1,34 @@
+{
+  "story": "daniel",
+  "scene": "den",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The lions' den from the reference image, exactly the same room, camera angle, stone wall, floor, round opening in the ceiling with a warm shaft of light falling to the floor, but completely EMPTY: no people, no animals, no figures, nothing on the floor. Keep the centre of the floor clear and lit."
+  },
+  "cutouts": {
+    "daniel": {
+      "sheet": "daniel",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Daniel, kneeling on both knees facing the viewer, hands pressed together in prayer at his chest, eyes open, calm gentle smile, lit warmly from above. Full figure including knees, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "lion-a": {
+      "sheet": "lion",
+      "aspect": "4:3",
+      "max_h": 560,
+      "prompt": "The lion from the second reference image, lying down at rest on all fours like a real lion, body facing right with the head turned toward the viewer, eyes open, content closed-mouth smile, front paws stretched forward, tail curled behind. Whole animal visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "king": {
+      "sheet": "king",
+      "aspect": "4:3",
+      "max_h": 320,
+      "prompt": "The king from the second reference image, seen from directly below as he leans over the rim of a round hole and peers down: only his head, crown, shoulders and two hands gripping the rim are visible, face turned down toward the viewer, worried and sad expression. Centred, on a flat solid bright green background (#00ff00), no hole, no floor, no shadow, no other objects."
+    },
+    "lion-b": {
+      "sheet": "lion",
+      "aspect": "4:3",
+      "max_h": 560,
+      "prompt": "The lion from the second reference image, lying down at rest on all fours like a real lion, body facing right, head up and looking slightly to the left, eyes open, relaxed smile, one front paw over the other. Whole animal visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

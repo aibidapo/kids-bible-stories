@@ -1,0 +1,63 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 63926,
+    "source": "design/pipeline/raw/daniel/den/bg.png"
+  },
+  "cutouts": {
+    "daniel": {
+      "file": "daniel.webp",
+      "w": 409,
+      "h": 900,
+      "trim": [
+        228,
+        102,
+        669,
+        1073
+      ],
+      "source": "design/pipeline/raw/daniel/den/daniel.png",
+      "bytes": 50070
+    },
+    "lion-a": {
+      "file": "lion-a.webp",
+      "w": 825,
+      "h": 560,
+      "trim": [
+        117,
+        127,
+        1097,
+        792
+      ],
+      "source": "design/pipeline/raw/daniel/den/lion-a.png",
+      "bytes": 54654
+    },
+    "king": {
+      "file": "king.webp",
+      "w": 323,
+      "h": 320,
+      "trim": [
+        200,
+        44,
+        1000,
+        836
+      ],
+      "source": "design/pipeline/raw/daniel/den/king.png",
+      "bytes": 23436
+    },
+    "lion-b": {
+      "file": "lion-b.webp",
+      "w": 688,
+      "h": 560,
+      "trim": [
+        140,
+        76,
+        1058,
+        823
+      ],
+      "source": "design/pipeline/raw/daniel/den/lion-b.png",
+      "bytes": 51192
+    }
+  }
+}
