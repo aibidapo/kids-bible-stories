@@ -9,16 +9,16 @@
   "cutouts": {
     "goliath-taunt": {
       "file": "goliath-taunt.webp",
-      "w": 716,
+      "w": 702,
       "h": 1000,
       "trim": [
-        76,
-        61,
-        836,
-        1122
+        60,
+        43,
+        852,
+        1172
       ],
       "source": "design/pipeline/raw/david/taunt/goliath-taunt.png",
-      "bytes": 83120
+      "bytes": 88920
     },
     "army-afraid": {
       "file": "army-afraid.webp",

@@ -22,16 +22,16 @@
     },
     "goliath-loom": {
       "file": "goliath-loom.webp",
-      "w": 659,
+      "w": 661,
       "h": 1000,
       "trim": [
-        76,
-        61,
-        775,
-        1121
+        60,
+        26,
+        817,
+        1172
       ],
       "source": "design/pipeline/raw/david/stones/goliath-loom.png",
-      "bytes": 83872
+      "bytes": 94320
     },
     "stones": {
       "file": "stones.webp",

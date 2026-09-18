@@ -17,6 +17,12 @@
       "aspect": "4:3",
       "max_h": 700,
       "prompt": "Three Israelite soldiers in simple bronze helmets and cream tunics cheering with arms and shields raised, big happy smiles, in the same soft cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "goliath-fallen": {
+      "sheet": "goliath",
+      "aspect": "16:9",
+      "max_h": 500,
+      "prompt": "The character from the second reference image, Goliath, lying flat on his back on the ground, seen from the side, eyes closed, mouth closed, arms limp at his sides, helmet fallen off beside his head, no blood, no wound, as if knocked out cold. Whole figure lying horizontally, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }

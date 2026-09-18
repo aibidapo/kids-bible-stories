@@ -32,6 +32,19 @@
       ],
       "source": "design/pipeline/raw/david/victory/army-cheer.png",
       "bytes": 69658
+    },
+    "goliath-fallen": {
+      "file": "goliath-fallen.webp",
+      "w": 1138,
+      "h": 500,
+      "trim": [
+        69,
+        182,
+        1307,
+        726
+      ],
+      "source": "design/pipeline/raw/david/victory/goliath-fallen.png",
+      "bytes": 76390
     }
   }
 }

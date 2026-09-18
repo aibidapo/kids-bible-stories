@@ -1,0 +1,6 @@
+{
+  "story": "david",
+  "scene": "strike",
+  "background": { "reuse": "david/stones/bg.webp" },
+  "cutouts": {}
+}

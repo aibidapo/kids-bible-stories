@@ -3,7 +3,7 @@
   "scene": "shepherd",
   "background": {
     "aspect": "16:9",
-    "prompt": "Rolling green hill pasture in Judea at golden afternoon light, a few smooth grey rocks, a small stream at the right, an olive tree at the far left, soft blue sky with warm clouds. Completely EMPTY: no people, no animals. Keep the grass at the centre and left clear."
+    "prompt": "Rolling green hill pasture in Judea at golden afternoon light: lush detailed grass with individual blades and small wildflowers in the foreground, a few smooth grey rocks, a small stream winding at the right, soft blue sky with warm clouds. Completely EMPTY: no trees, no people, no animals, no birds. Keep the grass at the centre and left clear."
   },
   "cutouts": {
     "david-staff": {
@@ -17,6 +17,54 @@
       "aspect": "4:3",
       "max_h": 400,
       "prompt": "One small fluffy friendly cartoon lamb standing facing left, big gentle eyes, cream wool, black face, in the same soft cutout illustration style as the reference image. Whole animal, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "tree": {
+      "sheet": null,
+      "aspect": "3:4",
+      "max_h": 700,
+      "prompt": "One olive tree with a gnarled brown trunk and a full, rounded canopy of many small silver-green leaves, detailed leaf clusters, in the same soft cutout illustration style as the reference image. Whole tree including the base of the trunk, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "grass-tuft": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "A single clump of tall green grass blades with two tiny white wildflowers, in the same soft cutout illustration style as the reference image. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "bluebird-up": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright blue songbird with an orange chest in flight seen from the side, flying to the right, wings raised high above its back at the top of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "bluebird-down": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright blue songbird with an orange chest in flight seen from the side, flying to the right, both wings swept down below its body at the bottom of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "redbird-up": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright red cardinal with a black face mask in flight seen from the side, flying to the right, wings raised high above its back at the top of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "redbird-down": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright red cardinal with a black face mask in flight seen from the side, flying to the right, both wings swept down below its body at the bottom of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "goldfinch-up": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright yellow goldfinch with black wings in flight seen from the side, flying to the right, wings raised high above its back at the top of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "goldfinch-down": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small bright yellow goldfinch with black wings in flight seen from the side, flying to the right, both wings swept down below its body at the bottom of the stroke, tail feathers spread slightly, tiny beak and eye, in the same soft cutout illustration style as the reference image. Whole bird, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }

@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 56554,
+    "bytes": 82804,
     "source": "design/pipeline/raw/david/shepherd/bg.png"
   },
   "cutouts": {
@@ -32,6 +32,157 @@
       ],
       "source": "design/pipeline/raw/david/shepherd/lamb.png",
       "bytes": 22502
+    },
+    "tree": {
+      "file": "tree.webp",
+      "w": 617,
+      "h": 700,
+      "trim": [
+        30,
+        141,
+        865,
+        1089
+      ],
+      "source": "design/pipeline/raw/david/shepherd/tree.png",
+      "bytes": 170314,
+      "body": {
+        "file": "tree-body.webp",
+        "bytes": 20736
+      },
+      "tail": {
+        "file": "tree-tail.webp",
+        "w": 617,
+        "h": 474,
+        "ox": 0,
+        "oy": 0,
+        "root": "tl",
+        "polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            617,
+            0
+          ],
+          [
+            617,
+            470
+          ],
+          [
+            430,
+            470
+          ],
+          [
+            430,
+            395
+          ],
+          [
+            200,
+            395
+          ],
+          [
+            200,
+            470
+          ],
+          [
+            0,
+            470
+          ]
+        ],
+        "bytes": 151406
+      }
+    },
+    "grass-tuft": {
+      "file": "grass-tuft.webp",
+      "w": 216,
+      "h": 220,
+      "trim": [
+        346,
+        160,
+        870,
+        693
+      ],
+      "source": "design/pipeline/raw/david/shepherd/grass-tuft.png",
+      "bytes": 17532
+    },
+    "bluebird-up": {
+      "file": "bluebird-up.webp",
+      "w": 242,
+      "h": 220,
+      "trim": [
+        242,
+        123,
+        959,
+        774
+      ],
+      "source": "design/pipeline/raw/david/shepherd/bluebird-up.png",
+      "bytes": 13432
+    },
+    "bluebird-down": {
+      "file": "bluebird-down.webp",
+      "w": 322,
+      "h": 220,
+      "trim": [
+        193,
+        214,
+        996,
+        762
+      ],
+      "source": "design/pipeline/raw/david/shepherd/bluebird-down.png",
+      "bytes": 14812
+    },
+    "redbird-up": {
+      "file": "redbird-up.webp",
+      "w": 225,
+      "h": 220,
+      "trim": [
+        302,
+        157,
+        897,
+        739
+      ],
+      "source": "design/pipeline/raw/david/shepherd/redbird-up.png",
+      "bytes": 12080
+    },
+    "redbird-down": {
+      "file": "redbird-down.webp",
+      "w": 281,
+      "h": 220,
+      "trim": [
+        206,
+        159,
+        947,
+        740
+      ],
+      "source": "design/pipeline/raw/david/shepherd/redbird-down.png",
+      "bytes": 11536
+    },
+    "goldfinch-up": {
+      "file": "goldfinch-up.webp",
+      "w": 218,
+      "h": 220,
+      "trim": [
+        260,
+        108,
+        942,
+        795
+      ],
+      "source": "design/pipeline/raw/david/shepherd/goldfinch-up.png",
+      "bytes": 12434
+    },
+    "goldfinch-down": {
+      "file": "goldfinch-down.webp",
+      "w": 326,
+      "h": 220,
+      "trim": [
+        217,
+        216,
+        957,
+        715
+      ],
+      "source": "design/pipeline/raw/david/shepherd/goldfinch-down.png",
+      "bytes": 12960
     }
   }
 }

@@ -34,6 +34,13 @@ enabled (image models have zero free-tier quota).
    `<name>-tail.webp` and `<name>-body.webp`, records its box and root corner
    in `layers.json`. The scene renders `Tail` before the body `Layer`. The
    original `<name>.webp` stays as the split's source and is not imported.
+   Works for any part with its own motion (a tree canopy on `a-sway-slow`);
+   the scene uses `Part` with the class it wants.
+6. `find_eyes.py <story> <scene> <name> [max_eyes] [top_fraction]` — locates
+   the eyes on a cutout (near-white sclera blobs in the upper part, teeth
+   filtered by aspect) and prints lid centres, radii and skin tone for
+   `Eyelids`. Three-quarter faces may need the far eye mirrored by hand;
+   always verify by rendering with the lids forced visible.
 
 ## What gets committed
 
