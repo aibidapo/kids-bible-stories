@@ -72,7 +72,10 @@ narration are the costliest for the least teaching value. Phases 4–7 are
 - **Done when:** a one-page findings note in `docs/decisions/` with: the
   named buyer segments, what each pays today, the top three requested
   items, and the price points heard. Phases 4–7 reordered from it.
-- **Status:** not started. **Blocks every phase from 3 onward.**
+- **Kit:** `docs/discovery/interview-kit.md` (scripts, write-up template,
+  findings note format).
+- **Status:** kit ready 2026-09-18; interviews not started. **Blocks every
+  phase from 3 onward.**
 
 ## Phase 1: Family Devotional mode
 
@@ -95,7 +98,13 @@ narration are the costliest for the least teaching value. Phases 4–7 are
 - **Spec:** `docs/superpowers/specs/2026-09-18-family-devotional-design.md`
 - **Plan:** `docs/superpowers/plans/2026-09-18-family-devotional.md`
 - **Evidence:** `docs/evidence/2026-09-18-family-devotional/record.md`
-- **Status:** built 2026-09-18; human review of content and screen open.
+- **Status:** built 2026-09-18. Author's content review pass done
+  (`docs/evidence/2026-09-18-family-devotional/content-review.md`): all
+  items check out against the stories and references; **one finding for
+  the owner: the memory verses are NIV wording and the app shows no
+  translation notice; choose notice, public-domain translation, or
+  paraphrase before release.** Owner's read-through still open; checklist
+  in the review note.
 
 ## Phase 2: Blockers before paid or classroom use
 
@@ -323,3 +332,5 @@ Kept here so the reasoning survives.
   sized to the art).
 - 2026-09-18: phase 2c local half built (component and hook tests, include
   set widened); CI blocked, owner has no GitHub Actions for now.
+- 2026-09-18: phase 1 content review pass written (NIV notice finding);
+  phase 0 interview kit written.

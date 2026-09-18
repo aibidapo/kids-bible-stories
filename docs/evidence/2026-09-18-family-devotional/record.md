@@ -50,7 +50,9 @@ activity each for the grown-up. **Human theological review is still open.**
 
 ## Gaps
 
-- No human review of the content or the screen yet.
+- No human review of the content or the screen yet. The author's review
+  pass and the checklist for it are in `content-review.md`; it found that
+  the memory verses are NIV wording with no notice shown.
 - Read to me is one utterance; some Android voices cut long utterances off
   around 15 s. The cards are short enough; not measured on a device.
 - Coverage include set is unchanged (`src/lib/**` covers `devotional.ts`);
