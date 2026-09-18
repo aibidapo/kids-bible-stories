@@ -29,9 +29,9 @@ export const daniel: Story = {
       hotspots: [
         {
           id: "window",
-          x: 65,
-          y: 60,
-          size: 22,
+          x: 70,
+          y: 38,
+          size: 24,
           label: "the open window",
           reward:
             "The window faced Jerusalem — his home, far away. He never closed it.",
@@ -40,8 +40,8 @@ export const daniel: Story = {
         },
         {
           id: "daniel",
-          x: 33,
-          y: 78,
+          x: 39,
+          y: 74,
           size: 20,
           label: "Daniel praying",
           reward:
@@ -62,7 +62,7 @@ export const daniel: Story = {
       hotspots: [
         {
           id: "scroll",
-          x: 33,
+          x: 32,
           y: 64,
           size: 22,
           label: "the new law",
@@ -74,7 +74,7 @@ export const daniel: Story = {
         {
           id: "king",
           x: 64,
-          y: 40,
+          y: 52,
           size: 20,
           label: "King Darius",
           reward:
@@ -133,8 +133,8 @@ export const daniel: Story = {
         {
           id: "angel",
           x: 50,
-          y: 48,
-          size: 24,
+          y: 56,
+          size: 26,
           label: "the angel",
           reward:
             "Daniel said afterwards: “My God sent his angel, and he shut the mouths of the lions.”",
@@ -143,9 +143,9 @@ export const daniel: Story = {
         },
         {
           id: "lions",
-          x: 66,
-          y: 84,
-          size: 22,
+          x: 72,
+          y: 86,
+          size: 24,
           label: "the sleeping lions",
           reward:
             "Fast asleep. The most dangerous animals in the kingdom, having a nap.",
@@ -166,9 +166,9 @@ export const daniel: Story = {
       hotspots: [
         {
           id: "king",
-          x: 25,
-          y: 78,
-          size: 20,
+          x: 23,
+          y: 76,
+          size: 22,
           label: "the king",
           reward: "A king does not usually run anywhere. This one did.",
           sound: "cheer",
@@ -176,8 +176,8 @@ export const daniel: Story = {
         },
         {
           id: "daniel-out",
-          x: 43,
-          y: 68,
+          x: 47,
+          y: 72,
           size: 20,
           label: "Daniel, safe",
           reward:

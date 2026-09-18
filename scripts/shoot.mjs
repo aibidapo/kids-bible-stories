@@ -130,7 +130,7 @@ await shot({
   progress: { calm: true },
 })
 
-// Daniel den: the reference scene for the v2 art style.
+// Daniel den: the reference scene for the raster art style.
 await shot({ path: `${D}/10-den-phone.png`, route: '#/story/daniel/2', width: 390, height: 844 })
 await shot({ path: `${D}/11-den-tablet.png`, route: '#/story/daniel/2', width: 1024, height: 768 })
 await shot({
@@ -154,6 +154,20 @@ await shot({
   height: 768,
   progress: { mode: 'big' },
 })
+
+// Every Daniel page at phone and tablet, plus the first hotspot tapped on each.
+for (const [i, name] of ['prays', 'trap', 'den', 'angel', 'rejoice'].entries()) {
+  const route = `#/story/daniel/${i}`
+  await shot({ path: `${D}/20-daniel-${i}-${name}-phone.png`, route, width: 390, height: 844 })
+  await shot({ path: `${D}/21-daniel-${i}-${name}-tablet.png`, route, width: 1024, height: 768 })
+  await shot({
+    path: `${D}/22-daniel-${i}-${name}-hotspot.png`,
+    route,
+    width: 1024,
+    height: 768,
+    before: `document.querySelectorAll('.hotspot')[0].click(); true`,
+  })
+}
 
 if (errors.length) {
   console.log('\nPAGE ERRORS:')
