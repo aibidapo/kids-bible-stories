@@ -12,39 +12,39 @@
       "w": 487,
       "h": 700,
       "trim": [
-        93,
-        90,
-        804,
-        1113
+        91,
+        88,
+        806,
+        1115
       ],
       "source": "design/pipeline/raw/daniel/trap/king-throne.png",
-      "bytes": 87662
+      "bytes": 55916
     },
     "official-scroll": {
       "file": "official-scroll.webp",
-      "w": 397,
+      "w": 398,
       "h": 800,
       "trim": [
-        269,
-        92,
-        773,
-        1108
+        267,
+        90,
+        775,
+        1110
       ],
       "source": "design/pipeline/raw/daniel/trap/official-scroll.png",
-      "bytes": 51832
+      "bytes": 44630
     },
     "official-point": {
       "file": "official-point.webp",
-      "w": 485,
+      "w": 486,
       "h": 800,
       "trim": [
-        223,
-        92,
-        839,
-        1108
+        221,
+        90,
+        841,
+        1110
       ],
       "source": "design/pipeline/raw/daniel/trap/official-point.png",
-      "bytes": 50240
+      "bytes": 43178
     }
   }
 }

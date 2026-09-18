@@ -9,16 +9,16 @@
   "cutouts": {
     "daniel-kneel": {
       "file": "daniel-kneel.webp",
-      "w": 545,
+      "w": 546,
       "h": 900,
       "trim": [
-        148,
-        102,
-        750,
-        1096
+        146,
+        100,
+        752,
+        1098
       ],
       "source": "design/pipeline/raw/daniel/prays/daniel-kneel.png",
-      "bytes": 56688
+      "bytes": 48558
     }
   }
 }

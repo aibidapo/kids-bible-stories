@@ -10,8 +10,7 @@ pip install -r design/pipeline/requirements.txt
 ```
 
 `GEMINI_API_KEY` must be set, on a Google AI Studio project with billing
-enabled (image models have zero free-tier quota). The first `cutout.py` run
-downloads the rembg `isnet-general-use` model (~170 MB).
+enabled (image models have zero free-tier quota).
 
 ## Order
 
@@ -22,9 +21,10 @@ downloads the rembg `isnet-general-use` model (~170 MB).
    layer in `design/pipeline/scenes/<story>-<scene>.json`, written to
    `design/pipeline/raw/<story>/<scene>/`. Skips existing files; delete a raw
    PNG to regenerate it.
-3. `cutout.py <story> <scene>` — strips the flat green field from each
-   character, despills edges, trims, caps height, writes WebP with alpha into
-   `src/assets/scenes/<story>/<scene>/`.
+3. `cutout.py <story> <scene>` — chroma-keys the flat green field from each
+   character (no learned matte: rembg ghosted figures standing behind others),
+   softens and despills the edge, trims, caps height, writes WebP with alpha
+   into `src/assets/scenes/<story>/<scene>/`.
 4. `pack.py <story> <scene>` — background cropped to 16:10, resized to
    1600×1000, WebP q80, plus `layers.json` with sizes, byte counts and sources.
 

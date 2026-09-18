@@ -9,42 +9,42 @@
   "cutouts": {
     "daniel-raise": {
       "file": "daniel-raise.webp",
-      "w": 609,
+      "w": 639,
       "h": 900,
       "trim": [
-        96,
-        102,
-        769,
-        1097
+        94,
+        100,
+        803,
+        1099
       ],
       "source": "design/pipeline/raw/daniel/rejoice/daniel-raise.png",
-      "bytes": 56884
+      "bytes": 53232
     },
     "king-run": {
       "file": "king-run.webp",
-      "w": 740,
+      "w": 741,
       "h": 900,
       "trim": [
-        55,
-        113,
-        859,
-        1091
+        53,
+        111,
+        861,
+        1093
       ],
       "source": "design/pipeline/raw/daniel/rejoice/king-run.png",
-      "bytes": 88938
+      "bytes": 76178
     },
     "crowd": {
       "file": "crowd.webp",
-      "w": 783,
+      "w": 782,
       "h": 700,
       "trim": [
-        235,
-        101,
-        1029,
-        811
+        233,
+        99,
+        1031,
+        813
       ],
       "source": "design/pipeline/raw/daniel/rejoice/crowd.png",
-      "bytes": 91586
+      "bytes": 82178
     }
   }
 }
