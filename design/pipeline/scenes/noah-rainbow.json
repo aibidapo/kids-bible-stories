@@ -1,0 +1,22 @@
+{
+  "story": "noah",
+  "scene": "rainbow",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A green hillside after the rain with the huge wooden ark resting on the slope at the far right, its door open, wet grass sparkling, a few puddles, and a big bright rainbow arching across a clearing blue sky with soft white clouds, warm sunlight. Completely EMPTY: no people, no animals. Keep the grass at the left and centre clear."
+  },
+  "cutouts": {
+    "family": {
+      "sheet": "noah",
+      "aspect": "4:3",
+      "max_h": 800,
+      "prompt": "Noah's family cheering with arms raised, looking up: an older woman in a blue dress and cream headscarf, a young man in a brown tunic, and a young woman in a green dress, standing close together, joyful. Same illustration style as the second reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "noah-look-up": {
+      "sheet": "noah",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Noah, standing facing the viewer with both arms raised high in joy, face tilted up, wide grateful smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

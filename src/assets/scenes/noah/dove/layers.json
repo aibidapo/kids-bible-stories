@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 57588,
+    "source": "design/pipeline/raw/noah/dove/bg.png"
+  },
+  "cutouts": {
+    "ark-resting": {
+      "file": "ark-resting.webp",
+      "w": 809,
+      "h": 600,
+      "trim": [
+        131,
+        100,
+        1069,
+        796
+      ],
+      "source": "design/pipeline/raw/noah/dove/ark-resting.png",
+      "bytes": 47634
+    },
+    "noah-window": {
+      "file": "noah-window.webp",
+      "w": 378,
+      "h": 400,
+      "trim": [
+        135,
+        146,
+        965,
+        1024
+      ],
+      "source": "design/pipeline/raw/noah/dove/noah-window.png",
+      "bytes": 19586
+    },
+    "dove-branch": {
+      "file": "dove-branch.webp",
+      "w": 296,
+      "h": 260,
+      "trim": [
+        233,
+        135,
+        948,
+        762
+      ],
+      "source": "design/pipeline/raw/noah/dove/dove-branch.png",
+      "bytes": 16078
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 115592,
+    "source": "design/pipeline/raw/noah/flood/bg.png"
+  },
+  "cutouts": {
+    "ark-afloat": {
+      "file": "ark-afloat.webp",
+      "w": 750,
+      "h": 600,
+      "trim": [
+        154,
+        91,
+        1046,
+        805
+      ],
+      "source": "design/pipeline/raw/noah/flood/ark-afloat.png",
+      "bytes": 49940
+    }
+  }
+}

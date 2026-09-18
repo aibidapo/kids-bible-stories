@@ -1,0 +1,28 @@
+{
+  "story": "noah",
+  "scene": "dove",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A calm wide sea at dawn after a great flood, gentle ripples, soft pink and gold sky with clearing clouds, and at the far right a single rocky mountain peak just emerging from the water. Completely EMPTY: no boat, no ark, no birds, no people. Keep the centre and left of the water clear."
+  },
+  "cutouts": {
+    "ark-resting": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "A huge wooden ark, a big boat with a roofed cabin on top and one open window in the cabin wall, seen from the side, sitting level and still. Whole ark including its hull bottom, centred, on a flat solid bright green background (#00ff00), no water, no cast shadow, no other objects."
+    },
+    "noah-window": {
+      "sheet": "noah",
+      "aspect": "1:1",
+      "max_h": 400,
+      "prompt": "The character from the second reference image, Noah, seen from the chest up, leaning forward and reaching out with one open hand as if to receive something, hopeful smile, looking to the right. Head, shoulders, arms and chest only, centred, on a flat solid bright green background (#00ff00), no window frame, no floor, no cast shadow, no other objects."
+    },
+    "dove-branch": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 260,
+      "prompt": "A small white dove in flight seen from the side, flying to the left, wings spread wide, carrying a fresh green olive twig with leaves in its beak, soft cream and white plumage. Whole bird, centred, on a flat solid bright green background (#00ff00), no other objects."
+    }
+  }
+}

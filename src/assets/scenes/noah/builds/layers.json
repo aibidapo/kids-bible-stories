@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 72976,
+    "source": "design/pipeline/raw/noah/builds/bg.png"
+  },
+  "cutouts": {
+    "noah-raise": {
+      "file": "noah-raise.webp",
+      "w": 546,
+      "h": 900,
+      "trim": [
+        100,
+        75,
+        750,
+        1146
+      ],
+      "source": "design/pipeline/raw/noah/builds/noah-raise.png",
+      "bytes": 49382
+    },
+    "sons-carry": {
+      "file": "sons-carry.webp",
+      "w": 842,
+      "h": 737,
+      "trim": [
+        179,
+        89,
+        1021,
+        826
+      ],
+      "source": "design/pipeline/raw/noah/builds/sons-carry.png",
+      "bytes": 61440
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "story": "noah",
+  "scene": "two-by-two",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The finished ark, an enormous wooden boat with a roof, standing on a green meadow at the right, its big door open with a long wooden ramp sloping down to the grass at centre, blue sky with soft clouds, a few trees at the far left. Completely EMPTY: no people, no animals. Keep the meadow at the left and centre clear."
+  },
+  "cutouts": {
+    "giraffes": {
+      "sheet": null,
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "Two friendly cartoon giraffes standing side by side, one slightly behind the other, walking to the right, big gentle eyes, soft spotted yellow coats. Whole animals, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "elephants": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Two friendly cartoon grey elephants standing side by side, one slightly behind the other, walking to the right, trunks curled up happily, big gentle eyes. Whole animals, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "zebras": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "Two friendly cartoon zebras standing side by side, one slightly behind the other, walking to the right, big gentle eyes, soft black and white stripes. Whole animals, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "lions": {
+      "sheet": "lion",
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "Two lions in the style of the second reference image, a maned lion and a lioness without a mane, walking side by side to the right, content smiles. Whole animals, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "sheep": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "Two fluffy friendly cartoon sheep standing side by side, one slightly behind the other, facing right, big gentle eyes, cream wool, black faces. Whole animals, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "noah-point": {
+      "sheet": "noah",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Noah, standing in three-quarter view facing right, one arm stretched out pointing to the right, warm welcoming smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

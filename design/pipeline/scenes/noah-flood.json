@@ -1,0 +1,16 @@
+{
+  "story": "noah",
+  "scene": "flood",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A vast stormy sea under heavy dark grey rain clouds, big rolling waves with white crests filling the lower half, sheets of rain, no land anywhere, a faint glow where the sun hides behind the clouds. Completely EMPTY: no boat, no ark, no people, no animals. Keep the centre of the water clear."
+  },
+  "cutouts": {
+    "ark-afloat": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "A huge wooden ark, a big boat with a roofed cabin on top and one small window, seen from the side, floating, wet planks shining, tilted slightly as if riding a wave. Whole ark including its hull bottom, centred, on a flat solid bright green background (#00ff00), no water, no cast shadow, no other objects."
+    }
+  }
+}

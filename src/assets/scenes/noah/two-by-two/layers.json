@@ -1,0 +1,89 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 64318,
+    "source": "design/pipeline/raw/noah/two-by-two/bg.png"
+  },
+  "cutouts": {
+    "giraffes": {
+      "file": "giraffes.webp",
+      "w": 674,
+      "h": 900,
+      "trim": [
+        97,
+        142,
+        796,
+        1076
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/giraffes.png",
+      "bytes": 71636
+    },
+    "elephants": {
+      "file": "elephants.webp",
+      "w": 1019,
+      "h": 546,
+      "trim": [
+        93,
+        203,
+        1112,
+        749
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/elephants.png",
+      "bytes": 55574
+    },
+    "zebras": {
+      "file": "zebras.webp",
+      "w": 923,
+      "h": 600,
+      "trim": [
+        83,
+        133,
+        1095,
+        791
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/zebras.png",
+      "bytes": 73346
+    },
+    "lions": {
+      "file": "lions.webp",
+      "w": 1030,
+      "h": 600,
+      "trim": [
+        50,
+        150,
+        1109,
+        767
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/lions.png",
+      "bytes": 69530
+    },
+    "sheep": {
+      "file": "sheep.webp",
+      "w": 803,
+      "h": 500,
+      "trim": [
+        112,
+        146,
+        1084,
+        751
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/sheep.png",
+      "bytes": 37524
+    },
+    "noah-point": {
+      "file": "noah-point.webp",
+      "w": 572,
+      "h": 900,
+      "trim": [
+        163,
+        79,
+        842,
+        1148
+      ],
+      "source": "design/pipeline/raw/noah/two-by-two/noah-point.png",
+      "bytes": 44866
+    }
+  }
+}

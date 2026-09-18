@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 100854,
+    "source": "design/pipeline/raw/noah/rainbow/bg.png"
+  },
+  "cutouts": {
+    "family": {
+      "file": "family.webp",
+      "w": 1015,
+      "h": 786,
+      "trim": [
+        83,
+        75,
+        1098,
+        861
+      ],
+      "source": "design/pipeline/raw/noah/rainbow/family.png",
+      "bytes": 84964
+    },
+    "noah-look-up": {
+      "file": "noah-look-up.webp",
+      "w": 664,
+      "h": 900,
+      "trim": [
+        53,
+        75,
+        843,
+        1146
+      ],
+      "source": "design/pipeline/raw/noah/rainbow/noah-look-up.png",
+      "bytes": 53144
+    }
+  }
+}

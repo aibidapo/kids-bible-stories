@@ -1,0 +1,22 @@
+{
+  "story": "noah",
+  "scene": "builds",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A sunny green hillside worksite: the huge wooden hull of a half-built ark on timber scaffolding fills the right half, planks, ladders and a sawhorse around it, a few stacked logs at the left, blue sky with soft clouds. Completely EMPTY: no people, no animals. Keep the ground at the left and centre clear."
+  },
+  "cutouts": {
+    "noah-raise": {
+      "sheet": "noah",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Noah, standing facing the viewer with one arm raised high pointing up to the sky and the other hand on his hip, a determined kind smile. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "sons-carry": {
+      "sheet": "noah",
+      "aspect": "4:3",
+      "max_h": 800,
+      "prompt": "Two young men, Noah's sons, in simple brown and blue tunics with rope belts, carrying one long wooden plank together on their shoulders, walking to the right, cheerful. Same illustration style as the second reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}
