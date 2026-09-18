@@ -350,12 +350,12 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
         ))}
         <Layer src={angelBody} w={L.angel.w} h={L.angel.h} x={500} y={496} scale={0.45} />
       </g>
-      <SoftShadow x={300} y={600} rx={80} ry={14} opacity={0.4} />
+      <SoftShadow x={340} y={600} rx={80} ry={14} opacity={0.4} />
       <Layer
         src={denDaniel}
         w={D.daniel.w}
         h={D.daniel.h}
-        x={300}
+        x={340}
         y={600}
         scale={0.36}
         className="a-breathe"
@@ -424,7 +424,7 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
         className="a-breathe-slow"
       />
       <Motes x={500} top={110} bottom={540} spread={200} />
-      <Sparkle x={300} y={260} s={1.6} />
+      <Sparkle x={340} y={260} s={1.6} />
       <Sparkle x={720} y={230} s={1.4} delay={0.6} />
       {found.includes("lions") && <Sparkle x={700} y={500} s={1.6} delay={0.3} />}
       <Grain opacity={0.05} />

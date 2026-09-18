@@ -69,3 +69,7 @@ drawn before Daniel so he covers its head, own shadow, tail flick delay
 3.5 s, breathe delay 1.2 s. No new art. Full-size render
 `angel-three-lions-render.png` (`npm run compare`); motion check, tests and
 build through the hook.
+Then, on request, Daniel moved from x 300 to x 340 (shadow and sparkle with
+him) to sit centred between the left lion's head and the middle lion; no
+hotspot sits on Daniel on this page, so story data is unchanged.
+`angel-three-lions-render.png` is the final render.
