@@ -17,6 +17,24 @@
       "aspect": "3:4",
       "max_h": 700,
       "prompt": "The character from the second reference image, Jonah, tumbling through water with arms and legs flailing, cloak billowing, eyes wide and cheeks puffed, seen from the side facing right. Full figure, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "turtle": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 300,
+      "prompt": "A friendly green sea turtle swimming to the left, flippers spread, big gentle eye, patterned shell, in the same soft cutout illustration style as the reference image. Whole turtle, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "fish-school": {
+      "sheet": null,
+      "aspect": "16:9",
+      "max_h": 260,
+      "prompt": "A small school of seven little orange and yellow tropical fish swimming together to the right, in the same soft cutout illustration style as the reference image. Whole school, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "jellyfish": {
+      "sheet": null,
+      "aspect": "3:4",
+      "max_h": 320,
+      "prompt": "A soft translucent pink jellyfish with a rounded bell and trailing wavy tentacles, gentle and friendly, in the same soft cutout illustration style as the reference image. Whole jellyfish, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
     }
   }
 }

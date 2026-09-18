@@ -518,6 +518,63 @@ svg [class*=" a-"] {
 }
 
 /*
+ * Heaving sea. A wave layer rises, tilts and slides a little; the boat sits
+ * inside a group with the same class and delay, so it rides the swell rather
+ * than bobbing on its own. Rest state is the drawn position.
+ */
+@keyframes heave {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate(-22px, -26px) rotate(-2.5deg);
+  }
+  65% {
+    transform: translate(18px, 14px) rotate(2deg);
+  }
+}
+.a-heave {
+  animation: heave 5.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+.a-heave-slow {
+  animation: heave 8s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+/*
+ * Jonah drifts down into the great fish's mouth, once. He is drawn at the
+ * mouth (the rest state) and the animation replays the drift from up-left.
+ */
+@keyframes swallow {
+  from {
+    transform: translate(-260px, -170px) rotate(-25deg);
+  }
+  to {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+.a-swallow {
+  animation: swallow 6s cubic-bezier(0.4, 0, 0.7, 1) both;
+}
+
+/* Bubbles rise and fade; each is drawn where it starts so Calm mode keeps it there. */
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-320px) scale(1.2);
+    opacity: 0;
+  }
+}
+.a-bubble {
+  animation: bubble 7s linear infinite;
+}
+
+/*
  * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
  * a moment near the end of each cycle. Calm mode drops the animation and the
  * attribute value keeps the eyes open.

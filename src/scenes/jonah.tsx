@@ -1,4 +1,5 @@
 import { HolyGlow, Lightning, Rain, Sparkle } from "../art/base";
+import { rand } from "../art/palette";
 import { Grain, SoftShadow } from "../art/v2/effects";
 import { Backdrop, Eyelids, Layer } from "../art/raster";
 import runLayers from "../assets/scenes/jonah/running/layers.json";
@@ -11,10 +12,14 @@ import stormBg from "../assets/scenes/jonah/storm/bg.webp";
 import stormShip from "../assets/scenes/jonah/storm/ship-storm.webp";
 import stormSailors from "../assets/scenes/jonah/storm/sailors-afraid.webp";
 import stormJonah from "../assets/scenes/jonah/storm/jonah-point-self.webp";
+import stormWave from "../assets/scenes/jonah/storm/wave.webp";
 import swLayers from "../assets/scenes/jonah/swallowed/layers.json";
 import swBg from "../assets/scenes/jonah/swallowed/bg.webp";
 import swFish from "../assets/scenes/jonah/swallowed/great-fish.webp";
 import swJonah from "../assets/scenes/jonah/swallowed/jonah-fall.webp";
+import swTurtle from "../assets/scenes/jonah/swallowed/turtle.webp";
+import swSchool from "../assets/scenes/jonah/swallowed/fish-school.webp";
+import swJelly from "../assets/scenes/jonah/swallowed/jellyfish.webp";
 import prayLayers from "../assets/scenes/jonah/prayer/layers.json";
 import prayBg from "../assets/scenes/jonah/prayer/bg.webp";
 import prayJonah from "../assets/scenes/jonah/prayer/jonah-pray.webp";
@@ -55,20 +60,21 @@ export function RunningAway({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={runBg} />
-      <g transform="translate(720 470)">
+      {/* the ship rides at the quay's edge, on the water */}
+      <g transform="translate(840 570)">
         <g className="a-rock">
-          <image href={runShip} x={-L.ship.w * 0.2} y={-L.ship.h * 0.4} width={L.ship.w * 0.4} height={L.ship.h * 0.4} />
+          <image href={runShip} x={-L.ship.w * 0.31} y={-L.ship.h * 0.62} width={L.ship.w * 0.62} height={L.ship.h * 0.62} />
         </g>
       </g>
-      <SoftShadow x={560} y={598} rx={110} ry={12} opacity={0.4} />
-      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={560} y={598} scale={0.32} className="a-breathe-slow">
+      <SoftShadow x={585} y={478} rx={130} ry={12} opacity={0.4} />
+      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={585} y={478} scale={0.5} className="a-breathe-slow">
         <Eyelids {...EYES.sailors} w={L.sailors.w} h={L.sailors.h} delay={2.1} />
       </Layer>
-      <SoftShadow x={250} y={602} rx={90} ry={12} opacity={0.4} />
-      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={250} y={602} scale={0.38} className="a-breathe">
+      <SoftShadow x={260} y={560} rx={100} ry={12} opacity={0.4} />
+      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={260} y={560} scale={0.4} className="a-breathe">
         <Eyelids {...EYES.jonahWalk} w={L["jonah-walk"].w} h={L["jonah-walk"].h} />
       </Layer>
-      {found.includes("ship") && <Sparkle x={720} y={300} s={1.6} />}
+      {found.includes("ship") && <Sparkle x={840} y={300} s={1.6} />}
       <Grain opacity={0.05} />
     </>
   );
@@ -77,28 +83,46 @@ export function RunningAway({ found }: SceneArtProps) {
 /** The sea would not calm until Jonah went over the side. */
 export function TheStorm() {
   const S = stormLayers.cutouts;
-  const sc = 0.34;
+  const sc = 0.3;
+  const shipS = 0.8;
+  const wave = (x: number, y: number, scale: number, cls: string, delay: number, flip = false) => (
+    <Layer src={stormWave} w={S.wave.w} h={S.wave.h} x={x} y={y} scale={scale} flip={flip} className={cls} delay={delay} />
+  );
   return (
     <>
       <Backdrop src={stormBg} />
       <Lightning delay={0.8} />
-      {/* sailors and Jonah ride inside the hull: drawn first so the ship covers their legs */}
-      <g transform="translate(430 445)">
-        <g className="a-shake">
-          <image href={stormSailors} x={-S["sailors-afraid"].w * sc * 0.5} y={-S["sailors-afraid"].h * sc} width={S["sailors-afraid"].w * sc} height={S["sailors-afraid"].h * sc} />
-          <g transform={`translate(${-S["sailors-afraid"].w * sc * 0.5} ${-S["sailors-afraid"].h * sc}) scale(${sc})`}>
-            <Eyelids {...EYES.sailorsAfraid} w={0} h={0} delay={1.3} />
+      {/* far swell behind the ship */}
+      {wave(280, 600, 0.6, "a-heave-slow", -2)}
+      {wave(800, 590, 0.55, "a-heave-slow", -5, true)}
+      {/* the ship rides the near swell: same heave class and delay as the wave in front of it */}
+      <g transform="translate(500 590)">
+        <g className="a-heave">
+          <g className="a-rock">
+            {/* crew inside the hull, drawn first so the gunwale covers their legs */}
+            <g transform="translate(-70 -140)">
+              <g className="a-shake">
+                <image href={stormSailors} x={-S["sailors-afraid"].w * sc * 0.5} y={-S["sailors-afraid"].h * sc} width={S["sailors-afraid"].w * sc} height={S["sailors-afraid"].h * sc} />
+                <g transform={`translate(${-S["sailors-afraid"].w * sc * 0.5} ${-S["sailors-afraid"].h * sc}) scale(${sc})`}>
+                  <Eyelids {...EYES.sailorsAfraid} w={0} h={0} delay={1.3} />
+                </g>
+              </g>
+            </g>
+            <g transform="translate(80 -150)">
+              <g className="a-breathe">
+                <image href={stormJonah} x={-S["jonah-point-self"].w * 0.13} y={-S["jonah-point-self"].h * 0.26} width={S["jonah-point-self"].w * 0.26} height={S["jonah-point-self"].h * 0.26} />
+                <g transform={`translate(${-S["jonah-point-self"].w * 0.13} ${-S["jonah-point-self"].h * 0.26}) scale(0.26)`}>
+                  <Eyelids {...EYES.jonahPointSelf} w={0} h={0} />
+                </g>
+              </g>
+            </g>
+            <image href={stormShip} x={-S["ship-storm"].w * shipS * 0.5} y={-S["ship-storm"].h * shipS} width={S["ship-storm"].w * shipS} height={S["ship-storm"].h * shipS} />
           </g>
         </g>
       </g>
-      <Layer src={stormJonah} w={S["jonah-point-self"].w} h={S["jonah-point-self"].h} x={578} y={452} scale={0.32} className="a-breathe">
-        <Eyelids {...EYES.jonahPointSelf} w={S["jonah-point-self"].w} h={S["jonah-point-self"].h} />
-      </Layer>
-      <g transform="translate(500 520)">
-        <g className="a-rock">
-          <image href={stormShip} x={-S["ship-storm"].w * 0.31} y={-S["ship-storm"].h * 0.62} width={S["ship-storm"].w * 0.62} height={S["ship-storm"].h * 0.62} />
-        </g>
-      </g>
+      {/* near swell in front, carrying the ship */}
+      {wave(430, 650, 0.75, "a-heave", 0)}
+      {wave(950, 640, 0.6, "a-heave", -1.4, true)}
       <Rain count={100} seed={42} />
       <Grain opacity={0.05} />
     </>
@@ -108,24 +132,47 @@ export function TheStorm() {
 /** Down, and swallowed whole. */
 export function SwallowedWhole() {
   const L = swLayers.cutouts;
+  const fishS = 0.55;
+  // the fish's mouth in viewBox units: its image's left edge sits at 660 - w*fishS/2
+  const mouthX = 660 - L["great-fish"].w * fishS * 0.5 + 70;
+  const bubbles = Array.from({ length: 14 }, (_, i) => {
+    const t = rand(11 + i);
+    return { x: 120 + t * 760, y: 380 + rand(40 + i) * 220, r: 3 + rand(70 + i) * 6, d: -t * 7 };
+  });
   return (
     <>
       <Backdrop src={swBg} />
-      <g transform="translate(340 380)">
-        <g className="a-float">
-          <image href={swJonah} x={-L["jonah-fall"].w * 0.15} y={-L["jonah-fall"].h * 0.15} width={L["jonah-fall"].w * 0.3} height={L["jonah-fall"].h * 0.3} />
-          <g transform={`translate(${-L["jonah-fall"].w * 0.15} ${-L["jonah-fall"].h * 0.15}) scale(0.3)`}>
+      {/* other sea life, each on its own drift */}
+      <Layer src={swTurtle} w={L.turtle.w} h={L.turtle.h} x={200} y={300} scale={0.36} className="a-swim-slow" delay={-3} />
+      <Layer src={swSchool} w={L["fish-school"].w} h={L["fish-school"].h} x={800} y={230} scale={0.4} className="a-swim" delay={-1} />
+      <Layer src={swJelly} w={L.jellyfish.w} h={L.jellyfish.h} x={900} y={470} scale={0.42} className="a-float" delay={-2} />
+      {/* Jonah is drawn at the mouth; the beat replays his drift down into it */}
+      <g transform={`translate(${mouthX} 470)`}>
+        <g className="a-swallow">
+          <image href={swJonah} x={-L["jonah-fall"].w * 0.14} y={-L["jonah-fall"].h * 0.14} width={L["jonah-fall"].w * 0.28} height={L["jonah-fall"].h * 0.28} />
+          <g transform={`translate(${-L["jonah-fall"].w * 0.14} ${-L["jonah-fall"].h * 0.14}) scale(0.28)`}>
             <Eyelids {...EYES.jonahFall} w={0} h={0} />
           </g>
         </g>
       </g>
       <g transform="translate(660 500)">
         <g className="a-swim-slow">
-          <image href={swFish} x={-L["great-fish"].w * 0.275} y={-L["great-fish"].h * 0.275} width={L["great-fish"].w * 0.55} height={L["great-fish"].h * 0.55} />
-          <g transform={`translate(${-L["great-fish"].w * 0.275} ${-L["great-fish"].h * 0.275}) scale(0.55)`}>
+          <image href={swFish} x={-L["great-fish"].w * fishS * 0.5} y={-L["great-fish"].h * fishS * 0.5} width={L["great-fish"].w * fishS} height={L["great-fish"].h * fishS} />
+          <g transform={`translate(${-L["great-fish"].w * fishS * 0.5} ${-L["great-fish"].h * fishS * 0.5}) scale(${fishS})`}>
             <Eyelids {...EYES.greatFish} w={0} h={0} delay={2.8} />
           </g>
         </g>
+      </g>
+      {/* bubbles rise from the depths; each is drawn where it starts */}
+      <g pointerEvents="none">
+        {bubbles.map((b, i) => (
+          <g key={i} transform={`translate(${b.x.toFixed(1)} ${b.y.toFixed(1)})`}>
+            <g className="a-bubble" style={{ animationDelay: `${b.d.toFixed(2)}s` }}>
+              <circle r={b.r.toFixed(1)} fill="none" stroke="#e6f6ff" strokeWidth="1.5" opacity="0.7" />
+              <circle r={(b.r * 0.3).toFixed(1)} cx={(-b.r * 0.35).toFixed(1)} cy={(-b.r * 0.35).toFixed(1)} fill="#ffffff" opacity="0.6" />
+            </g>
+          </g>
+        ))}
       </g>
       <Grain opacity={0.05} />
     </>
@@ -163,8 +210,8 @@ export function Nineveh({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={ninBg} />
-      <SoftShadow x={640} y={606} rx={160} ry={14} opacity={0.4} />
-      <Layer src={ninCrowd} w={L["crowd-listen"].w} h={L["crowd-listen"].h} x={640} y={606} scale={0.38} className="a-breathe-slow">
+      <SoftShadow x={660} y={608} rx={200} ry={16} opacity={0.4} />
+      <Layer src={ninCrowd} w={L["crowd-listen"].w} h={L["crowd-listen"].h} x={660} y={608} scale={0.48} className="a-breathe-slow">
         <Eyelids {...EYES.crowd} w={L["crowd-listen"].w} h={L["crowd-listen"].h} delay={1.7} />
       </Layer>
       <SoftShadow x={300} y={602} rx={90} ry={12} opacity={0.4} />

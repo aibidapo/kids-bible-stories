@@ -28,9 +28,9 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "ship",
-          x: 72,
-          y: 58,
-          size: 26,
+          x: 82,
+          y: 62,
+          size: 28,
           label: "the ship",
           reward:
             "Nineveh was east. This ship is pointed west. Jonah knew exactly what he was doing.",
@@ -39,8 +39,8 @@ export const jonah: Story = {
         },
         {
           id: "jonah",
-          x: 25,
-          y: 72,
+          x: 26,
+          y: 66,
           size: 20,
           label: "Jonah",
           reward:
@@ -62,7 +62,7 @@ export const jonah: Story = {
         {
           id: "sailors",
           x: 43,
-          y: 60,
+          y: 50,
           size: 22,
           label: "the frightened sailors",
           reward:
@@ -95,7 +95,7 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "bigfish",
-          x: 66,
+          x: 70,
           y: 78,
           size: 28,
           label: "the great fish",
@@ -175,9 +175,9 @@ export const jonah: Story = {
         },
         {
           id: "people",
-          x: 64,
-          y: 72,
-          size: 24,
+          x: 66,
+          y: 68,
+          size: 26,
           label: "the people listening",
           reward:
             "Jonah did not think they deserved a second chance. He had just had one himself.",

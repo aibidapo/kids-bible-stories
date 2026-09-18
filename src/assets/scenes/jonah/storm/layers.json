@@ -45,6 +45,19 @@
       ],
       "source": "design/pipeline/raw/jonah/storm/jonah-point-self.png",
       "bytes": 42460
+    },
+    "wave": {
+      "file": "wave.webp",
+      "w": 825,
+      "h": 360,
+      "trim": [
+        89,
+        123,
+        1287,
+        646
+      ],
+      "source": "design/pipeline/raw/jonah/storm/wave.png",
+      "bytes": 24464
     }
   }
 }

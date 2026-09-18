@@ -32,6 +32,45 @@
       ],
       "source": "design/pipeline/raw/jonah/swallowed/jonah-fall.png",
       "bytes": 56372
+    },
+    "turtle": {
+      "file": "turtle.webp",
+      "w": 478,
+      "h": 300,
+      "trim": [
+        168,
+        203,
+        1054,
+        759
+      ],
+      "source": "design/pipeline/raw/jonah/swallowed/turtle.png",
+      "bytes": 43022
+    },
+    "fish-school": {
+      "file": "fish-school.webp",
+      "w": 453,
+      "h": 260,
+      "trim": [
+        261,
+        140,
+        1115,
+        630
+      ],
+      "source": "design/pipeline/raw/jonah/swallowed/fish-school.png",
+      "bytes": 30652
+    },
+    "jellyfish": {
+      "file": "jellyfish.webp",
+      "w": 196,
+      "h": 320,
+      "trim": [
+        151,
+        116,
+        745,
+        1084
+      ],
+      "source": "design/pipeline/raw/jonah/swallowed/jellyfish.png",
+      "bytes": 23704
     }
   }
 }
