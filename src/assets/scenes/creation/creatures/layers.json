@@ -19,6 +19,84 @@
       ],
       "source": "design/pipeline/raw/creation/creatures/dolphin.png",
       "bytes": 15828
+    },
+    "fish-orange": {
+      "file": "fish-orange.webp",
+      "w": 270,
+      "h": 220,
+      "trim": [
+        274,
+        198,
+        890,
+        699
+      ],
+      "source": "design/pipeline/raw/creation/creatures/fish-orange.png",
+      "bytes": 12288
+    },
+    "fish-blue": {
+      "file": "fish-blue.webp",
+      "w": 204,
+      "h": 220,
+      "trim": [
+        321,
+        130,
+        913,
+        767
+      ],
+      "source": "design/pipeline/raw/creation/creatures/fish-blue.png",
+      "bytes": 12232
+    },
+    "fish-green": {
+      "file": "fish-green.webp",
+      "w": 290,
+      "h": 220,
+      "trim": [
+        200,
+        145,
+        1001,
+        752
+      ],
+      "source": "design/pipeline/raw/creation/creatures/fish-green.png",
+      "bytes": 17826
+    },
+    "seahorse": {
+      "file": "seahorse.webp",
+      "w": 143,
+      "h": 260,
+      "trim": [
+        431,
+        133,
+        782,
+        772
+      ],
+      "source": "design/pipeline/raw/creation/creatures/seahorse.png",
+      "bytes": 9900
+    },
+    "crab": {
+      "file": "crab.webp",
+      "w": 400,
+      "h": 260,
+      "trim": [
+        180,
+        199,
+        1020,
+        745
+      ],
+      "source": "design/pipeline/raw/creation/creatures/crab.png",
+      "bytes": 24124
+    },
+    "octopus": {
+      "file": "octopus.webp",
+      "w": 356,
+      "h": 260,
+      "trim": [
+        104,
+        85,
+        1096,
+        810
+      ],
+      "source": "design/pipeline/raw/creation/creatures/octopus.png",
+      "bytes": 25280
     }
   }
 }

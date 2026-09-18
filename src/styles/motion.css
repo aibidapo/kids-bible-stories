@@ -575,6 +575,58 @@ svg [class*=" a-"] {
 }
 
 /*
+ * A fish crossing the water on its own, with a gentle bob. Relative offsets,
+ * so the fish's own x is where it rests under Calm mode. Flip the outer group
+ * to send it the other way.
+ */
+@keyframes swim-across {
+  0% {
+    transform: translate(-520px, 0);
+  }
+  25% {
+    transform: translate(-240px, -14px);
+  }
+  50% {
+    transform: translate(40px, 6px);
+  }
+  75% {
+    transform: translate(320px, -10px);
+  }
+  100% {
+    transform: translate(620px, 0);
+  }
+}
+.a-swim-across {
+  animation: swim-across 22s linear infinite;
+}
+
+/* A dolphin's leap: up out of the water in an arc and back in, then a rest under the surface. */
+@keyframes leap {
+  0%,
+  100% {
+    transform: translate(-260px, 70px) rotate(-28deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0, -110px) rotate(0deg);
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(260px, 70px) rotate(28deg);
+    opacity: 0;
+  }
+}
+.a-leap {
+  animation: leap 5.5s ease-in-out infinite;
+}
+
+/*
  * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
  * a moment near the end of each cycle. Calm mode drops the animation and the
  * attribute value keeps the eyes open.

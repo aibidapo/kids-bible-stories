@@ -1,4 +1,5 @@
 import { HolyGlow, Sparkle, Stars } from "../art/base";
+import { rand } from "../art/palette";
 import { Grain, Motes, SoftShadow } from "../art/v2/effects";
 import { Backdrop, Eyelids, Flipbook, Layer, Part } from "../art/raster";
 import lightBg from "../assets/scenes/creation/light/bg.webp";
@@ -28,8 +29,13 @@ import moonImg from "../assets/scenes/creation/lights/moon.webp";
 import creaturesLayers from "../assets/scenes/creation/creatures/layers.json";
 import creaturesBg from "../assets/scenes/creation/creatures/bg.webp";
 import dolphinImg from "../assets/scenes/creation/creatures/dolphin.webp";
+import fishOrange from "../assets/scenes/creation/creatures/fish-orange.webp";
+import fishBlue from "../assets/scenes/creation/creatures/fish-blue.webp";
+import fishGreen from "../assets/scenes/creation/creatures/fish-green.webp";
+import seahorseImg from "../assets/scenes/creation/creatures/seahorse.webp";
+import crabImg from "../assets/scenes/creation/creatures/crab.webp";
+import octopusImg from "../assets/scenes/creation/creatures/octopus.webp";
 import swLayers from "../assets/scenes/jonah/swallowed/layers.json";
-import fishSchool from "../assets/scenes/jonah/swallowed/fish-school.webp";
 import turtleImg from "../assets/scenes/jonah/swallowed/turtle.webp";
 import jellyImg from "../assets/scenes/jonah/swallowed/jellyfish.webp";
 import praysLayers from "../assets/scenes/daniel/prays/layers.json";
@@ -152,23 +158,43 @@ export function SunMoonStars({ found }: SceneArtProps) {
 export function BirdsAndFish() {
   const L = creaturesLayers.cutouts;
   const J = swLayers.cutouts;
+  const S = skyLayers.cutouts;
+  const fish = (src: string, key: keyof typeof L, x: number, y: number, s: number, delay: number, flip = false) => (
+    <Layer src={src} w={L[key].w} h={L[key].h} x={x} y={y} scale={s} flip={flip} className="a-swim-across" delay={delay} />
+  );
+  const bubbles = Array.from({ length: 12 }, (_, i) => {
+    const t = rand(31 + i);
+    return { x: 80 + t * 840, y: 420 + rand(60 + i) * 190, r: 2.5 + rand(90 + i) * 5, d: -t * 7 };
+  });
   return (
     <>
       <Backdrop src={creaturesBg} />
+      {/* clouds drift across the sky in front of the painted ones */}
+      <Layer src={skyCloud} w={S.cloud.w} h={S.cloud.h} x={200} y={130} scale={0.3} className="a-drift" delay={-25} />
+      <Layer src={skyCloud} w={S.cloud.w} h={S.cloud.h} x={650} y={90} scale={0.22} className="a-drift" delay={-55} flip />
       <Bird kind="red" x={240} y={150} size={0.3} motion="a-fly" delay={0} />
       <Bird kind="blue" x={540} y={110} size={0.26} motion="a-flutter" delay={-4} />
       <Bird kind="gold" x={760} y={200} size={0.24} motion="a-flutter" delay={-8} flip />
       <Bird kind="dove" x={400} y={240} size={0.26} motion="a-flutter" delay={-2} />
-      <g transform="translate(650 400)">
-        <g className="a-float">
-          <image href={dolphinImg} x={-L.dolphin.w * 0.24} y={-L.dolphin.h * 0.24} width={L.dolphin.w * 0.48} height={L.dolphin.h * 0.48} />
-          <g transform={`translate(${-L.dolphin.w * 0.24} ${-L.dolphin.h * 0.24}) scale(0.48)`}>
+      {/* the dolphin leaps in an arc; at rest it sits at the top of the leap */}
+      <g transform="translate(560 320)">
+        <g className="a-leap">
+          <image href={dolphinImg} x={-L.dolphin.w * 0.22} y={-L.dolphin.h * 0.22} width={L.dolphin.w * 0.44} height={L.dolphin.h * 0.44} />
+          <g transform={`translate(${-L.dolphin.w * 0.22} ${-L.dolphin.h * 0.22}) scale(0.44)`}>
             <Eyelids {...EYES.dolphin} w={0} h={0} delay={1.8} />
           </g>
         </g>
       </g>
-      <Layer src={fishSchool} w={J["fish-school"].w} h={J["fish-school"].h} x={300} y={560} scale={0.5} className="a-swim" delay={-1} />
-      <g transform="translate(860 540)">
+      {/* each fish crosses on its own; flipped ones go the other way */}
+      {fish(fishOrange, "fish-orange", 300, 470, 0.34, -3)}
+      {fish(fishBlue, "fish-blue", 700, 430, 0.32, -12, true)}
+      {fish(fishGreen, "fish-green", 480, 520, 0.36, -7)}
+      {fish(fishOrange, "fish-orange", 820, 560, 0.24, -17, true)}
+      {fish(fishBlue, "fish-blue", 150, 590, 0.26, -20)}
+      <Layer src={seahorseImg} w={L.seahorse.w} h={L.seahorse.h} x={80} y={560} scale={0.44} className="a-float" delay={-1} />
+      <Layer src={octopusImg} w={L.octopus.w} h={L.octopus.h} x={640} y={612} scale={0.38} className="a-float" delay={-4} />
+      <Layer src={crabImg} w={L.crab.w} h={L.crab.h} x={380} y={620} scale={0.3} className="a-swim" delay={-2} />
+      <g transform="translate(880 590)">
         <g className="a-swim-slow">
           <image href={turtleImg} x={-J.turtle.w * 0.2} y={-J.turtle.h * 0.2} width={J.turtle.w * 0.4} height={J.turtle.h * 0.4} />
           <g transform={`translate(${-J.turtle.w * 0.2} ${-J.turtle.h * 0.2}) scale(0.4)`}>
@@ -176,7 +202,18 @@ export function BirdsAndFish() {
           </g>
         </g>
       </g>
-      <Layer src={jellyImg} w={J.jellyfish.w} h={J.jellyfish.h} x={560} y={600} scale={0.36} className="a-float" delay={-3} />
+      <Layer src={jellyImg} w={J.jellyfish.w} h={J.jellyfish.h} x={230} y={470} scale={0.3} className="a-float" delay={-3} />
+      {/* bubbles rise through the water; each is drawn where it starts */}
+      <g pointerEvents="none">
+        {bubbles.map((b, i) => (
+          <g key={i} transform={`translate(${b.x.toFixed(1)} ${b.y.toFixed(1)})`}>
+            <g className="a-bubble" style={{ animationDelay: `${b.d.toFixed(2)}s` }}>
+              <circle r={b.r.toFixed(1)} fill="none" stroke="#e6f6ff" strokeWidth="1.5" opacity="0.7" />
+              <circle r={(b.r * 0.3).toFixed(1)} cx={(-b.r * 0.35).toFixed(1)} cy={(-b.r * 0.35).toFixed(1)} fill="#ffffff" opacity="0.6" />
+            </g>
+          </g>
+        ))}
+      </g>
       <Grain opacity={0.05} />
     </>
   );

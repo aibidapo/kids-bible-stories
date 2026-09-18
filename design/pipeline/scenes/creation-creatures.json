@@ -11,6 +11,42 @@
       "aspect": "4:3",
       "max_h": 320,
       "prompt": "A friendly grey-blue dolphin leaping in an arc to the right, big gentle eye, smiling, in the same soft layered cutout illustration style as the reference image. Whole dolphin, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "fish-orange": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small round orange fish with white stripes, friendly big eye, seen from the side swimming to the right, in the same soft cutout illustration style as the reference image. Whole fish, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "fish-blue": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small blue and yellow angelfish with tall fins, friendly big eye, seen from the side swimming to the right, in the same soft cutout illustration style as the reference image. Whole fish, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "fish-green": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 220,
+      "prompt": "a small green and pink fish with a long flowing tail, friendly big eye, seen from the side swimming to the right, in the same soft cutout illustration style as the reference image. Whole fish, centred, filling the frame, on a flat solid bright green background (#00ff00) that covers the entire image edge to edge, no white border, no card, no frame, no water, no bubbles, no cast shadow, no other objects."
+    },
+    "seahorse": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 260,
+      "prompt": "a small friendly orange seahorse with a curled tail, seen from the side, in the same soft cutout illustration style as the reference image. Whole animal, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "crab": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 260,
+      "prompt": "a small friendly red crab with big eyes and raised claws, seen from the front, in the same soft cutout illustration style as the reference image. Whole animal, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    },
+    "octopus": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 260,
+      "prompt": "a small friendly purple octopus with big eyes and eight curling arms, in the same soft cutout illustration style as the reference image. Whole animal, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
     }
   }
 }

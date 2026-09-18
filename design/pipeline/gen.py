@@ -45,15 +45,25 @@ def client() -> genai.Client:
 
 def generate(prompt: str, refs: list[Path], out: Path, aspect: str = "16:9", size: str = "1K") -> Path:
     contents: list = [f"{STYLE_LINE}\n\n{prompt}"] + [Image.open(r) for r in refs]
-    response = client().models.generate_content(
-        model=MODEL,
-        contents=contents,
-        config=types.GenerateContentConfig(
-            response_modalities=["TEXT", "IMAGE"],
-            image_config=types.ImageConfig(aspect_ratio=aspect, image_size=size),
-        ),
-    )
-    for part in response.parts:
+    parts = None
+    for attempt in range(3):
+        response = client().models.generate_content(
+            model=MODEL,
+            contents=contents,
+            config=types.GenerateContentConfig(
+                response_modalities=["TEXT", "IMAGE"],
+                image_config=types.ImageConfig(aspect_ratio=aspect, image_size=size),
+            ),
+        )
+        parts = response.parts
+        if parts:
+            break
+        # An empty response (safety block or transient) has no parts; say why and retry.
+        reason = getattr(getattr(response, "candidates", [None])[0] if response.candidates else None, "finish_reason", None)
+        print(f"empty response for {out.name} (attempt {attempt + 1}, finish_reason={reason}); retrying")
+    if not parts:
+        sys.exit(f"no image returned for {out.name} after 3 attempts")
+    for part in parts:
         if part.inline_data:
             out.parent.mkdir(parents=True, exist_ok=True)
             # inline_data is JPEG/PNG bytes; decode with PIL so the file on

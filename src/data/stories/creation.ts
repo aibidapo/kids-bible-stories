@@ -152,8 +152,8 @@ export const creation: Story = {
       hotspots: [
         {
           id: "fish",
-          x: 30,
-          y: 84,
+          x: 48,
+          y: 82,
           size: 22,
           label: "the fish",
           reward:
