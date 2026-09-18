@@ -251,4 +251,16 @@ export const creation: Story = {
     text: "In the beginning God created the heavens and the earth.",
     reference: "Genesis 1:1",
   },
+  devotional: {
+    question: {
+      little: "What is your favourite thing that God made?",
+      big: "God looked at everything he had made and called it good. What is one good thing God made that you are thankful for today, and why?",
+    },
+    prayer: {
+      little: "Dear God, thank you for making the world. Thank you for making me. Amen.",
+      big: "Dear God, thank you for the sky, the sea, the animals and for us. Help us look after the world you made and notice how good it is. Amen.",
+    },
+    activity:
+      "Go outside or look out of a window together. Find five things God made and say thank you for each one out loud.",
+  },
 };

@@ -1111,3 +1111,62 @@ body {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* Family time: the card after the quiz. Same tokens as the quiz, no motion. */
+.family {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.family__kicker {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.family__heading {
+  margin: 0;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.family__card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 0.9rem 1.1rem;
+}
+.family__card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+.family__card p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+.family__verse {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  font-style: italic;
+}
+.family__verse cite {
+  display: block;
+  margin-top: 0.3rem;
+  font-style: normal;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.family__actions,
+.quiz__actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}

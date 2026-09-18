@@ -230,4 +230,17 @@ export const jonah: Story = {
     text: "In my distress I called to the Lord, and he answered me.",
     reference: "Jonah 2:2",
   },
+  devotional: {
+    question: {
+      little: "Why did Jonah run away?",
+      big: "Jonah did not want to go to Nineveh because he did not think those people deserved a second chance. Is there anyone you find hard to forgive? What does this story show about God's heart for them?",
+    },
+    prayer: {
+      little:
+        "Dear God, thank you for giving Jonah another chance. Thank you for giving me another chance too. Amen.",
+      big: "Dear God, thank you that you are slow to anger and full of love, even for people who have done wrong. Help us to obey you the first time, and to love the people you love. Amen.",
+    },
+    activity:
+      "Think of someone who might not expect kindness from you. Plan one small kind thing to do for them this week, and do it.",
+  },
 };

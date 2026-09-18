@@ -258,4 +258,16 @@ export const david: Story = {
     text: "You come against me with sword and spear, but I come against you in the name of the Lord Almighty.",
     reference: "1 Samuel 17:45",
   },
+  devotional: {
+    question: {
+      little: "Who helped David be brave?",
+      big: "David was small, but he trusted God more than he feared Goliath. What feels like a giant in your life right now, and how could trusting God change the way you face it?",
+    },
+    prayer: {
+      little: "Dear God, help me be brave like David. You are bigger than anything scary. Amen.",
+      big: "Dear God, when something feels too big for us, remind us that you are bigger still. Give us David's courage and David's trust. Amen.",
+    },
+    activity:
+      "Make a paper giant and write a worry on it. Pray about it together, then fold it up small and put it away.",
+  },
 };

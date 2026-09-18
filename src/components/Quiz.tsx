@@ -7,6 +7,8 @@ import type { Story } from "../types";
 interface Props {
   story: Story;
   onDone: () => void;
+  /** Opens the Family time card for this story. */
+  onFamily: () => void;
 }
 
 /**
@@ -14,7 +16,7 @@ interface Props {
  * and the child tries again; the score only counts first-time-right answers, so
  * there is something to beat without anything to lose.
  */
-export function Quiz({ story, onDone }: Props) {
+export function Quiz({ story, onDone, onFamily }: Props) {
   const progress = useProgress();
   // Story data lists the right answer first for readability; shuffle each
   // question's choices once per quiz so the answer is never always the top one.
@@ -77,9 +79,14 @@ export function Quiz({ story, onDone }: Props) {
           </blockquote>
         )}
 
-        <button type="button" className="btn btn--primary btn--big" onClick={onDone}>
-          Back to the stories
-        </button>
+        <div className="quiz__actions">
+          <button type="button" className="btn btn--primary btn--big" onClick={onFamily}>
+            Family time
+          </button>
+          <button type="button" className="btn btn--big" onClick={onDone}>
+            Back to the stories
+          </button>
+        </div>
       </div>
     );
   }

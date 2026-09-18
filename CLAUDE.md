@@ -98,7 +98,7 @@ src/
   data/
     stories.ts        library order + derived sticker total
     stories/*.ts      one file per story: prose, hotspots, quiz, memory verse
-  components/   Library, StoryPlayer, Stage, Quiz, StickerBook, Settings, NarrationText
+  components/   Library, StoryPlayer, Stage, Quiz, FamilyTime, StickerBook, Settings, NarrationText
   hooks/        useNarration (speechSynthesis + word highlighting)
   lib/
     sound.ts    every sound effect, synthesised with Web Audio
@@ -147,8 +147,10 @@ Every story is raster now. The vector figure, animal and prop kits are gone;
    `src/art/v2/effects.tsx`.
 2. Register each scene under a string key in `src/scenes/index.ts`.
 3. Write `src/data/stories/<story>.ts` — prose at **both** reading levels,
-   hotspots, optional find-game, quiz questions tagged `little` or `big`, and a
-   memory verse.
+   hotspots, optional find-game, quiz questions tagged `little` or `big`, a
+   memory verse, and a `devotional` (question and prayer at both levels, one
+   activity) for the Family time card after the quiz. `npm test` enforces all
+   of these.
 4. Append it to `STORIES` in `src/data/stories.ts`.
 
 Nothing else needs wiring. Sticker totals, the library grid and progress all
@@ -201,7 +203,7 @@ screenshots too.
   first-time-right answers score. Never add a fail state or a buzzer.
 - **No network calls, no analytics, no account.** Progress is localStorage only.
   Keep it that way — the users are children.
-- **Routing is hash-based** (`#/story/<id>/<n>`) so the phone back button pages
+- **Routing is hash-based** (`#/story/<id>/<n>`, `/quiz`, `/family`) so the phone back button pages
   back through the book. Do not swap in a history router without solving that.
 
 ## Gotchas

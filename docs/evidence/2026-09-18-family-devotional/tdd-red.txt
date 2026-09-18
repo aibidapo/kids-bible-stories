@@ -1,0 +1,13 @@
+       × has a devotional at both levels and a memory verse 4ms
+       × has a devotional at both levels and a memory verse 1ms
+       × has a devotional at both levels and a memory verse 0ms
+       × has a devotional at both levels and a memory verse 0ms
+       × has a devotional at both levels and a memory verse 0ms
+ FAIL  src/lib/devotional.test.ts [ src/lib/devotional.test.ts ]
+Error: Cannot find module './devotional' imported from C:/Users/aibid/PROJECTS/KIDS BIBLE STORIES/src/lib/devotional.test.ts
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/data/stories.test.ts > story library > creation > has a devotional at both levels and a memory verse
+ FAIL  src/data/stories.test.ts > story library > noah > has a devotional at both levels and a memory verse
+ FAIL  src/data/stories.test.ts > story library > david > has a devotional at both levels and a memory verse
+ FAIL  src/data/stories.test.ts > story library > jonah > has a devotional at both levels and a memory verse
+vitest exit=1

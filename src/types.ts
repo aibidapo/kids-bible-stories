@@ -49,6 +49,16 @@ export interface QuizQuestion {
   level: AgeMode;
 }
 
+/** The Family time card shown after a story's quiz. Nothing here is persisted. */
+export interface Devotional {
+  /** One question to talk about together, per reading level. */
+  question: Record<AgeMode, string>;
+  /** A short prayer to say together, per reading level. */
+  prayer: Record<AgeMode, string>;
+  /** One thing to do together this week, written for the grown-up. */
+  activity: string;
+}
+
 export interface Story {
   id: string;
   title: string;
@@ -64,8 +74,10 @@ export interface Story {
   cover: string;
   scenes: Scene[];
   quiz: QuizQuestion[];
-  /** Memory verse, shown in big mode after the quiz. */
+  /** Memory verse, shown in big mode after the quiz and on the Family time card. */
   memoryVerse?: { text: string; reference: string };
+  /** Family time after the quiz: talk, pray, remember, try. */
+  devotional: Devotional;
 }
 
 export type SoundName =

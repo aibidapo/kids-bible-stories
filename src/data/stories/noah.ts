@@ -218,4 +218,15 @@ export const noah: Story = {
     text: "I have set my rainbow in the clouds, and it will be the sign of the covenant between me and the earth.",
     reference: "Genesis 9:13",
   },
+  devotional: {
+    question: {
+      little: "How did God keep Noah safe?",
+      big: "Noah kept building even when it looked strange to everyone else. When is it hard to do what God asks? What helps you keep going?",
+    },
+    prayer: {
+      little: "Dear God, you keep your promises. Thank you for the rainbow. Amen.",
+      big: "Dear God, thank you that you keep every promise you make. When we see a rainbow, remind us that you are faithful, and help us to be faithful too. Amen.",
+    },
+    activity: "Draw a rainbow together. On each colour, write or draw one promise God keeps.",
+  },
 };

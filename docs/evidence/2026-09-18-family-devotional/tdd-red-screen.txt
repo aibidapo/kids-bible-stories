@@ -1,0 +1,5 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/components/FamilyTime.test.tsx > FamilyTime > shows the four sections with the little-level text and the verse
+Error: Cannot find module '/src/components/FamilyTime' imported from C:/Users/aibid/PROJECTS/KIDS BIBLE STORIES/src/components/FamilyTime.test.tsx
+ FAIL  src/components/FamilyTime.test.tsx > FamilyTime > swaps to the big-level question and prayer
+vitest exit=1

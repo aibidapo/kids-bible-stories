@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Daniel page 2 rebuilt symmetric** (round 4: background regenerated
+Latest: **Family Devotional mode built** (roadmap phase 1). `Story.devotional`
+(question and prayer at both levels, one activity) on all five stories,
+enforced by the data test; `src/lib/devotional.ts` read-aloud script;
+`FamilyTime` screen at `#/story/<id>/family`, reached from the quiz's
+"Family time" button; 95 tests. Product roadmap for all phases in
+`docs/roadmap.md`. Evidence: `docs/evidence/2026-09-18-family-devotional/record.md`.
+Open: human review of the content.
+
+Before that: **Daniel page 2 rebuilt symmetric** (round 4: background regenerated
 straight-on with the dais centre-back so the throne faces the room; courtiers
 regenerated seated naturally and placed at 0.38 either side of the carpet;
 officials face the king; round 5: king regenerated as a square front portrait). Also **Daniel page 5** family scaled to Daniel
@@ -101,7 +109,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the trap-palace commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the family-devotional commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -114,6 +122,8 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 4. Next Steps
 
+- [ ] **User reviews Family time**: content for five stories (`src/data/stories/*.ts`, `devotional`) and the screen at `#/story/daniel/family`.
+- [ ] Roadmap phase 2 next: licensing decision (owner) and the tablet crop (code). See `docs/roadmap.md`.
 - [ ] **User reviews the throne room** on `#/story/daniel/1` (throne, courtiers, background).
 - [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.
 - [ ] **User reviews the angel wing beat** on `#/story/daniel/3` (phone); depth and speed are two numbers in `motion.css`.

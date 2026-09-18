@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Library } from "./components/Library";
 import { StoryPlayer } from "./components/StoryPlayer";
 import { Quiz } from "./components/Quiz";
+import { FamilyTime } from "./components/FamilyTime";
 import { StickerBook } from "./components/StickerBook";
 import { Settings } from "./components/Settings";
 import { getStory } from "./data/stories";
@@ -13,6 +14,7 @@ type Route =
   | { view: "library" }
   | { view: "story"; storyId: string; index: number }
   | { view: "quiz"; storyId: string }
+  | { view: "family"; storyId: string }
   | { view: "stickers" };
 
 /**
@@ -25,6 +27,7 @@ function parse(hash: string): Route {
   if (parts[0] === "stickers") return { view: "stickers" };
   if (parts[0] === "story" && parts[1]) {
     if (parts[2] === "quiz") return { view: "quiz", storyId: parts[1] };
+    if (parts[2] === "family") return { view: "family", storyId: parts[1] };
     const index = Number.parseInt(parts[2] ?? "0", 10);
     return {
       view: "story",
@@ -43,6 +46,8 @@ function href(route: Route): string {
       return `#/story/${route.storyId}/${route.index}`;
     case "quiz":
       return `#/story/${route.storyId}/quiz`;
+    case "family":
+      return `#/story/${route.storyId}/family`;
     default:
       return "#/";
   }
@@ -79,7 +84,7 @@ export default function App() {
   let content;
   if (route.view === "stickers") {
     content = <StickerBook onBack={home} />;
-  } else if (route.view === "story" || route.view === "quiz") {
+  } else if (route.view === "story" || route.view === "quiz" || route.view === "family") {
     const story = getStory(route.storyId);
     if (!story) {
       content = (
@@ -90,7 +95,15 @@ export default function App() {
         />
       );
     } else if (route.view === "quiz") {
-      content = <Quiz story={story} onDone={home} />;
+      content = (
+        <Quiz
+          story={story}
+          onDone={home}
+          onFamily={() => navigate({ view: "family", storyId: story.id })}
+        />
+      );
+    } else if (route.view === "family") {
+      content = <FamilyTime story={story} onDone={home} />;
     } else {
       const index = Math.min(Math.max(route.index, 0), story.scenes.length - 1);
       content = (

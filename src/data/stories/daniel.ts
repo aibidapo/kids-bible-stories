@@ -224,4 +224,17 @@ export const daniel: Story = {
     text: "My God sent his angel, and he shut the mouths of the lions.",
     reference: "Daniel 6:22",
   },
+  devotional: {
+    question: {
+      little: "When did Daniel pray?",
+      big: "Daniel kept praying even though it could get him thrown to the lions. Why do you think he did not hide? What would you do if being faithful to God cost you something?",
+    },
+    prayer: {
+      little:
+        "Dear God, help me talk to you every day, like Daniel. Thank you for keeping me safe. Amen.",
+      big: "Dear God, thank you for Daniel, who prayed no matter what. Help us make talking to you a habit, and give us courage when it is hard to stand up for what is right. Amen.",
+    },
+    activity:
+      "Pick a time each day this week to pray together, like Daniel at his window. Draw a window to stick on the wall as a reminder.",
+  },
 };
