@@ -28,9 +28,9 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "ship",
-          x: 64,
-          y: 53,
-          size: 24,
+          x: 72,
+          y: 58,
+          size: 26,
           label: "the ship",
           reward:
             "Nineveh was east. This ship is pointed west. Jonah knew exactly what he was doing.",
@@ -40,8 +40,8 @@ export const jonah: Story = {
         {
           id: "jonah",
           x: 25,
-          y: 60,
-          size: 18,
+          y: 72,
+          size: 20,
           label: "Jonah",
           reward:
             "Jonah was a prophet. He had heard God clearly. He just did not like the message.",
@@ -61,8 +61,8 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "sailors",
-          x: 50,
-          y: 62,
+          x: 43,
+          y: 60,
           size: 22,
           label: "the frightened sailors",
           reward:
@@ -71,8 +71,8 @@ export const jonah: Story = {
         },
         {
           id: "lightning",
-          x: 54,
-          y: 30,
+          x: 62,
+          y: 22,
           size: 22,
           label: "the storm",
           reward:
@@ -95,8 +95,8 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "bigfish",
-          x: 58,
-          y: 52,
+          x: 66,
+          y: 78,
           size: 28,
           label: "the great fish",
           reward:
@@ -107,7 +107,7 @@ export const jonah: Story = {
         {
           id: "bubbles",
           x: 20,
-          y: 34,
+          y: 30,
           size: 18,
           label: "the bubbles",
           reward: "Jonah had already given up. God had not.",
@@ -132,8 +132,8 @@ export const jonah: Story = {
         {
           id: "light",
           x: 50,
-          y: 30,
-          size: 24,
+          y: 12,
+          size: 22,
           label: "the light",
           reward:
             "Even here, in the strangest place anybody has ever prayed, God was listening.",
@@ -143,8 +143,8 @@ export const jonah: Story = {
         {
           id: "jonah-praying",
           x: 50,
-          y: 72,
-          size: 20,
+          y: 74,
+          size: 22,
           label: "Jonah praying",
           reward:
             "Three days and three nights. Then the fish set him down on the shore.",
@@ -164,9 +164,9 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "city",
-          x: 56,
-          y: 40,
-          size: 26,
+          x: 62,
+          y: 32,
+          size: 28,
           label: "the city of Nineveh",
           reward:
             "Nineveh was huge — it took three days just to walk across it.",
@@ -175,9 +175,9 @@ export const jonah: Story = {
         },
         {
           id: "people",
-          x: 56,
-          y: 88,
-          size: 22,
+          x: 64,
+          y: 72,
+          size: 24,
           label: "the people listening",
           reward:
             "Jonah did not think they deserved a second chance. He had just had one himself.",

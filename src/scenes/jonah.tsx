@@ -1,261 +1,179 @@
-import { C } from "../art/palette";
-import {
-  Clouds,
-  Ground,
-  GrassTufts,
-  HolyGlow,
-  LightRays,
-  Lightning,
-  Rain,
-  Sea,
-  Sky,
-  Sparkle,
-  Sun,
-} from "../art/base";
-import { BigFish, Bird, Fish, FishSchool } from "../art/animals";
-import { Crowd, Person } from "../art/figures";
-import { City, PalmTree, Ship } from "../art/props";
+import { HolyGlow, Lightning, Rain, Sparkle } from "../art/base";
+import { Grain, SoftShadow } from "../art/v2/effects";
+import { Backdrop, Eyelids, Layer } from "../art/raster";
+import runLayers from "../assets/scenes/jonah/running/layers.json";
+import runBg from "../assets/scenes/jonah/running/bg.webp";
+import runJonah from "../assets/scenes/jonah/running/jonah-walk.webp";
+import runShip from "../assets/scenes/jonah/running/ship.webp";
+import runSailors from "../assets/scenes/jonah/running/sailors.webp";
+import stormLayers from "../assets/scenes/jonah/storm/layers.json";
+import stormBg from "../assets/scenes/jonah/storm/bg.webp";
+import stormShip from "../assets/scenes/jonah/storm/ship-storm.webp";
+import stormSailors from "../assets/scenes/jonah/storm/sailors-afraid.webp";
+import stormJonah from "../assets/scenes/jonah/storm/jonah-point-self.webp";
+import swLayers from "../assets/scenes/jonah/swallowed/layers.json";
+import swBg from "../assets/scenes/jonah/swallowed/bg.webp";
+import swFish from "../assets/scenes/jonah/swallowed/great-fish.webp";
+import swJonah from "../assets/scenes/jonah/swallowed/jonah-fall.webp";
+import prayLayers from "../assets/scenes/jonah/prayer/layers.json";
+import prayBg from "../assets/scenes/jonah/prayer/bg.webp";
+import prayJonah from "../assets/scenes/jonah/prayer/jonah-pray.webp";
+import prayFish from "../assets/scenes/jonah/prayer/little-fish.webp";
+import ninLayers from "../assets/scenes/jonah/nineveh/layers.json";
+import ninBg from "../assets/scenes/jonah/nineveh/bg.webp";
+import ninJonah from "../assets/scenes/jonah/nineveh/jonah-preach.webp";
+import ninCrowd from "../assets/scenes/jonah/nineveh/crowd-listen.webp";
 import type { SceneArtProps } from "../types";
 
-/** God says "go east". Jonah buys a ticket west. */
+/** Eye points from design/pipeline/find_eyes.py; noise blobs dropped, far eyes mirrored by hand. */
+const EYES = {
+  jonahWalk: { points: [[311, 133], [377, 134]] as [number, number][], rx: 17, ry: 17, tone: "#cb8b5c" },
+  sailors: { points: [[121, 100], [177, 93], [492, 99], [548, 99]] as [number, number][], rx: 13, ry: 13, tone: "#d8935f" },
+  jonahPointSelf: { points: [[120, 99], [185, 99]] as [number, number][], rx: 12, ry: 10, tone: "#d18c61" },
+  sailorsAfraid: {
+    points: [[91, 166], [135, 149], [290, 125], [342, 136], [429, 186], [474, 188]] as [number, number][],
+    rx: 13,
+    ry: 13,
+    tone: "#d98c62",
+  },
+  greatFish: { points: [[377, 204]] as [number, number][], rx: 44, ry: 36, tone: "#507179" },
+  jonahFall: { points: [[650, 300], [723, 313]] as [number, number][], rx: 22, ry: 20, tone: "#d0905f" },
+  jonahPray: { points: [[255, 116], [323, 115]] as [number, number][], rx: 18, ry: 14, tone: "#d69168" },
+  littleFish: { points: [[191, 85]] as [number, number][], rx: 19, ry: 20, tone: "#eec65f" },
+  jonahPreach: { points: [[175, 125], [232, 125]] as [number, number][], rx: 17, ry: 14, tone: "#d69365" },
+  crowd: {
+    points: [[110, 124], [161, 121], [327, 99], [380, 101], [472, 412], [550, 168], [686, 119], [736, 122]] as [number, number][],
+    rx: 13,
+    ry: 12,
+    tone: "#d88a5c",
+  },
+};
+
+/** The wrong ship, the wrong direction. */
 export function RunningAway({ found }: SceneArtProps) {
+  const L = runLayers.cutouts;
   return (
     <>
-      <Sky from="#f0a05c" to="#ffe0b8" />
-      <Sun x={140} y={140} r={50} />
-      <Clouds y={150} count={4} seed={41} fill="#ffe9d2" speed={70} />
-      <LightRays x={840} y={-40} count={6} len={420} color="#ffd9a0" />
-      <Sea y={420} amp={12} speed={11} color="#2e7fa8" crest="#78c2dd" />
-      {/* the harbour */}
-      <path d="M0,400 L300,400 L300,470 L0,470 Z" fill="#c9a06a" />
-      <path d="M0,400 L300,400 L300,412 L0,412 Z" fill="#b08a56" />
-      {[40, 130, 230].map((x) => (
-        <rect key={x} x={x} y={470} width="16" height="60" fill="#8a5a3b" />
-      ))}
-      <PalmTree x={80} y={398} scale={0.6} />
-      <Ship x={640} y={466} scale={0.62} className="a-rock" />
-      <Person
-        x={250}
-        y={396}
-        scale={0.9}
-        robe={C.robe[1]}
-        skin={C.skin[2]}
-        hair={C.hair[0]}
-        beard
-        pose="walk"
-        face="sad"
-      />
-      <Crowd
-        x={140}
-        y={398}
-        count={3}
-        scale={0.55}
-        spread={120}
-        opacity={0.6}
-      />
-      <Bird x={430} y={190} scale={0.7} color={C.white} delay={4} />
-      {found.includes("ship") && <Sparkle x={640} y={330} s={1.6} />}
+      <Backdrop src={runBg} />
+      <g transform="translate(720 470)">
+        <g className="a-rock">
+          <image href={runShip} x={-L.ship.w * 0.2} y={-L.ship.h * 0.4} width={L.ship.w * 0.4} height={L.ship.h * 0.4} />
+        </g>
+      </g>
+      <SoftShadow x={560} y={598} rx={110} ry={12} opacity={0.4} />
+      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={560} y={598} scale={0.32} className="a-breathe-slow">
+        <Eyelids {...EYES.sailors} w={L.sailors.w} h={L.sailors.h} delay={2.1} />
+      </Layer>
+      <SoftShadow x={250} y={602} rx={90} ry={12} opacity={0.4} />
+      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={250} y={602} scale={0.38} className="a-breathe">
+        <Eyelids {...EYES.jonahWalk} w={L["jonah-walk"].w} h={L["jonah-walk"].h} />
+      </Layer>
+      {found.includes("ship") && <Sparkle x={720} y={300} s={1.6} />}
+      <Grain opacity={0.05} />
     </>
   );
 }
 
-/** A wind so wild the sailors were afraid. */
+/** The sea would not calm until Jonah went over the side. */
 export function TheStorm() {
+  const S = stormLayers.cutouts;
+  const sc = 0.34;
   return (
     <>
-      <Sky from="#1e2740" to="#4c5b74" />
-      <Clouds
-        y={90}
-        count={8}
-        seed={42}
-        fill="#39445c"
-        opacity={0.95}
-        speed={22}
-      />
+      <Backdrop src={stormBg} />
       <Lightning delay={0.8} />
-      <Sea y={360} amp={44} speed={4} color="#254f70" crest="#5d9cc0" />
-      <g className="a-rock">
-        <Ship x={500} y={430} scale={0.58} sailFull={false} />
-        <Person
-          x={460}
-          y={400}
-          scale={0.5}
-          robe={C.robe[0]}
-          skin={C.skin[1]}
-          hair={C.hair[0]}
-          pose="fear"
-          face="scared"
-          idle={false}
-        />
-        <Person
-          x={540}
-          y={400}
-          scale={0.5}
-          robe={C.robe[4]}
-          skin={C.skin[3]}
-          hair={C.hair[1]}
-          pose="raise"
-          face="scared"
-          idle={false}
-          flip
-        />
+      {/* sailors and Jonah ride inside the hull: drawn first so the ship covers their legs */}
+      <g transform="translate(430 445)">
+        <g className="a-shake">
+          <image href={stormSailors} x={-S["sailors-afraid"].w * sc * 0.5} y={-S["sailors-afraid"].h * sc} width={S["sailors-afraid"].w * sc} height={S["sailors-afraid"].h * sc} />
+          <g transform={`translate(${-S["sailors-afraid"].w * sc * 0.5} ${-S["sailors-afraid"].h * sc}) scale(${sc})`}>
+            <Eyelids {...EYES.sailorsAfraid} w={0} h={0} delay={1.3} />
+          </g>
+        </g>
+      </g>
+      <Layer src={stormJonah} w={S["jonah-point-self"].w} h={S["jonah-point-self"].h} x={578} y={452} scale={0.32} className="a-breathe">
+        <Eyelids {...EYES.jonahPointSelf} w={S["jonah-point-self"].w} h={S["jonah-point-self"].h} />
+      </Layer>
+      <g transform="translate(500 520)">
+        <g className="a-rock">
+          <image href={stormShip} x={-S["ship-storm"].w * 0.31} y={-S["ship-storm"].h * 0.62} width={S["ship-storm"].w * 0.62} height={S["ship-storm"].h * 0.62} />
+        </g>
       </g>
       <Rain count={100} seed={42} />
-      <path
-        d="M0,540 q140,-56 300,-10 q170,46 330,-10 q160,-50 370,16 L1000,625 L0,625 Z"
-        fill="#1b3f5c"
-        opacity="0.7"
-      />
+      <Grain opacity={0.05} />
     </>
   );
 }
 
-/** And the Lord appointed a great fish. */
+/** Down, and swallowed whole. */
 export function SwallowedWhole() {
+  const L = swLayers.cutouts;
   return (
     <>
-      <Sky from="#0f3a55" to="#1f6a90" />
-      <rect
-        x="0"
-        y="0"
-        width="1000"
-        height="625"
-        fill="#12557f"
-        opacity="0.5"
-      />
-      <Sea
-        y={-40}
-        amp={20}
-        speed={8}
-        color="#1a6a95"
-        crest="#54a8cc"
-        depth={625}
-      />
-      <rect
-        x="0"
-        y="0"
-        width="1000"
-        height="625"
-        fill="#0d4a70"
-        opacity="0.35"
-      />
-      <BigFish x={640} y={330} scale={0.92} flip mouthOpen />
-      <Person
-        x={230}
-        y={330}
-        scale={0.62}
-        robe={C.robe[1]}
-        skin={C.skin[2]}
-        hair={C.hair[0]}
-        beard
-        pose="fear"
-        face="scared"
-        idle={false}
-      />
-      {/* bubbles */}
-      {[
-        [200, 250, 8],
-        [230, 190, 5],
-        [180, 150, 6],
-        [270, 120, 4],
-        [150, 300, 5],
-      ].map(([cx, cy, r], i) => (
-        <circle
-          key={i}
-          cx={cx}
-          cy={cy}
-          r={r}
-          fill={C.foam}
-          opacity="0.45"
-          className="a-float"
-          style={{ animationDelay: `${i * 0.6}s` }}
-        />
-      ))}
-      <FishSchool y={520} count={6} seed={43} />
+      <Backdrop src={swBg} />
+      <g transform="translate(340 380)">
+        <g className="a-float">
+          <image href={swJonah} x={-L["jonah-fall"].w * 0.15} y={-L["jonah-fall"].h * 0.15} width={L["jonah-fall"].w * 0.3} height={L["jonah-fall"].h * 0.3} />
+          <g transform={`translate(${-L["jonah-fall"].w * 0.15} ${-L["jonah-fall"].h * 0.15}) scale(0.3)`}>
+            <Eyelids {...EYES.jonahFall} w={0} h={0} />
+          </g>
+        </g>
+      </g>
+      <g transform="translate(660 500)">
+        <g className="a-swim-slow">
+          <image href={swFish} x={-L["great-fish"].w * 0.275} y={-L["great-fish"].h * 0.275} width={L["great-fish"].w * 0.55} height={L["great-fish"].h * 0.55} />
+          <g transform={`translate(${-L["great-fish"].w * 0.275} ${-L["great-fish"].h * 0.275}) scale(0.55)`}>
+            <Eyelids {...EYES.greatFish} w={0} h={0} delay={2.8} />
+          </g>
+        </g>
+      </g>
+      <Grain opacity={0.05} />
     </>
   );
 }
 
-/** Three days in the dark, and a prayer that got through. */
+/** Three days in the dark, and a prayer. */
 export function PrayerInsideTheFish({ found }: SceneArtProps) {
+  const L = prayLayers.cutouts;
   return (
     <>
-      <rect x="0" y="0" width="1000" height="625" fill="#5e2f3e" />
-      {/* ribs of the belly */}
-      <path d="M0,0 Q500,120 1000,0 L1000,625 L0,625 Z" fill="#7a3f4e" />
-      <path d="M0,625 Q500,500 1000,625 Z" fill="#4a2532" />
-      {[-2, -1, 0, 1, 2].map((i) => (
-        <path
-          key={i}
-          d={`M${500 + i * 210},60 q${i * -40},260 ${i * -20},520`}
-          stroke="#8c4a5a"
-          strokeWidth="26"
-          fill="none"
-          opacity="0.55"
-          strokeLinecap="round"
-        />
-      ))}
-      <LightRays x={500} y={-180} count={5} len={620} color="#ffd9a0" />
-      <HolyGlow x={500} y={210} r={230} color="#ffd9a0" />
-      <Person
-        x={500}
-        y={520}
-        scale={1.35}
-        robe={C.robe[1]}
-        skin={C.skin[2]}
-        hair={C.hair[0]}
-        beard
-        pose="pray"
-        face="calm"
-      />
-      <Sparkle x={360} y={260} s={1.4} />
-      <Sparkle x={650} y={300} s={1.2} delay={0.7} />
-      <Fish x={140} y={520} scale={0.5} color="#f6c63c" />
-      {found.includes("light") && (
-        <Sparkle x={500} y={180} s={2.4} delay={0.2} />
-      )}
+      <Backdrop src={prayBg} />
+      <HolyGlow x={500} y={70} r={220} />
+      <g transform="translate(230 600)">
+        <g className="a-swim">
+          <image href={prayFish} x={-L["little-fish"].w * 0.14} y={-L["little-fish"].h * 0.28} width={L["little-fish"].w * 0.28} height={L["little-fish"].h * 0.28} />
+          <g transform={`translate(${-L["little-fish"].w * 0.14} ${-L["little-fish"].h * 0.28}) scale(0.28)`}>
+            <Eyelids {...EYES.littleFish} w={0} h={0} delay={3.9} />
+          </g>
+        </g>
+      </g>
+      <SoftShadow x={500} y={602} rx={100} ry={14} opacity={0.4} />
+      <Layer src={prayJonah} w={L["jonah-pray"].w} h={L["jonah-pray"].h} x={500} y={602} scale={0.4} className="a-breathe">
+        <Eyelids {...EYES.jonahPray} w={L["jonah-pray"].w} h={L["jonah-pray"].h} />
+      </Layer>
+      {found.includes("light") && <Sparkle x={500} y={80} s={2} />}
+      <Grain opacity={0.05} />
     </>
   );
 }
 
-/** Nineveh listens — which is the part Jonah did not expect. */
+/** A big city, and the message it did not expect to hear. */
 export function Nineveh({ found }: SceneArtProps) {
+  const L = ninLayers.cutouts;
   return (
     <>
-      <Sky from="#4aa8e0" to="#f0dcb8" />
-      <Sun x={840} y={120} r={50} />
-      <Clouds y={140} count={4} seed={45} fill="#fdf0da" speed={70} />
-      <City x={560} y={470} scale={0.92} />
-      <Ground y={470} fill="#d9be86" top="#e6cf9c" />
-      <HolyGlow x={560} y={200} r={220} />
-      <Person
-        x={180}
-        y={570}
-        scale={1.15}
-        robe={C.robe[1]}
-        skin={C.skin[2]}
-        hair={C.hair[0]}
-        beard
-        pose="point"
-        face="calm"
-      />
-      <Crowd
-        x={560}
-        y={584}
-        count={9}
-        scale={0.6}
-        spread={400}
-        opacity={0.95}
-      />
-      <PalmTree x={90} y={520} scale={0.7} />
-      <PalmTree x={950} y={540} scale={0.6} flip />
-      <GrassTufts y={490} count={12} seed={45} fill="#c2a874" />
-      {found.includes("city") && (
-        <>
-          <Sparkle x={380} y={300} s={1.5} />
-          <Sparkle x={760} y={280} s={1.3} delay={0.6} />
-        </>
-      )}
+      <Backdrop src={ninBg} />
+      <SoftShadow x={640} y={606} rx={160} ry={14} opacity={0.4} />
+      <Layer src={ninCrowd} w={L["crowd-listen"].w} h={L["crowd-listen"].h} x={640} y={606} scale={0.38} className="a-breathe-slow">
+        <Eyelids {...EYES.crowd} w={L["crowd-listen"].w} h={L["crowd-listen"].h} delay={1.7} />
+      </Layer>
+      <SoftShadow x={300} y={602} rx={90} ry={12} opacity={0.4} />
+      <Layer src={ninJonah} w={L["jonah-preach"].w} h={L["jonah-preach"].h} x={300} y={602} scale={0.38} className="a-breathe">
+        <Eyelids {...EYES.jonahPreach} w={L["jonah-preach"].w} h={L["jonah-preach"].h} />
+      </Layer>
+      {found.includes("city") && <Sparkle x={600} y={180} s={1.8} />}
+      {found.includes("people") && <Sparkle x={640} y={420} s={1.4} delay={0.4} />}
+      <Grain opacity={0.05} />
     </>
   );
 }
