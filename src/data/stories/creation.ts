@@ -25,8 +25,8 @@ export const creation: Story = {
         {
           id: "first-light",
           x: 50,
-          y: 40,
-          size: 22,
+          y: 48,
+          size: 26,
           label: "the very first light",
           reward:
             "The first thing God ever made was light. Everything else could be seen because of it.",
@@ -47,9 +47,9 @@ export const creation: Story = {
       hotspots: [
         {
           id: "clouds",
-          x: 32,
-          y: 22,
-          size: 20,
+          x: 30,
+          y: 20,
+          size: 22,
           label: "the clouds",
           reward:
             "Clouds are water too — carried up high and floating over our heads.",
@@ -57,9 +57,9 @@ export const creation: Story = {
         },
         {
           id: "sea",
-          x: 62,
-          y: 78,
-          size: 22,
+          x: 60,
+          y: 84,
+          size: 24,
           label: "the sea",
           reward:
             "The sea was here on day two, long before anything swam in it.",
@@ -83,9 +83,9 @@ export const creation: Story = {
       hotspots: [
         {
           id: "fruit-tree",
-          x: 17,
-          y: 68,
-          size: 20,
+          x: 20,
+          y: 62,
+          size: 24,
           label: "the fruit tree",
           reward:
             "Inside every piece of fruit are seeds — tiny instructions for growing a whole new tree.",
@@ -94,9 +94,9 @@ export const creation: Story = {
         },
         {
           id: "flowers",
-          x: 62,
-          y: 88,
-          size: 18,
+          x: 60,
+          y: 90,
+          size: 20,
           label: "the flowers",
           reward: "God did not have to make flowers pretty. He did it anyway.",
           sound: "sparkle",
@@ -120,8 +120,8 @@ export const creation: Story = {
         {
           id: "sun",
           x: 81,
-          y: 26,
-          size: 20,
+          y: 28,
+          size: 22,
           label: "the sun",
           reward:
             "The sun is a star — the closest one to us, and the reason the day is warm.",
@@ -131,8 +131,8 @@ export const creation: Story = {
         {
           id: "moon",
           x: 18,
-          y: 24,
-          size: 20,
+          y: 26,
+          size: 22,
           label: "the moon",
           reward:
             "The moon has no light of its own. It shines by catching the light of the sun.",
@@ -152,8 +152,8 @@ export const creation: Story = {
       hotspots: [
         {
           id: "fish",
-          x: 50,
-          y: 78,
+          x: 30,
+          y: 84,
           size: 22,
           label: "the fish",
           reward:
@@ -163,9 +163,9 @@ export const creation: Story = {
         },
         {
           id: "birds",
-          x: 40,
-          y: 28,
-          size: 22,
+          x: 46,
+          y: 24,
+          size: 24,
           label: "the birds",
           reward: "Birds were the first things ever to fly.",
           sound: "bird",
@@ -185,9 +185,9 @@ export const creation: Story = {
       hotspots: [
         {
           id: "lion",
-          x: 38,
-          y: 72,
-          size: 18,
+          x: 25,
+          y: 88,
+          size: 20,
           label: "the lion",
           reward:
             "Every animal you can think of — and lots you cannot — came from this day.",
@@ -195,9 +195,9 @@ export const creation: Story = {
         },
         {
           id: "giraffe",
-          x: 23,
-          y: 56,
-          size: 18,
+          x: 17,
+          y: 62,
+          size: 20,
           label: "the giraffe",
           reward:
             "A giraffe has the same number of neck bones as you do. Just much, much longer ones.",
@@ -205,9 +205,9 @@ export const creation: Story = {
         },
         {
           id: "people",
-          x: 50,
-          y: 80,
-          size: 20,
+          x: 52,
+          y: 70,
+          size: 22,
           label: "the first people",
           reward:
             "People were made last — and made like God, to look after everything else.",
