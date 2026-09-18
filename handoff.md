@@ -12,7 +12,20 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest (after the user's "go"): **the whole Daniel story is raster now.**
+Latest: **Noah story fully raster** (five pages) plus a dove at Daniel's window.
+
+- Dove at the window (`e7d9868`): two dove frames flip-book through
+  `.a-frame-a/.a-frame-b`, glide on the `fly` path, clipped to the window.
+  Manifests may now carry sheet-less layers.
+- Noah (`b8e438a` assets, `1419e5a` plan, `2000f53` compositions + hotspots):
+  Noah sheet, 19 layers, all first-generation. `FlappingDove` in `noah.tsx`
+  reuses the prays frames for the two-by-two pair; the flood keeps the vector
+  `Rain` overlay and rocks the ark; Noah leans over the bow for the olive-branch
+  dove. `shoot.mjs` loops over every migrated story (`STORY=<id>` to limit).
+- Evidence: `docs/evidence/2026-09-18-noah-story-raster/` (story sheet, five
+  renders, raw sheets, 15 browser shots, offline check, frame probe).
+
+Before that: **the whole Daniel story is raster.**
 
 - Plan + manifests `e1b811a`; pipeline `background.reuse` + angel/official
   sheets `086daea`; assets per scene `91c7851` `e883a61` `11a3d5f` `89a935d`.
@@ -94,7 +107,12 @@ Verification actually run (details, hashes, numbers in
 - [ ] **User reviews the story**: `docs/evidence/2026-09-18-daniel-story-raster/story-sheet.png` and the
       phone shots under `browser/20-*`. Then the Daniel story is releasable on its own merits; the other
       four stories are still flat vector until migrated.
-- [ ] Next story to migrate: Noah (five scenes; needs sheets for Noah, family, animals, dove, the ark).
+- [x] Noah migrated (five pages, one Gemini call per layer, ~1.5 hours).
+- [ ] **User reviews Noah**: `docs/evidence/2026-09-18-noah-story-raster/story-sheet.png`, `phones.png`.
+- [ ] Next stories: David (5 scenes: shepherd, taunt, volunteers, stones, victory; needs David, Goliath,
+      Saul, sheep reuse, sling), Jonah (5: running, storm, swallowed, prayer, nineveh; needs Jonah, sailors,
+      the great fish, ship, city), Creation (6: light, sky-water, land, lights, creatures, people; mostly
+      backgrounds, Adam and Eve, birds/fish reuse). Then delete `src/art/*` v1 and `src/art/v2/{den,lion,person}.tsx`.
 - [ ] Blinks on the other Daniel pages (prays Daniel, trap king, rejoice king): measure pupils on the
       cutouts with the grid trick, add `Eyelids`.
 - [ ] Library thumbnails: covers use scene art; check the card size once a story is fully raster.
