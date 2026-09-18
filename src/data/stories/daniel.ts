@@ -95,9 +95,9 @@ export const daniel: Story = {
       hotspots: [
         {
           id: "lions-awake",
-          x: 20,
-          y: 84,
-          size: 22,
+          x: 25,
+          y: 88,
+          size: 24,
           label: "the lions",
           reward:
             "These lions were kept hungry on purpose. This was not meant to be survivable.",
@@ -107,8 +107,8 @@ export const daniel: Story = {
         {
           id: "king-above",
           x: 50,
-          y: 10,
-          size: 20,
+          y: 8,
+          size: 18,
           label: "the king at the opening",
           reward:
             "The king stayed up all night. He was the one who could not sleep.",

@@ -22,7 +22,7 @@ import {
   Throne,
 } from "../art/props";
 import { Den2 } from "../art/v2/den";
-import { Grain, LightShaft } from "../art/v2/effects";
+import { Grain, LightShaft, Motes } from "../art/v2/effects";
 import { Lion2 } from "../art/v2/lion";
 import { Person2 } from "../art/v2/person";
 import type { SceneArtProps } from "../types";
@@ -227,6 +227,7 @@ export function IntoTheDen() {
       />
       <Lion2 x={255} y={602} scale={1.12} />
       <Lion2 x={735} y={612} scale={1.02} flip />
+      <Motes x={500} top={110} bottom={540} spread={200} />
       {/* the king's face at the opening, far above */}
       <Person
         x={500}

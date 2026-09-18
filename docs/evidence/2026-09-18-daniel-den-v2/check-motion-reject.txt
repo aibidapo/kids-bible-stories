@@ -1,0 +1,4 @@
+check-motion: 2 offence(s)
+ - daniel/den: <g class="a-pulse-soft"> also has a transform attribute
+ - daniel/angel: <g class="a-pulse-soft"> also has a transform attribute
+exit=1

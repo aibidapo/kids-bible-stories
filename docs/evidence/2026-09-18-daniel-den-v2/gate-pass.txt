@@ -1,0 +1,27 @@
+pre-commit: motion constraints
+check-motion: 26 scenes clean
+pre-commit: typecheck + build
+[36mvite v8.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 43 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                0.13 kB
+dist/manifest.webmanifest         0.57 kB
+dist/index.html                   1.20 kB │ gzip:  0.56 kB
+dist/assets/index-DStU4Tg2.css   19.69 kB │ gzip:  4.90 kB
+dist/assets/index-C8iK61-6.js   246.78 kB │ gzip: 75.84 kB
+
+[32m✓ built in 349ms[39m
+
+PWA v1.3.0
+mode      generateSW
+precache  12 entries (304.29 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-9c191d2f.js
+[main d177cd4] Add local pre-commit gate: motion-constraint lint plus typecheck and build
+ 6 files changed, 561 insertions(+), 2 deletions(-)
+ create mode 100755 .githooks/pre-commit
+ create mode 100644 scripts/check-motion.tsx
+exit=0

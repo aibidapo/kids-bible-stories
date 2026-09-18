@@ -1,0 +1,5 @@
+pre-commit: motion constraints
+check-motion: 26 scenes clean
+pre-commit: typecheck + build
+src/_gate_probe.ts(1,14): error TS2322: Type 'string' is not assignable to type 'number'.
+exit=1

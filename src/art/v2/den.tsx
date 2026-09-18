@@ -3,8 +3,8 @@ import { randIn } from "../palette";
 import { VB } from "../base";
 import { Shaded } from "./effects";
 
-const WALL = "#6f5f57";
-const FLOOR = "#5c4c46";
+const WALL = "#7d6759";
+const FLOOR = "#66524a";
 const OPENING = "#ffe9b8";
 
 /**
