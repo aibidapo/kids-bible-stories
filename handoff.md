@@ -12,6 +12,24 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
+Latest (after the user's "go"): **the whole Daniel story is raster now.**
+
+- Plan + manifests `e1b811a`; pipeline `background.reuse` + angel/official
+  sheets `086daea`; assets per scene `91c7851` `e883a61` `11a3d5f` `89a935d`.
+- `8bf856a`: cutout matte switched from rembg to a chroma mask (rembg ghosted
+  a figure behind another); every cutout regenerated; rembg dropped from
+  requirements.
+- `7301975`: `prays`, `trap`, `angel`, `rejoice` composed from layers, hotspot
+  coordinates moved, `shoot.mjs` loops over all five pages.
+- Tail flicks: `design/pipeline/split_tail.py` splits a lion cutout into
+  body + tail by polygon; `Tail` in `src/art/raster.tsx`; `.a-tail-flick-tr`
+  / `-tl` in `motion.css` (still for 78% of a 9 s cycle, then two swishes,
+  pivot at the root corner). Five lions across den and angel, offsets 0/3/6
+  and 2/5 s.
+- Evidence: `docs/evidence/2026-09-18-daniel-story-raster/record.md`
+  (15 browser shots, offline check on the angel page, frame probe 34.2 ms at
+  4x throttle, story total 1,030 KB, mid-flick screenshot).
+
 Earlier in the session (vector slice, now superseded but kept):
 
 - Local gate: `.githooks/pre-commit` runs `npm run check:motion` (renders all
@@ -70,11 +88,15 @@ Verification actually run (details, hashes, numbers in
 - [ ] **User reviews** `docs/evidence/2026-09-18-layered-raster-den/cycle-04.png` and `browser/10-den-phone.png`. Go / tune / stop.
 - [ ] Decide on `design/concept-art/`: commit or gitignore.
 - [ ] Confirm licensing stance for Gemini-generated art in a published app.
-- [ ] Migrate the other four Daniel pages (`prays`, `trap`, `angel`, `rejoice`) so one story is coherent.
-      Needs: manifests per scene; new sheets for the angel and the officials; Daniel poses
-      (standing at a window, raised arms), king on his throne, city/room backgrounds.
-      Per-scene cost observed on the den: ~6 Gemini calls (~$0.50), pipeline ~2 min, composition and
-      compare 2–4 cycles, ~45–60 min of attention per scene. 25 scenes ≈ 20–25 hours plus review.
+- [x] Daniel story fully migrated (five pages). Observed cost: 2 sheets + 12 layers in 14 Gemini calls,
+      zero regenerations, ~2.5 hours including the matte fix and tails. Per story of five scenes: expect
+      ~15 calls and 2–3 hours. Remaining 21 scenes across four stories ≈ 10–14 hours.
+- [ ] **User reviews the story**: `docs/evidence/2026-09-18-daniel-story-raster/story-sheet.png` and the
+      phone shots under `browser/20-*`. Then the Daniel story is releasable on its own merits; the other
+      four stories are still flat vector until migrated.
+- [ ] Next story to migrate: Noah (five scenes; needs sheets for Noah, family, animals, dove, the ark).
+- [ ] Blinks on the other Daniel pages (prays Daniel, trap king, rejoice king): measure pupils on the
+      cutouts with the grid trick, add `Eyelids`.
 - [ ] Library thumbnails: covers use scene art; check the card size once a story is fully raster.
 - [ ] Bundle strategy: 26 scenes × ~250 KB ≈ 6.5 MB precache. Under the ~12 MB line in the media rule,
       but measure first-load on Fast 3G before deciding on precache-first-story.
@@ -85,7 +107,8 @@ Verification actually run (details, hashes, numbers in
 
 ## 5. Active Blockers & Notes
 
-- **Not for release.** Daniel page 3 is raster, pages 1, 2, 4, 5 are flat vector.
+- **Release state.** The Daniel story is fully raster and internally consistent. The other four stories
+  are still flat vector; the library page shows both styles side by side until they migrate.
 - **Evidence gaps** are listed in the record: no failing-test-first artifact, unknown lint/format/secret/audit, emulated perf only, no human review yet.
 - **Pipeline lessons** (already fixed in code): key the green field *after* rembg and intersect alphas, never before; keep one Gemini client per process; decode `inline_data.data` with PIL, the SDK's image wrapper is not PIL.
 - **Compare tool is the acceptance test.** Judge art from `npm run compare`, never from the 500 px contact sheet.

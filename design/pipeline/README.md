@@ -27,6 +27,13 @@ enabled (image models have zero free-tier quota).
    into `src/assets/scenes/<story>/<scene>/`.
 4. `pack.py <story> <scene>` — background cropped to 16:10, resized to
    1600×1000, WebP q80, plus `layers.json` with sizes, byte counts and sources.
+   A manifest may set `"background": {"reuse": "<story>/<scene>/bg.webp"}` to
+   share another scene's background; the scene file imports it directly.
+5. `split_tail.py <story> <scene> <name> <tl|tr> "<polygon>"` — optional: cuts
+   a tail (or any part that should move on its own) out of a cutout into
+   `<name>-tail.webp` and `<name>-body.webp`, records its box and root corner
+   in `layers.json`. The scene renders `Tail` before the body `Layer`. The
+   original `<name>.webp` stays as the split's source and is not imported.
 
 ## What gets committed
 
