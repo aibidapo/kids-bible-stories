@@ -12,7 +12,9 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: creatures page review round (`5e924f2`): five single fish cross on `a-swim-across`,
+Latest: garden page review (`e1fa37a`): swaying trees and tufts, animals wander on `a-wander` +
+`a-walk-bob`; dolphin leap lowered to the water line with splashes (`1001600`, `95e295f`).
+Before that: creatures page review round (`5e924f2`): five single fish cross on `a-swim-across`,
 the dolphin leaps on `a-leap`, two clouds drift, seahorse/crab/octopus and bubbles added;
 `gen.py` retries an empty model response. Before that: **Creation story, six pages, and the vector kit removed. All five
 stories (27 pages) are layered raster.** Commits `05489d0` plan + manifests,
