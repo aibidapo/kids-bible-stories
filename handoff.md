@@ -12,7 +12,9 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: **Creation story, six pages, and the vector kit removed. All five
+Latest: creatures page review round (`5e924f2`): five single fish cross on `a-swim-across`,
+the dolphin leaps on `a-leap`, two clouds drift, seahorse/crab/octopus and bubbles added;
+`gen.py` retries an empty model response. Before that: **Creation story, six pages, and the vector kit removed. All five
 stories (27 pages) are layered raster.** Commits `05489d0` plan + manifests,
 `d724a52` assets, `0e59dcc` compositions, then kit removal and the record.
 Heavy reuse of earlier layers (birds, dove, sea life, animal pairs, trees,
