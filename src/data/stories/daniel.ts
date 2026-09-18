@@ -58,7 +58,7 @@ export const daniel: Story = {
       hotspots: [
         {
           id: "scroll",
-          x: 32,
+          x: 38,
           y: 64,
           size: 22,
           label: "the new law",

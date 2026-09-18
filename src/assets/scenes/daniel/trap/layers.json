@@ -48,29 +48,29 @@
     },
     "courtiers-left": {
       "file": "courtiers-left.webp",
-      "w": 605,
+      "w": 616,
       "h": 560,
       "trim": [
-        169,
-        61,
-        1028,
-        856
+        177,
+        85,
+        1020,
+        851
       ],
       "source": "design/pipeline/raw/daniel/trap/courtiers-left.png",
-      "bytes": 84090
+      "bytes": 77984
     },
     "courtiers-right": {
       "file": "courtiers-right.webp",
-      "w": 558,
+      "w": 577,
       "h": 560,
       "trim": [
-        246,
-        100,
-        953,
-        809
+        218,
+        86,
+        967,
+        813
       ],
       "source": "design/pipeline/raw/daniel/trap/courtiers-right.png",
-      "bytes": 49454
+      "bytes": 54972
     }
   }
 }

@@ -74,3 +74,29 @@ around the throne; both male and female courtiers." Background kept.
   `courtiers-right-sidecar.json`. Final render `trap-after-court.png`.
 - Browser (fresh context, bundle from this build): king hotspot lands on the
   king with the new throne; `trap-court-phone.png`.
+
+## Round 3: courtiers on the floor beside the carpet, facing the room
+
+User: "The courtiers should be seated to the side of the carpets and the
+king's throne facing the room, not to the sides."
+
+- Both pairs regenerated facing the viewer straight on (the round-2 pairs
+  were turned toward the centre); raws kept locally as
+  `courtiers-*-v2-turned.png`. Cutouts clean first time
+  (`cutouts-round-3.png`); `courtiers-left` 76 KB, `courtiers-right` 53 KB,
+  scene 414 KB.
+- Placed at floor level either side of the carpet, in front of the dais:
+  left pair (125, 548) scale 0.35, right pair (880, 548) scale 0.36, drawn
+  after the king and before the officials. The scroll official moved from
+  x 300 to 318 so he no longer hides the purple courtier; his hotspot moved
+  from 32 % to 34 %. `trap-after-court.png` replaced with the round-3 render;
+  the sidecars replaced with the round-3 ones (round-2 sidecars are in the
+  previous commit).
+- The first phone still clipped both outer courtiers: the phone stage keeps
+  roughly x 90–910 of the viewBox. Pairs moved inward and a step back, left
+  (195, 535) and right (815, 535) at scale 0.29; officials shifted right to
+  x 355 and 505 so the purple courtier stays visible; scroll hotspot from
+  34 % to 38 %. Render and phone still replaced with this layout.
+- Browser, fresh context on this build (`index-BlhP43lk.js`): six layers,
+  scroll hotspot tapped, both pairs fully inside the phone frame;
+  `trap-court-phone.png`.

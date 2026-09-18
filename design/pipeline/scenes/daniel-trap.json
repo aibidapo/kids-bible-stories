@@ -27,12 +27,12 @@
     "courtiers-left": {
       "aspect": "4:3",
       "max_h": 560,
-      "prompt": "Two Persian courtiers seated side by side on a low gilded bench, in the same illustration style and costume world as the reference: on the left a woman in an elegant teal gown with gold embroidery and a sheer veil over dark braided hair, on the right a bearded man in a deep purple robe with a tall dark hat, both turned slightly to their right toward the centre of the room, calm attentive expressions, hands in laps. Full seated figures, feet visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+      "prompt": "Two Persian courtiers seated side by side on a low gilded bench, in the same illustration style and costume world as the reference: on the left a woman in an elegant teal gown with gold embroidery and a sheer veil over dark braided hair, on the right a bearded man in a deep purple robe with a tall dark hat, both facing the viewer straight on like a formal court portrait, calm attentive expressions, hands in laps. Full seated figures, feet visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
     "courtiers-right": {
       "aspect": "4:3",
       "max_h": 560,
-      "prompt": "Two Persian courtiers seated side by side on a low gilded bench, in the same illustration style and costume world as the reference: on the left a bearded man in a deep navy-blue robe with gold trim and a tall dark hat, on the right a woman in a rose-pink gown with silver embroidery and a jewelled headband over dark hair, both turned slightly to their left toward the centre of the room, calm attentive expressions, hands in laps. Full seated figures, feet visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+      "prompt": "Two Persian courtiers seated side by side on a low gilded bench, in the same illustration style and costume world as the reference: on the left a bearded man in a deep navy-blue robe with gold trim and a tall dark hat, on the right a woman in a rose-pink gown with silver embroidery and a jewelled headband over dark hair, both facing the viewer straight on like a formal court portrait, calm attentive expressions, hands in laps. Full seated figures, feet visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }

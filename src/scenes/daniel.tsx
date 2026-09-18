@@ -103,29 +103,6 @@ export function TheTrap() {
   return (
     <>
       <Backdrop src={trapBg} />
-      {/* courtiers seated on the dais either side of the throne, behind it */}
-      <SoftShadow x={590} y={400} rx={90} ry={10} opacity={0.35} />
-      <Layer
-        src={trapCourtiersLeft}
-        w={L["courtiers-left"].w}
-        h={L["courtiers-left"].h}
-        x={590}
-        y={400}
-        scale={0.32}
-        className="a-breathe-slow"
-        delay={1.1}
-      />
-      <SoftShadow x={855} y={402} rx={90} ry={10} opacity={0.35} />
-      <Layer
-        src={trapCourtiersRight}
-        w={L["courtiers-right"].w}
-        h={L["courtiers-right"].h}
-        x={855}
-        y={402}
-        scale={0.32}
-        className="a-breathe-slow"
-        delay={2.3}
-      />
       <SoftShadow x={712} y={392} rx={100} ry={14} opacity={0.4} />
       <Layer
         src={trapKing}
@@ -136,22 +113,45 @@ export function TheTrap() {
         scale={0.37}
         className="a-breathe-slow"
       />
-      <SoftShadow x={300} y={612} rx={80} ry={14} opacity={0.4} />
+      {/* courtiers seated on the floor either side of the carpet, facing the room */}
+      <SoftShadow x={195} y={535} rx={90} ry={11} opacity={0.35} />
+      <Layer
+        src={trapCourtiersLeft}
+        w={L["courtiers-left"].w}
+        h={L["courtiers-left"].h}
+        x={195}
+        y={535}
+        scale={0.29}
+        className="a-breathe-slow"
+        delay={1.1}
+      />
+      <SoftShadow x={815} y={535} rx={90} ry={11} opacity={0.35} />
+      <Layer
+        src={trapCourtiersRight}
+        w={L["courtiers-right"].w}
+        h={L["courtiers-right"].h}
+        x={815}
+        y={535}
+        scale={0.29}
+        className="a-breathe-slow"
+        delay={2.3}
+      />
+      <SoftShadow x={355} y={612} rx={80} ry={14} opacity={0.4} />
       <Layer
         src={trapOfficialScroll}
         w={L["official-scroll"].w}
         h={L["official-scroll"].h}
-        x={300}
+        x={355}
         y={612}
         scale={0.42}
         className="a-breathe"
       />
-      <SoftShadow x={470} y={608} rx={90} ry={14} opacity={0.4} />
+      <SoftShadow x={505} y={608} rx={90} ry={14} opacity={0.4} />
       <Layer
         src={trapOfficialPoint}
         w={L["official-point"].w}
         h={L["official-point"].h}
-        x={470}
+        x={505}
         y={608}
         scale={0.42}
         className="a-breathe-slow"

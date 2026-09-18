@@ -14,7 +14,8 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 Latest: **Daniel page 2: grander throne and seated courtiers** (round 2 on the
 same page: `king-throne` regenerated, two new seated pairs `courtiers-left` /
-`courtiers-right` on the dais; a green robe got chroma-keyed once, regenerated
+`courtiers-right` on the floor either side of the carpet, facing the room (round 3;
+round 2 had them on the dais, turned inward); a green robe got chroma-keyed once, regenerated
 in navy, README rule added; scene 415 KB). Round 1 was the **palace background
 regenerated, richer and more royal** (background
 only: marble and gilded lotus columns, crimson carpet, blue-gold tile, banners,
