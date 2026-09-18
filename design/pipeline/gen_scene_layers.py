@@ -21,7 +21,9 @@ def wanted(name: str) -> bool:
 
 if wanted("bg"):
     out = raw / "bg.png"
-    if out.exists():
+    if manifest["background"].get("reuse"):
+        print(f"skip bg (reuse {manifest['background']['reuse']})")
+    elif out.exists():
         print("skip bg (exists)")
     else:
         bg = manifest["background"]

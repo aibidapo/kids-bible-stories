@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Character sheet for official: a sly Persian court official with pale skin, a pointed black beard, a tall dark blue hat, and a dark blue and silver robe. Full figure, standing, facing the viewer, neutral friendly expression, arms relaxed, centred, on a flat, solid, bright green background (#00ff00), no floor, no shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "3:4",
+  "size": "1K",
+  "generated": "2026-09-18T14:38:59+00:00"
+}

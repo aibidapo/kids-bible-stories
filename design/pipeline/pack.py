@@ -17,35 +17,41 @@ if len(sys.argv) < 3:
 story, scene = sys.argv[1:3]
 raw = ROOT / f"design/pipeline/raw/{story}/{scene}"
 dest = ROOT / f"src/assets/scenes/{story}/{scene}"
+manifest = json.loads((ROOT / f"design/pipeline/scenes/{story}-{scene}.json").read_text(encoding="utf-8"))
+reuse = manifest["background"].get("reuse")
 
-img = Image.open(raw / "bg.png").convert("RGB")
-target_ratio = 1.6
-w, h = img.size
-if w / h > target_ratio:
-    new_w = round(h * target_ratio)
-    x0 = (w - new_w) // 2
-    img = img.crop((x0, 0, x0 + new_w, h))
+if reuse:
+    # Another scene's background is imported directly by the scene file; the
+    # bytes are counted once, in that scene.
+    background = {"reuse": reuse, "w": 1600, "h": 1000, "bytes": 0}
+    print("bg reused from", reuse)
 else:
-    new_h = round(w / target_ratio)
-    y0 = (h - new_h) // 2
-    img = img.crop((0, y0, w, y0 + new_h))
-img = img.resize((1600, 1000), Image.LANCZOS)
-out = dest / "bg.webp"
-img.save(out, format="WEBP", quality=80, method=6)
-print("bg", img.size, f"{out.stat().st_size // 1024} KB")
-
-cutouts = json.loads((dest / "cutouts.json").read_text(encoding="utf-8"))
-layers = {
-    "background": {
+    img = Image.open(raw / "bg.png").convert("RGB")
+    target_ratio = 1.6
+    w, h = img.size
+    if w / h > target_ratio:
+        new_w = round(h * target_ratio)
+        x0 = (w - new_w) // 2
+        img = img.crop((x0, 0, x0 + new_w, h))
+    else:
+        new_h = round(w / target_ratio)
+        y0 = (h - new_h) // 2
+        img = img.crop((0, y0, w, y0 + new_h))
+    img = img.resize((1600, 1000), Image.LANCZOS)
+    out = dest / "bg.webp"
+    img.save(out, format="WEBP", quality=80, method=6)
+    print("bg", img.size, f"{out.stat().st_size // 1024} KB")
+    background = {
         "file": "bg.webp",
         "w": 1600,
         "h": 1000,
         "bytes": out.stat().st_size,
         "source": f"design/pipeline/raw/{story}/{scene}/bg.png",
-    },
-    "cutouts": cutouts,
-}
+    }
+
+cutouts = json.loads((dest / "cutouts.json").read_text(encoding="utf-8"))
+layers = {"background": background, "cutouts": cutouts}
 (dest / "layers.json").write_text(json.dumps(layers, indent=2), encoding="utf-8")
 (dest / "cutouts.json").unlink()
-total = out.stat().st_size + sum(c["bytes"] for c in cutouts.values())
+total = background["bytes"] + sum(c["bytes"] for c in cutouts.values())
 print(f"scene total {total // 1024} KB (budget 450 KB)")
