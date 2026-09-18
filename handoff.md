@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **local gates and first unit tests** (`56bd1a5`, then `c67fc5b`
+Latest: **angel wings beat slowly, forwards and back** (Daniel page 4).
+`design/pipeline/split_part.py` cuts any named part off a cutout (several per
+cutout); the angel is now body + two wing parts inside one `a-float` group,
+wings on `a-wing-l` / `a-wing-r` (scaleX 1 → 0.5 about the shoulder, ±4°
+tilt, 5 s). Evidence: `docs/evidence/2026-09-18-angel-wings/record.md`
+(Calm render, phone stills at quarter and mid beat). Awaiting user review
+of the motion.
+
+Before that: **local gates and first unit tests** (`56bd1a5`, then `c67fc5b`
 Prettier mechanical over 28 files, then the record commit).
 
 - ESLint 9 flat config (typescript-eslint, eslint-plugin-security,
@@ -77,7 +85,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the phone-perf fallback record commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the angel-wings commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -90,6 +98,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 4. Next Steps
 
+- [ ] **User reviews the angel wing beat** on `#/story/daniel/3` (phone); depth and speed are two numbers in `motion.css`.
 - [ ] **User reviews** each story from its record's `story-sheet.png` and
       `phones.png` (`docs/evidence/2026-09-18-{daniel,noah,david,jonah,creation}-story-raster/`).
 - [x] Coverage ratchet: thresholds at the measured floor, hook-enforced.

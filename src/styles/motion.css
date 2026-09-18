@@ -320,30 +320,36 @@ svg [class*=" a-"] {
   transform-origin: 25% 0%;
 }
 
+/* Slow forward-and-back wing beat for a raster wing split off its body
+   (split_part.py). Seen from the front, a wing sweeping forward foreshortens
+   toward the shoulder, so the beat is a scaleX about the shoulder pivot
+   (right edge for the viewer's-left wing, left edge for the other, a third
+   of the way down) with a small tilt. Rest is the spread pose, so Calm mode
+   shows the wings open. The body covers the join. */
 @keyframes wing-l {
   0%,
   100% {
-    transform: rotate(4deg);
+    transform: rotate(1.5deg) scaleX(1);
   }
   50% {
-    transform: rotate(-12deg);
+    transform: rotate(-4deg) scaleX(0.5);
   }
 }
 @keyframes wing-r {
   0%,
   100% {
-    transform: rotate(-4deg);
+    transform: rotate(-1.5deg) scaleX(1);
   }
   50% {
-    transform: rotate(12deg);
+    transform: rotate(4deg) scaleX(0.5);
   }
 }
 .a-wing-l {
-  animation: wing-l 3s ease-in-out infinite;
+  animation: wing-l 5s ease-in-out infinite;
   transform-origin: 100% 35%;
 }
 .a-wing-r {
-  animation: wing-r 3s ease-in-out infinite;
+  animation: wing-r 5s ease-in-out infinite;
   transform-origin: 0% 35%;
 }
 

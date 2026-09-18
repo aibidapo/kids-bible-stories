@@ -1,6 +1,6 @@
 import { HolyGlow, Sparkle } from "../art/base";
 import { Grain, LightShaft, Motes } from "../art/v2/effects";
-import { Backdrop, Eyelids, Layer, Tail } from "../art/raster";
+import { Backdrop, Eyelids, Layer, Part, Tail } from "../art/raster";
 import denLayers from "../assets/scenes/daniel/den/layers.json";
 import denBg from "../assets/scenes/daniel/den/bg.webp";
 import denDaniel from "../assets/scenes/daniel/den/daniel.webp";
@@ -21,7 +21,9 @@ import trapKing from "../assets/scenes/daniel/trap/king-throne.webp";
 import trapOfficialScroll from "../assets/scenes/daniel/trap/official-scroll.webp";
 import trapOfficialPoint from "../assets/scenes/daniel/trap/official-point.webp";
 import angelLayers from "../assets/scenes/daniel/angel/layers.json";
-import angelCutout from "../assets/scenes/daniel/angel/angel.webp";
+import angelBody from "../assets/scenes/daniel/angel/angel-body.webp";
+import angelWingL from "../assets/scenes/daniel/angel/angel-wing-l.webp";
+import angelWingR from "../assets/scenes/daniel/angel/angel-wing-r.webp";
 import angelLionA from "../assets/scenes/daniel/angel/lion-asleep-a-body.webp";
 import angelLionATail from "../assets/scenes/daniel/angel/lion-asleep-a-tail.webp";
 import angelLionB from "../assets/scenes/daniel/angel/lion-asleep-b-body.webp";
@@ -301,15 +303,27 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
         <LightShaft x={500} top={48} topWidth={80} bottomSpread={240} floorY={560} />
       </g>
       <HolyGlow x={500} y={330} r={330} />
-      <Layer
-        src={angelCutout}
-        w={L.angel.w}
-        h={L.angel.h}
-        x={500}
-        y={496}
-        scale={0.45}
-        className="a-float"
-      />
+      {/* Wings are split off the cutout (split_part.py) and beat slowly behind
+          the body; the whole angel floats as one group. */}
+      <g className="a-float">
+        {(["wing-l", "wing-r"] as const).map((wing) => (
+          <Part
+            key={wing}
+            src={wing === "wing-l" ? angelWingL : angelWingR}
+            tw={L.angel.parts[wing].w}
+            th={L.angel.parts[wing].h}
+            ox={L.angel.parts[wing].ox}
+            oy={L.angel.parts[wing].oy}
+            w={L.angel.w}
+            h={L.angel.h}
+            x={500}
+            y={496}
+            scale={0.45}
+            className={wing === "wing-l" ? "a-wing-l" : "a-wing-r"}
+          />
+        ))}
+        <Layer src={angelBody} w={L.angel.w} h={L.angel.h} x={500} y={496} scale={0.45} />
+      </g>
       <SoftShadow x={300} y={600} rx={80} ry={14} opacity={0.4} />
       <Layer
         src={denDaniel}
