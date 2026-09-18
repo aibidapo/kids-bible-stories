@@ -1,0 +1,5 @@
+     × draws the hotspots inside a layer glued to the art's rendered box 12ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: stage__spots layer: expected null not to be null
+      Tests  1 failed | 1 passed (2)
+vitest exit=1

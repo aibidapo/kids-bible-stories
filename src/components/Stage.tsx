@@ -57,28 +57,32 @@ export function Stage({ storyId, scene, onSticker }: StageProps) {
           {Art ? <Art active animate={!progress.calm} found={found} /> : null}
         </svg>
 
-        {scene.hotspots?.map((h) => {
-          const isFound = found.includes(h.id);
-          return (
-            <button
-              key={h.id}
-              type="button"
-              className={`hotspot${isFound ? " hotspot--found" : ""}`}
-              style={{
-                left: `${h.x}%`,
-                top: `${h.y}%`,
-                width: `${h.size ?? 18}%`,
-              }}
-              onClick={() => tap(h.id)}
-              aria-label={isFound ? `${h.label} — found` : `Find ${h.label}`}
-            >
-              <span className="hotspot__ring" aria-hidden="true" />
-              <span className="hotspot__tick" aria-hidden="true">
-                ★
-              </span>
-            </button>
-          );
-        })}
+        {/* Sized to the art's rendered box (see .stage__spots), so hotspot
+            percentages are art coordinates even when the frame crops. */}
+        <div className="stage__spots">
+          {scene.hotspots?.map((h) => {
+            const isFound = found.includes(h.id);
+            return (
+              <button
+                key={h.id}
+                type="button"
+                className={`hotspot${isFound ? " hotspot--found" : ""}`}
+                style={{
+                  left: `${h.x}%`,
+                  top: `${h.y}%`,
+                  width: `${h.size ?? 18}%`,
+                }}
+                onClick={() => tap(h.id)}
+                aria-label={isFound ? `${h.label} — found` : `Find ${h.label}`}
+              >
+                <span className="hotspot__ring" aria-hidden="true" />
+                <span className="hotspot__tick" aria-hidden="true">
+                  ★
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
         {bubble && (
           <div className="stage__bubble" role="status">

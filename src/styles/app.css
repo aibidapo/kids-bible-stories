@@ -412,14 +412,23 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 0;
+  /* Size container so the frame can measure the room it has (cqh below). */
+  container-type: size;
 }
 
+/* Letterbox, not crop: when the room is wider than 16:10 (a tablet held
+   sideways) the frame gives up width and keeps the art's aspect ratio, so
+   `slice` has nothing to cut. The plain `width: 100%` stays first as the
+   fallback for browsers without container units. */
 .stage__frame {
   position: relative;
   width: 100%;
+  width: min(100%, 160cqh);
   aspect-ratio: 16 / 10;
   max-height: 100%;
   min-height: 0;
+  /* The hotspot layer measures the frame to find the art's rendered box. */
+  container-type: size;
   border-radius: var(--radius);
   overflow: hidden;
   background: #0d0a1e;
@@ -1108,8 +1117,28 @@ body {
    which is where the characters stand. */
 @media (orientation: portrait) {
   .stage__frame {
+    width: 100%;
+    width: min(100%, 133.34cqh);
     aspect-ratio: 4 / 3;
   }
+}
+
+/* The art is drawn with `slice`, so on a cropping frame its rendered box is
+   wider than the frame and centred (xMidYMax). Hotspots live in a layer the
+   same size as that box, so their percentages are art coordinates on every
+   frame shape. On a 16:10 frame the layer is simply the frame. */
+.stage__spots {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  width: max(100%, 160cqh);
+  pointer-events: none;
+}
+.stage__spots > .hotspot {
+  pointer-events: auto;
 }
 
 /* Family time: the card after the quiz. Same tokens as the quiz, no motion. */

@@ -110,8 +110,8 @@ src/
 
 All art uses a **1000 x 625 viewBox**. Hotspot `x`/`y` are percentages of that,
 so `x: 50` is SVG x=500. The stage renders with `preserveAspectRatio="xMidYMax
-slice"` — tight frames crop the **sky**, never the ground, because that is where
-the characters stand.
+slice"`; landscape frames letterbox to 16:10, portrait frames crop the sides
+(see Verifying changes).
 
 ## Media rule
 
@@ -179,9 +179,14 @@ BASE=http://localhost:4173 node scripts/shoot.mjs
 
 Both write to `scratch/`, which is gitignored. Shots 10–14 cover the Daniel
 den scene at phone, tablet, Calm, hotspot-found and big mode; they are the
-reference for the v2 style. Known layout limit: at 1024x768 the stage frame
-is height-limited and `slice` crops the top ~225 viewBox units, so keep
-story-critical art below y=225 and inside x=90–910.
+reference for the v2 style.
+
+Frame shapes: on a landscape frame (tablet, desktop) the stage keeps 16:10
+by giving up width (letterbox, `min(100%, 160cqh)`), so nothing is cropped.
+On a portrait phone the frame is 4:3 and `slice` crops the sides evenly, so
+keep story-critical art inside x=90–910. Hotspots sit in `.stage__spots`, a
+layer sized to the art's rendered box, so hotspot percentages are always art
+coordinates; never position a hotspot against the frame.
 
 `render-scenes.tsx` renders without CSS, so it **cannot** catch constraint 1
 above. `npm run check:motion` does catch it, mechanically, for every registered

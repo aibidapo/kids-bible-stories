@@ -128,7 +128,8 @@ narration are the costliest for the least teaching value. Phases 4–7 are
   five or more pages (Gemini 0 unless a background must move). Gate is the
   27-page tablet re-shoot, not a code change.
 - **Done when:** every page's tablet shot shows heads and key props.
-- **Status:** open. Blocks phase 5 (classrooms run tablets landscape).
+- **Evidence:** `docs/evidence/2026-09-18-tablet-letterbox/record.md`
+- **Status:** done 2026-09-18 (owner chose letterbox); hotspot layer glued to the art as part of it; 27-page tablet re-shoot passed.
 
 ### 2c. CI and component coverage
 
@@ -310,3 +311,5 @@ Kept here so the reasoning survives.
   screen, route, tests); human review open.
 - 2026-09-18: roadmap revised after the adversarial review; phases 0, 2c
   and 3 added, costs and measurement added, order changed.
+- 2026-09-18: phase 2b built (letterbox on landscape frames, hotspot layer
+  sized to the art).

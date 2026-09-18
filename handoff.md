@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Family Devotional mode built** (roadmap phase 1). `Story.devotional`
+Latest: **Tablet letterbox (roadmap phase 2b) done.** Landscape frames keep
+16:10 by giving up width (`min(100%, 160cqh)`), so nothing is cropped;
+hotspots moved into `.stage__spots`, a layer sized to the art's rendered box,
+so their percentages are art coordinates on every frame (fixes a pre-existing
+few-percent drift on portrait phones). 27-page tablet re-shoot passed.
+Evidence: `docs/evidence/2026-09-18-tablet-letterbox/record.md`. Roadmap 2b
+closed; 2a (licensing) and 2c (CI, component coverage) and phase 0 remain.
+
+Before that: **Family Devotional mode built** (roadmap phase 1). `Story.devotional`
 (question and prayer at both levels, one activity) on all five stories,
 enforced by the data test; `src/lib/devotional.ts` read-aloud script;
 `FamilyTime` screen at `#/story/<id>/family`, reached from the quiz's
@@ -109,7 +117,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the family-devotional commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the tablet-letterbox commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -138,7 +146,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
       Raise thresholds in the same commit each time. First review 2026-10-02.
 - [ ] Decide on CI (GitHub Actions running the identical hook commands plus
       `npm run audit`). Without it the hook is per-clone only.
-- [ ] Tablet-landscape crop decision (sun/moon and the den king sit above y=225).
+- [x] Tablet-landscape crop: letterbox shipped (phase 2b).
 - [ ] Licensing stance for Gemini-generated art in a published app.
 - [x] `design/concept-art/` committed (`f5a4bf0`) and pushed.
 - [ ] Real-phone performance check. Fallback done (record, follow-up 3):
