@@ -5,7 +5,7 @@ Guidance for Claude Code working in this repository.
 ## What this is
 
 An interactive illustrated Bible storybook for children, as an installable,
-offline-capable PWA. React + TypeScript + Vite. 5 stories, 26 animated scenes.
+offline-capable PWA. React + TypeScript + Vite. 5 stories, 27 animated scenes, all layered raster art.
 
 The audience is 3–12 year olds, served by a single story set with a **Little /
 Big** reading-level switch. Every piece of prose has to work at both levels.
@@ -66,16 +66,13 @@ units breaks the moment a scene places the part somewhere else.
 ```
 src/
   types.ts      Story / Scene / Hotspot shapes — read this first
-  art/          the shared art kit; scenes compose from it, never draw from scratch
-    palette.ts  one colour system for all 26 scenes, plus seeded rand()
-    base.tsx    skies, sun/moon/stars, clouds, land, sea, rain, light, rainbow
-    figures.tsx Person (poses + expressions), Crowd, Giant, Angel
-    animals.tsx lions, sheep, birds, fish, the great fish, etc.
-    props.tsx   trees, ark, ship, city, den, throne, sling
-    raster.tsx  Backdrop / Layer / Eyelids: raster cutouts inside the SVG stage
-    v2/         superseded vector kit (effects.tsx still used for light, motes, grain, shadows)
-  assets/scenes/<story>/<scene>/   bg.webp, <character>.webp, layers.json (shipped)
-  scenes/       the 26 scenes; index.ts maps string key -> component
+  art/          what scenes compose from
+    palette.ts  colour tokens plus seeded rand()
+    base.tsx    VB (the viewBox), Sky, Sun, Stars, Sparkle, HolyGlow, Rain, Lightning: vector overlays
+    raster.tsx  Backdrop / Layer / Part / Tail / Flipbook / Eyelids: raster cutouts inside the SVG stage
+    v2/effects.tsx  LightShaft, Motes, Grain, SoftShadow (tone.ts backs its gradients)
+  assets/scenes/<story>/<scene>/   bg.webp, <layer>.webp, layers.json (shipped)
+  scenes/       27 scenes across five stories; index.ts maps string key -> component
   data/
     stories.ts        library order + derived sticker total
     stories/*.ts      one file per story: prose, hotspots, quiz, memory verse
@@ -114,8 +111,8 @@ Every generated asset has a JSON sidecar (model, prompt, references, date).
 Raw generations under `design/pipeline/raw/` are not committed; regenerate
 from the sidecars. The pipeline README is `design/pipeline/README.md`.
 
-The original vector scenes remain until each is migrated; `src/art/v2/` is a
-superseded vector kit from the first style slice and goes when nothing uses it.
+Every story is raster now. The vector figure, animal and prop kits are gone;
+`src/art/base.tsx` keeps the overlay primitives scenes still use.
 
 ## Adding a story
 
@@ -141,7 +138,7 @@ There is no test suite, so **look at the result** — do not assume a change
 worked because it compiled.
 
 ```bash
-# All 26 scenes to PNGs + a contact sheet, with motion frozen. This is exactly
+# All 27 scenes to PNGs + a contact sheet, with motion frozen. This is exactly
 # the still frame Calm mode shows, so it catches art that only composes while
 # it is moving.
 npm run render                                   # OUT_DIR=… to change the folder
@@ -171,14 +168,6 @@ screenshots too.
 
 - **Data-driven.** Stories are data; the player is generic. Resist adding
   per-story branches in components.
-- **Two art kits, temporarily.** `src/art/v2/` is the new soft-shaded cutout
-  style (reference: `design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg`);
-  `src/art/*.tsx` is the original flat style. A scene uses one or the other;
-  the only exception is a tiny background figure where v2 has no pose yet.
-  When every scene has migrated, delete v1 and fold v2 into `src/art/`. New
-  style work goes in v2 only. v2 rules: one bbox-relative `Shaded` gradient
-  per material, gradient-ellipse shadows (never `filter` on anything that
-  moves), rest state from attributes so Calm mode holds a composed still.
 - **Both reading levels, always.** A `Scene` needs `text.little` and `text.big`.
   Little: short sentences, concrete words, pre-reader. Big: fuller narrative,
   richer vocabulary, plus `verse`.
