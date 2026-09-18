@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 55496,
+    "bytes": 58876,
     "source": "design/pipeline/raw/david/victory/bg.png"
   },
   "cutouts": {
@@ -45,6 +45,19 @@
       ],
       "source": "design/pipeline/raw/david/victory/goliath-fallen.png",
       "bytes": 76390
+    },
+    "soldiers-run": {
+      "file": "soldiers-run.webp",
+      "w": 828,
+      "h": 520,
+      "trim": [
+        90,
+        136,
+        1126,
+        787
+      ],
+      "source": "design/pipeline/raw/david/victory/soldiers-run.png",
+      "bytes": 72760
     }
   }
 }

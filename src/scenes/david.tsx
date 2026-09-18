@@ -35,6 +35,7 @@ import victoryBg from "../assets/scenes/david/victory/bg.webp";
 import victoryDavid from "../assets/scenes/david/victory/david-victory.webp";
 import victoryArmy from "../assets/scenes/david/victory/army-cheer.webp";
 import victoryGoliath from "../assets/scenes/david/victory/goliath-fallen.webp";
+import victoryRunners from "../assets/scenes/david/victory/soldiers-run.webp";
 import type { SceneArtProps } from "../types";
 
 /** Eye points and lid tones come from design/pipeline/find_eyes.py. */
@@ -304,19 +305,33 @@ export function Victory() {
   return (
     <>
       <Backdrop src={victoryBg} />
-      {/* the army, adult height, behind the fallen giant */}
-      <SoftShadow x={640} y={556} rx={170} ry={16} opacity={0.4} />
-      <Layer src={victoryArmy} w={L["army-cheer"].w} h={L["army-cheer"].h} x={640} y={556} scale={0.6} className="a-breathe-slow">
+      {/* soldiers pour down the hill from the camp and rest where they arrive */}
+      <g transform="translate(250 522)">
+        <g className="a-run-down">
+          <g className="a-run-bob">
+            <image
+              href={victoryRunners}
+              x={-L["soldiers-run"].w * 0.15}
+              y={-L["soldiers-run"].h * 0.3}
+              width={L["soldiers-run"].w * 0.3}
+              height={L["soldiers-run"].h * 0.3}
+            />
+          </g>
+        </g>
+      </g>
+      {/* the army already in the valley, adult height, behind the fallen giant */}
+      <SoftShadow x={700} y={562} rx={140} ry={14} opacity={0.4} />
+      <Layer src={victoryArmy} w={L["army-cheer"].w} h={L["army-cheer"].h} x={700} y={562} scale={0.5} className="a-breathe-slow">
         <Eyelids {...EYES.armyCheer} w={L["army-cheer"].w} h={L["army-cheer"].h} delay={1.6} />
       </Layer>
-      <SoftShadow x={760} y={632} rx={260} ry={20} opacity={0.4} />
-      <Layer src={victoryGoliath} w={L["goliath-fallen"].w} h={L["goliath-fallen"].h} x={760} y={632} scale={0.5} />
-      <SoftShadow x={300} y={598} rx={80} ry={12} opacity={0.4} />
-      <Layer src={victoryDavid} w={L["david-victory"].w} h={L["david-victory"].h} x={300} y={598} scale={0.36} className="a-breathe">
+      <SoftShadow x={420} y={600} rx={80} ry={12} opacity={0.4} />
+      <Layer src={victoryDavid} w={L["david-victory"].w} h={L["david-victory"].h} x={420} y={600} scale={0.36} className="a-breathe">
         <Eyelids {...EYES.davidVictory} w={L["david-victory"].w} h={L["david-victory"].h} />
       </Layer>
-      <Sparkle x={260} y={300} s={1.6} />
-      <Sparkle x={440} y={260} s={1.3} delay={0.5} />
+      <SoftShadow x={790} y={632} rx={260} ry={20} opacity={0.4} />
+      <Layer src={victoryGoliath} w={L["goliath-fallen"].w} h={L["goliath-fallen"].h} x={790} y={632} scale={0.48} />
+      <Sparkle x={350} y={300} s={1.6} />
+      <Sparkle x={540} y={260} s={1.3} delay={0.5} />
       <Grain opacity={0.05} />
     </>
   );

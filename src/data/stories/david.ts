@@ -196,7 +196,7 @@ export const david: Story = {
       hotspots: [
         {
           id: "david",
-          x: 30,
+          x: 42,
           y: 74,
           size: 22,
           label: "David",
@@ -207,8 +207,8 @@ export const david: Story = {
         },
         {
           id: "crowd",
-          x: 64,
-          y: 66,
+          x: 70,
+          y: 64,
           size: 26,
           label: "the cheering army",
           reward:

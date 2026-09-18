@@ -488,6 +488,36 @@ svg [class*=" a-"] {
 }
 
 /*
+ * Soldiers running down the hill in the "victory" scene: a one-shot dash
+ * from the ridge to where the group is drawn (its attribute position), so
+ * Calm mode shows them arrived. The inner bob sells the running.
+ */
+@keyframes run-down {
+  from {
+    transform: translate(-300px, -170px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+.a-run-down {
+  animation: run-down 7s cubic-bezier(0.3, 0, 0.6, 1) both;
+}
+@keyframes run-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+.a-run-bob {
+  animation: run-bob 0.36s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+/*
  * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
  * a moment near the end of each cycle. Calm mode drops the animation and the
  * attribute value keeps the eyes open.
