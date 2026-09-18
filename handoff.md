@@ -12,7 +12,22 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: **Noah story fully raster** (five pages) plus a dove at Daniel's window.
+Latest: **David story fully raster** (five pages). Three of five stories done.
+
+- David (`8eb18a8` sheets + 17 layers + plan, `ad679d7` compositions): David,
+  Goliath and Saul sheets; shepherd's flock reuses the Noah sheep; armour pile
+  regenerated once (helmet had a face). Sling split-and-spin idea dropped: the
+  generated loop circles David's head. All five compositions accepted first
+  pass. Evidence: `docs/evidence/2026-09-18-david-story-raster/`.
+- **Standards gap, stated on the user's question:** TDD never satisfied (no
+  test runner installed); lint/format/secret scan/audit never installed; the
+  David, dove and tail diffs got an inline roast, not a separate adversarial
+  pass. Recommended next increment: install Vitest, ESLint (security plugin),
+  Prettier, staged secret scan, `npm audit` on demand; wire into the hook;
+  prove each fails; add unit tests for `tone.ts`, `Layer`/`Tail` geometry,
+  `inlinePng`, hotspot data invariants. ~2–3 hours, before Jonah.
+
+Before that: **Noah story fully raster** (five pages) plus a dove at Daniel's window.
 
 - Dove at the window (`e7d9868`): two dove frames flip-book through
   `.a-frame-a/.a-frame-b`, glide on the `fly` path, clipped to the window.
@@ -109,9 +124,12 @@ Verification actually run (details, hashes, numbers in
       four stories are still flat vector until migrated.
 - [x] Noah migrated (five pages, one Gemini call per layer, ~1.5 hours).
 - [ ] **User reviews Noah**: `docs/evidence/2026-09-18-noah-story-raster/story-sheet.png`, `phones.png`.
-- [ ] Next stories: David (5 scenes: shepherd, taunt, volunteers, stones, victory; needs David, Goliath,
-      Saul, sheep reuse, sling), Jonah (5: running, storm, swallowed, prayer, nineveh; needs Jonah, sailors,
-      the great fish, ship, city), Creation (6: light, sky-water, land, lights, creatures, people; mostly
+- [x] David migrated (five pages, 17 layers, one regeneration, ~1.5 hours).
+- [ ] **User reviews David**: `docs/evidence/2026-09-18-david-story-raster/story-sheet.png`, `phones.png`.
+- [ ] **Gate increment (recommended before Jonah):** Vitest, ESLint + security plugin, Prettier, staged
+      secret scan, `npm audit` on demand; hook wiring; prove each fails; first unit tests on pure seams.
+- [ ] Remaining stories: Jonah (5: running, storm, swallowed, prayer, nineveh; needs Jonah, sailors, the
+      great fish, ship, city), Creation (6: light, sky-water, land, lights, creatures, people; mostly
       backgrounds, Adam and Eve, birds/fish reuse). Then delete `src/art/*` v1 and `src/art/v2/{den,lion,person}.tsx`.
 - [ ] Blinks on the other Daniel pages (prays Daniel, trap king, rejoice king): measure pupils on the
       cutouts with the grid trick, add `Eyelids`.
