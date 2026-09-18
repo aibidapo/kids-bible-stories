@@ -8,3 +8,4 @@ scratch/
 tsconfig.tsbuildinfo
 .playwright-mcp/
 design/pipeline/raw/
+coverage

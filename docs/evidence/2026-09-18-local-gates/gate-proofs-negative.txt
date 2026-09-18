@@ -1,0 +1,43 @@
+### A. secret scan rejects a staged fake AWS key
+warning: in the working copy of 'src/lib/_fake.ts', LF will be replaced by CRLF the next time Git touches it
+check-secrets: 1 finding(s) in staged changes
+ - src/lib/_fake.ts:1: AWS access key
+Mark a confirmed false positive with `secret-ok` on the same line.
+secrets exit=1
+### A2. secret scan passes the real staged set
+check-secrets: staged changes clean
+secrets exit=0
+
+### B. format check rejects an unformatted staged file
+warning: in the working copy of 'src/lib/_ugly.ts', LF will be replaced by CRLF the next time Git touches it
+Checking formatting...
+[[33mwarn[39m] src/lib/_ugly.ts
+[[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+prettier exit=123
+
+### C. lint rejects an unused expression
+  2:1  error  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+✖ 25 problems (1 error, 24 warnings)
+lint exit=1
+
+### D. the hook itself blocks a commit that stages a failing test
+warning: in the working copy of 'src/lib/_fail.test.ts', LF will be replaced by CRLF the next time Git touches it
+pre-commit: secret scan
+pre-commit: format (staged files)
+commit exit=1
+HEAD after blocked attempt: ea66d6d Record the garden wander check and update handoff
+### D (redo). the hook blocks a commit that stages a formatted but failing test
+(fixture is prettier-clean)
+pre-commit: secret scan
+pre-commit: format (staged files)
+pre-commit: lint
+pre-commit: motion constraints
+pre-commit: tests
+ ❯ src/lib/_fail.test.ts (1 test | 1 failed) 7ms
+   × fails on purpose 6ms
+ FAIL  src/lib/_fail.test.ts > fails on purpose
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 52 passed (53)
+commit exit=1
+HEAD after blocked attempt: ea66d6d Record the garden wander check and update handoff
+staged fixture gone: 0

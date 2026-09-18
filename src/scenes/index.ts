@@ -44,5 +44,6 @@ export const SCENE_ART: Record<string, SceneArt> = {
 };
 
 export function getSceneArt(key: string): SceneArt | undefined {
-  return SCENE_ART[key];
+  // Own-property check so a key like "constructor" cannot reach the prototype.
+  return Object.prototype.hasOwnProperty.call(SCENE_ART, key) ? SCENE_ART[key] : undefined;
 }

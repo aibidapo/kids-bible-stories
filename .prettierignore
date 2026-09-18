@@ -1,0 +1,13 @@
+dist
+dev-dist
+scratch
+node_modules
+design
+docs
+public
+*.md
+*.json
+*.webp
+*.png
+*.jpg
+coverage

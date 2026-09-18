@@ -1,0 +1,15 @@
+## mutation 1: Layer image y anchored at top (-h -> h) in src/art/raster.tsx
+[31m   [31m×[31m Layer[2m > [22mlands the image's bottom-centre on (x, y) at the given scale[39m[32m 10[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m10 passed[39m[22m[90m (11)[39m
+## mutation 2: hotspot x pushed off stage in src/data/stories/david.ts
+[31m   [31m×[31m story library[2m > [22mdavid[2m > [22mkeeps hotspots on the stage with unique ids per scene[39m[32m 3[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m25 passed[39m[22m[90m (26)[39m
+## mutation 3: answerIndex not remapped in src/lib/quiz.ts
+[31m   [31m×[31m shuffleChoices[2m > [22mpoints answerIndex at the correct choice after shuffling[39m[32m 5[2mms[22m[39m
+[31m   [31m×[31m shuffleChoices[2m > [22mactually moves the answer for some rng values[39m[32m 1[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
+## restored:
+1

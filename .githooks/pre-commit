@@ -1,9 +1,33 @@
 #!/bin/sh
 # Local pre-commit gate. CI is a mirror of this, never a replacement.
 # Activate once per clone:  git config core.hooksPath .githooks
-# `npm run build` runs `tsc -b` first, so this is typecheck + build in one.
+#
+# Order is cheapest-first so a trivial slip fails fast. Every step blocks.
+#   1. secrets  - staged added lines against credential shapes (scripts/check-secrets.mjs)
+#   2. format   - prettier on the staged files (the tree-wide check is `npm run format:check`)
+#   3. lint     - eslint incl. security rules; errors block, warnings are reviewed per site
+#   4. motion   - transform/class constraint on every scene (scripts/check-motion.tsx)
+#   5. test     - vitest
+#   6. build    - `tsc -b` typecheck then the production bundle
 set -e
+
+echo "pre-commit: secret scan"
+npm run --silent secrets
+
+echo "pre-commit: format (staged files)"
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -n "$staged" ]; then
+  echo "$staged" | xargs npx prettier --check --ignore-unknown
+fi
+
+echo "pre-commit: lint"
+npm run --silent lint
+
 echo "pre-commit: motion constraints"
 npm run --silent check:motion
+
+echo "pre-commit: tests"
+npm run --silent test
+
 echo "pre-commit: typecheck + build"
 npm run --silent build

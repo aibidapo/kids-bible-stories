@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { shuffleChoices } from "../lib/quiz";
 import { playCorrect, playTryAgain } from "../lib/sound";
 import { recordQuiz, useProgress } from "../lib/store";
 import type { Story } from "../types";
@@ -21,18 +22,7 @@ export function Quiz({ story, onDone }: Props) {
     () =>
       story.quiz
         .filter((q) => (progress.mode === "big" ? true : q.level === "little"))
-        .map((q) => {
-          const order = q.choices.map((_, i) => i);
-          for (let i = order.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [order[i], order[j]] = [order[j], order[i]];
-          }
-          return {
-            ...q,
-            choices: order.map((i) => q.choices[i]),
-            answerIndex: order.indexOf(q.answerIndex),
-          };
-        }),
+        .map((q) => shuffleChoices(q)),
     [story.quiz, progress.mode],
   );
 
@@ -87,11 +77,7 @@ export function Quiz({ story, onDone }: Props) {
           </blockquote>
         )}
 
-        <button
-          type="button"
-          className="btn btn--primary btn--big"
-          onClick={onDone}
-        >
+        <button type="button" className="btn btn--primary btn--big" onClick={onDone}>
           Back to the stories
         </button>
       </div>
@@ -102,11 +88,7 @@ export function Quiz({ story, onDone }: Props) {
     return (
       <div className="quiz quiz--done">
         <p className="quiz__score">No questions for this story yet.</p>
-        <button
-          type="button"
-          className="btn btn--primary btn--big"
-          onClick={onDone}
-        >
+        <button type="button" className="btn btn--primary btn--big" onClick={onDone}>
           Back to the stories
         </button>
       </div>
@@ -133,9 +115,7 @@ export function Quiz({ story, onDone }: Props) {
           </li>
         ))}
       </ul>
-      {wrong.length > 0 && (
-        <p className="quiz__nudge">Not that one — have another go!</p>
-      )}
+      {wrong.length > 0 && <p className="quiz__nudge">Not that one — have another go!</p>}
     </div>
   );
 }

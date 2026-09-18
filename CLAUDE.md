@@ -17,17 +17,36 @@ npm run dev        # dev server
 npm run build      # typecheck + production build into dist/
 npm run preview    # serve the built output
 npm run typecheck  # tsc -b
+npm test           # vitest: pure seams (quiz shuffle, tone maths, raster geometry, inline-png) and story-data invariants
+npm run lint       # eslint incl. security rules; errors block, warnings are reviewed per site (see below)
+npm run format     # prettier --write over src, scripts and root configs
+npm run format:check
+npm run secrets    # staged-diff credential scan (scripts/check-secrets.mjs)
+npm run audit      # npm audit --audit-level=high; needs the network, "unreachable" means unknown, never clean
 npm run icons      # regenerate public/icons/*.png from scripts/generate-icons.mjs
 npm run check:motion   # hard-constraint lint: no a-* class on a transform'd element
-git config core.hooksPath .githooks   # once per clone: pre-commit runs check:motion + build
+git config core.hooksPath .githooks   # once per clone: activates the pre-commit gate
 ```
 
-There is no test suite. Verification is visual — see **Verifying changes** below.
-`npm run build` runs `tsc -b` first, so a type error fails the build.
+`.githooks/pre-commit` runs, in order, `secrets`, prettier on the staged files,
+`lint`, `check:motion`, `test`, `build`, and refuses the commit if any fails.
+Activate it once per clone with the command above and check
+`git config core.hooksPath` prints `.githooks` at the start of a session. The
+tree-wide format check is `npm run format:check`; the hook checks only what is
+being committed. `npm audit` is on demand before a push, not in the hook.
 
-`.githooks/pre-commit` runs `check:motion` and `build` and refuses the commit on
-failure. Activate it once per clone with the command above. It does not lint,
-format, unit-test, or secret-scan; those gates are not installed yet.
+Lint notes: `security/detect-object-injection` is syntactic and flags every
+`obj[key]`, so it stays a warning. Each warning is reviewed: keys that come from
+outside static data are guarded (`getSceneArt` uses an own-property check; story
+ids reach the store only after `getStory` has matched them). Do not turn the
+rule off; fix a real finding or leave the warning. A confirmed false positive
+in the secret scan is marked with `secret-ok` on the same line, never in a
+baseline file.
+
+Test files live next to the code (`*.test.ts`, `*.test.tsx`) and run in node;
+React components are rendered with `react-dom/server`, so no DOM library. Unit
+tests do not replace the browser checks below: motion, layering and Calm mode
+only show in a real browser.
 
 ## Hard constraints
 
@@ -134,7 +153,7 @@ derive from the data.
 
 ## Verifying changes
 
-There is no test suite, so **look at the result** — do not assume a change
+Unit tests cover the pure seams only, so **look at the result** — do not assume a change
 worked because it compiled.
 
 ```bash
