@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 142964,
+    "bytes": 120114,
     "source": "design/pipeline/raw/daniel/trap/bg.png"
   },
   "cutouts": {
@@ -48,29 +48,29 @@
     },
     "courtiers-left": {
       "file": "courtiers-left.webp",
-      "w": 616,
+      "w": 679,
       "h": 560,
       "trim": [
-        177,
-        85,
-        1020,
-        851
+        99,
+        57,
+        1064,
+        853
       ],
       "source": "design/pipeline/raw/daniel/trap/courtiers-left.png",
-      "bytes": 77984
+      "bytes": 80406
     },
     "courtiers-right": {
       "file": "courtiers-right.webp",
-      "w": 577,
+      "w": 599,
       "h": 560,
       "trim": [
-        218,
-        86,
-        967,
-        813
+        194,
+        89,
+        989,
+        832
       ],
       "source": "design/pipeline/raw/daniel/trap/courtiers-right.png",
-      "bytes": 54972
+      "bytes": 59874
     }
   }
 }

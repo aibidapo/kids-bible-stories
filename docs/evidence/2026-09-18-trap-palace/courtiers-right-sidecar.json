@@ -1,11 +1,11 @@
 {
   "model": "gemini-3-pro-image-preview",
-  "prompt": "Two Persian courtiers seated side by side on a low gilded bench, in the same illustration style and costume world as the reference: on the left a bearded man in a deep navy-blue robe with gold trim and a tall dark hat, on the right a woman in a rose-pink gown with silver embroidery and a jewelled headband over dark hair, both facing the viewer straight on like a formal court portrait, calm attentive expressions, hands in laps. Full seated figures, feet visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "prompt": "Two Persian courtiers sitting naturally and comfortably side by side on a low gilded bench, seen straight on at eye level, in the same illustration style and costume world as the reference: on the left a bearded man in a deep navy-blue robe with gold trim and a tall dark hat, on the right a woman in a rose-pink gown with silver embroidery and a jewelled headband over dark hair, relaxed upright posture, knees bent, feet flat on the ground, hands resting in laps, both facing the viewer with calm attentive expressions. Full seated figures including the whole bench and feet, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
   "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
   "references": [
     "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
   ],
   "aspect": "4:3",
   "size": "1K",
-  "generated": "2026-09-18T21:51:11+00:00"
+  "generated": "2026-09-18T22:15:18+00:00"
 }

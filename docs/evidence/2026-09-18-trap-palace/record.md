@@ -100,3 +100,34 @@ king's throne facing the room, not to the sides."
 - Browser, fresh context on this build (`index-BlhP43lk.js`): six layers,
   scroll hotspot tapped, both pairs fully inside the phone frame;
   `trap-court-phone.png`.
+
+## Round 4: throne facing the room, courtiers at size, seated naturally
+
+User: "The throne is still to the angle and not facing the room. Also, the
+courtiers are seated awkwardly." Then: "The courtiers also look tiny sitting
+down."
+
+- Cause: the round-1 background put the dais and carpet on a diagonal into
+  the right corner, so the frontal throne cutout still read as angled, and
+  straight-on benches sat oddly on that diagonal floor. Background
+  regenerated symmetric and straight-on: dais centre-back facing the
+  viewer, carpet straight up the middle, matching column rows, three
+  windows behind the dais. Raw of the diagonal version kept locally as
+  `bg-v2-diagonal.png`. New `bg.webp` 120 KB.
+- Courtiers regenerated "sitting naturally, knees bent, feet flat, seen at
+  eye level" (`cutouts-round-4.png`); `courtiers-left` 80 KB (rounded, at
+  the guideline), `courtiers-right` 60 KB. Scene 399 KB.
+- Generation was blocked for ~10 minutes: `generativelanguage.googleapis.com`
+  and `www.googleapis.com` timed out on IPv4 and IPv6 through the machine's
+  VPN route (gateway 10.5.0.1) while `google.com`, `oauth2.googleapis.com`
+  and GitHub answered. A background loop retried once a minute and
+  succeeded on attempt 3 at 18:15.
+- Layout: king centred at (500, 372) on the platform (first pass at y 392
+  sat him on the steps); courtiers at (215, 560) and (785, 560) scale 0.38,
+  the officials' scale is 0.42, so a seated courtier is about 65 % of a
+  standing official; the pointing official at (440, 608) points right at
+  the throne, the scroll official mirrored at (590, 612) faces him, so the
+  two conspire over the scroll in front of the king. Both pairs inside the
+  phone-safe zone (x 90–910). Hotspots: king 50 % / 42 %, scroll 54 % / 64 %.
+- Checks: `check:motion` 27 clean; full-size render `trap-after-court.png`;
+  browser fresh context `trap-court-phone.png`; hook on commit.

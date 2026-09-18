@@ -12,8 +12,11 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Daniel page 2: grander throne and seated courtiers** (round 2 on the
-same page: `king-throne` regenerated, two new seated pairs `courtiers-left` /
+Latest: **Daniel page 2 rebuilt symmetric** (round 4: background regenerated
+straight-on with the dais centre-back so the throne faces the room; courtiers
+regenerated seated naturally and placed at 0.38 either side of the carpet;
+officials face the king). Also **Daniel page 5** family scaled to Daniel
+(`52225be`). Rounds 2–3 on page 2: `king-throne` regenerated, two new seated pairs `courtiers-left` /
 `courtiers-right` on the floor either side of the carpet, facing the room (round 3;
 round 2 had them on the dais, turned inward); a green robe got chroma-keyed once, regenerated
 in navy, README rule added; scene 415 KB). Round 1 was the **palace background

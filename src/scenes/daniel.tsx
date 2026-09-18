@@ -103,55 +103,56 @@ export function TheTrap() {
   return (
     <>
       <Backdrop src={trapBg} />
-      <SoftShadow x={712} y={392} rx={100} ry={14} opacity={0.4} />
+      <SoftShadow x={500} y={372} rx={100} ry={12} opacity={0.4} />
       <Layer
         src={trapKing}
         w={L["king-throne"].w}
         h={L["king-throne"].h}
-        x={712}
-        y={392}
+        x={500}
+        y={372}
         scale={0.37}
         className="a-breathe-slow"
       />
       {/* courtiers seated on the floor either side of the carpet, facing the room */}
-      <SoftShadow x={195} y={535} rx={90} ry={11} opacity={0.35} />
+      <SoftShadow x={215} y={560} rx={120} ry={13} opacity={0.35} />
       <Layer
         src={trapCourtiersLeft}
         w={L["courtiers-left"].w}
         h={L["courtiers-left"].h}
-        x={195}
-        y={535}
-        scale={0.29}
+        x={215}
+        y={560}
+        scale={0.38}
         className="a-breathe-slow"
         delay={1.1}
       />
-      <SoftShadow x={815} y={535} rx={90} ry={11} opacity={0.35} />
+      <SoftShadow x={785} y={560} rx={110} ry={13} opacity={0.35} />
       <Layer
         src={trapCourtiersRight}
         w={L["courtiers-right"].w}
         h={L["courtiers-right"].h}
-        x={815}
-        y={535}
-        scale={0.29}
+        x={785}
+        y={560}
+        scale={0.38}
         className="a-breathe-slow"
         delay={2.3}
       />
-      <SoftShadow x={355} y={612} rx={80} ry={14} opacity={0.4} />
+      <SoftShadow x={590} y={612} rx={80} ry={14} opacity={0.4} />
       <Layer
         src={trapOfficialScroll}
         w={L["official-scroll"].w}
         h={L["official-scroll"].h}
-        x={355}
+        x={590}
         y={612}
         scale={0.42}
+        flip
         className="a-breathe"
       />
-      <SoftShadow x={505} y={608} rx={90} ry={14} opacity={0.4} />
+      <SoftShadow x={440} y={608} rx={90} ry={14} opacity={0.4} />
       <Layer
         src={trapOfficialPoint}
         w={L["official-point"].w}
         h={L["official-point"].h}
-        x={505}
+        x={440}
         y={608}
         scale={0.42}
         className="a-breathe-slow"
