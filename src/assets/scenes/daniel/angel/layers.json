@@ -1,0 +1,49 @@
+{
+  "background": {
+    "reuse": "daniel/den/bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 0
+  },
+  "cutouts": {
+    "angel": {
+      "file": "angel.webp",
+      "w": 674,
+      "h": 745,
+      "trim": [
+        104,
+        141,
+        778,
+        886
+      ],
+      "source": "design/pipeline/raw/daniel/angel/angel.png",
+      "bytes": 46092
+    },
+    "lion-asleep-a": {
+      "file": "lion-asleep-a.webp",
+      "w": 753,
+      "h": 520,
+      "trim": [
+        54,
+        110,
+        1128,
+        852
+      ],
+      "source": "design/pipeline/raw/daniel/angel/lion-asleep-a.png",
+      "bytes": 53960
+    },
+    "lion-asleep-b": {
+      "file": "lion-asleep-b.webp",
+      "w": 814,
+      "h": 520,
+      "trim": [
+        103,
+        142,
+        1096,
+        776
+      ],
+      "source": "design/pipeline/raw/daniel/angel/lion-asleep-b.png",
+      "bytes": 54636
+    }
+  }
+}
