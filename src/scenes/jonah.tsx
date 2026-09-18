@@ -60,8 +60,8 @@ export function RunningAway({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={runBg} />
-      {/* the ship rides at the quay's edge, on the water */}
-      <g transform="translate(870 612)">
+      {/* the ship rides at the quay's edge, on the water, prow to the left: west, away from Nineveh */}
+      <g transform="translate(870 612) scale(-1 1)">
         <g className="a-rock">
           <image href={runShip} x={-L.ship.w * 0.44} y={-L.ship.h * 0.88} width={L.ship.w * 0.88} height={L.ship.h * 0.88} />
         </g>

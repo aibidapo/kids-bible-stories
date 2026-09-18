@@ -12,3 +12,4 @@ Pass = characters match the Jonah sheet, scene reads as the same book, hotspots 
 | 04 | swallowed | P | swallowed-render.png, swallowed-mouth-zoom.png | Jonah drawn in front of the fish, head-first in the mouth, legs out; the drift replays from up-left |
 | 05 | running | P | running-render.png | figures moved up onto the quay top (feet at y 478 and 398 against an edge that runs from ~540 at the left to ~330 at the right); ship 0.88 moored at the quay edge |
 | 06 | running | P | running-feet-zoom.png | Jonah moved back from the edge onto the flat stone at (320,436) scale 0.37; feet on flagstones |
+| 07 | running | P | running-render.png | ship mirrored so the prow points left (west, away from Nineveh) to match the hotspot text |
