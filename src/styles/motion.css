@@ -1,0 +1,457 @@
+/*
+ * Every animation in the app lives here. Scene art only ever adds a class, so
+ * one `prefers-reduced-motion` block at the bottom can calm the whole storybook
+ * for children who need it — and the "Calm mode" switch reuses the same lever.
+ *
+ * Two rules keep this working inside SVG:
+ *
+ * 1. A CSS `transform` animation beats an element's `transform` *attribute*, so
+ *    an animated element must never be the one carrying its own positioning.
+ *    Art components wrap a positioned <g> around an animated <g>.
+ * 2. Pivots are declared here as percentages of each element's own bounding box
+ *    (`transform-box: fill-box`), not as user-space coordinates, so a part
+ *    rotates around its own hinge wherever the scene happens to place it.
+ */
+
+svg [class^="a-"],
+svg [class*=" a-"] {
+  transform-box: fill-box;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.a-spin-slow {
+  animation: spin 90s linear infinite;
+}
+.a-spin-vslow {
+  animation: spin 180s linear infinite;
+}
+.a-spin-fast {
+  animation: spin 0.55s linear infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.a-twinkle {
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.15) rotate(40deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(120deg);
+  }
+}
+.a-sparkle {
+  animation: sparkle 1.8s ease-out infinite;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-260px);
+  }
+  to {
+    transform: translateX(1160px);
+  }
+}
+.a-drift {
+  animation: drift 70s linear infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-3.5deg);
+  }
+  50% {
+    transform: rotate(3.5deg);
+  }
+}
+.a-sway {
+  animation: sway 3.2s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+.a-sway-slow {
+  animation: sway 6.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+/* One tile of the wave path is 250 units wide; sliding by that reads as endless. */
+@keyframes wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-250px);
+  }
+}
+@keyframes wave-rev {
+  from {
+    transform: translateX(-250px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.a-wave {
+  animation: wave 9s linear infinite;
+}
+.a-wave-rev {
+  animation: wave-rev 15s linear infinite;
+}
+
+@keyframes rainfall {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(260px);
+  }
+}
+.a-rainfall {
+  animation: rainfall 0.85s linear infinite;
+}
+
+@keyframes flash {
+  0%,
+  92%,
+  100% {
+    opacity: 0;
+  }
+  93%,
+  95% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 0.2;
+  }
+}
+.a-flash {
+  animation: flash 7s linear infinite;
+}
+
+@keyframes draw-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.a-draw-in {
+  animation: draw-in 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 50% 100%;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+.a-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+.a-pulse-soft {
+  animation: pulse 7s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.018);
+  }
+}
+.a-breathe {
+  animation: breathe 3.6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+.a-breathe-slow {
+  animation: breathe 5.5s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes nod {
+  0%,
+  100% {
+    transform: rotate(-1.6deg) translateY(0);
+  }
+  50% {
+    transform: rotate(1.6deg) translateY(-1.5px);
+  }
+}
+.a-nod {
+  animation: nod 4.4s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes tail {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+.a-tail {
+  animation: tail 2.8s ease-in-out infinite;
+  transform-origin: 100% 100%;
+}
+
+/* Relative offsets, so a bird's own x is where it sits when motion is off. */
+@keyframes fly {
+  0% {
+    transform: translate(-460px, 0);
+  }
+  50% {
+    transform: translate(160px, -38px);
+  }
+  100% {
+    transform: translate(780px, 6px);
+  }
+}
+.a-fly {
+  animation: fly 24s linear infinite;
+}
+
+@keyframes flap {
+  0%,
+  100% {
+    transform: rotate(-16deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(26deg) scaleY(0.75);
+  }
+}
+.a-flap {
+  animation: flap 0.42s ease-in-out infinite;
+  transform-origin: 100% 50%;
+}
+.a-flap-fast {
+  animation: flap 0.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+.a-float {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+@keyframes swim {
+  0% {
+    transform: translateX(-60px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(60px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(-60px) rotate(-2deg);
+  }
+}
+.a-swim {
+  animation: swim 7s ease-in-out infinite;
+}
+.a-swim-slow {
+  animation: swim 13s ease-in-out infinite;
+}
+
+@keyframes ear {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+.a-ear {
+  animation: ear 3s ease-in-out infinite;
+}
+
+@keyframes trunk {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+.a-trunk {
+  animation: trunk 4.2s ease-in-out infinite;
+  transform-origin: 25% 0%;
+}
+
+@keyframes wing-l {
+  0%,
+  100% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+}
+@keyframes wing-r {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+.a-wing-l {
+  animation: wing-l 3s ease-in-out infinite;
+  transform-origin: 100% 35%;
+}
+.a-wing-r {
+  animation: wing-r 3s ease-in-out infinite;
+  transform-origin: 0% 35%;
+}
+
+@keyframes flutter {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(40px, -28px);
+  }
+  50% {
+    transform: translate(86px, 6px);
+  }
+  75% {
+    transform: translate(34px, 26px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.a-flutter {
+  animation: flutter 11s ease-in-out infinite;
+}
+
+/* Scene-local helpers used by individual stories. */
+@keyframes rise-slow {
+  from {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.a-rise {
+  animation: rise-slow 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 50% 100%;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px) rotate(-1deg);
+  }
+  40% {
+    transform: translateX(6px) rotate(1deg);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+.a-shake {
+  animation: shake 1.1s ease-in-out infinite;
+}
+
+@keyframes rock-boat {
+  0%,
+  100% {
+    transform: rotate(-6deg) translateY(0);
+  }
+  50% {
+    transform: rotate(6deg) translateY(-14px);
+  }
+}
+.a-rock {
+  animation: rock-boat 3.4s ease-in-out infinite;
+  transform-origin: center bottom;
+  transform-origin: 50% 100%;
+}
+
+@keyframes stone-fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(380px, -40px) scale(0.7);
+    opacity: 1;
+  }
+}
+.a-stone {
+  animation: stone-fly 2.6s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+}
+
+/*
+ * Calm mode. `.calm` is set on the app root when the child (or their device)
+ * asks for less motion: art holds a composed still frame instead of moving.
+ */
+.calm [class^="a-"],
+.calm [class*=" a-"] {
+  animation: none !important;
+}
+.calm .a-draw-in,
+.calm .a-rise {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.calm .a-flash,
+.calm .a-sparkle {
+  opacity: 0 !important;
+}
