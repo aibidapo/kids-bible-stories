@@ -12,7 +12,16 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Tablet letterbox (roadmap phase 2b) done.** Landscape frames keep
+Latest: **Component and hook tests (roadmap phase 2c, local half).**
+happy-dom per test file plus Testing Library; every component and
+`useNarration` covered by behaviour tests; coverage include set widened to
+`src/components` and `src/hooks`, thresholds at the measured floor
+(98 / 91 / 96 / 97); 129 tests. CI itself is blocked (no GitHub Actions
+available to the owner); the hook stays the enforcement. Evidence:
+`docs/evidence/2026-09-18-component-coverage/record.md`. Licensing (2a)
+parked by the owner.
+
+Before that: **Tablet letterbox (roadmap phase 2b) done.** Landscape frames keep
 16:10 by giving up width (`min(100%, 160cqh)`), so nothing is cropped;
 hotspots moved into `.stage__spots`, a layer sized to the art's rendered box,
 so their percentages are art coordinates on every frame (fixes a pre-existing
@@ -117,7 +126,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the tablet-letterbox commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the component-coverage commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -144,8 +153,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [ ] Widen the coverage include set to components rendered through
       `react-dom/server` (Quiz, NarrationText, StoryPlayer), then scenes.
       Raise thresholds in the same commit each time. First review 2026-10-02.
-- [ ] Decide on CI (GitHub Actions running the identical hook commands plus
-      `npm run audit`). Without it the hook is per-clone only.
+- [ ] CI: blocked, GitHub Actions unavailable to the owner (2026-09-18). When available, run the hook's commands plus `npm run audit`.
 - [x] Tablet-landscape crop: letterbox shipped (phase 2b).
 - [ ] Licensing stance for Gemini-generated art in a published app.
 - [x] `design/concept-art/` committed (`f5a4bf0`) and pushed.

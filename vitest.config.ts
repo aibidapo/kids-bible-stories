@@ -8,10 +8,18 @@ export default defineConfig({
     include: ["src/**/*.test.{ts,tsx}", "scripts/**/*.test.{ts,tsx}"],
     coverage: {
       provider: "v8",
-      include: ["src/lib/**", "src/art/raster.tsx", "src/art/v2/tone.ts", "scripts/lib/**"],
-      // Ratchet: set at the measured baseline after each test-adding commit and only ever
-      // raised. The include set is the pure seams; see the local-gates record.
-      thresholds: { lines: 98, branches: 95, functions: 93, statements: 97 },
+      include: [
+        "src/lib/**",
+        "src/components/**",
+        "src/hooks/**",
+        "src/art/raster.tsx",
+        "src/art/v2/tone.ts",
+        "scripts/lib/**",
+      ],
+      // Ratchet: set at the measured floor after each test-adding commit and only ever
+      // raised. Widening the include set (components, hooks on 2026-09-18) resets the
+      // floor for the new set; a number may only drop when the set grows.
+      thresholds: { lines: 98, branches: 91, functions: 96, statements: 97 },
     },
   },
 });

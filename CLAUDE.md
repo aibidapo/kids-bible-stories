@@ -46,10 +46,17 @@ rule off; fix a real finding or leave the warning. A confirmed false positive
 in the secret scan is marked with `secret-ok` on the same line, never in a
 baseline file.
 
-Test files live next to the code (`*.test.ts`, `*.test.tsx`) and run in node;
-React components are rendered with `react-dom/server`, so no DOM library. Unit
-tests do not replace the browser checks below: motion, layering and Calm mode
-only show in a real browser.
+Test files live next to the code (`*.test.ts`, `*.test.tsx`) and run in node
+by default. Pure renders use `react-dom/server`. A test that needs clicks
+opts into a DOM with `// @vitest-environment happy-dom` on its first line
+and drives the component with Testing Library; the store is module state,
+so such files reset it in `beforeEach` through its setters. happy-dom has
+no `AudioContext`, `speechSynthesis` or `confirm`: sound is a no-op there,
+narration reports unsupported unless the test installs a fake, and
+`window.confirm` must be assigned before spying. Coverage thresholds in
+`vitest.config.ts` cover `src/lib`, `src/components`, `src/hooks` and the
+raster seams. Unit tests do not replace the browser checks below: motion,
+layering and Calm mode only show in a real browser.
 
 ## Hard constraints
 

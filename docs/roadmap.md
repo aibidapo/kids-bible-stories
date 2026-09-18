@@ -145,7 +145,15 @@ narration are the costliest for the least teaching value. Phases 4–7 are
 - **Cost:** ~2 days × R. Third-party: CI minutes (free tier likely enough).
 - **Done when:** a pull request fails on a broken test or an unformatted
   file without any local hook; component coverage in the thresholds.
-- **Status:** open. **Every later phase depends on it**; do before phase 4.
+- **Evidence:** `docs/evidence/2026-09-18-component-coverage/record.md`
+- **Status:** local half done 2026-09-18: every component and the narration
+  hook have behaviour tests (happy-dom per file, Testing Library), the
+  coverage include set now spans `src/lib`, `src/components`, `src/hooks`
+  and the raster seams with thresholds at the measured floor. **CI blocked:**
+  GitHub Actions is unavailable to the owner (stated 2026-09-18); the
+  pre-commit hook remains the enforcement, per the local-first rule. Revisit
+  when CI is available; the hook's commands are the workflow's commands.
+  Browser smoke stays manual (`scripts/shoot.mjs`).
 
 ## Phase 3: Distribution model
 
@@ -313,3 +321,5 @@ Kept here so the reasoning survives.
   and 3 added, costs and measurement added, order changed.
 - 2026-09-18: phase 2b built (letterbox on landscape frames, hotspot layer
   sized to the art).
+- 2026-09-18: phase 2c local half built (component and hook tests, include
+  set widened); CI blocked, owner has no GitHub Actions for now.
