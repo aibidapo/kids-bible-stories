@@ -303,6 +303,32 @@ export function AngelShutsTheMouths({ found }: SceneArtProps) {
         <LightShaft x={500} top={48} topWidth={80} bottomSpread={240} floorY={560} />
       </g>
       <HolyGlow x={500} y={330} r={330} />
+      {/* third lion asleep at Daniel's knees, drawn behind him */}
+      <SoftShadow x={118} y={612} rx={130} ry={16} opacity={0.4} />
+      <Tail
+        src={angelLionBTail}
+        tw={L["lion-asleep-b"].tail.w}
+        th={L["lion-asleep-b"].tail.h}
+        ox={L["lion-asleep-b"].tail.ox}
+        oy={L["lion-asleep-b"].tail.oy}
+        w={L["lion-asleep-b"].w}
+        h={L["lion-asleep-b"].h}
+        x={118}
+        y={612}
+        scale={0.34}
+        root="tl"
+        delay={3.5}
+      />
+      <Layer
+        src={angelLionB}
+        w={L["lion-asleep-b"].w}
+        h={L["lion-asleep-b"].h}
+        x={118}
+        y={612}
+        scale={0.34}
+        className="a-breathe-slow"
+        delay={1.2}
+      />
       {/* Wings are split off the cutout (split_part.py) and beat slowly behind
           the body; the whole angel floats as one group. */}
       <g className="a-float">

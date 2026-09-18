@@ -12,7 +12,7 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **angel wings beat slowly, forwards and back** (Daniel page 4).
+Latest: **angel wings beat slowly, forwards and back, and a third sleeping lion** (Daniel page 4).
 `design/pipeline/split_part.py` cuts any named part off a cutout (several per
 cutout); the angel is now body + two wing parts inside one `a-float` group,
 wings on `a-wing-l` / `a-wing-r` (scaleX 1 → 0.5 about the shoulder, ±4°

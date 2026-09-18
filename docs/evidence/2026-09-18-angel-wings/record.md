@@ -57,3 +57,15 @@ flapping forwards and back slowly." Page `daniel/angel` (`#/story/daniel/3`).
 - Debt: `split_part.py` repeats the matte/crop logic of `split_tail.py`
   (about 25 lines). Next time either script changes, make `split_tail.py` a
   thin call into `split_part.py` with `part="tail"`.
+
+## Follow-up: third lion
+
+User: "In the 4th scene of Daniel, what happened to the 3rd lion?" The den
+page draws three lions; the angel page had only two since its first
+composition (a continuity miss, visible in the original
+`daniel-story-raster/angel-render.png`). Added a third sleeper from
+`lion-asleep-b` (unflipped, head toward Daniel) at (118, 612) scale 0.34,
+drawn before Daniel so he covers its head, own shadow, tail flick delay
+3.5 s, breathe delay 1.2 s. No new art. Full-size render
+`angel-three-lions-render.png` (`npm run compare`); motion check, tests and
+build through the hook.
