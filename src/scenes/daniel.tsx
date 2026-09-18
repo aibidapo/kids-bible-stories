@@ -24,6 +24,7 @@ import {
 import { Den2 } from "../art/v2/den";
 import { Grain, LightShaft } from "../art/v2/effects";
 import { Lion2 } from "../art/v2/lion";
+import { Person2 } from "../art/v2/person";
 import type { SceneArtProps } from "../types";
 
 /** Three times a day, at the open window. */
@@ -213,16 +214,14 @@ export function IntoTheDen() {
       <Den2 />
       <LightShaft x={500} top={42} topWidth={90} bottomSpread={250} floorY={578} />
       <Lion2 x={555} y={548} scale={0.72} />
-      <Person
+      <Person2
         x={500}
-        y={520}
-        scale={1.2}
+        y={565}
+        scale={1.1}
         robe={C.robe[2]}
         sash={C.sun}
         skin={C.skin[2]}
         hair={C.hair[1]}
-        beard
-        headscarf
         pose="pray"
         face="calm"
       />
