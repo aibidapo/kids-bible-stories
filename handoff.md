@@ -12,7 +12,17 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: **Jonah story, five pages, after one review round** (`babbf54`…`b4611a5`).
+Latest: **Creation story, six pages, and the vector kit removed. All five
+stories (27 pages) are layered raster.** Commits `05489d0` plan + manifests,
+`d724a52` assets, `0e59dcc` compositions, then kit removal and the record.
+Heavy reuse of earlier layers (birds, dove, sea life, animal pairs, trees,
+lamb); eight new sheet-less layers. `src/art/` is now `palette.ts`,
+`base.tsx` (overlays), `raster.tsx`, `v2/effects.tsx` + `tone.ts`. JS bundle
+76 KB gzip, `dist` 6.1 MB. Evidence: `docs/evidence/2026-09-18-creation-story-raster/record.md`.
+Earlier Jonah follow-ups: harbour figures on the quay top, ship west and
+drawn in front (`1a7483f`, `79236f6`, `f99384c`).
+
+Before that: **Jonah story, five pages, after one review round** (`babbf54`…`b4611a5`).
 Four of five stories migrated. Harbour with a full quay and a moored ship,
 storm on four heaving wave layers with the ship riding the near swell and the
 crew inside the hull, Jonah head-first into the great fish with a turtle, a
@@ -158,9 +168,14 @@ Verification actually run (details, hashes, numbers in
       secret scan, `npm audit` on demand; hook wiring; prove each fails; first unit tests on pure seams.
 - [x] Jonah migrated (five pages, 21 layers, no regeneration, one review round).
 - [ ] **User reviews Jonah**: `docs/evidence/2026-09-18-jonah-story-raster/story-sheet.png`, `phones.png`.
-- [ ] Last story: Creation (6: light, sky-water, land, lights, creatures, people; mostly backgrounds,
-      Adam and Eve, birds/fish/animal reuse). Then delete `src/art/*` v1 and `src/art/v2/{den,lion,person}.tsx`,
-      and `check:motion` still passes.
+- [x] Creation migrated (six pages) and the vector kit deleted; `check:motion` 27 clean, build green.
+- [ ] **User reviews Creation**: `docs/evidence/2026-09-18-creation-story-raster/story-sheet.png`, `phones.png`.
+- [ ] **Migration complete → release checklist**: gate increment (test runner, lint + security plugin,
+      format, staged secret scan, `npm audit`), the tablet-landscape crop decision (sun/moon and the den
+      king sit above y=225), the licensing stance on generated art, `design/concept-art/` tracked or
+      ignored, a real-phone performance check, and human review of every story.
+- [ ] Optional prune: unused exports in `src/art/base.tsx` (Moon, Clouds, Hills, Sea, Rainbow,
+      LightRays, GrassTufts, Rocks); `scripts/shoot.mjs` shots 3, 4, 9 still reference old routes by number.
 - [ ] Blinks on the other Daniel pages (prays Daniel, trap king, rejoice king): measure pupils on the
       cutouts with the grid trick, add `Eyelids`.
 - [ ] Library thumbnails: covers use scene art; check the card size once a story is fully raster.
@@ -173,8 +188,8 @@ Verification actually run (details, hashes, numbers in
 
 ## 5. Active Blockers & Notes
 
-- **Release state.** The Daniel story is fully raster and internally consistent. The other four stories
-  are still flat vector; the library page shows both styles side by side until they migrate.
+- **Release state.** All five stories are raster and consistent. Releasable on art; the open items are
+  the gates, the tablet crop, licensing and human review.
 - **Evidence gaps** are listed in the record: no failing-test-first artifact, unknown lint/format/secret/audit, emulated perf only, no human review yet.
 - **Pipeline lessons** (already fixed in code): key the green field *after* rembg and intersect alphas, never before; keep one Gemini client per process; decode `inline_data.data` with PIL, the SDK's image wrapper is not PIL.
 - **Compare tool is the acceptance test.** Judge art from `npm run compare`, never from the 500 px contact sheet.
