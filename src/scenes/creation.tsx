@@ -22,6 +22,7 @@ import redbirdDown from "../assets/scenes/david/shepherd/redbird-down.webp";
 import goldfinchUp from "../assets/scenes/david/shepherd/goldfinch-up.webp";
 import goldfinchDown from "../assets/scenes/david/shepherd/goldfinch-down.webp";
 import lamb from "../assets/scenes/david/shepherd/lamb.webp";
+import shepherdGrass from "../assets/scenes/david/shepherd/grass-tuft.webp";
 import lightsLayers from "../assets/scenes/creation/lights/layers.json";
 import lightsBg from "../assets/scenes/creation/lights/bg.webp";
 import sunImg from "../assets/scenes/creation/lights/sun.webp";
@@ -238,30 +239,53 @@ export function BirdsAndFish() {
 export function AnimalsAndPeople({ found }: SceneArtProps) {
   const L = peopleLayers.cutouts;
   const T = twoLayers.cutouts;
-  const animal = (src: string, key: keyof typeof T, x: number, y: number, s: number, cls: string, delay: number, flip = false) => (
+  const F = landLayers.cutouts;
+  const olive = D.tree;
+  const fruit = F["fruit-tree"];
+  /** Walks a little way and back; the shadow stays put, the animal paces over it. */
+  const roam = (src: string, w: number, h: number, x: number, y: number, s: number, cls: string, delay: number, flip = false) => (
     <>
-      <SoftShadow x={x} y={y} rx={T[key].w * s * 0.42} ry={12} opacity={0.4} />
-      <Layer src={src} w={T[key].w} h={T[key].h} x={x} y={y} scale={s} flip={flip} className={cls} delay={delay} />
+      <SoftShadow x={x} y={y} rx={w * s * 0.42} ry={12} opacity={0.35} />
+      <g transform={`translate(${x} ${y}) scale(${flip ? -s : s} ${s})`}>
+        <g className={cls} style={{ animationDelay: `${delay}s` }}>
+          <g className="a-walk-bob" style={{ animationDelay: `${delay * 0.37}s` }}>
+            <image href={src} x={-w / 2} y={-h} width={w} height={h} />
+          </g>
+        </g>
+      </g>
     </>
+  );
+  const tuft = (x: number, y: number, s: number, delay: number, flip = false) => (
+    <Layer src={shepherdGrass} w={D["grass-tuft"].w} h={D["grass-tuft"].h} x={x} y={y} scale={s} flip={flip} className="a-sway" delay={delay} />
   );
   return (
     <>
       <Backdrop src={peopleBg} />
+      {/* trees at the edges, canopies swaying in the wind */}
+      <Layer src={oliveTrunk} w={olive.w} h={olive.h} x={70} y={560} scale={0.6} />
+      <Part src={oliveCanopy} tw={olive.tail.w} th={olive.tail.h} ox={olive.tail.ox} oy={olive.tail.oy} w={olive.w} h={olive.h} x={70} y={560} scale={0.6} className="a-sway-slow" delay={-1} />
+      <Layer src={landTrunk} w={fruit.w} h={fruit.h} x={930} y={580} scale={0.4} flip />
+      <Part src={landCanopy} tw={fruit.tail.w} th={fruit.tail.h} ox={fruit.tail.ox} oy={fruit.tail.oy} w={fruit.w} h={fruit.h} x={930} y={580} scale={0.4} flip className="a-sway-slow" delay={-4} />
       <Bird kind="blue" x={620} y={150} size={0.22} motion="a-flutter" delay={-3} />
       <Bird kind="gold" x={300} y={120} size={0.2} motion="a-fly" delay={-9} />
-      {animal(giraffes, "giraffes", 170, 550, 0.3, "a-breathe-slow", -1)}
-      {animal(elephants, "elephants", 880, 572, 0.28, "a-breathe-slow", -2, true)}
-      {animal(zebras, "zebras", 770, 608, 0.24, "a-breathe", -3)}
-      {animal(lionsPair, "lions", 250, 612, 0.24, "a-breathe-slow", -4)}
-      <SoftShadow x={640} y={616} rx={50} ry={9} opacity={0.4} />
-      <Layer src={lamb} w={D.lamb.w} h={D.lamb.h} x={640} y={616} scale={0.26} className="a-breathe" delay={-1.5} />
+      {/* the animals wander the meadow, far to near */}
+      {roam(giraffes, T.giraffes.w, T.giraffes.h, 190, 548, 0.28, "a-wander-slow", -6)}
+      {roam(elephants, T.elephants.w, T.elephants.h, 860, 566, 0.26, "a-wander-slow", -14, true)}
+      {roam(zebras, T.zebras.w, T.zebras.h, 740, 602, 0.24, "a-wander", -3)}
+      {roam(lionsPair, T.lions.w, T.lions.h, 270, 610, 0.24, "a-wander", -10)}
+      {roam(lamb, D.lamb.w, D.lamb.h, 640, 616, 0.26, "a-wander", -1)}
       <SoftShadow x={520} y={600} rx={110} ry={14} opacity={0.4} />
       <Layer src={adamEve} w={L["adam-eve"].w} h={L["adam-eve"].h} x={520} y={600} scale={0.46} className="a-breathe">
         <Eyelids {...EYES.adamEve} w={L["adam-eve"].w} h={L["adam-eve"].h} />
       </Layer>
-      {found.includes("lion") && <Sparkle x={340} y={540} s={1.6} />}
-      {found.includes("giraffe") && <Sparkle x={200} y={380} s={1.6} delay={0.2} />}
-      {found.includes("people") && <Sparkle x={500} y={300} s={2} delay={0.4} />}
+      {/* foreground grass, swaying */}
+      {tuft(140, 624, 0.46, 0)}
+      {tuft(430, 628, 0.4, -1.3, true)}
+      {tuft(600, 626, 0.44, -2.2)}
+      {tuft(820, 628, 0.38, -0.7, true)}
+      {found.includes("lion") && <Sparkle x={270} y={540} s={1.6} />}
+      {found.includes("giraffe") && <Sparkle x={190} y={380} s={1.6} delay={0.2} />}
+      {found.includes("people") && <Sparkle x={520} y={300} s={2} delay={0.4} />}
       <Grain opacity={0.05} />
     </>
   );

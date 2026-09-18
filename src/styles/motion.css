@@ -652,6 +652,50 @@ svg [class*=" a-"] {
 }
 
 /*
+ * An animal wandering the garden: it strolls a little way, turns to face the
+ * way it walks, and strolls back. The inner walk-bob sells the steps. Both
+ * rest at the drawn position, so Calm mode shows the animal standing.
+ */
+@keyframes wander {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  42% {
+    transform: translateX(150px) scaleX(1);
+  }
+  50% {
+    transform: translateX(150px) scaleX(-1);
+  }
+  92% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+.a-wander {
+  animation: wander 18s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+.a-wander-slow {
+  animation: wander 26s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes walk-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.2deg);
+  }
+}
+.a-walk-bob {
+  animation: walk-bob 0.7s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+/*
  * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
  * a moment near the end of each cycle. Calm mode drops the animation and the
  * attribute value keeps the eyes open.
