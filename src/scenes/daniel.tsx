@@ -23,6 +23,7 @@ import {
 } from "../art/props";
 import { Den2 } from "../art/v2/den";
 import { Grain, LightShaft } from "../art/v2/effects";
+import { Lion2 } from "../art/v2/lion";
 import type { SceneArtProps } from "../types";
 
 /** Three times a day, at the open window. */
@@ -211,6 +212,7 @@ export function IntoTheDen() {
     <>
       <Den2 />
       <LightShaft x={500} top={42} topWidth={90} bottomSpread={250} floorY={578} />
+      <Lion2 x={555} y={548} scale={0.72} />
       <Person
         x={500}
         y={520}
@@ -224,10 +226,8 @@ export function IntoTheDen() {
         pose="pray"
         face="calm"
       />
-      <Lion x={200} y={560} scale={0.62} />
-      <Lion x={820} y={572} scale={0.58} flip />
-      <Lion x={330} y={604} scale={0.48} />
-      <Lion x={700} y={610} scale={0.46} flip />
+      <Lion2 x={255} y={602} scale={1.12} />
+      <Lion2 x={735} y={612} scale={1.02} flip />
       {/* the king's face at the opening, far above */}
       <Person
         x={500}

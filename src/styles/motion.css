@@ -439,6 +439,26 @@ svg [class*=" a-"] {
 }
 
 /*
+ * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
+ * a moment near the end of each cycle. Calm mode drops the animation and the
+ * attribute value keeps the eyes open.
+ */
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+  }
+  95%,
+  97% {
+    opacity: 1;
+  }
+}
+.a-blink {
+  animation: blink 5.2s linear infinite;
+}
+
+/*
  * Calm mode. `.calm` is set on the app root when the child (or their device)
  * asks for less motion: art holds a composed still frame instead of moving.
  */
