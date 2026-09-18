@@ -70,8 +70,8 @@ export function RunningAway({ found }: SceneArtProps) {
       <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={560} y={398} scale={0.44} className="a-breathe-slow">
         <Eyelids {...EYES.sailors} w={L.sailors.w} h={L.sailors.h} delay={2.1} />
       </Layer>
-      <SoftShadow x={250} y={478} rx={100} ry={12} opacity={0.4} />
-      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={250} y={478} scale={0.4} className="a-breathe">
+      <SoftShadow x={320} y={436} rx={90} ry={10} opacity={0.4} />
+      <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={320} y={436} scale={0.37} className="a-breathe">
         <Eyelids {...EYES.jonahWalk} w={L["jonah-walk"].w} h={L["jonah-walk"].h} />
       </Layer>
       {found.includes("ship") && <Sparkle x={840} y={300} s={1.6} />}

@@ -39,8 +39,8 @@ export const jonah: Story = {
         },
         {
           id: "jonah",
-          x: 25,
-          y: 52,
+          x: 32,
+          y: 46,
           size: 20,
           label: "Jonah",
           reward:
