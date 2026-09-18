@@ -26,9 +26,9 @@ export const david: Story = {
       hotspots: [
         {
           id: "sheep",
-          x: 38,
-          y: 78,
-          size: 20,
+          x: 64,
+          y: 86,
+          size: 22,
           label: "the sheep",
           reward:
             "Looking after sheep is how David learned to be brave — long before anyone was watching.",
@@ -37,8 +37,8 @@ export const david: Story = {
         },
         {
           id: "staff",
-          x: 27,
-          y: 82,
+          x: 26,
+          y: 66,
           size: 16,
           label: "David's staff",
           reward:
@@ -59,9 +59,9 @@ export const david: Story = {
       hotspots: [
         {
           id: "goliath",
-          x: 72,
-          y: 62,
-          size: 24,
+          x: 74,
+          y: 56,
+          size: 28,
           label: "Goliath",
           reward:
             "Goliath’s spear alone weighed about as much as a big bag of dog food. He was enormous.",
@@ -70,9 +70,9 @@ export const david: Story = {
         },
         {
           id: "army",
-          x: 18,
-          y: 72,
-          size: 20,
+          x: 20,
+          y: 78,
+          size: 22,
           label: "Israel's army",
           reward: "A whole army, all trained, all armed — and all frightened.",
           sound: "chime",
@@ -96,7 +96,7 @@ export const david: Story = {
         {
           id: "armour",
           x: 31,
-          y: 86,
+          y: 88,
           size: 20,
           label: "the armour on the ground",
           reward:
@@ -106,9 +106,9 @@ export const david: Story = {
         },
         {
           id: "saul",
-          x: 60,
-          y: 76,
-          size: 18,
+          x: 64,
+          y: 66,
+          size: 22,
           label: "King Saul",
           reward:
             "Saul was the tallest man in Israel. Even he would not fight Goliath.",
@@ -132,9 +132,9 @@ export const david: Story = {
       hotspots: [
         {
           id: "sling",
-          x: 28,
-          y: 72,
-          size: 20,
+          x: 30,
+          y: 54,
+          size: 22,
           label: "the sling",
           reward:
             "A shepherd’s sling was not a toy. In skilled hands it was fast, and accurate, and serious.",
@@ -144,7 +144,7 @@ export const david: Story = {
         {
           id: "stones",
           x: 15,
-          y: 94,
+          y: 93,
           size: 18,
           label: "the four spare stones",
           reward: "He picked five. He only ever needed one.",
@@ -165,8 +165,8 @@ export const david: Story = {
         {
           id: "david",
           x: 40,
-          y: 76,
-          size: 20,
+          y: 74,
+          size: 22,
           label: "David",
           reward:
             "David went on to become Israel’s greatest king. It started here, with a sling.",
@@ -177,7 +177,7 @@ export const david: Story = {
           id: "crowd",
           x: 72,
           y: 84,
-          size: 22,
+          size: 24,
           label: "the cheering army",
           reward:
             "The same soldiers who were too scared to move are now running down the hill.",
