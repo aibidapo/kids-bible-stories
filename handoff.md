@@ -77,7 +77,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the sound-tests commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the phone-perf fallback record commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -104,7 +104,10 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [ ] Tablet-landscape crop decision (sun/moon and the den king sit above y=225).
 - [ ] Licensing stance for Gemini-generated art in a published app.
 - [x] `design/concept-art/` committed (`f5a4bf0`) and pushed.
-- [ ] Real-phone performance check (emulated 4x throttle only so far).
+- [ ] Real-phone performance check. Fallback done (record, follow-up 3):
+      cold load on Slow 4G + 4× CPU, LCP 591 ms, frames avg 35 ms at 4×.
+      Still needs a phone: `npm run preview -- --host`, open
+      `http://192.168.4.27:4173` on the same Wi-Fi.
 - [x] Pruned `Hills`, `GrassTufts`, `Rainbow`, `LightRays` from `base.tsx`;
       `shoot.mjs` numbered routes verified and annotated.
 - [ ] Optional: leg flipbooks for true walking gaits in the garden.

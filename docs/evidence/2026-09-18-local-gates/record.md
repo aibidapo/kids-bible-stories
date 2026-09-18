@@ -168,3 +168,31 @@ pragma needed.
 - `scripts/shoot.mjs`: the numbered routes were resolved against story data
   (noah/4 rainbow, creation/5 people with three hotspots, jonah/1 storm) and
   annotated; all valid.
+
+## Follow-up 3: phone performance, fallback only
+
+**Why live is infeasible:** no physical phone is attached to this session and
+the operator has not joined one to the LAN yet. A real-device measurement
+needs a person holding the phone.
+
+**Strongest safe fallback run:** production build `dist/assets/index-D2eS7U_E.js`
+served by `vite preview` on :4173, Chrome DevTools in a fresh isolated
+context, emulation 390×844 @3x mobile + touch, CPU 4× slowdown, network
+"Slow 4G". Page `#/story/creation/4` (creatures: the most animated page,
+43 running animations, 22 raster images).
+
+- Cold load trace (`perf-trace-creatures-mobile-4x-slow4g.json.gz`): LCP
+  591 ms (TTFB 2, load delay 323, load 3, render delay 264), CLS 0.00.
+  Insights flagged: render-blocking CSS, DOM size, LCP image discoverability.
+  None acted on; all are within budget for an offline storybook.
+- Steady-state frame cost, 145 rAF samples: avg 35.4 ms, p50 33.3, p95 66.3,
+  max 100.3 at 4× throttle (≈ 8–9 ms unthrottled). Same floor as the story
+  records; service worker controlling the page.
+
+**Remaining gap:** emulation approximates a mid-range phone's CPU, not its
+GPU, compositor, thermal state or real radio. Touch latency, install-to-home
+flow and iOS Safari's audio unlock are untested. To close it: on the phone,
+open `http://192.168.4.27:4173` while `npm run preview -- --host` runs on
+this machine (same Wi-Fi), page through Creation and Daniel, then check
+Settings → Calm off feels smooth and the quiz sounds play after the first
+tap.
