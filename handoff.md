@@ -12,7 +12,23 @@ the asset pipeline and a local pre-commit gate.
 
 ## 2. Completed Work
 
-Latest: **David story fully raster** (five pages). Three of five stories done.
+Latest: **David story, six pages, after two user review rounds** (`0219027`…`ceef0fd`).
+New strike page (stone flies, giant staggers and collapses; Calm rests on the
+outcome), blinks on every face including sheep and lamb, shepherd hill with a
+swaying canopy, swaying tufts, three flapping birds and a flock of seven on the
+meadow, Goliath re-sheeted bigger and at 0.6 everywhere, soldiers taller than
+David, fallen Goliath in the foreground, four soldiers running down the hill.
+Pipeline: `find_eyes.py`, `split_tail.py` for any part, `Part`/`Flipbook`/
+`Layer delay` in `raster.tsx`. Evidence: `docs/evidence/2026-09-18-david-story-raster/record.md`.
+
+**Incident, fixed:** `8273eb5` shipped `motion.css` with blinks, wing flips
+and tail flicks deleted, because a string-sliced edit matched the vector
+scene's old `stone-fly` keyframe first. Restored in `7e3072d`. Rule from now
+on: edit `motion.css` with `Edit` on a unique anchor, never by first-match
+slicing; and after any stylesheet edit, run `document.getAnimations()` on a
+migrated page and check the animation names are all present.
+
+Before that: **David story fully raster** (five pages). Three of five stories done.
 
 - David (`8eb18a8` sheets + 17 layers + plan, `ad679d7` compositions): David,
   Goliath and Saul sheets; shepherd's flock reuses the Noah sheep; armour pile
