@@ -21,10 +21,15 @@ import {
   Scroll,
   Throne,
 } from "../art/props";
-import { Den2 } from "../art/v2/den";
 import { Grain, LightShaft, Motes } from "../art/v2/effects";
-import { Lion2 } from "../art/v2/lion";
-import { Person2 } from "../art/v2/person";
+import { Backdrop, Eyelids, Layer } from "../art/raster";
+import denLayers from "../assets/scenes/daniel/den/layers.json";
+import denBg from "../assets/scenes/daniel/den/bg.webp";
+import denDaniel from "../assets/scenes/daniel/den/daniel.webp";
+import denLionA from "../assets/scenes/daniel/den/lion-a.webp";
+import denLionB from "../assets/scenes/daniel/den/lion-b.webp";
+import denKing from "../assets/scenes/daniel/den/king.webp";
+import { SoftShadow } from "../art/v2/effects";
 import type { SceneArtProps } from "../types";
 
 /** Three times a day, at the open window. */
@@ -209,39 +214,73 @@ export function TheTrap() {
 
 /** Down into the den, and a stone rolled over the top. */
 export function IntoTheDen() {
+  const L = denLayers.cutouts;
   return (
     <>
-      <Den2 />
-      <LightShaft x={500} top={42} topWidth={90} bottomSpread={250} floorY={578} />
-      <Lion2 x={555} y={548} scale={0.72} />
-      <Person2
-        x={500}
-        y={565}
-        scale={1.1}
-        robe={C.robe[2]}
-        sash={C.sun}
-        skin={C.skin[2]}
-        hair={C.hair[1]}
-        pose="pray"
-        face="calm"
+      <Backdrop src={denBg} />
+      {/* the backdrop paints its own shaft; this one only adds the slow pulse */}
+      <g opacity="0.45">
+        <LightShaft x={500} top={48} topWidth={80} bottomSpread={240} floorY={560} />
+      </g>
+      {/* the king peers down through the opening */}
+      <Layer src={denKing} w={L.king.w} h={L.king.h} x={500} y={74} scale={0.22} />
+      {/* far lion, behind Daniel's shoulder */}
+      <SoftShadow x={640} y={548} rx={95} ry={14} opacity={0.35} />
+      <Layer
+        src={denLionB}
+        w={L["lion-b"].w}
+        h={L["lion-b"].h}
+        x={640}
+        y={548}
+        scale={0.34}
+        className="a-breathe-slow"
       />
-      <Lion2 x={255} y={602} scale={1.12} />
-      <Lion2 x={735} y={612} scale={1.02} flip />
+      <SoftShadow x={500} y={590} rx={80} ry={14} opacity={0.4} />
+      <Layer
+        src={denDaniel}
+        w={L.daniel.w}
+        h={L.daniel.h}
+        x={500}
+        y={590}
+        scale={0.41}
+        className="a-breathe"
+      >
+        {/* pupils measured on daniel.webp; lid tone sampled from the forehead */}
+        <Eyelids
+          points={[
+            [174, 127],
+            [247, 127],
+          ]}
+          w={L.daniel.w}
+          h={L.daniel.h}
+          rx={15}
+          ry={13}
+          tone="#c68058"
+        />
+      </Layer>
+      <SoftShadow x={255} y={612} rx={200} ry={20} opacity={0.4} />
+      <Layer
+        src={denLionA}
+        w={L["lion-a"].w}
+        h={L["lion-a"].h}
+        x={255}
+        y={612}
+        scale={0.5}
+        className="a-breathe-slow"
+      />
+      <SoftShadow x={760} y={618} rx={170} ry={20} opacity={0.4} />
+      <Layer
+        src={denLionB}
+        w={L["lion-b"].w}
+        h={L["lion-b"].h}
+        x={760}
+        y={618}
+        scale={0.5}
+        flip
+        className="a-breathe-slow"
+      />
       <Motes x={500} top={110} bottom={540} spread={200} />
-      {/* the king's face at the opening, far above */}
-      <Person
-        x={500}
-        y={62}
-        scale={0.28}
-        robe="#f0c97a"
-        skin={C.skin[3]}
-        hair={C.hair[1]}
-        beard
-        pose="fear"
-        face="sad"
-        idle={false}
-      />
-      <Grain />
+      <Grain opacity={0.05} />
     </>
   );
 }
