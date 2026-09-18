@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 90466,
+    "source": "design/pipeline/raw/daniel/trap/bg.png"
+  },
+  "cutouts": {
+    "king-throne": {
+      "file": "king-throne.webp",
+      "w": 487,
+      "h": 700,
+      "trim": [
+        93,
+        90,
+        804,
+        1113
+      ],
+      "source": "design/pipeline/raw/daniel/trap/king-throne.png",
+      "bytes": 87662
+    },
+    "official-scroll": {
+      "file": "official-scroll.webp",
+      "w": 397,
+      "h": 800,
+      "trim": [
+        269,
+        92,
+        773,
+        1108
+      ],
+      "source": "design/pipeline/raw/daniel/trap/official-scroll.png",
+      "bytes": 51832
+    },
+    "official-point": {
+      "file": "official-point.webp",
+      "w": 485,
+      "h": 800,
+      "trim": [
+        223,
+        92,
+        839,
+        1108
+      ],
+      "source": "design/pipeline/raw/daniel/trap/official-point.png",
+      "bytes": 50240
+    }
+  }
+}
