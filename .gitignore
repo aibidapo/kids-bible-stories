@@ -7,3 +7,4 @@ scratch/
 .vite/
 tsconfig.tsbuildinfo
 .playwright-mcp/
+design/pipeline/raw/
