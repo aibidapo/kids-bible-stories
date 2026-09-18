@@ -61,6 +61,17 @@ describe("story library", () => {
         }
       });
 
+      it("has a devotional at both levels and a memory verse", () => {
+        const d = story.devotional;
+        expect(d, "devotional").toBeDefined();
+        for (const level of ["little", "big"] as const) {
+          expect(d.question[level].trim().endsWith("?"), `${level} question`).toBe(true);
+          expect(d.prayer[level].trim(), `${level} prayer`).not.toBe("");
+        }
+        expect(d.activity.trim()).not.toBe("");
+        expect(story.memoryVerse?.text.trim()).not.toBe("");
+      });
+
       it("has answerable quiz questions and at least one for little readers", () => {
         expect(story.quiz.some((q) => q.level === "little")).toBe(true);
         for (const q of story.quiz) {
