@@ -31,12 +31,29 @@ import rainbowNoah from "../assets/scenes/noah/rainbow/noah-look-up.webp";
 import type { SceneArtProps } from "../types";
 
 /** The two prays dove frames as a Flipbook, flapping in place. */
-function FlappingDove({ x, y, size = 1, flip = false }: { x: number; y: number; size?: number; flip?: boolean }) {
+function FlappingDove({
+  x,
+  y,
+  size = 1,
+  flip = false,
+}: {
+  x: number;
+  y: number;
+  size?: number;
+  flip?: boolean;
+}) {
   const B = praysLayers.cutouts;
   return (
     <Flipbook
       a={{ src: birdUp, w: B["bird-up"].w, h: B["bird-up"].h, ax: 195, ay: 122, s: 0.25 * size }}
-      b={{ src: birdDown, w: B["bird-down"].w, h: B["bird-down"].h, ax: 247, ay: 32, s: 0.185 * size }}
+      b={{
+        src: birdDown,
+        w: B["bird-down"].w,
+        h: B["bird-down"].h,
+        ax: 247,
+        ay: 32,
+        s: 0.185 * size,
+      }}
       x={x}
       y={y}
       flip={flip}
@@ -79,7 +96,15 @@ export function NoahBuilds() {
 /** Two of every kind, up the ramp. */
 export function TwoByTwo({ found }: SceneArtProps) {
   const L = twoLayers.cutouts;
-  const animal = (src: string, key: keyof typeof L, x: number, y: number, scale: number, cls: string, rx: number) => (
+  const animal = (
+    src: string,
+    key: keyof typeof L,
+    x: number,
+    y: number,
+    scale: number,
+    cls: string,
+    rx: number,
+  ) => (
     <>
       <SoftShadow x={x} y={y} rx={rx} ry={rx * 0.12} opacity={0.4} />
       <Layer src={src} w={L[key].w} h={L[key].h} x={x} y={y} scale={scale} className={cls} />
@@ -150,7 +175,14 @@ export function DoveReturns({ found }: SceneArtProps) {
         scale={0.34}
         className="a-breathe"
       />
-      <Layer src={doveArk} w={L["ark-resting"].w} h={L["ark-resting"].h} x={380} y={470} scale={0.5} />
+      <Layer
+        src={doveArk}
+        w={L["ark-resting"].w}
+        h={L["ark-resting"].h}
+        x={380}
+        y={470}
+        scale={0.5}
+      />
       <SoftShadow x={380} y={472} rx={200} ry={18} opacity={0.3} />
       <Layer
         src={doveBranch}
@@ -177,7 +209,15 @@ export function TheRainbow({ found }: SceneArtProps) {
     <>
       <Backdrop src={rainbowBg} />
       <SoftShadow x={140} y={612} rx={110} ry={14} opacity={0.4} />
-      <Layer src={twoLions} w={T.lions.w} h={T.lions.h} x={140} y={612} scale={0.22} className="a-breathe-slow" />
+      <Layer
+        src={twoLions}
+        w={T.lions.w}
+        h={T.lions.h}
+        x={140}
+        y={612}
+        scale={0.22}
+        className="a-breathe-slow"
+      />
       <SoftShadow x={330} y={602} rx={150} ry={16} opacity={0.4} />
       <Layer
         src={rainbowFamily}
@@ -199,7 +239,15 @@ export function TheRainbow({ found }: SceneArtProps) {
         className="a-breathe"
       />
       <SoftShadow x={770} y={612} rx={80} ry={12} opacity={0.4} />
-      <Layer src={twoSheep} w={T.sheep.w} h={T.sheep.h} x={770} y={612} scale={0.2} className="a-breathe" />
+      <Layer
+        src={twoSheep}
+        w={T.sheep.w}
+        h={T.sheep.h}
+        x={770}
+        y={612}
+        scale={0.2}
+        className="a-breathe"
+      />
       <Layer
         src={doveBranch}
         w={D["dove-branch"].w}

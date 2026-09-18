@@ -54,26 +54,89 @@ import type { SceneArtProps } from "../types";
 
 /** Eye points from design/pipeline/find_eyes.py. */
 const EYES = {
-  adamEve: { points: [[127, 138], [200, 138], [470, 190], [545, 189]] as [number, number][], rx: 15, ry: 16, tone: "#c46d45" },
+  adamEve: {
+    points: [
+      [127, 138],
+      [200, 138],
+      [470, 190],
+      [545, 189],
+    ] as [number, number][],
+    rx: 15,
+    ry: 16,
+    tone: "#c46d45",
+  },
   dolphin: { points: [[283, 80]] as [number, number][], rx: 15, ry: 16, tone: "#94a2a7" },
   turtle: { points: [[82, 42]] as [number, number][], rx: 24, ry: 25, tone: "#b1b362" },
 };
 
 const D = shepherdLayers.cutouts;
 const BIRDS = {
-  blue: { up: { src: bluebirdUp, w: D["bluebird-up"].w, h: D["bluebird-up"].h, ax: 205, ay: 85 }, down: { src: bluebirdDown, w: D["bluebird-down"].w, h: D["bluebird-down"].h, ax: 240, ay: 50 } },
-  red: { up: { src: redbirdUp, w: D["redbird-up"].w, h: D["redbird-up"].h, ax: 185, ay: 95 }, down: { src: redbirdDown, w: D["redbird-down"].w, h: D["redbird-down"].h, ax: 215, ay: 50 } },
-  gold: { up: { src: goldfinchUp, w: D["goldfinch-up"].w, h: D["goldfinch-up"].h, ax: 188, ay: 100 }, down: { src: goldfinchDown, w: D["goldfinch-down"].w, h: D["goldfinch-down"].h, ax: 245, ay: 45 } },
+  blue: {
+    up: { src: bluebirdUp, w: D["bluebird-up"].w, h: D["bluebird-up"].h, ax: 205, ay: 85 },
+    down: { src: bluebirdDown, w: D["bluebird-down"].w, h: D["bluebird-down"].h, ax: 240, ay: 50 },
+  },
+  red: {
+    up: { src: redbirdUp, w: D["redbird-up"].w, h: D["redbird-up"].h, ax: 185, ay: 95 },
+    down: { src: redbirdDown, w: D["redbird-down"].w, h: D["redbird-down"].h, ax: 215, ay: 50 },
+  },
+  gold: {
+    up: { src: goldfinchUp, w: D["goldfinch-up"].w, h: D["goldfinch-up"].h, ax: 188, ay: 100 },
+    down: {
+      src: goldfinchDown,
+      w: D["goldfinch-down"].w,
+      h: D["goldfinch-down"].h,
+      ax: 245,
+      ay: 45,
+    },
+  },
   dove: {
-    up: { src: doveUp, w: praysLayers.cutouts["bird-up"].w, h: praysLayers.cutouts["bird-up"].h, ax: 195, ay: 122 },
-    down: { src: doveDown, w: praysLayers.cutouts["bird-down"].w, h: praysLayers.cutouts["bird-down"].h, ax: 247, ay: 32 },
+    up: {
+      src: doveUp,
+      w: praysLayers.cutouts["bird-up"].w,
+      h: praysLayers.cutouts["bird-up"].h,
+      ax: 195,
+      ay: 122,
+    },
+    down: {
+      src: doveDown,
+      w: praysLayers.cutouts["bird-down"].w,
+      h: praysLayers.cutouts["bird-down"].h,
+      ax: 247,
+      ay: 32,
+    },
   },
 };
 
-function Bird({ kind, x, y, size, motion, delay, flip = false }: { kind: keyof typeof BIRDS; x: number; y: number; size: number; motion: string; delay: number; flip?: boolean }) {
+function Bird({
+  kind,
+  x,
+  y,
+  size,
+  motion,
+  delay,
+  flip = false,
+}: {
+  kind: keyof typeof BIRDS;
+  x: number;
+  y: number;
+  size: number;
+  motion: string;
+  delay: number;
+  flip?: boolean;
+}) {
   const b = BIRDS[kind];
   const downS = kind === "dove" ? size * 0.74 : size;
-  return <Flipbook a={{ ...b.up, s: size }} b={{ ...b.down, s: downS }} x={x} y={y} flip={flip} motion={motion} delay={delay} />;
+  return (
+    <Flipbook
+      a={{ ...b.up, s: size }}
+      b={{ ...b.down, s: downS }}
+      x={x}
+      y={y}
+      flip={flip}
+      motion={motion}
+      delay={delay}
+    />
+  );
 }
 
 /** "Let there be light." */
@@ -97,10 +160,48 @@ export function SkyAndWater() {
   return (
     <>
       <Backdrop src={skyBg} />
-      <Layer src={skyCloud} w={L.cloud.w} h={L.cloud.h} x={300} y={190} scale={0.5} className="a-drift" delay={-10} />
-      <Layer src={skyCloud} w={L.cloud.w} h={L.cloud.h} x={700} y={120} scale={0.32} className="a-drift" delay={-40} flip />
-      <Layer src={skyWave} w={L["calm-wave"].w} h={L["calm-wave"].h} x={260} y={560} scale={0.7} className="a-heave-slow" delay={-3} />
-      <Layer src={skyWave} w={L["calm-wave"].w} h={L["calm-wave"].h} x={760} y={600} scale={0.8} className="a-heave-slow" delay={-6} flip />
+      <Layer
+        src={skyCloud}
+        w={L.cloud.w}
+        h={L.cloud.h}
+        x={300}
+        y={190}
+        scale={0.5}
+        className="a-drift"
+        delay={-10}
+      />
+      <Layer
+        src={skyCloud}
+        w={L.cloud.w}
+        h={L.cloud.h}
+        x={700}
+        y={120}
+        scale={0.32}
+        className="a-drift"
+        delay={-40}
+        flip
+      />
+      <Layer
+        src={skyWave}
+        w={L["calm-wave"].w}
+        h={L["calm-wave"].h}
+        x={260}
+        y={560}
+        scale={0.7}
+        className="a-heave-slow"
+        delay={-3}
+      />
+      <Layer
+        src={skyWave}
+        w={L["calm-wave"].w}
+        h={L["calm-wave"].h}
+        x={760}
+        y={600}
+        scale={0.8}
+        className="a-heave-slow"
+        delay={-6}
+        flip
+      />
       <Grain opacity={0.05} />
     </>
   );
@@ -112,15 +213,50 @@ export function LandAndPlants({ found }: SceneArtProps) {
   const tree = L["fruit-tree"];
   const olive = D.tree;
   const flowers = (x: number, y: number, s: number, delay: number, flip = false) => (
-    <Layer src={landFlowers} w={L.flowers.w} h={L.flowers.h} x={x} y={y} scale={s} flip={flip} className="a-sway" delay={delay} />
+    <Layer
+      src={landFlowers}
+      w={L.flowers.w}
+      h={L.flowers.h}
+      x={x}
+      y={y}
+      scale={s}
+      flip={flip}
+      className="a-sway"
+      delay={delay}
+    />
   );
   return (
     <>
       <Backdrop src={landBg} />
       <Layer src={oliveTrunk} w={olive.w} h={olive.h} x={880} y={520} scale={0.5} />
-      <Part src={oliveCanopy} tw={olive.tail.w} th={olive.tail.h} ox={olive.tail.ox} oy={olive.tail.oy} w={olive.w} h={olive.h} x={880} y={520} scale={0.5} className="a-sway-slow" delay={-2} />
+      <Part
+        src={oliveCanopy}
+        tw={olive.tail.w}
+        th={olive.tail.h}
+        ox={olive.tail.ox}
+        oy={olive.tail.oy}
+        w={olive.w}
+        h={olive.h}
+        x={880}
+        y={520}
+        scale={0.5}
+        className="a-sway-slow"
+        delay={-2}
+      />
       <Layer src={landTrunk} w={tree.w} h={tree.h} x={200} y={604} scale={0.42} />
-      <Part src={landCanopy} tw={tree.tail.w} th={tree.tail.h} ox={tree.tail.ox} oy={tree.tail.oy} w={tree.w} h={tree.h} x={200} y={604} scale={0.42} className="a-sway-slow" />
+      <Part
+        src={landCanopy}
+        tw={tree.tail.w}
+        th={tree.tail.h}
+        ox={tree.tail.ox}
+        oy={tree.tail.oy}
+        w={tree.w}
+        h={tree.h}
+        x={200}
+        y={604}
+        scale={0.42}
+        className="a-sway-slow"
+      />
       {flowers(560, 610, 0.5, 0)}
       {flowers(700, 622, 0.42, -1.2, true)}
       {flowers(420, 624, 0.38, -2.1)}
@@ -140,12 +276,24 @@ export function SunMoonStars({ found }: SceneArtProps) {
       <Stars count={40} seed={14} maxY={300} />
       <g transform="translate(810 175)">
         <g className="a-pulse-soft">
-          <image href={sunImg} x={-L.sun.w * 0.2} y={-L.sun.h * 0.2} width={L.sun.w * 0.4} height={L.sun.h * 0.4} />
+          <image
+            href={sunImg}
+            x={-L.sun.w * 0.2}
+            y={-L.sun.h * 0.2}
+            width={L.sun.w * 0.4}
+            height={L.sun.h * 0.4}
+          />
         </g>
       </g>
       <g transform="translate(180 160)">
         <g className="a-float">
-          <image href={moonImg} x={-L.moon.w * 0.18} y={-L.moon.h * 0.18} width={L.moon.w * 0.36} height={L.moon.h * 0.36} />
+          <image
+            href={moonImg}
+            x={-L.moon.w * 0.18}
+            y={-L.moon.h * 0.18}
+            width={L.moon.w * 0.36}
+            height={L.moon.h * 0.36}
+          />
         </g>
       </g>
       {found.includes("moon") && <Sparkle x={180} y={150} s={2.2} />}
@@ -160,8 +308,26 @@ export function BirdsAndFish() {
   const L = creaturesLayers.cutouts;
   const J = swLayers.cutouts;
   const S = skyLayers.cutouts;
-  const fish = (src: string, key: keyof typeof L, x: number, y: number, s: number, delay: number, flip = false) => (
-    <Layer src={src} w={L[key].w} h={L[key].h} x={x} y={y} scale={s} flip={flip} className="a-swim-across" delay={delay} />
+  const fish = (
+    src: string,
+    key: keyof typeof L,
+    x: number,
+    y: number,
+    s: number,
+    delay: number,
+    flip = false,
+  ) => (
+    <Layer
+      src={src}
+      w={L[key].w}
+      h={L[key].h}
+      x={x}
+      y={y}
+      scale={s}
+      flip={flip}
+      className="a-swim-across"
+      delay={delay}
+    />
   );
   const bubbles = Array.from({ length: 12 }, (_, i) => {
     const t = rand(31 + i);
@@ -171,8 +337,27 @@ export function BirdsAndFish() {
     <>
       <Backdrop src={creaturesBg} />
       {/* clouds drift across the sky in front of the painted ones */}
-      <Layer src={skyCloud} w={S.cloud.w} h={S.cloud.h} x={200} y={130} scale={0.3} className="a-drift" delay={-25} />
-      <Layer src={skyCloud} w={S.cloud.w} h={S.cloud.h} x={650} y={90} scale={0.22} className="a-drift" delay={-55} flip />
+      <Layer
+        src={skyCloud}
+        w={S.cloud.w}
+        h={S.cloud.h}
+        x={200}
+        y={130}
+        scale={0.3}
+        className="a-drift"
+        delay={-25}
+      />
+      <Layer
+        src={skyCloud}
+        w={S.cloud.w}
+        h={S.cloud.h}
+        x={650}
+        y={90}
+        scale={0.22}
+        className="a-drift"
+        delay={-55}
+        flip
+      />
       <Bird kind="red" x={240} y={150} size={0.3} motion="a-fly" delay={0} />
       <Bird kind="blue" x={540} y={110} size={0.26} motion="a-flutter" delay={-4} />
       <Bird kind="gold" x={760} y={200} size={0.24} motion="a-flutter" delay={-8} flip />
@@ -180,7 +365,13 @@ export function BirdsAndFish() {
       {/* the dolphin leaps just clear of the surface; at rest it sits at the top of the leap */}
       <g transform="translate(560 350)">
         <g className="a-leap">
-          <image href={dolphinImg} x={-L.dolphin.w * 0.2} y={-L.dolphin.h * 0.2} width={L.dolphin.w * 0.4} height={L.dolphin.h * 0.4} />
+          <image
+            href={dolphinImg}
+            x={-L.dolphin.w * 0.2}
+            y={-L.dolphin.h * 0.2}
+            width={L.dolphin.w * 0.4}
+            height={L.dolphin.h * 0.4}
+          />
           <g transform={`translate(${-L.dolphin.w * 0.2} ${-L.dolphin.h * 0.2}) scale(0.4)`}>
             <Eyelids {...EYES.dolphin} w={0} h={0} delay={1.8} />
           </g>
@@ -193,7 +384,11 @@ export function BirdsAndFish() {
       ].map((sp) => (
         <g key={sp.x} transform={`translate(${sp.x} 352)`}>
           <g className="a-splash" opacity="0" style={{ animationDelay: `${sp.delay}s` }}>
-            <path d="M-40,0 Q-30,-40 -18,-8 Q-8,-56 0,-14 Q8,-56 18,-8 Q30,-40 40,0 Z" fill="#f4fbff" opacity="0.9" />
+            <path
+              d="M-40,0 Q-30,-40 -18,-8 Q-8,-56 0,-14 Q8,-56 18,-8 Q30,-40 40,0 Z"
+              fill="#f4fbff"
+              opacity="0.9"
+            />
             <circle cx="-34" cy="-46" r="4" fill="#ffffff" />
             <circle cx="30" cy="-52" r="3" fill="#ffffff" />
             <circle cx="4" cy="-64" r="3.5" fill="#ffffff" />
@@ -207,25 +402,79 @@ export function BirdsAndFish() {
       {fish(fishGreen, "fish-green", 480, 520, 0.36, -7)}
       {fish(fishOrange, "fish-orange", 820, 560, 0.24, -17, true)}
       {fish(fishBlue, "fish-blue", 150, 590, 0.26, -20)}
-      <Layer src={seahorseImg} w={L.seahorse.w} h={L.seahorse.h} x={80} y={560} scale={0.44} className="a-float" delay={-1} />
-      <Layer src={octopusImg} w={L.octopus.w} h={L.octopus.h} x={640} y={612} scale={0.38} className="a-float" delay={-4} />
-      <Layer src={crabImg} w={L.crab.w} h={L.crab.h} x={380} y={620} scale={0.3} className="a-swim" delay={-2} />
+      <Layer
+        src={seahorseImg}
+        w={L.seahorse.w}
+        h={L.seahorse.h}
+        x={80}
+        y={560}
+        scale={0.44}
+        className="a-float"
+        delay={-1}
+      />
+      <Layer
+        src={octopusImg}
+        w={L.octopus.w}
+        h={L.octopus.h}
+        x={640}
+        y={612}
+        scale={0.38}
+        className="a-float"
+        delay={-4}
+      />
+      <Layer
+        src={crabImg}
+        w={L.crab.w}
+        h={L.crab.h}
+        x={380}
+        y={620}
+        scale={0.3}
+        className="a-swim"
+        delay={-2}
+      />
       <g transform="translate(880 590)">
         <g className="a-swim-slow">
-          <image href={turtleImg} x={-J.turtle.w * 0.2} y={-J.turtle.h * 0.2} width={J.turtle.w * 0.4} height={J.turtle.h * 0.4} />
+          <image
+            href={turtleImg}
+            x={-J.turtle.w * 0.2}
+            y={-J.turtle.h * 0.2}
+            width={J.turtle.w * 0.4}
+            height={J.turtle.h * 0.4}
+          />
           <g transform={`translate(${-J.turtle.w * 0.2} ${-J.turtle.h * 0.2}) scale(0.4)`}>
             <Eyelids {...EYES.turtle} w={0} h={0} delay={3.2} />
           </g>
         </g>
       </g>
-      <Layer src={jellyImg} w={J.jellyfish.w} h={J.jellyfish.h} x={230} y={470} scale={0.3} className="a-float" delay={-3} />
+      <Layer
+        src={jellyImg}
+        w={J.jellyfish.w}
+        h={J.jellyfish.h}
+        x={230}
+        y={470}
+        scale={0.3}
+        className="a-float"
+        delay={-3}
+      />
       {/* bubbles rise through the water; each is drawn where it starts */}
       <g pointerEvents="none">
         {bubbles.map((b, i) => (
           <g key={i} transform={`translate(${b.x.toFixed(1)} ${b.y.toFixed(1)})`}>
             <g className="a-bubble" style={{ animationDelay: `${b.d.toFixed(2)}s` }}>
-              <circle r={b.r.toFixed(1)} fill="none" stroke="#e6f6ff" strokeWidth="1.5" opacity="0.7" />
-              <circle r={(b.r * 0.3).toFixed(1)} cx={(-b.r * 0.35).toFixed(1)} cy={(-b.r * 0.35).toFixed(1)} fill="#ffffff" opacity="0.6" />
+              <circle
+                r={b.r.toFixed(1)}
+                fill="none"
+                stroke="#e6f6ff"
+                strokeWidth="1.5"
+                opacity="0.7"
+              />
+              <circle
+                r={(b.r * 0.3).toFixed(1)}
+                cx={(-b.r * 0.35).toFixed(1)}
+                cy={(-b.r * 0.35).toFixed(1)}
+                fill="#ffffff"
+                opacity="0.6"
+              />
             </g>
           </g>
         ))}
@@ -243,7 +492,17 @@ export function AnimalsAndPeople({ found }: SceneArtProps) {
   const olive = D.tree;
   const fruit = F["fruit-tree"];
   /** Walks a little way and back; the shadow stays put, the animal paces over it. */
-  const roam = (src: string, w: number, h: number, x: number, y: number, s: number, cls: string, delay: number, flip = false) => (
+  const roam = (
+    src: string,
+    w: number,
+    h: number,
+    x: number,
+    y: number,
+    s: number,
+    cls: string,
+    delay: number,
+    flip = false,
+  ) => (
     <>
       <SoftShadow x={x} y={y} rx={w * s * 0.42} ry={12} opacity={0.35} />
       <g transform={`translate(${x} ${y}) scale(${flip ? -s : s} ${s})`}>
@@ -256,16 +515,53 @@ export function AnimalsAndPeople({ found }: SceneArtProps) {
     </>
   );
   const tuft = (x: number, y: number, s: number, delay: number, flip = false) => (
-    <Layer src={shepherdGrass} w={D["grass-tuft"].w} h={D["grass-tuft"].h} x={x} y={y} scale={s} flip={flip} className="a-sway" delay={delay} />
+    <Layer
+      src={shepherdGrass}
+      w={D["grass-tuft"].w}
+      h={D["grass-tuft"].h}
+      x={x}
+      y={y}
+      scale={s}
+      flip={flip}
+      className="a-sway"
+      delay={delay}
+    />
   );
   return (
     <>
       <Backdrop src={peopleBg} />
       {/* trees at the edges, canopies swaying in the wind */}
       <Layer src={oliveTrunk} w={olive.w} h={olive.h} x={70} y={560} scale={0.6} />
-      <Part src={oliveCanopy} tw={olive.tail.w} th={olive.tail.h} ox={olive.tail.ox} oy={olive.tail.oy} w={olive.w} h={olive.h} x={70} y={560} scale={0.6} className="a-sway-slow" delay={-1} />
+      <Part
+        src={oliveCanopy}
+        tw={olive.tail.w}
+        th={olive.tail.h}
+        ox={olive.tail.ox}
+        oy={olive.tail.oy}
+        w={olive.w}
+        h={olive.h}
+        x={70}
+        y={560}
+        scale={0.6}
+        className="a-sway-slow"
+        delay={-1}
+      />
       <Layer src={landTrunk} w={fruit.w} h={fruit.h} x={930} y={580} scale={0.4} flip />
-      <Part src={landCanopy} tw={fruit.tail.w} th={fruit.tail.h} ox={fruit.tail.ox} oy={fruit.tail.oy} w={fruit.w} h={fruit.h} x={930} y={580} scale={0.4} flip className="a-sway-slow" delay={-4} />
+      <Part
+        src={landCanopy}
+        tw={fruit.tail.w}
+        th={fruit.tail.h}
+        ox={fruit.tail.ox}
+        oy={fruit.tail.oy}
+        w={fruit.w}
+        h={fruit.h}
+        x={930}
+        y={580}
+        scale={0.4}
+        flip
+        className="a-sway-slow"
+        delay={-4}
+      />
       <Bird kind="blue" x={620} y={150} size={0.22} motion="a-flutter" delay={-3} />
       <Bird kind="gold" x={300} y={120} size={0.2} motion="a-fly" delay={-9} />
       {/* the animals wander the meadow, far to near */}
@@ -275,7 +571,15 @@ export function AnimalsAndPeople({ found }: SceneArtProps) {
       {roam(lionsPair, T.lions.w, T.lions.h, 270, 610, 0.24, "a-wander", -10)}
       {roam(lamb, D.lamb.w, D.lamb.h, 640, 616, 0.26, "a-wander", -1)}
       <SoftShadow x={520} y={600} rx={110} ry={14} opacity={0.4} />
-      <Layer src={adamEve} w={L["adam-eve"].w} h={L["adam-eve"].h} x={520} y={600} scale={0.46} className="a-breathe">
+      <Layer
+        src={adamEve}
+        w={L["adam-eve"].w}
+        h={L["adam-eve"].h}
+        x={520}
+        y={600}
+        scale={0.46}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.adamEve} w={L["adam-eve"].w} h={L["adam-eve"].h} />
       </Layer>
       {/* foreground grass, swaying */}

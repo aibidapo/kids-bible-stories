@@ -39,8 +39,7 @@ export const creation: Story = {
       id: "sky-water",
       art: "creation/sky-water",
       text: {
-        little:
-          "God made a big open sky. Water stayed below it. Clouds floated above it.",
+        little: "God made a big open sky. Water stayed below it. Clouds floated above it.",
         big: "On the second day God stretched out a great open space and called it “sky.” He set the waters below it and the clouds above it, so the sky arched over the sea like a roof with no walls.",
       },
       verse: "Genesis 1:6–8",
@@ -51,8 +50,7 @@ export const creation: Story = {
           y: 20,
           size: 22,
           label: "the clouds",
-          reward:
-            "Clouds are water too — carried up high and floating over our heads.",
+          reward: "Clouds are water too — carried up high and floating over our heads.",
           sound: "chime",
         },
         {
@@ -61,8 +59,7 @@ export const creation: Story = {
           y: 84,
           size: 24,
           label: "the sea",
-          reward:
-            "The sea was here on day two, long before anything swam in it.",
+          reward: "The sea was here on day two, long before anything swam in it.",
           sound: "splash",
         },
       ],
@@ -123,8 +120,7 @@ export const creation: Story = {
           y: 28,
           size: 22,
           label: "the sun",
-          reward:
-            "The sun is a star — the closest one to us, and the reason the day is warm.",
+          reward: "The sun is a star — the closest one to us, and the reason the day is warm.",
           sound: "sparkle",
           sticker: "The Sun",
         },
@@ -134,8 +130,7 @@ export const creation: Story = {
           y: 26,
           size: 22,
           label: "the moon",
-          reward:
-            "The moon has no light of its own. It shines by catching the light of the sun.",
+          reward: "The moon has no light of its own. It shines by catching the light of the sun.",
           sound: "chime",
           sticker: "The Moon",
         },
@@ -156,8 +151,7 @@ export const creation: Story = {
           y: 82,
           size: 22,
           label: "the fish",
-          reward:
-            "There are more kinds of fish than anyone has ever finished counting.",
+          reward: "There are more kinds of fish than anyone has ever finished counting.",
           sound: "splash",
           sticker: "Sea Full of Fish",
         },
@@ -189,8 +183,7 @@ export const creation: Story = {
           y: 88,
           size: 20,
           label: "the lion",
-          reward:
-            "Every animal you can think of — and lots you cannot — came from this day.",
+          reward: "Every animal you can think of — and lots you cannot — came from this day.",
           sound: "roar",
         },
         {
@@ -209,8 +202,7 @@ export const creation: Story = {
           y: 70,
           size: 22,
           label: "the first people",
-          reward:
-            "People were made last — and made like God, to look after everything else.",
+          reward: "People were made last — and made like God, to look after everything else.",
           sound: "cheer",
           sticker: "Made in His Image",
         },

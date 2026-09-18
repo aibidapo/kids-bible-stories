@@ -30,12 +30,7 @@ export function Settings({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   return (
-    <div
-      className="sheet"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Settings"
-    >
+    <div className="sheet" role="dialog" aria-modal="true" aria-label="Settings">
       <div className="sheet__panel">
         <header className="sheet__head">
           <h2>Settings</h2>
@@ -84,8 +79,7 @@ export function Settings({ onClose }: { onClose: () => void }) {
               <span>
                 <strong>Read pages aloud</strong>
                 <small>
-                  Uses the voice built into this device. Nothing is recorded or
-                  sent anywhere.
+                  Uses the voice built into this device. Nothing is recorded or sent anywhere.
                 </small>
               </span>
             </label>
@@ -99,24 +93,18 @@ export function Settings({ onClose }: { onClose: () => void }) {
               />
               <span>
                 <strong>Sound effects</strong>
-                <small>
-                  Chimes, splashes and cheers when things are tapped.
-                </small>
+                <small>Chimes, splashes and cheers when things are tapped.</small>
               </span>
             </label>
           </li>
           <li>
             <label>
-              <input
-                type="checkbox"
-                checked={p.calm}
-                onChange={(e) => setCalm(e.target.checked)}
-              />
+              <input type="checkbox" checked={p.calm} onChange={(e) => setCalm(e.target.checked)} />
               <span>
                 <strong>Calm mode</strong>
                 <small>
-                  Holds the pictures still. Turned on automatically if this
-                  device asks for reduced motion.
+                  Holds the pictures still. Turned on automatically if this device asks for reduced
+                  motion.
                 </small>
               </span>
             </label>
@@ -125,18 +113,14 @@ export function Settings({ onClose }: { onClose: () => void }) {
 
         <div className="sheet__danger">
           <p>
-            Progress is saved on this device only — there is no account and no
-            tracking. Clearing it cannot be undone.
+            Progress is saved on this device only — there is no account and no tracking. Clearing it
+            cannot be undone.
           </p>
           <button
             type="button"
             className="btn"
             onClick={() => {
-              if (
-                window.confirm(
-                  "Clear all stickers and progress on this device?",
-                )
-              )
+              if (window.confirm("Clear all stickers and progress on this device?"))
                 resetProgress();
             }}
           >

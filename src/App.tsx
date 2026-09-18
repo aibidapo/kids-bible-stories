@@ -97,9 +97,7 @@ export default function App() {
         <StoryPlayer
           story={story}
           index={index}
-          onIndex={(i) =>
-            navigate({ view: "story", storyId: story.id, index: i })
-          }
+          onIndex={(i) => navigate({ view: "story", storyId: story.id, index: i })}
           onQuiz={() => navigate({ view: "quiz", storyId: story.id })}
           onHome={home}
         />

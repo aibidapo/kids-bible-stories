@@ -3,8 +3,7 @@ import type { Story } from "../../types";
 export const daniel: Story = {
   id: "daniel",
   title: "Daniel and the Lions",
-  blurb:
-    "A window left open, a night in a lions’ den, and a morning nobody expected.",
+  blurb: "A window left open, a night in a lions’ den, and a morning nobody expected.",
   reference: "Daniel 6",
   lesson: {
     little: "God looks after us, even in scary places.",
@@ -17,8 +16,7 @@ export const daniel: Story = {
       id: "prays",
       art: "daniel/prays",
       text: {
-        little:
-          "Daniel loved God. Three times every day he opened his window and prayed.",
+        little: "Daniel loved God. Three times every day he opened his window and prayed.",
         big: "Daniel worked for the king of Persia, and he was so good at his job that the king planned to put him in charge of the whole kingdom. Three times a day, every day, Daniel knelt at his upstairs window — the one that faced Jerusalem — and prayed. Everyone knew it.",
       },
       verse: "Daniel 6:10",
@@ -33,8 +31,7 @@ export const daniel: Story = {
           y: 38,
           size: 24,
           label: "the open window",
-          reward:
-            "The window faced Jerusalem — his home, far away. He never closed it.",
+          reward: "The window faced Jerusalem — his home, far away. He never closed it.",
           sound: "sparkle",
           sticker: "The Open Window",
         },
@@ -44,8 +41,7 @@ export const daniel: Story = {
           y: 74,
           size: 20,
           label: "Daniel praying",
-          reward:
-            "Three times a day, for years. Daniel’s bravery was mostly made of habit.",
+          reward: "Three times a day, for years. Daniel’s bravery was mostly made of habit.",
           sound: "chime",
         },
       ],
@@ -87,8 +83,7 @@ export const daniel: Story = {
       id: "den",
       art: "daniel/den",
       text: {
-        little:
-          "Daniel kept on praying. So they put him in the lions’ den. The king was very sad.",
+        little: "Daniel kept on praying. So they put him in the lions’ den. The king was very sad.",
         big: "Daniel heard about the law, went home, opened his window and prayed exactly as he always had. So they came for him. The king could not save him; he had signed the order himself. As they sealed the stone over the den, he called down, “May your God, whom you serve continually, rescue you.” Then he went home and could not eat, or sleep.",
       },
       verse: "Daniel 6:16",
@@ -99,8 +94,7 @@ export const daniel: Story = {
           y: 88,
           size: 24,
           label: "the lions",
-          reward:
-            "These lions were kept hungry on purpose. This was not meant to be survivable.",
+          reward: "These lions were kept hungry on purpose. This was not meant to be survivable.",
           sound: "roar",
           sticker: "Into the Den",
         },
@@ -110,8 +104,7 @@ export const daniel: Story = {
           y: 8,
           size: 18,
           label: "the king at the opening",
-          reward:
-            "The king stayed up all night. He was the one who could not sleep.",
+          reward: "The king stayed up all night. He was the one who could not sleep.",
           sound: "chime",
         },
       ],
@@ -147,8 +140,7 @@ export const daniel: Story = {
           y: 86,
           size: 24,
           label: "the sleeping lions",
-          reward:
-            "Fast asleep. The most dangerous animals in the kingdom, having a nap.",
+          reward: "Fast asleep. The most dangerous animals in the kingdom, having a nap.",
           sound: "chime",
           sticker: "Mouths Shut",
         },
@@ -180,8 +172,7 @@ export const daniel: Story = {
           y: 72,
           size: 20,
           label: "Daniel, safe",
-          reward:
-            "“Not a wound was found on him, because he had trusted in his God.”",
+          reward: "“Not a wound was found on him, because he had trusted in his God.”",
           sound: "cheer",
         },
       ],
@@ -190,11 +181,7 @@ export const daniel: Story = {
   quiz: [
     {
       question: "How often did Daniel pray?",
-      choices: [
-        "Three times every day",
-        "Once a year",
-        "Only when he was scared",
-      ],
+      choices: ["Three times every day", "Once a year", "Only when he was scared"],
       answerIndex: 0,
       level: "little",
     },
@@ -212,11 +199,7 @@ export const daniel: Story = {
     },
     {
       question: "Why did the other officials want to trap Daniel?",
-      choices: [
-        "They were jealous of him",
-        "He had stolen from the king",
-        "He was rude to them",
-      ],
+      choices: ["They were jealous of him", "He had stolen from the king", "He was rude to them"],
       answerIndex: 0,
       level: "big",
     },
@@ -232,11 +215,7 @@ export const daniel: Story = {
     },
     {
       question: "What did King Darius do the night Daniel was in the den?",
-      choices: [
-        "He could not eat or sleep",
-        "He held a feast",
-        "He left the city",
-      ],
+      choices: ["He could not eat or sleep", "He held a feast", "He left the city"],
       answerIndex: 0,
       level: "big",
     },

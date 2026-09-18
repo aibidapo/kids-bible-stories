@@ -38,9 +38,7 @@ export function StickerBook({ onBack }: { onBack: () => void }) {
               <span className="sticker__disc" aria-hidden="true">
                 {got ? "★" : "?"}
               </span>
-              <span className="sticker__name">
-                {got ? s.name : "Not found yet"}
-              </span>
+              <span className="sticker__name">{got ? s.name : "Not found yet"}</span>
               <span className="sticker__story">{s.story}</span>
             </li>
           );

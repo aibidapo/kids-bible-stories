@@ -17,9 +17,7 @@ export function splitWords(text: string): Word[] {
   return words;
 }
 
-function pickVoice(
-  voices: SpeechSynthesisVoice[],
-): SpeechSynthesisVoice | undefined {
+function pickVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
   const english = voices.filter((v) => v.lang.toLowerCase().startsWith("en"));
   const pool = english.length ? english : voices;
   // Prefer a voice that ships with the device: it works offline and starts instantly.
@@ -35,8 +33,7 @@ function pickVoice(
  * not highlight and the audio still plays.
  */
 export function useNarration() {
-  const supported =
-    typeof window !== "undefined" && "speechSynthesis" in window;
+  const supported = typeof window !== "undefined" && "speechSynthesis" in window;
   const [speaking, setSpeaking] = useState(false);
   const [charIndex, setCharIndex] = useState(-1);
   const voiceRef = useRef<SpeechSynthesisVoice | undefined>(undefined);
@@ -49,8 +46,7 @@ export function useNarration() {
     };
     refresh();
     window.speechSynthesis.addEventListener("voiceschanged", refresh);
-    return () =>
-      window.speechSynthesis.removeEventListener("voiceschanged", refresh);
+    return () => window.speechSynthesis.removeEventListener("voiceschanged", refresh);
   }, [supported]);
 
   const stop = useCallback(() => {
@@ -71,8 +67,7 @@ export function useNarration() {
       if (voiceRef.current) u.voice = voiceRef.current;
       u.onstart = () => setSpeaking(true);
       u.onboundary = (e) => {
-        if (e.name === "word" || e.name === undefined)
-          setCharIndex(e.charIndex);
+        if (e.name === "word" || e.name === undefined) setCharIndex(e.charIndex);
       };
       const finish = () => {
         setSpeaking(false);

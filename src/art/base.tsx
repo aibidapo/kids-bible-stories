@@ -24,15 +24,7 @@ export function Sky({ from, to }: { from: string; to: string }) {
   );
 }
 
-export function Sun({
-  x = 820,
-  y = 120,
-  r = 58,
-}: {
-  x?: number;
-  y?: number;
-  r?: number;
-}) {
+export function Sun({ x = 820, y = 120, r = 58 }: { x?: number; y?: number; r?: number }) {
   const id = useId();
   return (
     <g>
@@ -60,26 +52,12 @@ export function Sun({
         ))}
       </g>
       <circle cx={x} cy={y} r={r} fill={C.sun} />
-      <circle
-        cx={x - r * 0.25}
-        cy={y - r * 0.25}
-        r={r * 0.55}
-        fill={C.sunCore}
-        opacity="0.7"
-      />
+      <circle cx={x - r * 0.25} cy={y - r * 0.25} r={r * 0.55} fill={C.sunCore} opacity="0.7" />
     </g>
   );
 }
 
-export function Moon({
-  x = 180,
-  y = 110,
-  r = 44,
-}: {
-  x?: number;
-  y?: number;
-  r?: number;
-}) {
+export function Moon({ x = 180, y = 110, r = 44 }: { x?: number; y?: number; r?: number }) {
   const id = useId();
   return (
     <g>
@@ -323,10 +301,7 @@ export function Sea({
         <path d={wave(y)} fill={color} />
         <path d={wave(y - 2)} fill={crest} opacity="0.35" />
       </g>
-      <g
-        className="a-wave-rev"
-        style={{ animationDuration: `${speed * 1.6}s` }}
-      >
+      <g className="a-wave-rev" style={{ animationDuration: `${speed * 1.6}s` }}>
         <path d={wave(y + 26)} fill={crest} opacity="0.22" />
       </g>
     </g>
@@ -387,14 +362,7 @@ export function Rain({
 export function Lightning({ delay = 0 }: { delay?: number }) {
   return (
     <g className="a-flash" style={{ animationDelay: `${delay}s` }}>
-      <rect
-        x="0"
-        y="0"
-        width={VB.w}
-        height={VB.h}
-        fill="#ffffff"
-        opacity="0.5"
-      />
+      <rect x="0" y="0" width={VB.w} height={VB.h} fill="#ffffff" opacity="0.5" />
       <path
         d="M520,40 L470,210 L540,200 L470,380 L600,180 L525,190 L575,40 Z"
         fill="#fff8c4"
@@ -406,23 +374,8 @@ export function Lightning({ delay = 0 }: { delay?: number }) {
   );
 }
 
-export function Rainbow({
-  cx = 500,
-  cy = 560,
-  r = 330,
-}: {
-  cx?: number;
-  cy?: number;
-  r?: number;
-}) {
-  const bands = [
-    "#e8453c",
-    "#f5871f",
-    "#f6c63c",
-    "#4caf50",
-    "#3f7fd6",
-    "#7a4fc4",
-  ];
+export function Rainbow({ cx = 500, cy = 560, r = 330 }: { cx?: number; cy?: number; r?: number }) {
+  const bands = ["#e8453c", "#f5871f", "#f6c63c", "#4caf50", "#3f7fd6", "#7a4fc4"];
   return (
     <g className="a-draw-in">
       {bands.map((c, i) => (

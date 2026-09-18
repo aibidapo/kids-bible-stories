@@ -119,11 +119,7 @@ export function recordFound(
   return isNewSticker ? sticker : null;
 }
 
-export function foundIn(
-  p: Progress,
-  storyId: string,
-  sceneId: string,
-): string[] {
+export function foundIn(p: Progress, storyId: string, sceneId: string): string[] {
   return p.found[storyId]?.[sceneId] ?? [];
 }
 

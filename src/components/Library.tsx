@@ -55,8 +55,7 @@ export function Library({ onOpen, onStickers, onSettings }: Props) {
       </header>
 
       <p className="library__progress">
-        <strong>{progress.stickers.length}</strong> of {TOTAL_STICKERS} stickers
-        found
+        <strong>{progress.stickers.length}</strong> of {TOTAL_STICKERS} stickers found
         <span className="library__bar" aria-hidden="true">
           <span
             style={{
@@ -95,10 +94,7 @@ export function Library({ onOpen, onStickers, onSettings }: Props) {
                   <span className="card__meta">
                     <span className="card__ref">{story.reference}</span>
                     {best !== undefined && (
-                      <span
-                        className="card__stars"
-                        aria-label={`Best quiz score ${best}`}
-                      >
+                      <span className="card__stars" aria-label={`Best quiz score ${best}`}>
                         {"★".repeat(Math.max(1, Math.min(3, best)))}
                       </span>
                     )}

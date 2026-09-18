@@ -31,9 +31,7 @@ export function NarrationText({ text, charIndex, mode }: Props) {
       {words.map((w, i) => (
         <span
           key={`${w.start}-${i}`}
-          className={
-            i === activeIndex ? "narration__word is-active" : "narration__word"
-          }
+          className={i === activeIndex ? "narration__word is-active" : "narration__word"}
         >
           {w.text}{" "}
         </span>

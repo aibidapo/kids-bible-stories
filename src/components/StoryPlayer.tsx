@@ -26,9 +26,7 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
   // The hunt prompt disappears once every target in the scene has been found.
   const found = foundIn(progress, story.id, scene.id);
   const quest =
-    scene.find && !scene.find.targets.every((t) => found.includes(t))
-      ? scene.find.prompt
-      : null;
+    scene.find && !scene.find.targets.every((t) => found.includes(t)) ? scene.find.prompt : null;
 
   const speakNow = useCallback(() => {
     narration.speak(text, progress.mode === "little" ? 0.82 : 0.95);
@@ -85,10 +83,7 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
         </button>
         <div className="player__title">
           <h1>{story.title}</h1>
-          <ol
-            className="player__dots"
-            aria-label={`Page ${index + 1} of ${story.scenes.length}`}
-          >
+          <ol className="player__dots" aria-label={`Page ${index + 1} of ${story.scenes.length}`}>
             {story.scenes.map((s, i) => (
               <li key={s.id}>
                 <button
@@ -106,9 +101,7 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
           type="button"
           className={`btn btn--round${narration.speaking ? " is-active" : ""}`}
           onClick={() => (narration.speaking ? narration.stop() : speakNow())}
-          aria-label={
-            narration.speaking ? "Stop reading" : "Read this page to me"
-          }
+          aria-label={narration.speaking ? "Stop reading" : "Read this page to me"}
           disabled={!narration.supported}
         >
           {narration.speaking ? "◼" : "▶"}
@@ -123,14 +116,8 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
             <span aria-hidden="true">🔎</span> {quest}
           </p>
         )}
-        <NarrationText
-          text={text}
-          charIndex={narration.charIndex}
-          mode={progress.mode}
-        />
-        {progress.mode === "big" && scene.verse && (
-          <p className="player__verse">{scene.verse}</p>
-        )}
+        <NarrationText text={text} charIndex={narration.charIndex} mode={progress.mode} />
+        {progress.mode === "big" && scene.verse && <p className="player__verse">{scene.verse}</p>}
       </section>
 
       <nav className="player__nav">
@@ -142,11 +129,7 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
         >
           ← Back
         </button>
-        <button
-          type="button"
-          className="btn btn--primary btn--big"
-          onClick={() => go(index + 1)}
-        >
+        <button type="button" className="btn btn--primary btn--big" onClick={() => go(index + 1)}>
           {isLast ? "Finish →" : "Next →"}
         </button>
       </nav>

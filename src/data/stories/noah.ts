@@ -16,8 +16,7 @@ export const noah: Story = {
       id: "builds",
       art: "noah/builds",
       text: {
-        little:
-          "God told Noah to build a great big boat. Noah got his hammer and began.",
+        little: "God told Noah to build a great big boat. Noah got his hammer and began.",
         big: "The world had grown cruel, and it grieved God to see it. But there was one man who still walked with him. God told Noah to build an enormous boat — an ark — and gave him the measurements. So Noah began, though there was no sea in sight.",
       },
       verse: "Genesis 6:14",
@@ -39,8 +38,7 @@ export const noah: Story = {
           y: 72,
           size: 20,
           label: "Noah",
-          reward:
-            "People laughed at Noah for building a boat on dry land. He kept building.",
+          reward: "People laughed at Noah for building a boat on dry land. He kept building.",
           sound: "chime",
         },
       ],
@@ -62,8 +60,7 @@ export const noah: Story = {
           y: 43,
           size: 20,
           label: "the two doves",
-          reward:
-            "Keep an eye on these two. One of them has an important job later.",
+          reward: "Keep an eye on these two. One of them has an important job later.",
           sound: "bird",
           sticker: "Two by Two",
         },
@@ -73,8 +70,7 @@ export const noah: Story = {
           y: 84,
           size: 22,
           label: "the elephants",
-          reward:
-            "Two of every kind — which means two of the very largest kind, too.",
+          reward: "Two of every kind — which means two of the very largest kind, too.",
           sound: "chime",
         },
       ],
@@ -95,8 +91,7 @@ export const noah: Story = {
           y: 62,
           size: 26,
           label: "the floating ark",
-          reward:
-            "The same water that covered the world is what held the ark up.",
+          reward: "The same water that covered the world is what held the ark up.",
           sound: "thunder",
         },
         {
@@ -105,8 +100,7 @@ export const noah: Story = {
           y: 30,
           size: 22,
           label: "the rain",
-          reward:
-            "Forty days and forty nights. That is nearly six whole weeks of rain.",
+          reward: "Forty days and forty nights. That is nearly six whole weeks of rain.",
           sound: "splash",
         },
       ],
@@ -115,8 +109,7 @@ export const noah: Story = {
       id: "dove",
       art: "noah/dove",
       text: {
-        little:
-          "Noah sent a little dove to look. She came back with a green leaf. Land!",
+        little: "Noah sent a little dove to look. She came back with a green leaf. Land!",
         big: "When the rain stopped, Noah opened a window and sent out a dove. The first time she found nowhere to land and came home. Seven days later he sent her again — and she returned with a fresh olive leaf in her beak. Somewhere out there, trees were growing again.",
       },
       verse: "Genesis 8:11",
@@ -128,8 +121,7 @@ export const noah: Story = {
           y: 53,
           size: 20,
           label: "the olive leaf",
-          reward:
-            "A leaf means a tree. A tree means dry ground. Noah knew it was nearly over.",
+          reward: "A leaf means a tree. A tree means dry ground. Noah knew it was nearly over.",
           sound: "chime",
           sticker: "Olive Leaf",
         },
@@ -164,8 +156,7 @@ export const noah: Story = {
           y: 30,
           size: 28,
           label: "the rainbow",
-          reward:
-            "A rainbow is God’s signature on a promise he has never broken.",
+          reward: "A rainbow is God’s signature on a promise he has never broken.",
           sound: "cheer",
           sticker: "The Promise",
         },
@@ -175,8 +166,7 @@ export const noah: Story = {
           y: 78,
           size: 22,
           label: "Noah's family",
-          reward:
-            "Eight people walked out of that boat, and the world started again with them.",
+          reward: "Eight people walked out of that boat, and the world started again with them.",
           sound: "chime",
         },
       ],
@@ -203,11 +193,7 @@ export const noah: Story = {
     },
     {
       question: "How long did the rain fall?",
-      choices: [
-        "Forty days and forty nights",
-        "Seven days",
-        "One long afternoon",
-      ],
+      choices: ["Forty days and forty nights", "Seven days", "One long afternoon"],
       answerIndex: 0,
       level: "big",
     },

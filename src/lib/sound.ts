@@ -14,8 +14,7 @@ function audio(): AudioContext | null {
   if (!ctx) {
     const Ctor =
       window.AudioContext ??
-      (window as { webkitAudioContext?: typeof AudioContext })
-        .webkitAudioContext;
+      (window as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
     if (!Ctor) return null;
     ctx = new Ctor();
   }
@@ -32,13 +31,7 @@ export function isMuted() {
   return muted;
 }
 
-function env(
-  gain: GainNode,
-  t: number,
-  peak: number,
-  attack: number,
-  decay: number,
-) {
+function env(gain: GainNode, t: number, peak: number, attack: number, decay: number) {
   gain.gain.setValueAtTime(0.0001, t);
   gain.gain.exponentialRampToValueAtTime(peak, t + attack);
   gain.gain.exponentialRampToValueAtTime(0.0001, t + attack + decay);
@@ -124,9 +117,7 @@ export function play(name: SoundName) {
       break;
 
     case "sparkle":
-      MAJOR.forEach((f, i) =>
-        tone(ac, f * 2, t + i * 0.055, 0.22, "triangle", 0.12),
-      );
+      MAJOR.forEach((f, i) => tone(ac, f * 2, t + i * 0.055, 0.22, "triangle", 0.12));
       break;
 
     case "splash":
@@ -180,9 +171,7 @@ export function playCorrect() {
   const ac = audio();
   if (!ac) return;
   const t = ac.currentTime;
-  [MAJOR[0], MAJOR[2], MAJOR[3]].forEach((f, i) =>
-    tone(ac, f, t + i * 0.1, 0.32, "triangle", 0.2),
-  );
+  [MAJOR[0], MAJOR[2], MAJOR[3]].forEach((f, i) => tone(ac, f, t + i * 0.1, 0.32, "triangle", 0.2));
 }
 
 /** Gentle, non-punishing "not that one" — a soft two-note dip, never a buzzer. */

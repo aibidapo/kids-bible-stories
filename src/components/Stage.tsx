@@ -21,9 +21,7 @@ interface StageProps {
 export function Stage({ storyId, scene, onSticker }: StageProps) {
   const progress = useProgress();
   const found = foundIn(progress, storyId, scene.id);
-  const [bubble, setBubble] = useState<{ id: string; text: string } | null>(
-    null,
-  );
+  const [bubble, setBubble] = useState<{ id: string; text: string } | null>(null);
   const timer = useRef<number | undefined>(undefined);
 
   const Art = getSceneArt(scene.art);

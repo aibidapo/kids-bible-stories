@@ -3,8 +3,7 @@ import type { Story } from "../../types";
 export const david: Story = {
   id: "david",
   title: "David and the Giant",
-  blurb:
-    "The smallest person on the battlefield was the one who was not afraid.",
+  blurb: "The smallest person on the battlefield was the one who was not afraid.",
   reference: "1 Samuel 17",
   lesson: {
     little: "You can be brave, even when you are small.",
@@ -110,8 +109,7 @@ export const david: Story = {
           y: 66,
           size: 22,
           label: "King Saul",
-          reward:
-            "Saul was the tallest man in Israel. Even he would not fight Goliath.",
+          reward: "Saul was the tallest man in Israel. Even he would not fight Goliath.",
           sound: "chime",
         },
       ],
@@ -168,8 +166,7 @@ export const david: Story = {
           y: 16,
           size: 20,
           label: "where the stone hit",
-          reward:
-            "One stone, one shot. The other four stayed in the bag.",
+          reward: "One stone, one shot. The other four stayed in the bag.",
           sound: "knock",
           sticker: "One Stone",
         },
@@ -188,8 +185,7 @@ export const david: Story = {
       id: "victory",
       art: "david/victory",
       text: {
-        little:
-          "Down went the giant! Everyone cheered for the brave shepherd boy.",
+        little: "Down went the giant! Everyone cheered for the brave shepherd boy.",
         big: "The stone flew true, and the giant fell. The armies of Israel erupted. The boy nobody had bothered to call in from the sheep field had done what no soldier there dared to do — and he never once claimed the credit for it.",
       },
       verse: "1 Samuel 17:50",
@@ -200,8 +196,7 @@ export const david: Story = {
           y: 74,
           size: 22,
           label: "David",
-          reward:
-            "David went on to become Israel’s greatest king. It started here, with a sling.",
+          reward: "David went on to become Israel’s greatest king. It started here, with a sling.",
           sound: "cheer",
           sticker: "Brave Heart",
         },
@@ -211,8 +206,7 @@ export const david: Story = {
           y: 64,
           size: 26,
           label: "the cheering army",
-          reward:
-            "The same soldiers who were too scared to move are now running down the hill.",
+          reward: "The same soldiers who were too scared to move are now running down the hill.",
           sound: "cheer",
         },
       ],

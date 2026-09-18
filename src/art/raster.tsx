@@ -76,7 +76,21 @@ export interface PartProps {
  * rest, with its own motion class. Render it before or after the body
  * depending on which should cover the join.
  */
-export function Part({ src, tw, th, ox, oy, w, h, x, y, scale = 1, flip = false, className, delay = 0 }: PartProps) {
+export function Part({
+  src,
+  tw,
+  th,
+  ox,
+  oy,
+  w,
+  h,
+  x,
+  y,
+  scale = 1,
+  flip = false,
+  className,
+  delay = 0,
+}: PartProps) {
   const sx = flip ? -scale : scale;
   return (
     <g transform={`translate(${x} ${y}) scale(${sx} ${scale})`}>
@@ -159,14 +173,7 @@ export function Flipbook({
 /** Full-frame background image. */
 export function Backdrop({ src }: { src: string }) {
   return (
-    <image
-      href={src}
-      x="0"
-      y="0"
-      width={VB.w}
-      height={VB.h}
-      preserveAspectRatio="xMidYMid slice"
-    />
+    <image href={src} x="0" y="0" width={VB.w} height={VB.h} preserveAspectRatio="xMidYMid slice" />
   );
 }
 

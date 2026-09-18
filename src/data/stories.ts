@@ -15,10 +15,6 @@ export function getStory(id: string): Story | undefined {
 /** Total stickers available across the whole library, for the progress ring. */
 export const TOTAL_STICKERS = STORIES.reduce(
   (n, s) =>
-    n +
-    s.scenes.reduce(
-      (m, sc) => m + (sc.hotspots?.filter((h) => h.sticker).length ?? 0),
-      0,
-    ),
+    n + s.scenes.reduce((m, sc) => m + (sc.hotspots?.filter((h) => h.sticker).length ?? 0), 0),
   0,
 );

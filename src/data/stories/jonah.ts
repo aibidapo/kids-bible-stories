@@ -75,8 +75,7 @@ export const jonah: Story = {
           y: 22,
           size: 22,
           label: "the storm",
-          reward:
-            "The sea went completely still the moment Jonah hit the water.",
+          reward: "The sea went completely still the moment Jonah hit the water.",
           sound: "thunder",
           sticker: "The Great Storm",
         },
@@ -135,8 +134,7 @@ export const jonah: Story = {
           y: 12,
           size: 22,
           label: "the light",
-          reward:
-            "Even here, in the strangest place anybody has ever prayed, God was listening.",
+          reward: "Even here, in the strangest place anybody has ever prayed, God was listening.",
           sound: "sparkle",
           sticker: "Prayer in the Dark",
         },
@@ -146,8 +144,7 @@ export const jonah: Story = {
           y: 74,
           size: 22,
           label: "Jonah praying",
-          reward:
-            "Three days and three nights. Then the fish set him down on the shore.",
+          reward: "Three days and three nights. Then the fish set him down on the shore.",
           sound: "chime",
         },
       ],
@@ -156,8 +153,7 @@ export const jonah: Story = {
       id: "nineveh",
       art: "jonah/nineveh",
       text: {
-        little:
-          "This time Jonah went to Nineveh. He told everyone about God — and they listened!",
+        little: "This time Jonah went to Nineveh. He told everyone about God — and they listened!",
         big: "Jonah walked into Nineveh at last and delivered his message. And to his complete astonishment, the whole city listened — from the king on his throne down to the smallest child. God forgave them. Jonah, honestly, sulked about it. God was kind to him too.",
       },
       verse: "Jonah 3:5",
@@ -168,8 +164,7 @@ export const jonah: Story = {
           y: 32,
           size: 28,
           label: "the city of Nineveh",
-          reward:
-            "Nineveh was huge — it took three days just to walk across it.",
+          reward: "Nineveh was huge — it took three days just to walk across it.",
           sound: "cheer",
           sticker: "Nineveh Listens",
         },
@@ -179,8 +174,7 @@ export const jonah: Story = {
           y: 68,
           size: 26,
           label: "the people listening",
-          reward:
-            "Jonah did not think they deserved a second chance. He had just had one himself.",
+          reward: "Jonah did not think they deserved a second chance. He had just had one himself.",
           sound: "cheer",
         },
       ],

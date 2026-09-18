@@ -41,23 +41,93 @@ import type { SceneArtProps } from "../types";
 /** Eye points and lid tones come from design/pipeline/find_eyes.py. */
 const EYES = {
   // measured by hand on a 10 px grid: the detector had found only the white crescents
-  davidStaff: { points: [[249, 136], [320, 136]] as [number, number][], rx: 17, ry: 15, tone: "#d98050" },
+  davidStaff: {
+    points: [
+      [249, 136],
+      [320, 136],
+    ] as [number, number][],
+    rx: 17,
+    ry: 15,
+    tone: "#d98050",
+  },
   // the Noah sheep pair shows one eye per sheep; black faces
-  sheepPair: { points: [[456, 140], [702, 186]] as [number, number][], rx: 21, ry: 19, tone: "#1e1a1a" },
-  goliathTaunt: { points: [[298, 234], [375, 237]] as [number, number][], rx: 16, ry: 16, tone: "#e4a578" },
+  sheepPair: {
+    points: [
+      [456, 140],
+      [702, 186],
+    ] as [number, number][],
+    rx: 21,
+    ry: 19,
+    tone: "#1e1a1a",
+  },
+  goliathTaunt: {
+    points: [
+      [298, 234],
+      [375, 237],
+    ] as [number, number][],
+    rx: 16,
+    ry: 16,
+    tone: "#e4a578",
+  },
   armyAfraid: {
-    points: [[126, 183], [190, 182], [386, 164], [459, 156], [608, 178], [673, 176]] as [number, number][],
+    points: [
+      [126, 183],
+      [190, 182],
+      [386, 164],
+      [459, 156],
+      [608, 178],
+      [673, 176],
+    ] as [number, number][],
     rx: 15,
     ry: 17,
     tone: "#dd8f60",
   },
-  saul: { points: [[281, 123], [345, 127]] as [number, number][], rx: 15, ry: 14, tone: "#d9a07a" },
-  davidBrave: { points: [[95, 121], [150, 121]] as [number, number][], rx: 9, ry: 13, tone: "#cf8051" },
+  saul: {
+    points: [
+      [281, 123],
+      [345, 127],
+    ] as [number, number][],
+    rx: 15,
+    ry: 14,
+    tone: "#d9a07a",
+  },
+  davidBrave: {
+    points: [
+      [95, 121],
+      [150, 121],
+    ] as [number, number][],
+    rx: 9,
+    ry: 13,
+    tone: "#cf8051",
+  },
   davidSling: { points: [[371, 243]] as [number, number][], rx: 16, ry: 18, tone: "#d67e50" },
-  goliathLoom: { points: [[282, 253], [359, 252]] as [number, number][], rx: 16, ry: 17, tone: "#e0a074" },
-  davidVictory: { points: [[259, 139], [321, 139]] as [number, number][], rx: 9, ry: 12, tone: "#d28454" },
+  goliathLoom: {
+    points: [
+      [282, 253],
+      [359, 252],
+    ] as [number, number][],
+    rx: 16,
+    ry: 17,
+    tone: "#e0a074",
+  },
+  davidVictory: {
+    points: [
+      [259, 139],
+      [321, 139],
+    ] as [number, number][],
+    rx: 9,
+    ry: 12,
+    tone: "#d28454",
+  },
   armyCheer: {
-    points: [[145, 134], [201, 125], [414, 115], [492, 114], [700, 124], [759, 132]] as [number, number][],
+    points: [
+      [145, 134],
+      [201, 125],
+      [414, 115],
+      [492, 114],
+      [700, 124],
+      [759, 132],
+    ] as [number, number][],
     rx: 12,
     ry: 14,
     tone: "#e59a68",
@@ -108,13 +178,32 @@ export function ShepherdBoy({ found }: SceneArtProps) {
   const sheep = (x: number, y: number, s: number, flip: boolean, cls: string, blink: number) => (
     <>
       <SoftShadow x={x} y={y} rx={T.sheep.w * s * 0.42} ry={10} opacity={0.4} />
-      <Layer src={twoSheep} w={T.sheep.w} h={T.sheep.h} x={x} y={y} scale={s} flip={flip} className={cls}>
+      <Layer
+        src={twoSheep}
+        w={T.sheep.w}
+        h={T.sheep.h}
+        x={x}
+        y={y}
+        scale={s}
+        flip={flip}
+        className={cls}
+      >
         <Eyelids {...EYES.sheepPair} w={T.sheep.w} h={T.sheep.h} delay={blink} />
       </Layer>
     </>
   );
   const tuft = (x: number, y: number, s: number, delay: number, flip = false) => (
-    <Layer src={shepherdGrass} w={L["grass-tuft"].w} h={L["grass-tuft"].h} x={x} y={y} scale={s} flip={flip} className="a-sway" delay={delay} />
+    <Layer
+      src={shepherdGrass}
+      w={L["grass-tuft"].w}
+      h={L["grass-tuft"].h}
+      x={x}
+      y={y}
+      scale={s}
+      flip={flip}
+      className="a-sway"
+      delay={delay}
+    />
   );
   return (
     <>
@@ -137,9 +226,40 @@ export function ShepherdBoy({ found }: SceneArtProps) {
       />
 
       {/* birds of different colours, each on its own path and flap offset */}
-      <Bird up={{ src: bluebirdUp, w: L["bluebird-up"].w, h: L["bluebird-up"].h }} down={{ src: bluebirdDown, w: L["bluebird-down"].w, h: L["bluebird-down"].h }} upEye={[205, 85]} downEye={[240, 50]} x={420} y={150} size={0.26} motion="a-fly" delay={0} />
-      <Bird up={{ src: redbirdUp, w: L["redbird-up"].w, h: L["redbird-up"].h }} down={{ src: redbirdDown, w: L["redbird-down"].w, h: L["redbird-down"].h }} upEye={[185, 95]} downEye={[215, 50]} x={620} y={230} size={0.22} motion="a-flutter" delay={-3} />
-      <Bird up={{ src: goldfinchUp, w: L["goldfinch-up"].w, h: L["goldfinch-up"].h }} down={{ src: goldfinchDown, w: L["goldfinch-down"].w, h: L["goldfinch-down"].h }} upEye={[188, 100]} downEye={[245, 45]} x={330} y={120} size={0.2} motion="a-flutter" delay={-7} flip />
+      <Bird
+        up={{ src: bluebirdUp, w: L["bluebird-up"].w, h: L["bluebird-up"].h }}
+        down={{ src: bluebirdDown, w: L["bluebird-down"].w, h: L["bluebird-down"].h }}
+        upEye={[205, 85]}
+        downEye={[240, 50]}
+        x={420}
+        y={150}
+        size={0.26}
+        motion="a-fly"
+        delay={0}
+      />
+      <Bird
+        up={{ src: redbirdUp, w: L["redbird-up"].w, h: L["redbird-up"].h }}
+        down={{ src: redbirdDown, w: L["redbird-down"].w, h: L["redbird-down"].h }}
+        upEye={[185, 95]}
+        downEye={[215, 50]}
+        x={620}
+        y={230}
+        size={0.22}
+        motion="a-flutter"
+        delay={-3}
+      />
+      <Bird
+        up={{ src: goldfinchUp, w: L["goldfinch-up"].w, h: L["goldfinch-up"].h }}
+        down={{ src: goldfinchDown, w: L["goldfinch-down"].w, h: L["goldfinch-down"].h }}
+        upEye={[188, 100]}
+        downEye={[245, 45]}
+        x={330}
+        y={120}
+        size={0.2}
+        motion="a-flutter"
+        delay={-7}
+        flip
+      />
 
       {/* the flock grazes the meadow between David and the stream, far to near */}
       {sheep(600, 528, 0.13, true, "a-breathe-slow", 0.7)}
@@ -150,14 +270,46 @@ export function ShepherdBoy({ found }: SceneArtProps) {
       {sheep(660, 604, 0.22, false, "a-breathe", 0.2)}
       {sheep(540, 616, 0.22, true, "a-breathe-slow", 3.7)}
       <SoftShadow x={450} y={604} rx={60} ry={10} opacity={0.4} />
-      <Layer src={shepherdLamb} w={L.lamb.w} h={L.lamb.h} x={450} y={604} scale={0.3} className="a-breathe-slow">
+      <Layer
+        src={shepherdLamb}
+        w={L.lamb.w}
+        h={L.lamb.h}
+        x={450}
+        y={604}
+        scale={0.3}
+        className="a-breathe-slow"
+      >
         {/* lamb faces left: a small far eye and a big near eye, measured on a 10 px grid */}
-        <Eyelids points={[[57, 108]]} w={L.lamb.w} h={L.lamb.h} rx={9} ry={8} tone="#241f1f" delay={1.4} />
-        <Eyelids points={[[133, 125]]} w={L.lamb.w} h={L.lamb.h} rx={19} ry={16} tone="#241f1f" delay={1.4} />
+        <Eyelids
+          points={[[57, 108]]}
+          w={L.lamb.w}
+          h={L.lamb.h}
+          rx={9}
+          ry={8}
+          tone="#241f1f"
+          delay={1.4}
+        />
+        <Eyelids
+          points={[[133, 125]]}
+          w={L.lamb.w}
+          h={L.lamb.h}
+          rx={19}
+          ry={16}
+          tone="#241f1f"
+          delay={1.4}
+        />
       </Layer>
 
       <SoftShadow x={300} y={596} rx={70} ry={12} opacity={0.4} />
-      <Layer src={shepherdDavid} w={L["david-staff"].w} h={L["david-staff"].h} x={300} y={596} scale={0.38} className="a-breathe">
+      <Layer
+        src={shepherdDavid}
+        w={L["david-staff"].w}
+        h={L["david-staff"].h}
+        x={300}
+        y={596}
+        scale={0.38}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.davidStaff} w={L["david-staff"].w} h={L["david-staff"].h} />
       </Layer>
 
@@ -181,12 +333,33 @@ export function GoliathTaunts() {
     <>
       <Backdrop src={tauntBg} />
       <SoftShadow x={200} y={602} rx={130} ry={14} opacity={0.4} />
-      <Layer src={tauntArmy} w={L["army-afraid"].w} h={L["army-afraid"].h} x={200} y={602} scale={0.36} className="a-breathe">
+      <Layer
+        src={tauntArmy}
+        w={L["army-afraid"].w}
+        h={L["army-afraid"].h}
+        x={200}
+        y={602}
+        scale={0.36}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.armyAfraid} w={L["army-afraid"].w} h={L["army-afraid"].h} delay={1.1} />
       </Layer>
       <SoftShadow x={740} y={618} rx={180} ry={20} opacity={0.45} />
-      <Layer src={tauntGoliath} w={L["goliath-taunt"].w} h={L["goliath-taunt"].h} x={740} y={618} scale={0.6} className="a-breathe-slow">
-        <Eyelids {...EYES.goliathTaunt} w={L["goliath-taunt"].w} h={L["goliath-taunt"].h} delay={3.4} />
+      <Layer
+        src={tauntGoliath}
+        w={L["goliath-taunt"].w}
+        h={L["goliath-taunt"].h}
+        x={740}
+        y={618}
+        scale={0.6}
+        className="a-breathe-slow"
+      >
+        <Eyelids
+          {...EYES.goliathTaunt}
+          w={L["goliath-taunt"].w}
+          h={L["goliath-taunt"].h}
+          delay={3.4}
+        />
       </Layer>
       <Grain opacity={0.05} />
     </>
@@ -200,13 +373,36 @@ export function DavidVolunteers({ found }: SceneArtProps) {
     <>
       <Backdrop src={volBg} />
       <SoftShadow x={310} y={608} rx={100} ry={12} opacity={0.4} />
-      <Layer src={volArmour} w={L["armour-pile"].w} h={L["armour-pile"].h} x={310} y={608} scale={0.36} />
+      <Layer
+        src={volArmour}
+        w={L["armour-pile"].w}
+        h={L["armour-pile"].h}
+        x={310}
+        y={608}
+        scale={0.36}
+      />
       <SoftShadow x={440} y={600} rx={70} ry={12} opacity={0.4} />
-      <Layer src={volDavid} w={L["david-brave"].w} h={L["david-brave"].h} x={440} y={600} scale={0.36} className="a-breathe">
+      <Layer
+        src={volDavid}
+        w={L["david-brave"].w}
+        h={L["david-brave"].h}
+        x={440}
+        y={600}
+        scale={0.36}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.davidBrave} w={L["david-brave"].w} h={L["david-brave"].h} />
       </Layer>
       <SoftShadow x={640} y={596} rx={90} ry={14} opacity={0.4} />
-      <Layer src={volSaul} w={L["saul-point"].w} h={L["saul-point"].h} x={640} y={596} scale={0.42} className="a-breathe-slow">
+      <Layer
+        src={volSaul}
+        w={L["saul-point"].w}
+        h={L["saul-point"].h}
+        x={640}
+        y={596}
+        scale={0.42}
+        className="a-breathe-slow"
+      >
         <Eyelids {...EYES.saul} w={L["saul-point"].w} h={L["saul-point"].h} delay={2.2} />
       </Layer>
       {found.includes("armour") && <Sparkle x={310} y={520} s={1.5} />}
@@ -222,13 +418,34 @@ export function FiveSmoothStones({ found }: SceneArtProps) {
     <>
       <Backdrop src={stonesBg} />
       <SoftShadow x={780} y={620} rx={170} ry={20} opacity={0.45} />
-      <Layer src={stonesGoliath} w={L["goliath-loom"].w} h={L["goliath-loom"].h} x={780} y={620} scale={0.6} className="a-breathe-slow">
-        <Eyelids {...EYES.goliathLoom} w={L["goliath-loom"].w} h={L["goliath-loom"].h} delay={2.7} />
+      <Layer
+        src={stonesGoliath}
+        w={L["goliath-loom"].w}
+        h={L["goliath-loom"].h}
+        x={780}
+        y={620}
+        scale={0.6}
+        className="a-breathe-slow"
+      >
+        <Eyelids
+          {...EYES.goliathLoom}
+          w={L["goliath-loom"].w}
+          h={L["goliath-loom"].h}
+          delay={2.7}
+        />
       </Layer>
       <SoftShadow x={150} y={602} rx={60} ry={10} opacity={0.4} />
       <Layer src={stonesPile} w={L.stones.w} h={L.stones.h} x={150} y={602} scale={0.3} />
       <SoftShadow x={300} y={600} rx={80} ry={12} opacity={0.4} />
-      <Layer src={stonesDavid} w={L["david-sling"].w} h={L["david-sling"].h} x={300} y={600} scale={0.38} className="a-breathe">
+      <Layer
+        src={stonesDavid}
+        w={L["david-sling"].w}
+        h={L["david-sling"].h}
+        x={300}
+        y={600}
+        scale={0.38}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.davidSling} w={L["david-sling"].w} h={L["david-sling"].h} />
       </Layer>
       {found.includes("stones") && <Sparkle x={150} y={560} s={1.3} />}
@@ -279,7 +496,15 @@ export function TheStrike({ found }: SceneArtProps) {
       </g>
 
       <SoftShadow x={240} y={600} rx={80} ry={12} opacity={0.4} />
-      <Layer src={stonesDavid} w={S["david-sling"].w} h={S["david-sling"].h} x={240} y={600} scale={0.38} className="a-breathe">
+      <Layer
+        src={stonesDavid}
+        w={S["david-sling"].w}
+        h={S["david-sling"].h}
+        x={240}
+        y={600}
+        scale={0.38}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.davidSling} w={S["david-sling"].w} h={S["david-sling"].h} />
       </Layer>
 
@@ -321,15 +546,38 @@ export function Victory() {
       </g>
       {/* the army already in the valley, adult height, behind the fallen giant */}
       <SoftShadow x={700} y={562} rx={140} ry={14} opacity={0.4} />
-      <Layer src={victoryArmy} w={L["army-cheer"].w} h={L["army-cheer"].h} x={700} y={562} scale={0.5} className="a-breathe-slow">
+      <Layer
+        src={victoryArmy}
+        w={L["army-cheer"].w}
+        h={L["army-cheer"].h}
+        x={700}
+        y={562}
+        scale={0.5}
+        className="a-breathe-slow"
+      >
         <Eyelids {...EYES.armyCheer} w={L["army-cheer"].w} h={L["army-cheer"].h} delay={1.6} />
       </Layer>
       <SoftShadow x={420} y={600} rx={80} ry={12} opacity={0.4} />
-      <Layer src={victoryDavid} w={L["david-victory"].w} h={L["david-victory"].h} x={420} y={600} scale={0.36} className="a-breathe">
+      <Layer
+        src={victoryDavid}
+        w={L["david-victory"].w}
+        h={L["david-victory"].h}
+        x={420}
+        y={600}
+        scale={0.36}
+        className="a-breathe"
+      >
         <Eyelids {...EYES.davidVictory} w={L["david-victory"].w} h={L["david-victory"].h} />
       </Layer>
       <SoftShadow x={790} y={632} rx={260} ry={20} opacity={0.4} />
-      <Layer src={victoryGoliath} w={L["goliath-fallen"].w} h={L["goliath-fallen"].h} x={790} y={632} scale={0.48} />
+      <Layer
+        src={victoryGoliath}
+        w={L["goliath-fallen"].w}
+        h={L["goliath-fallen"].h}
+        x={790}
+        y={632}
+        scale={0.48}
+      />
       <Sparkle x={350} y={300} s={1.6} />
       <Sparkle x={540} y={260} s={1.3} delay={0.5} />
       <Grain opacity={0.05} />
