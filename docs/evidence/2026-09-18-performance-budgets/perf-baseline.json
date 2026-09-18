@@ -1,0 +1,25 @@
+{
+  "cpu": 4,
+  "budgets": {
+    "coldLoadLcpMs": 1500,
+    "firstTapToPaintMs": 250,
+    "tapToPaintMs": 150,
+    "pageTurnMs": 300,
+    "quizTapMs": 150,
+    "frameMedianMs": 40,
+    "frameP95Ms": 80
+  },
+  "results": {
+    "coldLoadLcpMs": 748,
+    "bundle": "index-7sQxFND0.js",
+    "frames": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "animations": 43
+    },
+    "firstTapToPaintMs": 97,
+    "tapToPaintMs": 44,
+    "pageTurnMs": 164,
+    "quizTapMs": 53
+  }
+}

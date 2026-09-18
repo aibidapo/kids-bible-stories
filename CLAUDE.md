@@ -26,11 +26,14 @@ npm run secrets    # staged-diff credential scan (scripts/check-secrets.mjs)
 npm run audit      # npm audit --audit-level=high; needs the network, "unreachable" means unknown, never clean
 npm run icons      # regenerate public/icons/*.png from scripts/generate-icons.mjs
 npm run check:motion   # hard-constraint lint: no a-* class on a transform'd element
+npm run check:bundle   # JS gzip <= 100 KB and precache <= 12 MB, after a build (in the hook)
+npm run perf           # interaction and load budgets on the preview build, 4x CPU + Slow 4G (on demand)
 git config core.hooksPath .githooks   # once per clone: activates the pre-commit gate
 ```
 
 `.githooks/pre-commit` runs, in order, `secrets`, prettier on the staged files,
-`lint`, `check:motion`, `coverage`, `build`, and refuses the commit if any fails.
+`lint`, `check:motion`, `coverage`, `build`, `check:bundle`, and refuses the
+commit if any fails.
 When a commit adds tests, raise the thresholds to the new measured floor in
 the same commit; never lower them.
 Activate it once per clone with the command above and check
@@ -199,6 +202,29 @@ coordinates; never position a hotspot against the frame.
 above. `npm run check:motion` does catch it, mechanically, for every registered
 scene. Any change touching transforms or animation still needs the browser
 screenshots too.
+
+## Performance and load
+
+There is no server: the app is static files behind whatever host serves
+them, and after install the service worker answers every request, so
+"load" is the host's problem and per-user cost is zero. Response time is a
+per-device property and is held by two gates:
+
+- `npm run check:bundle` in the hook: main JS gzip <= 100 KB (76.8 KB
+  today), precache total <= 12 MB (5.97 MB today). Lower a budget when the
+  app slims; raising one needs a written reason in `docs/roadmap.md`.
+- `npm run perf` on demand, before a release and after any scene, animation
+  or player change: 4x CPU and Slow 4G on the production build, phone
+  viewport. Budgets: cold-load LCP <= 1500 ms, first tap to paint <= 250 ms
+  (the first tap also creates the AudioContext), warm tap <= 150 ms, page
+  turn <= 300 ms, quiz tap <= 150 ms, frame median <= 40 ms and p95 <= 80 ms
+  on the heaviest page. Needs `npm run preview` on :4173 and a Chrome on
+  `--remote-debugging-port=9222`. Emulation approximates a mid-range
+  phone's CPU, not its GPU; the numbers guard against regression.
+
+Keep it that way: no network calls at runtime, hashed immutable assets
+(Vite), everything precached, animations as CSS transforms on `.a-*`
+classes only, no JavaScript per frame.
 
 ## Conventions
 

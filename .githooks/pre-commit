@@ -9,6 +9,7 @@
 #   4. motion   - transform/class constraint on every scene (scripts/check-motion.tsx)
 #   5. test     - vitest with coverage thresholds (vitest.config.ts)
 #   6. build    - `tsc -b` typecheck then the production bundle
+#   7. bundle   - JS gzip and precache totals against budgets (scripts/check-bundle.mjs)
 set -e
 
 echo "pre-commit: secret scan"
@@ -31,3 +32,6 @@ npm run --silent coverage
 
 echo "pre-commit: typecheck + build"
 npm run --silent build
+
+echo "pre-commit: bundle budgets"
+npm run --silent check:bundle

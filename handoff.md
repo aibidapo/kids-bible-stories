@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **NIV notice** (`src/data/scripture.ts`; "· NIV" beside each quoted
+Latest: **Performance budgets.** `npm run check:bundle` in the hook (JS gzip
+<= 100 KB, precache <= 12 MB; 76.8 KB and 5.97 MB today) and `npm run perf`
+on demand (4x CPU, Slow 4G: LCP 748 ms, warm tap 44 ms, page turn 164 ms,
+quiz tap 53 ms, frame median 16.7 ms, all within budget). Scaling with
+users is the static host's property; documented in `CLAUDE.md`
+"Performance and load". Evidence:
+`docs/evidence/2026-09-18-performance-budgets/record.md`.
+
+Before that: **NIV notice** (`src/data/scripture.ts`; "· NIV" beside each quoted
 verse on the quiz done page and the Family time card; Biblica notice in a
 Scripture section of Settings; CLAUDE.md convention). **Phase 0 skipped by
 the owner**: local churches have requested the product
@@ -133,7 +141,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the NIV-notice commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the performance-budgets commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,

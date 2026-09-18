@@ -15,7 +15,10 @@ calls, no accounts, no analytics, progress in localStorage only; stories are
 data and the player is generic; every piece of prose at both reading levels;
 art is layered raster within 450 KB per scene and ~12 MB total precache;
 sound synthesised, narration by device speech, no font files; Calm mode
-honest; the quiz cannot be failed.
+honest; the quiz cannot be failed. Performance budgets (`CLAUDE.md`,
+"Performance and load"): JS gzip <= 100 KB, precache <= 12 MB in the hook;
+interaction budgets on demand with `npm run perf`; hosting is static, so
+scaling with users is the host's property, not the app's.
 
 ## How costs are written
 
@@ -342,4 +345,6 @@ Kept here so the reasoning survives.
 - 2026-09-18: phase 1 content review pass written (NIV notice finding);
   phase 0 interview kit written.
 - 2026-09-18: phase 0 skipped by the owner (churches requested the product);
-  NIV notice being added to Settings and beside each verse.
+  NIV notice added to Settings and beside each verse.
+- 2026-09-18: performance budgets: bundle gate in the hook, `npm run perf`
+  interaction budgets, baseline recorded.

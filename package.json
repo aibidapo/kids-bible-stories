@@ -19,7 +19,9 @@
     "test": "vitest run",
     "secrets": "node scripts/check-secrets.mjs",
     "audit": "npm audit --audit-level=high",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "perf": "node scripts/perf.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

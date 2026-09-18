@@ -1,0 +1,8 @@
+### bundle gate rejects with a 10 KB JS budget
+check-bundle: OVER JS bundle gzip: 76.8 KB (budget 10.0 KB)
+check-bundle: ok   precache (129 entries): 5.97 MB (budget 12.00 MB)
+exit=1
+### restored
+check-bundle: ok   JS bundle gzip: 76.8 KB (budget 100.0 KB)
+check-bundle: ok   precache (129 entries): 5.97 MB (budget 12.00 MB)
+exit=0
