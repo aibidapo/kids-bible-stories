@@ -101,14 +101,14 @@ export function TheTrap() {
   return (
     <>
       <Backdrop src={trapBg} />
-      <SoftShadow x={640} y={452} rx={110} ry={16} opacity={0.4} />
+      <SoftShadow x={712} y={392} rx={100} ry={14} opacity={0.4} />
       <Layer
         src={trapKing}
         w={L["king-throne"].w}
         h={L["king-throne"].h}
-        x={640}
-        y={452}
-        scale={0.4}
+        x={712}
+        y={392}
+        scale={0.37}
         className="a-breathe-slow"
       />
       <SoftShadow x={300} y={612} rx={80} ry={14} opacity={0.4} />

@@ -3,7 +3,7 @@
   "scene": "trap",
   "background": {
     "aspect": "16:9",
-    "prompt": "The throne hall of a Persian palace, seen straight on: tall stone columns either side, a raised stone dais with steps at centre-right with NO throne on it, patterned floor, tall windows showing an evening sky in purple and rose. Completely EMPTY: no people, no furniture on the dais. Keep the floor in front of the dais clear."
+    "prompt": "The throne hall of a Persian palace, seen straight on: tall fluted columns of cream marble with gold bands and gilded lotus capitals either side, a raised stone dais with three steps at centre-right with NO throne on it, a long crimson carpet with a gold border running from the foreground up to the dais, walls of glazed blue-and-gold Persian tile with a decorative frieze, tall crimson banners with gold tassels hanging between the columns, gold lamp stands with warm flames near the walls, a polished inlaid floor, tall arched windows showing an evening sky in purple and rose. Rich, royal and elegant. Completely EMPTY: no people, no furniture on the dais. Keep the floor in front of the dais clear."
   },
   "cutouts": {
     "king-throne": {

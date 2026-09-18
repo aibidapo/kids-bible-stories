@@ -69,8 +69,8 @@ export const daniel: Story = {
         },
         {
           id: "king",
-          x: 64,
-          y: 52,
+          x: 71,
+          y: 42,
           size: 20,
           label: "King Darius",
           reward:

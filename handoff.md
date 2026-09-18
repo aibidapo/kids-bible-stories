@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **angel wings beat slowly, forwards and back, and a third sleeping lion** (Daniel page 4).
+Latest: **Daniel page 2 palace regenerated, richer and more royal** (background
+only: marble and gilded lotus columns, crimson carpet, blue-gold tile, banners,
+lamp stands; king moved up onto the new dais, king hotspot moved). Evidence:
+`docs/evidence/2026-09-18-trap-palace/record.md` (before/after renders, phone
+hotspot still, sidecar). Gap: `pack.py` cannot repack a background alone; bytes
+patched by hand, a `--bg-only` path is worth adding. Old raw kept locally as
+`raw/daniel/trap/bg-v1.png`.
+
+Before that: **angel wings beat slowly, forwards and back, and a third sleeping lion** (Daniel page 4).
 `design/pipeline/split_part.py` cuts any named part off a cutout (several per
 cutout); the angel is now body + two wing parts inside one `a-float` group,
 wings on `a-wing-l` / `a-wing-r` (scaleX 1 → 0.5 about the shoulder, ±4°
@@ -85,7 +93,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the angel-wings commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the trap-palace commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -98,6 +106,8 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 4. Next Steps
 
+- [ ] **User reviews the new palace** on `#/story/daniel/1`.
+- [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.
 - [ ] **User reviews the angel wing beat** on `#/story/daniel/3` (phone); depth and speed are two numbers in `motion.css`.
 - [ ] **User reviews** each story from its record's `story-sheet.png` and
       `phones.png` (`docs/evidence/2026-09-18-{daniel,noah,david,jonah,creation}-story-raster/`).
