@@ -78,7 +78,7 @@ Verification actually run (details, hashes, numbers in
 - [ ] Library thumbnails: covers use scene art; check the card size once a story is fully raster.
 - [ ] Bundle strategy: 26 scenes × ~250 KB ≈ 6.5 MB precache. Under the ~12 MB line in the media rule,
       but measure first-load on Fast 3G before deciding on precache-first-story.
-- [ ] Lions' blink and tail sway: generate tails as separate cutouts if wanted; eyes are too small for lids.
+- [x] Lions blink, staggered (done after user review; `Eyelids` has a `delay` prop). Tail sway would need tails as separate cutouts.
 - [ ] Fix or decide the tablet-landscape crop (letterbox vs vertical safe zone).
 - [ ] Delete `src/art/v2/{den,lion,person}.tsx` once no scene uses them (`effects.tsx` stays).
 - [ ] Missing gates as a separate task: lint with security rules, format, test runner, secret scan, dependency audit.

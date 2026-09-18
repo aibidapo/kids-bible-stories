@@ -74,6 +74,7 @@ export function Eyelids({
   rx,
   ry,
   tone,
+  delay = 0,
 }: {
   points: [number, number][];
   w: number;
@@ -81,6 +82,8 @@ export function Eyelids({
   rx: number;
   ry: number;
   tone: string;
+  /** Seconds to offset this character's blink cycle, so a cast never blinks in unison. */
+  delay?: number;
 }) {
   return (
     <g>
@@ -94,6 +97,7 @@ export function Eyelids({
           fill={tone}
           opacity="0"
           className="a-blink"
+          style={{ animationDelay: `${delay}s` }}
         />
       ))}
     </g>

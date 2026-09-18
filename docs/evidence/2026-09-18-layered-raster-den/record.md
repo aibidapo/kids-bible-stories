@@ -75,7 +75,7 @@ Human review: **not performed**. Next authorized step is the user's review of `c
 - **Coverage, mutation**: inapplicable.
 - **Performance emulated**, not a real phone. Under 4x throttle every route sits at the 33 ms floor.
 - **Tablet-landscape crop** (pre-existing): opening, king and `king-above` hotspot off-screen at 1024x768. Needs a Stage layout decision.
-- **Lions do not blink or sway their tails**; only Daniel blinks (two lids). Lion eyes in the cutouts are under the 18 px threshold the plan set.
+- **Lion tails do not sway.** Blink: all four characters blink after the follow-up commit, offsets 0 / 1.3 / 2.6 / 3.9 s across the 5.2 s cycle so no two blink together. Placement verified by rendering with every lid forced visible (`lids-forced.png`, 8 lids in markup).
 - **Style split**: den is raster, the other four Daniel pages are flat vector. Not for release until the story is migrated.
 - **Licensing**: Gemini output with SynthID watermark; Google's terms permit commercial use, but this is the user's call to confirm for a published app.
 - **Stale service worker** in the DevTools MCP default profile for `localhost:4173`; measurements use isolated contexts.

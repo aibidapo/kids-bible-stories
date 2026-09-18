@@ -234,7 +234,20 @@ export function IntoTheDen() {
         y={548}
         scale={0.34}
         className="a-breathe-slow"
-      />
+      >
+        <Eyelids
+          points={[
+            [138, 168],
+            [247, 168],
+          ]}
+          w={L["lion-b"].w}
+          h={L["lion-b"].h}
+          rx={22}
+          ry={20}
+          tone="#dfa74c"
+          delay={1.3}
+        />
+      </Layer>
       <SoftShadow x={500} y={590} rx={80} ry={14} opacity={0.4} />
       <Layer
         src={denDaniel}
@@ -267,7 +280,20 @@ export function IntoTheDen() {
         y={612}
         scale={0.5}
         className="a-breathe-slow"
-      />
+      >
+        <Eyelids
+          points={[
+            [152, 170],
+            [267, 170],
+          ]}
+          w={L["lion-a"].w}
+          h={L["lion-a"].h}
+          rx={24}
+          ry={22}
+          tone="#ecbb56"
+          delay={2.6}
+        />
+      </Layer>
       <SoftShadow x={760} y={618} rx={170} ry={20} opacity={0.4} />
       <Layer
         src={denLionB}
@@ -278,7 +304,21 @@ export function IntoTheDen() {
         scale={0.5}
         flip
         className="a-breathe-slow"
-      />
+      >
+        {/* points are in the unflipped image; the group's flip mirrors them with it */}
+        <Eyelids
+          points={[
+            [138, 168],
+            [247, 168],
+          ]}
+          w={L["lion-b"].w}
+          h={L["lion-b"].h}
+          rx={22}
+          ry={20}
+          tone="#dfa74c"
+          delay={3.9}
+        />
+      </Layer>
       <Motes x={500} top={110} bottom={540} spread={200} />
       <Grain opacity={0.05} />
     </>
