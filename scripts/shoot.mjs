@@ -130,6 +130,31 @@ await shot({
   progress: { calm: true },
 })
 
+// Daniel den: the reference scene for the v2 art style.
+await shot({ path: `${D}/10-den-phone.png`, route: '#/story/daniel/2', width: 390, height: 844 })
+await shot({ path: `${D}/11-den-tablet.png`, route: '#/story/daniel/2', width: 1024, height: 768 })
+await shot({
+  path: `${D}/12-den-calm.png`,
+  route: '#/story/daniel/2',
+  width: 1024,
+  height: 768,
+  progress: { calm: true },
+})
+await shot({
+  path: `${D}/13-den-hotspot.png`,
+  route: '#/story/daniel/2',
+  width: 1024,
+  height: 768,
+  before: `document.querySelectorAll('.hotspot')[0].click(); true`,
+})
+await shot({
+  path: `${D}/14-den-big.png`,
+  route: '#/story/daniel/2',
+  width: 1024,
+  height: 768,
+  progress: { mode: 'big' },
+})
+
 if (errors.length) {
   console.log('\nPAGE ERRORS:')
   errors.forEach((e) => console.log(' -', e))
