@@ -463,12 +463,12 @@ export function TheKingRejoices({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={rejoiceBg} />
-      <SoftShadow x={470} y={578} rx={90} ry={14} opacity={0.4} />
+      <SoftShadow x={455} y={578} rx={90} ry={14} opacity={0.4} />
       <Layer
         src={rejoiceDaniel}
         w={L["daniel-raise"].w}
         h={L["daniel-raise"].h}
-        x={470}
+        x={455}
         y={578}
         scale={0.36}
         className="a-breathe"
@@ -483,14 +483,14 @@ export function TheKingRejoices({ found }: SceneArtProps) {
         scale={0.38}
         className="a-breathe-slow"
       />
-      <SoftShadow x={780} y={602} rx={130} ry={16} opacity={0.4} />
+      <SoftShadow x={745} y={604} rx={150} ry={17} opacity={0.4} />
       <Layer
         src={rejoiceCrowd}
         w={L.crowd.w}
         h={L.crowd.h}
-        x={780}
-        y={602}
-        scale={0.36}
+        x={745}
+        y={604}
+        scale={0.44}
         className="a-breathe-slow"
       />
       <Sparkle x={380} y={330} s={1.6} />

@@ -168,7 +168,7 @@ export const daniel: Story = {
         },
         {
           id: "daniel-out",
-          x: 47,
+          x: 45,
           y: 72,
           size: 20,
           label: "Daniel, safe",
