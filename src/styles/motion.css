@@ -459,6 +459,38 @@ svg [class*=" a-"] {
 }
 
 /*
+ * Two-frame flipbook for raster wings: frame A is drawn with opacity="1" and
+ * frame B with opacity="0", so Calm mode shows a single clean pose. Playing,
+ * the two swap in hard steps.
+ */
+@keyframes frame-a {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes frame-b {
+  0%,
+  49% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+.a-frame-a {
+  animation: frame-a 0.36s steps(1, end) infinite;
+}
+.a-frame-b {
+  animation: frame-b 0.36s steps(1, end) infinite;
+}
+
+/*
  * Tail flick. Still for most of a nine-second cycle, then two quick swishes.
  * The tail is its own raster layer whose root sits at a corner of its box, so
  * one class per root corner keeps the pivot in this file (rule 2). Calm mode

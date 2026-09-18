@@ -36,5 +36,9 @@ for name, spec in manifest["cutouts"].items():
     if out.exists():
         print(f"skip {name} (exists)")
         continue
-    sheet = ROOT / "design/characters" / f"{spec['sheet']}.png"
-    print(generate(spec["prompt"], [STYLE_REF, sheet], out, aspect=spec.get("aspect", "3:4")))
+    # A layer with no character sheet (a bird, a prop) is styled by the
+    # concept reference alone.
+    refs = [STYLE_REF]
+    if spec.get("sheet"):
+        refs.append(ROOT / "design/characters" / f"{spec['sheet']}.png")
+    print(generate(spec["prompt"], refs, out, aspect=spec.get("aspect", "3:4")))

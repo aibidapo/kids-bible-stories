@@ -12,6 +12,9 @@ import denKing from "../assets/scenes/daniel/den/king.webp";
 import praysLayers from "../assets/scenes/daniel/prays/layers.json";
 import praysBg from "../assets/scenes/daniel/prays/bg.webp";
 import praysDaniel from "../assets/scenes/daniel/prays/daniel-kneel.webp";
+import praysBirdUp from "../assets/scenes/daniel/prays/bird-up.webp";
+import praysBirdDown from "../assets/scenes/daniel/prays/bird-down.webp";
+import { useId } from "react";
 import trapLayers from "../assets/scenes/daniel/trap/layers.json";
 import trapBg from "../assets/scenes/daniel/trap/bg.webp";
 import trapKing from "../assets/scenes/daniel/trap/king-throne.webp";
@@ -34,9 +37,45 @@ import type { SceneArtProps } from "../types";
 /** Three times a day, at the open window. */
 export function DanielPrays({ found }: SceneArtProps) {
   const L = praysLayers.cutouts;
+  const windowClip = useId();
+  // Two dove frames aligned on the eye and scaled to the same body size, so
+  // the flipbook swap doesn't jump. Frame sizes come from layers.json; eye
+  // positions were read off the cutouts.
+  const up = { s: 0.25, eye: [195, 122] as const };
+  const down = { s: 0.185, eye: [247, 32] as const };
   return (
     <>
       <Backdrop src={praysBg} />
+      {/* a dove crosses the sky now and then; the window frame hides it otherwise */}
+      <defs>
+        <clipPath id={windowClip}>
+          <path d="M585,375 L585,200 A112,112 0 0 1 810,200 L810,375 Z" />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${windowClip})`}>
+        <g transform="translate(700 250)">
+          <g className="a-fly">
+            <image
+              href={praysBirdUp}
+              x={-up.eye[0] * up.s}
+              y={-up.eye[1] * up.s}
+              width={L["bird-up"].w * up.s}
+              height={L["bird-up"].h * up.s}
+              opacity="1"
+              className="a-frame-a"
+            />
+            <image
+              href={praysBirdDown}
+              x={-down.eye[0] * down.s}
+              y={-down.eye[1] * down.s}
+              width={L["bird-down"].w * down.s}
+              height={L["bird-down"].h * down.s}
+              opacity="0"
+              className="a-frame-b"
+            />
+          </g>
+        </g>
+      </g>
       <SoftShadow x={380} y={592} rx={110} ry={16} opacity={0.4} />
       <Layer
         src={praysDaniel}

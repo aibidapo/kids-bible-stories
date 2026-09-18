@@ -6,6 +6,18 @@
     "prompt": "Interior of a simple upstairs room in ancient Babylon, seen straight on. A large arched window with its wooden shutters open sits right of centre, showing a warm dawn sky and the distant rooftops of a city far away. Soft golden light falls through the window across a patterned rug on the wooden floor. A small oil lamp on a low table. Completely EMPTY: no people, no animals. Keep the floor in front of the window clear."
   },
   "cutouts": {
+    "bird-up": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 240,
+      "prompt": "A small white dove in flight seen from the side, flying to the right, wings raised high above its back at the top of the stroke, tail feathers spread slightly, tiny beak and eye, soft cream and white plumage. Whole bird, centred, on a flat solid bright green background (#00ff00), no other objects."
+    },
+    "bird-down": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 240,
+      "prompt": "The same small white dove in flight seen from the side, flying to the right, at the bottom of the wing stroke with both wings swept down below its body, tail feathers spread slightly, tiny beak and eye, soft cream and white plumage. Whole bird, centred, on a flat solid bright green background (#00ff00), no other objects."
+    },
     "daniel-kneel": {
       "sheet": "daniel",
       "aspect": "3:4",

@@ -7,6 +7,32 @@
     "source": "design/pipeline/raw/daniel/prays/bg.png"
   },
   "cutouts": {
+    "bird-up": {
+      "file": "bird-up.webp",
+      "w": 223,
+      "h": 240,
+      "trim": [
+        307,
+        133,
+        893,
+        764
+      ],
+      "source": "design/pipeline/raw/daniel/prays/bird-up.png",
+      "bytes": 11128
+    },
+    "bird-down": {
+      "file": "bird-down.webp",
+      "w": 342,
+      "h": 240,
+      "trim": [
+        213,
+        218,
+        959,
+        742
+      ],
+      "source": "design/pipeline/raw/daniel/prays/bird-down.png",
+      "bytes": 13316
+    },
     "daniel-kneel": {
       "file": "daniel-kneel.webp",
       "w": 546,
