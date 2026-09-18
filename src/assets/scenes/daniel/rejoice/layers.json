@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 71526,
+    "source": "design/pipeline/raw/daniel/rejoice/bg.png"
+  },
+  "cutouts": {
+    "daniel-raise": {
+      "file": "daniel-raise.webp",
+      "w": 609,
+      "h": 900,
+      "trim": [
+        96,
+        102,
+        769,
+        1097
+      ],
+      "source": "design/pipeline/raw/daniel/rejoice/daniel-raise.png",
+      "bytes": 56884
+    },
+    "king-run": {
+      "file": "king-run.webp",
+      "w": 740,
+      "h": 900,
+      "trim": [
+        55,
+        113,
+        859,
+        1091
+      ],
+      "source": "design/pipeline/raw/daniel/rejoice/king-run.png",
+      "bytes": 88938
+    },
+    "crowd": {
+      "file": "crowd.webp",
+      "w": 783,
+      "h": 700,
+      "trim": [
+        235,
+        101,
+        1029,
+        811
+      ],
+      "source": "design/pipeline/raw/daniel/rejoice/crowd.png",
+      "bytes": 91586
+    }
+  }
+}
