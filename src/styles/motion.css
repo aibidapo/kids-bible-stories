@@ -421,6 +421,12 @@ svg [class*=" a-"] {
   transform-origin: 50% 100%;
 }
 
+/*
+ * One-shot story beat for the "strike" scene. Attributes hold the AFTER
+ * state (stone hidden, standing giant hidden, fallen giant shown) so Calm
+ * mode shows the outcome; the animations replay the beat once when motion
+ * is on: the stone waits, flies, the giant staggers, then the poses crossfade.
+ */
 @keyframes stone-fly {
   0%,
   55% {
@@ -479,6 +485,92 @@ svg [class*=" a-"] {
 }
 .a-land-in {
   animation: land-in 6s linear both;
+}
+
+/*
+ * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
+ * a moment near the end of each cycle. Calm mode drops the animation and the
+ * attribute value keeps the eyes open.
+ */
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+  }
+  95%,
+  97% {
+    opacity: 1;
+  }
+}
+.a-blink {
+  animation: blink 5.2s linear infinite;
+}
+
+/*
+ * Two-frame flipbook for raster wings: frame A is drawn with opacity="1" and
+ * frame B with opacity="0", so Calm mode shows a single clean pose. Playing,
+ * the two swap in hard steps.
+ */
+@keyframes frame-a {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes frame-b {
+  0%,
+  49% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+.a-frame-a {
+  animation: frame-a 0.36s steps(1, end) infinite;
+}
+.a-frame-b {
+  animation: frame-b 0.36s steps(1, end) infinite;
+}
+
+/*
+ * Tail flick. Still for most of a nine-second cycle, then two quick swishes.
+ * The tail is its own raster layer whose root sits at a corner of its box, so
+ * one class per root corner keeps the pivot in this file (rule 2). Calm mode
+ * drops the animation and the tail rests exactly where it was drawn.
+ */
+@keyframes tail-flick {
+  0%,
+  78%,
+  100% {
+    transform: rotate(0deg);
+  }
+  82% {
+    transform: rotate(-9deg);
+  }
+  86% {
+    transform: rotate(7deg);
+  }
+  90% {
+    transform: rotate(-6deg);
+  }
+  94% {
+    transform: rotate(3deg);
+  }
+}
+.a-tail-flick-tr {
+  animation: tail-flick 9s ease-in-out infinite;
+  transform-origin: 100% 0%;
+}
+.a-tail-flick-tl {
+  animation: tail-flick 9s ease-in-out infinite;
+  transform-origin: 0% 0%;
 }
 
 /*

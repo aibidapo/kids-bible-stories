@@ -158,7 +158,7 @@ export const david: Story = {
       text: {
         little:
           "David let the stone fly. WHAM! It hit Goliath right on the forehead, and down he went.",
-        big: "Goliath laughed at the boy with the stick. David answered that he came in the name of the Lord. Then he ran toward the giant, whirled the sling, and let one stone go. It struck Goliath square on the forehead, and the champion of the Philistines fell face-down in the dust.",
+        big: "Goliath laughed at the boy with the stick. David answered that he came in the name of the Lord. Then he ran toward the giant, whirled the sling, and let one stone go. It struck Goliath square on the forehead, and the champion of the Philistines crashed to the ground and lay still.",
       },
       verse: "1 Samuel 17:49",
       hotspots: [

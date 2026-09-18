@@ -135,14 +135,16 @@ export function ShepherdBoy({ found }: SceneArtProps) {
       <Bird up={{ src: redbirdUp, w: L["redbird-up"].w, h: L["redbird-up"].h }} down={{ src: redbirdDown, w: L["redbird-down"].w, h: L["redbird-down"].h }} upEye={[185, 95]} downEye={[215, 50]} x={620} y={230} size={0.22} motion="a-flutter" delay={-3} />
       <Bird up={{ src: goldfinchUp, w: L["goldfinch-up"].w, h: L["goldfinch-up"].h }} down={{ src: goldfinchDown, w: L["goldfinch-down"].w, h: L["goldfinch-down"].h }} upEye={[188, 100]} downEye={[245, 45]} x={330} y={120} size={0.2} motion="a-flutter" delay={-7} flip />
 
-      {/* the flock, far to near */}
-      {sheep(880, 560, 0.16, true, "a-breathe-slow")}
-      {sheep(760, 570, 0.18, false, "a-breathe")}
-      {sheep(820, 612, 0.2, true, "a-breathe-slow")}
-      {sheep(640, 596, 0.24, false, "a-breathe")}
-      {sheep(560, 618, 0.22, true, "a-breathe-slow")}
-      <SoftShadow x={470} y={600} rx={60} ry={10} opacity={0.4} />
-      <Layer src={shepherdLamb} w={L.lamb.w} h={L.lamb.h} x={470} y={600} scale={0.3} className="a-breathe-slow" />
+      {/* the flock grazes the meadow between David and the stream, far to near */}
+      {sheep(600, 528, 0.13, true, "a-breathe-slow")}
+      {sheep(520, 536, 0.14, false, "a-breathe")}
+      {sheep(680, 548, 0.15, true, "a-breathe-slow")}
+      {sheep(430, 556, 0.16, false, "a-breathe")}
+      {sheep(590, 578, 0.19, true, "a-breathe-slow")}
+      {sheep(660, 604, 0.22, false, "a-breathe")}
+      {sheep(540, 616, 0.22, true, "a-breathe-slow")}
+      <SoftShadow x={450} y={604} rx={60} ry={10} opacity={0.4} />
+      <Layer src={shepherdLamb} w={L.lamb.w} h={L.lamb.h} x={450} y={604} scale={0.3} className="a-breathe-slow" />
 
       <SoftShadow x={300} y={596} rx={70} ry={12} opacity={0.4} />
       <Layer src={shepherdDavid} w={L["david-staff"].w} h={L["david-staff"].h} x={300} y={596} scale={0.38} className="a-breathe">
@@ -274,8 +276,9 @@ export function TheStrike({ found }: SceneArtProps) {
       {/* the stone: waits at the sling, flies to the forehead, vanishes; hidden at rest */}
       <g transform="translate(280 300)">
         <g className="a-stone-fly" opacity="0">
-          <circle r="9" fill="#9a9aa0" />
-          <circle r="7" fill="#c9c9cf" cx="-2" cy="-2" />
+          <circle r="14" fill="#5e5c66" />
+          <circle r="10" fill="#8f8d97" cx="-3" cy="-3" />
+          <circle r="4" fill="#c9c7d0" cx="-6" cy="-6" />
         </g>
       </g>
 
