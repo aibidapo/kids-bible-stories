@@ -164,8 +164,8 @@ export const david: Story = {
       hotspots: [
         {
           id: "stone-hit",
-          x: 79,
-          y: 36,
+          x: 80,
+          y: 16,
           size: 20,
           label: "where the stone hit",
           reward:
@@ -175,7 +175,7 @@ export const david: Story = {
         },
         {
           id: "goliath-down",
-          x: 61,
+          x: 70,
           y: 90,
           size: 26,
           label: "Goliath on the ground",

@@ -435,12 +435,12 @@ svg [class*=" a-"] {
   }
   70% {
     opacity: 1;
-    transform: translate(460px, -80px);
+    transform: translate(520px, -200px);
   }
   71%,
   100% {
     opacity: 0;
-    transform: translate(460px, -80px);
+    transform: translate(520px, -200px);
   }
 }
 .a-stone-fly {

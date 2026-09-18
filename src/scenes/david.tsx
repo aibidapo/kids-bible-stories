@@ -39,7 +39,10 @@ import type { SceneArtProps } from "../types";
 
 /** Eye points and lid tones come from design/pipeline/find_eyes.py. */
 const EYES = {
-  davidStaff: { points: [[241, 137], [334, 136]] as [number, number][], rx: 10, ry: 15, tone: "#d98050" },
+  // measured by hand on a 10 px grid: the detector had found only the white crescents
+  davidStaff: { points: [[249, 136], [320, 136]] as [number, number][], rx: 17, ry: 15, tone: "#d98050" },
+  // the Noah sheep pair shows one eye per sheep; black faces
+  sheepPair: { points: [[457, 136], [703, 183]] as [number, number][], rx: 16, ry: 15, tone: "#1e1a1a" },
   goliathTaunt: { points: [[298, 234], [375, 237]] as [number, number][], rx: 16, ry: 16, tone: "#e4a578" },
   armyAfraid: {
     points: [[126, 183], [190, 182], [386, 164], [459, 156], [608, 178], [673, 176]] as [number, number][],
@@ -101,10 +104,12 @@ export function ShepherdBoy({ found }: SceneArtProps) {
   const L = shepherdLayers.cutouts;
   const T = twoLayers.cutouts;
   const tree = L.tree;
-  const sheep = (x: number, y: number, s: number, flip: boolean, cls: string) => (
+  const sheep = (x: number, y: number, s: number, flip: boolean, cls: string, blink: number) => (
     <>
       <SoftShadow x={x} y={y} rx={T.sheep.w * s * 0.42} ry={10} opacity={0.4} />
-      <Layer src={twoSheep} w={T.sheep.w} h={T.sheep.h} x={x} y={y} scale={s} flip={flip} className={cls} />
+      <Layer src={twoSheep} w={T.sheep.w} h={T.sheep.h} x={x} y={y} scale={s} flip={flip} className={cls}>
+        <Eyelids {...EYES.sheepPair} w={T.sheep.w} h={T.sheep.h} delay={blink} />
+      </Layer>
     </>
   );
   const tuft = (x: number, y: number, s: number, delay: number, flip = false) => (
@@ -136,15 +141,19 @@ export function ShepherdBoy({ found }: SceneArtProps) {
       <Bird up={{ src: goldfinchUp, w: L["goldfinch-up"].w, h: L["goldfinch-up"].h }} down={{ src: goldfinchDown, w: L["goldfinch-down"].w, h: L["goldfinch-down"].h }} upEye={[188, 100]} downEye={[245, 45]} x={330} y={120} size={0.2} motion="a-flutter" delay={-7} flip />
 
       {/* the flock grazes the meadow between David and the stream, far to near */}
-      {sheep(600, 528, 0.13, true, "a-breathe-slow")}
-      {sheep(520, 536, 0.14, false, "a-breathe")}
-      {sheep(680, 548, 0.15, true, "a-breathe-slow")}
-      {sheep(430, 556, 0.16, false, "a-breathe")}
-      {sheep(590, 578, 0.19, true, "a-breathe-slow")}
-      {sheep(660, 604, 0.22, false, "a-breathe")}
-      {sheep(540, 616, 0.22, true, "a-breathe-slow")}
+      {sheep(600, 528, 0.13, true, "a-breathe-slow", 0.7)}
+      {sheep(520, 536, 0.14, false, "a-breathe", 1.9)}
+      {sheep(680, 548, 0.15, true, "a-breathe-slow", 3.1)}
+      {sheep(430, 556, 0.16, false, "a-breathe", 4.3)}
+      {sheep(590, 578, 0.19, true, "a-breathe-slow", 2.5)}
+      {sheep(660, 604, 0.22, false, "a-breathe", 0.2)}
+      {sheep(540, 616, 0.22, true, "a-breathe-slow", 3.7)}
       <SoftShadow x={450} y={604} rx={60} ry={10} opacity={0.4} />
-      <Layer src={shepherdLamb} w={L.lamb.w} h={L.lamb.h} x={450} y={604} scale={0.3} className="a-breathe-slow" />
+      <Layer src={shepherdLamb} w={L.lamb.w} h={L.lamb.h} x={450} y={604} scale={0.3} className="a-breathe-slow">
+        {/* lamb faces left: a small far eye and a big near eye, measured on a 10 px grid */}
+        <Eyelids points={[[57, 108]]} w={L.lamb.w} h={L.lamb.h} rx={9} ry={8} tone="#241f1f" delay={1.4} />
+        <Eyelids points={[[133, 125]]} w={L.lamb.w} h={L.lamb.h} rx={19} ry={16} tone="#241f1f" delay={1.4} />
+      </Layer>
 
       <SoftShadow x={300} y={596} rx={70} ry={12} opacity={0.4} />
       <Layer src={shepherdDavid} w={L["david-staff"].w} h={L["david-staff"].h} x={300} y={596} scale={0.38} className="a-breathe">
@@ -241,8 +250,8 @@ export function TheStrike({ found }: SceneArtProps) {
 
       {/* standing Goliath, toppling about his heels, then hidden */}
       {/* standing Goliath staggers about his feet, then fades as the fallen pose fades in */}
-      <SoftShadow x={820} y={622} rx={130} ry={16} opacity={0.45} />
-      <g transform="translate(820 622) scale(0.45)">
+      <SoftShadow x={820} y={622} rx={170} ry={20} opacity={0.45} />
+      <g transform="translate(820 622) scale(0.6)">
         <g className="a-topple">
           <g className="a-stand-out" opacity="0">
             <image
@@ -255,8 +264,8 @@ export function TheStrike({ found }: SceneArtProps) {
           </g>
         </g>
       </g>
-      <SoftShadow x={610} y={626} rx={230} ry={18} opacity={0.4} />
-      <g transform="translate(610 626) scale(0.42)">
+      <SoftShadow x={700} y={628} rx={270} ry={20} opacity={0.4} />
+      <g transform="translate(700 628) scale(0.5)">
         <g className="a-land-in" opacity="1">
           <image
             href={victoryGoliath}
@@ -282,8 +291,8 @@ export function TheStrike({ found }: SceneArtProps) {
         </g>
       </g>
 
-      {found.includes("stone-hit") && <Sparkle x={790} y={215} s={1.8} />}
-      {found.includes("goliath-down") && <Sparkle x={610} y={560} s={1.5} delay={0.3} />}
+      {found.includes("stone-hit") && <Sparkle x={800} y={110} s={1.8} />}
+      {found.includes("goliath-down") && <Sparkle x={700} y={560} s={1.5} delay={0.3} />}
       <Grain opacity={0.05} />
     </>
   );
