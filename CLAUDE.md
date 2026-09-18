@@ -126,9 +126,11 @@ worked because it compiled.
 # All 26 scenes to PNGs + a contact sheet, with motion frozen. This is exactly
 # the still frame Calm mode shows, so it catches art that only composes while
 # it is moving.
-npx esbuild scripts/render-scenes.tsx --bundle --platform=node --format=esm \
-  --jsx=automatic --packages=external --outfile=scratch/render.mjs
-OUT_DIR=scratch/scenes node scratch/render.mjs
+npm run render                                   # OUT_DIR=… to change the folder
+
+# Full-size render of one scene stacked over a reference image. Judge art
+# from this, not from the 500px contact sheet.
+npm run compare -- daniel/den design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg
 
 # Screenshot the running app across phone and tablet layouts.
 # Needs `npm run preview` on :4173 and a Chromium on --remote-debugging-port=9222.

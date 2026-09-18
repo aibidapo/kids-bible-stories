@@ -11,6 +11,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import sharp from 'sharp'
 import { createElement } from 'react'
 import { SCENE_ART } from '../src/scenes/index'
+import { inlinePng } from './lib/inline-png'
 
 const OUT = process.env.OUT_DIR ?? 'scratch/scenes'
 mkdirSync(OUT, { recursive: true })
@@ -20,7 +21,9 @@ const tiles: { key: string; png: Buffer }[] = []
 
 for (const key of keys) {
   const Art = SCENE_ART[key]
-  const inner = renderToStaticMarkup(createElement(Art, { active: true, animate: false, found: [] }))
+  const inner = await inlinePng(
+    renderToStaticMarkup(createElement(Art, { active: true, animate: false, found: [] })),
+  )
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="625" viewBox="0 0 1000 625">${inner}</svg>`
   const file = `${OUT}/${key.replace('/', '-')}.png`
   const png = await sharp(Buffer.from(svg)).resize(500, 313).png().toBuffer()
