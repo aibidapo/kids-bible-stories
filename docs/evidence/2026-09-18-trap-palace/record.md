@@ -131,3 +131,15 @@ down."
   phone-safe zone (x 90–910). Hotspots: king 50 % / 42 %, scroll 54 % / 64 %.
 - Checks: `check:motion` 27 clean; full-size render `trap-after-court.png`;
   browser fresh context `trap-court-phone.png`; hook on commit.
+
+## Round 5: the king himself faces the room
+
+User: "The king still needs to face the room properly." The round-2 king
+cutout had the throne frontal but the king turned to his left with the
+raised hand. Regenerated as a formal front portrait: head straight,
+shoulders square, eyes on the viewer, feet symmetrical, throne centred and
+symmetrical, same worried expression and raised palm. Raw of the turned
+version kept locally as `king-throne-v2-turned.png`; cutout 538×700, 59 KB;
+scene still 399 KB. Cutout on green `king-throne-round-5.png`; render
+`trap-after-court.png` and phone still `trap-court-phone.png` replaced;
+sidecar replaced.

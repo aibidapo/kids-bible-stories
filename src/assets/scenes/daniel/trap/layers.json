@@ -9,16 +9,16 @@
   "cutouts": {
     "king-throne": {
       "file": "king-throne.webp",
-      "w": 510,
+      "w": 538,
       "h": 700,
       "trim": [
-        75,
-        92,
-        820,
+        47,
+        72,
+        849,
         1115
       ],
       "source": "design/pipeline/raw/daniel/trap/king-throne.png",
-      "bytes": 61014
+      "bytes": 60500
     },
     "official-scroll": {
       "file": "official-scroll.webp",
