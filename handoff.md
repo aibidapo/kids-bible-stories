@@ -123,7 +123,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 ## 4. Next Steps
 
 - [ ] **User reviews Family time**: content for five stories (`src/data/stories/*.ts`, `devotional`) and the screen at `#/story/daniel/family`.
-- [ ] Roadmap phase 2 next: licensing decision (owner) and the tablet crop (code). See `docs/roadmap.md`.
+- [ ] Roadmap revised after a roast: **phase 0 discovery (interviews, no code) blocks phases 3+**; then 2a licensing (owner), 2b tablet crop, 2c CI and component coverage; phase 3 is the distribution decision. See `docs/roadmap.md`.
 - [ ] **User reviews the throne room** on `#/story/daniel/1` (throne, courtiers, background).
 - [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.
 - [ ] **User reviews the angel wing beat** on `#/story/daniel/3` (phone); depth and speed are two numbers in `motion.css`.
