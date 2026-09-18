@@ -7,7 +7,7 @@
 #   2. format   - prettier on the staged files (the tree-wide check is `npm run format:check`)
 #   3. lint     - eslint incl. security rules; errors block, warnings are reviewed per site
 #   4. motion   - transform/class constraint on every scene (scripts/check-motion.tsx)
-#   5. test     - vitest
+#   5. test     - vitest with coverage thresholds (vitest.config.ts)
 #   6. build    - `tsc -b` typecheck then the production bundle
 set -e
 
@@ -26,8 +26,8 @@ npm run --silent lint
 echo "pre-commit: motion constraints"
 npm run --silent check:motion
 
-echo "pre-commit: tests"
-npm run --silent test
+echo "pre-commit: tests + coverage thresholds"
+npm run --silent coverage
 
 echo "pre-commit: typecheck + build"
 npm run --silent build

@@ -13,3 +13,9 @@
 [2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (4)[39m
 ## restored:
 1
+## mutation: recordQuiz keeps equal score (>= -> >)
+      Tests  12 passed (12)
+## mutation (retry after strengthening): recordQuiz >= -> >
+     × keeps only the best quiz score per story and writes only when it improves 4ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  1 failed | 11 passed (12)

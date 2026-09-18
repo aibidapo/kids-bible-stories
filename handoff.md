@@ -33,8 +33,10 @@ Prettier mechanical over 28 files, then the record commit).
   `detect-object-injection` warnings reviewed per site, policy in `CLAUDE.md`;
   `getSceneArt` guards prototype keys.
 - `npm audit`: two moderate findings in vitest 3 cleared by vitest 5; now 0.
-- Coverage baseline 21.5 % lines over the pure-seam include set; no threshold
-  yet (ratchet plan in the record).
+- Coverage ratchet in place: `store.ts` characterised (12 tests, 64 total),
+  thresholds in `vitest.config.ts` at lines 45 / branches 56 / functions 67 /
+  statements 44, enforced by the hook through `npm run coverage`. A surviving
+  mutation in the first `recordQuiz` test was found and closed.
 - Evidence: `docs/evidence/2026-09-18-local-gates/record.md`.
 
 Before that, the art migration, newest first (records under `docs/evidence/`):
@@ -75,7 +77,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, HEAD is the local-gates record commit after `c67fc5b`.
+- **Git Branch:** `main`, HEAD is the coverage-ratchet commit after `1dcf777`.
 - **Uncommitted changes:** `design/concept-art/` untracked (six concept JPEGs,
   generator, README; ~5 MB). User asked to store them, never asked to commit.
   `coverage/` is generated and gitignored.
@@ -92,11 +94,11 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 - [ ] **User reviews** each story from its record's `story-sheet.png` and
       `phones.png` (`docs/evidence/2026-09-18-{daniel,noah,david,jonah,creation}-story-raster/`).
-- [ ] **Coverage ratchet:** add `coverage.thresholds` at the baseline
-      (lines 21 %, branches 25 %) so totals cannot fall, then raise with each
-      test commit. Largest uncovered seams: `src/lib/store.ts` (progress
-      record, sticker and quiz bookkeeping) and `src/lib/sound.ts`. First
-      review 2026-10-02.
+- [x] Coverage ratchet: thresholds at the measured floor, hook-enforced.
+- [ ] Raise coverage: `src/lib/sound.ts` (0 %, needs a fake `AudioContext`),
+      then widen the include set to components rendered through
+      `react-dom/server`. Raise thresholds in the same commit each time.
+      First review 2026-10-02.
 - [ ] Decide on CI (GitHub Actions running the identical hook commands plus
       `npm run audit`). Without it the hook is per-clone only.
 - [ ] Tablet-landscape crop decision (sun/moon and the den king sit above y=225).

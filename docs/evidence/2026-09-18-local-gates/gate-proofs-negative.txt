@@ -41,3 +41,12 @@ pre-commit: tests
 commit exit=1
 HEAD after blocked attempt: ea66d6d Record the garden wander check and update handoff
 staged fixture gone: 0
+### E. coverage threshold gate rejects (lines threshold raised to 90 temporarily)
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+Lines        : 45.14% ( 79/175 )
+ERROR: Coverage for lines (45.14%) does not meet global threshold (90%)
+coverage exit=1
+### E2. passes at the baseline
+      Tests  64 passed (64)
+Lines        : 45.14% ( 79/175 )
+coverage exit=0

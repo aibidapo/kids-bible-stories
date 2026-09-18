@@ -17,7 +17,8 @@ npm run dev        # dev server
 npm run build      # typecheck + production build into dist/
 npm run preview    # serve the built output
 npm run typecheck  # tsc -b
-npm test           # vitest: pure seams (quiz shuffle, tone maths, raster geometry, inline-png) and story-data invariants
+npm test           # vitest: pure seams (quiz shuffle, tone maths, raster geometry, inline-png, store) and story-data invariants
+npm run coverage   # the same with v8 coverage; fails below the thresholds in vitest.config.ts (ratchet: only ever raised)
 npm run lint       # eslint incl. security rules; errors block, warnings are reviewed per site (see below)
 npm run format     # prettier --write over src, scripts and root configs
 npm run format:check
@@ -29,7 +30,9 @@ git config core.hooksPath .githooks   # once per clone: activates the pre-commit
 ```
 
 `.githooks/pre-commit` runs, in order, `secrets`, prettier on the staged files,
-`lint`, `check:motion`, `test`, `build`, and refuses the commit if any fails.
+`lint`, `check:motion`, `coverage`, `build`, and refuses the commit if any fails.
+When a commit adds tests, raise the thresholds to the new measured floor in
+the same commit; never lower them.
 Activate it once per clone with the command above and check
 `git config core.hooksPath` prints `.githooks` at the start of a session. The
 tree-wide format check is `npm run format:check`; the hook checks only what is

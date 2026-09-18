@@ -114,3 +114,28 @@ pragma needed.
 - **Original red artifact** for step 1 was overwritten (see chronology).
 - **No human review** of this increment beyond the author's inline roast; no
   live target applies (offline PWA, no backend).
+
+## Follow-up: coverage ratchet and `store.ts` tests
+
+- `src/lib/store.test.ts`: 12 characterisation tests over a fake
+  `localStorage` (blank start, merge of an old save, corrupt JSON, OS
+  reduced-motion, setter persistence, write failure tolerated, `recordFound`
+  sticker rules, `foundIn`, `markCompleted` idempotent, `recordQuiz` best-only,
+  `resetProgress` keeps grown-up settings). Module state is isolated with
+  `vi.resetModules()` and a dynamic import per test; `useProgress` is read by
+  rendering a probe through `react-dom/server`.
+- Mutation `>=` → `>` in `recordQuiz` **survived** the first version of the
+  test (an equal score rewrote the same value). The test now counts storage
+  writes and the mutation is caught. Both runs are in
+  `test-mutation-sanity.txt`.
+- Coverage after: lines 45.14 %, branches 56.04 %, functions 67.34 %,
+  statements 44.55 % (`coverage-after-store.txt`); `store.ts` 95 % lines, the
+  gap is the unsubscribe closure only React exercises. `sound.ts` remains 0 %
+  (Web Audio, needs a fake `AudioContext`; next candidate).
+- `vitest.config.ts` now carries `coverage.thresholds` at lines 45, branches
+  56, functions 67, statements 44. The hook's test step runs `npm run coverage`
+  so the thresholds block. Proven: a temporary lines threshold of 90 fails
+  with `ERROR: Coverage for lines (45.14%) does not meet global threshold
+  (90%)`, exit 1; the baseline passes (`gate-proofs-negative.txt` E, E2).
+- Rule recorded in `CLAUDE.md`: a commit that adds tests raises the thresholds
+  to the new floor in the same commit; thresholds are never lowered.
