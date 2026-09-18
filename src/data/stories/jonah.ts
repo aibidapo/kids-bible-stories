@@ -28,8 +28,8 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "ship",
-          x: 84,
-          y: 66,
+          x: 86,
+          y: 68,
           size: 30,
           label: "the ship",
           reward:
@@ -61,7 +61,7 @@ export const jonah: Story = {
       hotspots: [
         {
           id: "sailors",
-          x: 56,
+          x: 47,
           y: 42,
           size: 22,
           label: "the frightened sailors",

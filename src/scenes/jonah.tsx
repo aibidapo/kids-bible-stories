@@ -60,20 +60,20 @@ export function RunningAway({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={runBg} />
-      {/* the ship rides at the quay's edge, on the water, prow to the left: west, away from Nineveh */}
-      <g transform="translate(870 612) scale(-1 1)">
-        <g className="a-rock">
-          <image href={runShip} x={-L.ship.w * 0.44} y={-L.ship.h * 0.88} width={L.ship.w * 0.88} height={L.ship.h * 0.88} />
-        </g>
-      </g>
-      <SoftShadow x={560} y={398} rx={120} ry={10} opacity={0.4} />
-      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={560} y={398} scale={0.44} className="a-breathe-slow">
+      <SoftShadow x={470} y={402} rx={120} ry={10} opacity={0.4} />
+      <Layer src={runSailors} w={L.sailors.w} h={L.sailors.h} x={470} y={402} scale={0.44} className="a-breathe-slow">
         <Eyelids {...EYES.sailors} w={L.sailors.w} h={L.sailors.h} delay={2.1} />
       </Layer>
       <SoftShadow x={320} y={436} rx={90} ry={10} opacity={0.4} />
       <Layer src={runJonah} w={L["jonah-walk"].w} h={L["jonah-walk"].h} x={320} y={436} scale={0.37} className="a-breathe">
         <Eyelids {...EYES.jonahWalk} w={L["jonah-walk"].w} h={L["jonah-walk"].h} />
       </Layer>
+      {/* the ship, nearer the viewer than the quay, is drawn in front; prow to the left: west, away from Nineveh */}
+      <g transform="translate(905 616) scale(-1 1)">
+        <g className="a-rock">
+          <image href={runShip} x={-L.ship.w * 0.44} y={-L.ship.h * 0.88} width={L.ship.w * 0.88} height={L.ship.h * 0.88} />
+        </g>
+      </g>
       {found.includes("ship") && <Sparkle x={840} y={300} s={1.6} />}
       <Grain opacity={0.05} />
     </>

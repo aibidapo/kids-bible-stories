@@ -13,3 +13,4 @@ Pass = characters match the Jonah sheet, scene reads as the same book, hotspots 
 | 05 | running | P | running-render.png | figures moved up onto the quay top (feet at y 478 and 398 against an edge that runs from ~540 at the left to ~330 at the right); ship 0.88 moored at the quay edge |
 | 06 | running | P | running-feet-zoom.png | Jonah moved back from the edge onto the flat stone at (320,436) scale 0.37; feet on flagstones |
 | 07 | running | P | running-render.png | ship mirrored so the prow points left (west, away from Nineveh) to match the hotspot text |
+| 08 | running | P | running-render.png | sailors moved left of the prow (470,402); ship drawn in front of the figures since it is nearer the viewer than the quay; ship at (905,616) |
