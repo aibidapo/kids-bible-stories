@@ -10,8 +10,8 @@ export default defineConfig({
       provider: "v8",
       include: ["src/lib/**", "src/art/raster.tsx", "src/art/v2/tone.ts", "scripts/lib/**"],
       // Ratchet: set at the measured baseline after each test-adding commit and only ever
-      // raised. `sound.ts` (Web Audio, 0 %) is the main drag; see the local-gates record.
-      thresholds: { lines: 45, branches: 56, functions: 67, statements: 44 },
+      // raised. The include set is the pure seams; see the local-gates record.
+      thresholds: { lines: 98, branches: 95, functions: 93, statements: 97 },
     },
   },
 });

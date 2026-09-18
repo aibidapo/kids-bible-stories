@@ -108,7 +108,9 @@ const D = process.env.OUT ?? "scratch/ui";
 
 await shot({ path: `${D}/1-library-phone.png`, width: 390, height: 844 });
 await shot({ path: `${D}/2-library-tablet.png`, width: 1024, height: 768 });
+// noah/4 is the rainbow page.
 await shot({ path: `${D}/3-story-phone.png`, route: "#/story/noah/4", width: 390, height: 844 });
+// creation/5 is the people page; its third hotspot is tapped.
 await shot({
   path: `${D}/4-story-hotspot.png`,
   route: "#/story/creation/5",
@@ -137,6 +139,7 @@ await shot({
   height: 844,
   before: `[...document.querySelectorAll('button')].find((b) => b.getAttribute('aria-label') === 'Grown-up settings').click(); true`,
 });
+// jonah/1 is the storm page, shot in Calm mode.
 await shot({
   path: `${D}/9-calm-storm.png`,
   route: "#/story/jonah/1",

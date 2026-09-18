@@ -77,10 +77,8 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, HEAD is the coverage-ratchet commit after `1dcf777`.
-- **Uncommitted changes:** `design/concept-art/` untracked (six concept JPEGs,
-  generator, README; ~5 MB). User asked to store them, never asked to commit.
-  `coverage/` is generated and gitignored.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the sound-tests commit.
+- **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
   Pillow. `GEMINI_API_KEY` in the user's environment, billing enabled. Hooks
@@ -95,19 +93,21 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [ ] **User reviews** each story from its record's `story-sheet.png` and
       `phones.png` (`docs/evidence/2026-09-18-{daniel,noah,david,jonah,creation}-story-raster/`).
 - [x] Coverage ratchet: thresholds at the measured floor, hook-enforced.
-- [ ] Raise coverage: `src/lib/sound.ts` (0 %, needs a fake `AudioContext`),
-      then widen the include set to components rendered through
-      `react-dom/server`. Raise thresholds in the same commit each time.
-      First review 2026-10-02.
+- [x] `sound.ts` characterised with a fake Web Audio graph (20 tests, 84
+      total); thresholds now lines 98 / branches 95 / functions 93 /
+      statements 97 over the pure-seam include set.
+- [ ] Widen the coverage include set to components rendered through
+      `react-dom/server` (Quiz, NarrationText, StoryPlayer), then scenes.
+      Raise thresholds in the same commit each time. First review 2026-10-02.
 - [ ] Decide on CI (GitHub Actions running the identical hook commands plus
       `npm run audit`). Without it the hook is per-clone only.
 - [ ] Tablet-landscape crop decision (sun/moon and the den king sit above y=225).
 - [ ] Licensing stance for Gemini-generated art in a published app.
-- [ ] `design/concept-art/`: commit or gitignore.
+- [x] `design/concept-art/` committed (`f5a4bf0`) and pushed.
 - [ ] Real-phone performance check (emulated 4x throttle only so far).
-- [ ] Optional: leg flipbooks for true walking gaits in the garden; prune
-      unused `src/art/base.tsx` exports; `scripts/shoot.mjs` shots 3, 4, 9
-      reference old routes by number.
+- [x] Pruned `Hills`, `GrassTufts`, `Rainbow`, `LightRays` from `base.tsx`;
+      `shoot.mjs` numbered routes verified and annotated.
+- [ ] Optional: leg flipbooks for true walking gaits in the garden.
 - [ ] Optional: mutation testing tool (Stryker) on `quiz.ts`, `tone.ts`,
       `store.ts` once covered.
 

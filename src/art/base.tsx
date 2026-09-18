@@ -186,31 +186,6 @@ export function Clouds({
 
 /* ---------------------------------------------------------------- land ---- */
 
-export function Hills({
-  y = 400,
-  colors = [C.grassDark, C.grass],
-}: {
-  y?: number;
-  colors?: string[];
-}) {
-  return (
-    <g>
-      {colors.map((c, i) => {
-        const dy = y + i * 34;
-        return (
-          <path
-            key={i}
-            d={`M0,${dy + 40} Q${180 + i * 70},${dy - 90} ${420 + i * 40},${dy + 10}
-                Q${640 - i * 60},${dy + 90} ${780 + i * 30},${dy - 20}
-                Q${900 + i * 20},${dy - 70} ${VB.w},${dy + 30} L${VB.w},${VB.h} L0,${VB.h} Z`}
-            fill={c}
-          />
-        );
-      })}
-    </g>
-  );
-}
-
 export function Ground({
   y = 480,
   fill = C.grass,
@@ -228,38 +203,6 @@ export function Ground({
         fill={top}
         opacity="0.55"
       />
-    </g>
-  );
-}
-
-/** Tufts of grass along a baseline — cheap detail that makes ground read as ground. */
-export function GrassTufts({
-  y = 500,
-  count = 22,
-  seed = 3,
-  fill = C.grassDark,
-}: {
-  y?: number;
-  count?: number;
-  seed?: number;
-  fill?: string;
-}) {
-  return (
-    <g fill={fill} opacity="0.8">
-      {Array.from({ length: count }, (_, i) => {
-        const s = seed * 30 + i;
-        const x = randIn(s, 0, VB.w);
-        const h = randIn(s + 0.3, 8, 20);
-        const yy = y + randIn(s + 0.7, 0, VB.h - y - 10);
-        return (
-          <path
-            key={i}
-            d={`M${x},${yy} q${-4},${-h} ${-9},${-h * 1.1} q${8},${1} ${9},${h} q${1},${-h} ${9},${-h * 1.1} q${-5},${2} ${-9},${h} Z`}
-            className="a-sway"
-            style={{ animationDelay: `${rand(s + 1.9) * 3}s` }}
-          />
-        );
-      })}
     </g>
   );
 }
@@ -374,25 +317,6 @@ export function Lightning({ delay = 0 }: { delay?: number }) {
   );
 }
 
-export function Rainbow({ cx = 500, cy = 560, r = 330 }: { cx?: number; cy?: number; r?: number }) {
-  const bands = ["#e8453c", "#f5871f", "#f6c63c", "#4caf50", "#3f7fd6", "#7a4fc4"];
-  return (
-    <g className="a-draw-in">
-      {bands.map((c, i) => (
-        <path
-          key={c}
-          d={`M${cx - r + i * 24},${cy} A${r - i * 24},${r - i * 24} 0 0 1 ${cx + r - i * 24},${cy}`}
-          fill="none"
-          stroke={c}
-          strokeWidth="24"
-          strokeLinecap="round"
-          opacity="0.9"
-        />
-      ))}
-    </g>
-  );
-}
-
 /** Soft radiant glow, used wherever God's presence or a miracle is shown. */
 export function HolyGlow({
   x,
@@ -416,35 +340,6 @@ export function HolyGlow({
         </radialGradient>
       </defs>
       <circle cx={x} cy={y} r={r} fill={`url(#${id})`} />
-    </g>
-  );
-}
-
-/** Diagonal shafts of light from a point — the "God speaks" motif. */
-export function LightRays({
-  x,
-  y,
-  count = 9,
-  len = 700,
-  color = C.glow,
-}: {
-  x: number;
-  y: number;
-  count?: number;
-  len?: number;
-  color?: string;
-}) {
-  return (
-    <g className="a-spin-vslow" opacity="0.5">
-      {Array.from({ length: count }, (_, i) => (
-        <path
-          key={i}
-          d={`M${x},${y} L${x - 40},${y + len} L${x + 40},${y + len} Z`}
-          fill={color}
-          opacity={0.25 + (i % 3) * 0.12}
-          transform={`rotate(${(360 / count) * i} ${x} ${y})`}
-        />
-      ))}
     </g>
   );
 }

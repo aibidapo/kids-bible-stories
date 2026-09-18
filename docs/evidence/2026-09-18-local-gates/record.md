@@ -139,3 +139,32 @@ pragma needed.
   (90%)`, exit 1; the baseline passes (`gate-proofs-negative.txt` E, E2).
 - Rule recorded in `CLAUDE.md`: a commit that adds tests raises the thresholds
   to the new floor in the same commit; thresholds are never lowered.
+
+## Follow-up 2: `sound.ts` tests, thresholds raised, dead exports pruned
+
+- `src/lib/sound.test.ts`: 20 tests over a recording fake of the Web Audio
+  graph (nodes, edges, parameter automation, start/stop). The fake throws on
+  an exponential ramp to a non-positive value, as a browser does. Checks: no
+  window / no `AudioContext` / `webkitAudioContext` fallback, one context
+  reused, suspended context resumed, mute silences all three entry points,
+  every `SoundName` builds sources that start, stop later and reach the
+  destination with a two-ramp envelope and positive frequencies, sparkle's
+  five staggered notes, noise vs tone composition, the rising correct
+  flourish, the gentle two-note dip under 0.25 peak.
+- Mutations (`test-mutation-sanity.txt`): decay ramp to 0 → 18 failures;
+  mute guard removed from `play` → 1 failure.
+- Coverage over the include set (`coverage-after-sound.txt`): lines 98.85 %,
+  branches 95.6 %, functions 93.87 %, statements 97.02 %. Uncovered:
+  `store.ts` unsubscribe closure (React-only), `sound.ts` two early returns
+  in `playCorrect`/`playTryAgain` for a missing context (same guard as `play`,
+  tested there), `inline-png.ts` unreachable `?? ''`, `raster.tsx` one
+  default-parameter branch.
+- Thresholds raised to lines 98 / branches 95 / functions 93 / statements 97.
+  The include set is the pure seams only; components and scenes are outside
+  it, so these numbers are not repository-wide coverage.
+- `src/art/base.tsx`: `Hills`, `GrassTufts`, `Rainbow`, `LightRays` had no
+  callers (grep over `src` and `scripts`); removed, 450 → 345 lines. Motion
+  check 27 clean, build green.
+- `scripts/shoot.mjs`: the numbered routes were resolved against story data
+  (noah/4 rainbow, creation/5 people with three hotspots, jonah/1 storm) and
+  annotated; all valid.
