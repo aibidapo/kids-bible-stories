@@ -155,18 +155,25 @@ await shot({
   progress: { mode: 'big' },
 })
 
-// Every Daniel page at phone and tablet, plus the first hotspot tapped on each.
-for (const [i, name] of ['prays', 'trap', 'den', 'angel', 'rejoice'].entries()) {
-  const route = `#/story/daniel/${i}`
-  await shot({ path: `${D}/20-daniel-${i}-${name}-phone.png`, route, width: 390, height: 844 })
-  await shot({ path: `${D}/21-daniel-${i}-${name}-tablet.png`, route, width: 1024, height: 768 })
-  await shot({
-    path: `${D}/22-daniel-${i}-${name}-hotspot.png`,
-    route,
-    width: 1024,
-    height: 768,
-    before: `document.querySelectorAll('.hotspot')[0].click(); true`,
-  })
+// Every page of each migrated story at phone and tablet, plus the first hotspot tapped on each.
+const STORIES = {
+  daniel: ['prays', 'trap', 'den', 'angel', 'rejoice'],
+  noah: ['builds', 'two-by-two', 'flood', 'dove', 'rainbow'],
+}
+const only = process.env.STORY ? [process.env.STORY] : Object.keys(STORIES)
+for (const story of only) {
+  for (const [i, name] of STORIES[story].entries()) {
+    const route = `#/story/${story}/${i}`
+    await shot({ path: `${D}/20-${story}-${i}-${name}-phone.png`, route, width: 390, height: 844 })
+    await shot({ path: `${D}/21-${story}-${i}-${name}-tablet.png`, route, width: 1024, height: 768 })
+    await shot({
+      path: `${D}/22-${story}-${i}-${name}-hotspot.png`,
+      route,
+      width: 1024,
+      height: 768,
+      before: `document.querySelectorAll('.hotspot')[0].click(); true`,
+    })
+  }
 }
 
 if (errors.length) {

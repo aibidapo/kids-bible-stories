@@ -24,9 +24,9 @@ export const noah: Story = {
       hotspots: [
         {
           id: "ark-frame",
-          x: 62,
-          y: 68,
-          size: 24,
+          x: 66,
+          y: 55,
+          size: 26,
           label: "the half-built ark",
           reward:
             "The ark was about as long as one and a half football pitches. It took Noah years.",
@@ -36,8 +36,8 @@ export const noah: Story = {
         {
           id: "noah",
           x: 25,
-          y: 76,
-          size: 18,
+          y: 72,
+          size: 20,
           label: "Noah",
           reward:
             "People laughed at Noah for building a boat on dry land. He kept building.",
@@ -59,7 +59,7 @@ export const noah: Story = {
         {
           id: "doves",
           x: 55,
-          y: 40,
+          y: 43,
           size: 20,
           label: "the two doves",
           reward:
@@ -69,9 +69,9 @@ export const noah: Story = {
         },
         {
           id: "elephants",
-          x: 38,
+          x: 32,
           y: 84,
-          size: 20,
+          size: 22,
           label: "the elephants",
           reward:
             "Two of every kind — which means two of the very largest kind, too.",
@@ -92,8 +92,8 @@ export const noah: Story = {
         {
           id: "ark-afloat",
           x: 50,
-          y: 58,
-          size: 24,
+          y: 62,
+          size: 26,
           label: "the floating ark",
           reward:
             "The same water that covered the world is what held the ark up.",
@@ -124,8 +124,8 @@ export const noah: Story = {
       hotspots: [
         {
           id: "leaf",
-          x: 60,
-          y: 44,
+          x: 62,
+          y: 53,
           size: 20,
           label: "the olive leaf",
           reward:
@@ -135,9 +135,9 @@ export const noah: Story = {
         },
         {
           id: "hill",
-          x: 87,
-          y: 64,
-          size: 18,
+          x: 90,
+          y: 55,
+          size: 20,
           label: "the first hilltop",
           reward: "Bit by bit, the world came back out of the water.",
           sound: "sparkle",
@@ -160,9 +160,9 @@ export const noah: Story = {
       hotspots: [
         {
           id: "rainbow",
-          x: 50,
-          y: 34,
-          size: 26,
+          x: 45,
+          y: 30,
+          size: 28,
           label: "the rainbow",
           reward:
             "A rainbow is God’s signature on a promise he has never broken.",
@@ -171,9 +171,9 @@ export const noah: Story = {
         },
         {
           id: "family",
-          x: 34,
-          y: 80,
-          size: 18,
+          x: 33,
+          y: 78,
+          size: 22,
           label: "Noah's family",
           reward:
             "Eight people walked out of that boat, and the world started again with them.",
