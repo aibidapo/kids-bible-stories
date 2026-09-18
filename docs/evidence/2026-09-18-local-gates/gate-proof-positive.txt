@@ -1,0 +1,240 @@
+pre-commit: secret scan
+check-secrets: staged changes clean
+pre-commit: format (staged files)
+Checking formatting...
+[[33mwarn[39m] eslint.config.js
+[[33mwarn[39m] Code style issues found in the above file. Run Prettier with --write to fix.
+
+real	0m2.189s
+user	0m0.000s
+sys	0m0.015s
+pre-commit: secret scan
+check-secrets: staged changes clean
+pre-commit: format (staged files)
+Checking formatting...
+All matched files use Prettier code style!
+pre-commit: lint
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\scripts\check-motion.tsx
+  26:19  warning  Function Call Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\scripts\compare.tsx
+  23:13  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\scripts\render-scenes.tsx
+  23:15  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\scripts\shoot.mjs
+  183:27  warning  Generic Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\components\NarrationText.tsx
+  23:11  warning  Generic Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\components\Quiz.tsx
+  34:13  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\components\StoryPlayer.tsx
+  22:17  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\lib\quiz.ts
+  13:17  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+  14:5   warning  Generic Object Injection Sink               security/detect-object-injection
+  14:16  warning  Generic Object Injection Sink               security/detect-object-injection
+  15:5   warning  Generic Object Injection Sink               security/detect-object-injection
+  19:31  warning  Generic Object Injection Sink               security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\lib\sound.ts
+  98:36  warning  Generic Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\lib\store.ts
+  105:17  warning  Generic Object Injection Sink  security/detect-object-injection
+  106:17  warning  Generic Object Injection Sink  security/detect-object-injection
+  127:10  warning  Generic Object Injection Sink  security/detect-object-injection
+  127:10  warning  Generic Object Injection Sink  security/detect-object-injection
+  137:8   warning  Generic Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\scenes\creation.tsx
+   74:13  warning  Variable Assigned to Object Injection Sink  security/detect-object-injection
+  164:25  warning  Generic Object Injection Sink               security/detect-object-injection
+  164:38  warning  Generic Object Injection Sink               security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\scenes\index.ts
+  48:42  warning  Generic Object Injection Sink  security/detect-object-injection
+
+C:\Users\aibid\PROJECTS\KIDS BIBLE STORIES\src\scenes\noah.tsx
+  85:27  warning  Generic Object Injection Sink  security/detect-object-injection
+  85:40  warning  Generic Object Injection Sink  security/detect-object-injection
+
+✖ 24 problems (0 errors, 24 warnings)
+
+pre-commit: motion constraints
+check-motion: 27 scenes clean
+pre-commit: tests
+
+ RUN  v5.0.1 C:/Users/aibid/PROJECTS/KIDS BIBLE STORIES
+
+
+ Test Files  5 passed (5)
+      Tests  52 passed (52)
+   Start at  15:38:31
+   Duration  758ms (transform 62%, import 32%, tests 4%, worker 2%)
+
+pre-commit: typecheck + build
+src/scenes/index.ts(48,17): error TS2550: Property 'hasOwn' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+
+real	0m8.572s
+user	0m0.015s
+sys	0m0.000s
+commit exit=1
+ea66d6d Record the garden wander check and update handoff
+pre-commit: secret scan
+check-secrets: staged changes clean
+pre-commit: format (staged files)
+Checking formatting...
+All matched files use Prettier code style!
+pre-commit: lint
+✖ 24 problems (0 errors, 24 warnings)
+pre-commit: motion constraints
+check-motion: 27 scenes clean
+pre-commit: tests
+ RUN  v5.0.1 C:/Users/aibid/PROJECTS/KIDS BIBLE STORIES
+ Test Files  5 passed (5)
+      Tests  52 passed (52)
+   Start at  15:39:00
+   Duration  942ms (transform 62%, import 31%, tests 4%, worker 2%)
+pre-commit: typecheck + build
+[36mvite v8.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 182 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/registerSW.js                              0.13 kB
+dist/manifest.webmanifest                       0.57 kB
+dist/index.html                                 1.20 kB │ gzip:  0.57 kB
+dist/assets/lion-asleep-b-tail-CZUCFHbz.webp    5.20 kB
+dist/assets/lion-b-tail-Ce5QVJs0.webp           6.86 kB
+dist/assets/lion-a-tail-BUoU4CaW.webp           7.61 kB
+dist/assets/little-fish-BW8eE5wP.webp           9.49 kB
+dist/assets/seahorse-_UONsgah.webp              9.90 kB
+dist/assets/stones-pNTYihAO.webp               10.11 kB
+dist/assets/lion-asleep-a-tail-DxYC2j6R.webp   10.13 kB
+dist/assets/bird-up-JlxaEVC2.webp              11.12 kB
+dist/assets/redbird-down-Bd9EZoQz.webp         11.53 kB
+dist/assets/redbird-up-D0ZuPOR8.webp           12.08 kB
+dist/assets/fish-blue-ZuVIz8qa.webp            12.23 kB
+dist/assets/fish-orange-DdRHRoJr.webp          12.28 kB
+dist/assets/goldfinch-up-DBiDUO1z.webp         12.43 kB
+dist/assets/goldfinch-down-D6sWtRAu.webp       12.96 kB
+dist/assets/cloud-BJlmFOFE.webp                12.96 kB
+dist/assets/bird-down-iK_v09Lq.webp            13.31 kB
+dist/assets/bluebird-up-Cx9ZPx2Y.webp          13.43 kB
+dist/assets/bluebird-down-31kuzC72.webp        14.81 kB
+dist/assets/calm-wave-DuA_KNHb.webp            15.26 kB
+dist/assets/dolphin-BL2fg4dC.webp              15.82 kB
+dist/assets/dove-branch-Bj3PaWoX.webp          16.07 kB
+dist/assets/grass-tuft-Cy5S1541.webp           17.53 kB
+dist/assets/fish-green-lYnFPwgx.webp           17.82 kB
+dist/assets/moon-DmdjUXyc.webp                 17.98 kB
+dist/assets/fruit-tree-body-VhDGX421.webp      19.45 kB
+dist/assets/noah-window-DcolWN-r.webp          19.58 kB
+dist/assets/tree-body-DI9LsNS6.webp            20.73 kB
+dist/assets/king-Clu3hFiN.webp                 21.55 kB
+dist/assets/lamb-CewoOrDN.webp                 22.50 kB
+dist/assets/jellyfish-mtnBIpKg.webp            23.70 kB
+dist/assets/crab-D0wqITgS.webp                 24.12 kB
+dist/assets/wave-YSTGXtKc.webp                 24.46 kB
+dist/assets/octopus-Dacn6VEq.webp              25.28 kB
+dist/assets/sun-CqJIlf5w.webp                  29.49 kB
+dist/assets/fish-school-DrvsB8Fa.webp          30.65 kB
+dist/assets/flowers-CKqSN-rA.webp              34.63 kB
+dist/assets/lion-asleep-a-body-rrl1AMpA.webp   36.55 kB
+dist/assets/armour-pile-Bz9zEMsC.webp          37.12 kB
+dist/assets/david-brave-tYvrfF80.webp          37.17 kB
+dist/assets/sheep-CTwAMVOw.webp                37.52 kB
+dist/assets/lion-b-body-w-7vdXNy.webp          38.49 kB
+dist/assets/lion-a-body-Dmmdlh3H.webp          40.58 kB
+dist/assets/lion-asleep-b-body-C1TK-bEE.webp   41.27 kB
+dist/assets/jonah-point-self-D-FPU9PP.webp     42.46 kB
+dist/assets/bg-cHR2LN5i.webp                   42.98 kB
+dist/assets/turtle-B1-NpXU6.webp               43.02 kB
+dist/assets/official-point-Uzq8EfYr.webp       43.17 kB
+dist/assets/daniel-DX7DkmX5.webp               43.95 kB
+dist/assets/official-scroll-D-2RqULm.webp      44.63 kB
+dist/assets/noah-point-CSgKxb-M.webp           44.86 kB
+dist/assets/bg-DuytzalK.webp                   46.33 kB
+dist/assets/ark-resting-ilL7NaY6.webp          47.63 kB
+dist/assets/daniel-kneel-Dl8PUZBe.webp         48.55 kB
+dist/assets/noah-raise-IRHAJVHu.webp           49.38 kB
+dist/assets/jonah-pray-CxpDCLk1.webp           49.40 kB
+dist/assets/jonah-preach-BaYcU3vv.webp         49.62 kB
+dist/assets/ark-afloat-BnyYOZtG.webp           49.94 kB
+dist/assets/bg-CGjL5NfF.webp                   52.91 kB
+dist/assets/noah-look-up-B4UzCX7E.webp         53.14 kB
+dist/assets/daniel-raise-VgnA9ysz.webp         53.23 kB
+dist/assets/bg-BjPOBrIZ.webp                   55.38 kB
+dist/assets/elephants-DowJp7q5.webp            55.57 kB
+dist/assets/david-victory-cixoLg31.webp        55.86 kB
+dist/assets/king-throne-Lx2Ht0uq.webp          55.91 kB
+dist/assets/ship-2W5zUqBY.webp                 56.19 kB
+dist/assets/jonah-fall-Uytqa1xg.webp           56.37 kB
+dist/assets/saul-point-BvbyaafW.webp           56.57 kB
+dist/assets/bg-BOgckqCI.webp                   57.58 kB
+dist/assets/sailors-afraid-Bgk8o57W.webp       57.70 kB
+dist/assets/david-staff-DwS0i65V.webp          58.27 kB
+dist/assets/sailors-BassiQjQ.webp              58.30 kB
+dist/assets/adam-eve-Cy0TIAIA.webp             58.63 kB
+dist/assets/bg-HZaKeQTy.webp                   58.87 kB
+dist/assets/jonah-walk-nwY7DPzM.webp           60.35 kB
+dist/assets/great-fish-Ri7kWAQg.webp           61.37 kB
+dist/assets/sons-carry-Cd5S_gwu.webp           61.44 kB
+dist/assets/bg-BzEmZVS-.webp                   62.30 kB
+dist/assets/army-afraid-G2yZsBJC.webp          62.33 kB
+dist/assets/bg-DTnYFPoN.webp                   63.92 kB
+dist/assets/bg-BQWqBGMS.webp                   64.31 kB
+dist/assets/angel-CoSd5r3q.webp                64.36 kB
+dist/assets/lions-xklv6O0y.webp                69.53 kB
+dist/assets/army-cheer-BO2fcdHV.webp           69.65 kB
+dist/assets/bg-D-XyLtJb.webp                   71.52 kB
+dist/assets/giraffes-DWk4TaS_.webp             71.63 kB
+dist/assets/bg-B6O2IA__.webp                   72.03 kB
+dist/assets/soldiers-run-DUHLGEs0.webp         72.76 kB
+dist/assets/bg-BOYvF9Ad.webp                   72.97 kB
+dist/assets/zebras-BIOHiwsA.webp               73.34 kB
+dist/assets/king-run-C0Iziiju.webp             76.17 kB
+dist/assets/goliath-fallen-DEkfQbMu.webp       76.39 kB
+dist/assets/ship-storm-CX74s77o.webp           76.84 kB
+dist/assets/fruit-tree-tail-DBBgME4c.webp      80.80 kB
+dist/assets/crowd-BECuz7NC.webp                82.17 kB
+dist/assets/david-sling-CZGfQ8QT.webp          82.33 kB
+dist/assets/bg-D4xoI2t-.webp                   82.80 kB
+dist/assets/bg-TU_AK5FA.webp                   83.02 kB
+dist/assets/bg-1H4XuJDl.webp                   83.22 kB
+dist/assets/bg-TGINcEDA.webp                   84.70 kB
+dist/assets/bg-r4HXOtRf.webp                   84.92 kB
+dist/assets/family-WO6Q5Mh2.webp               84.96 kB
+dist/assets/bg-LbRlhdm_.webp                   86.91 kB
+dist/assets/bg-DQi3pNxo.webp                   88.76 kB
+dist/assets/goliath-taunt-Cp1y76tK.webp        88.92 kB
+dist/assets/bg-spNrN5rE.webp                   90.46 kB
+dist/assets/goliath-loom-DjnT85Bn.webp         94.32 kB
+dist/assets/crowd-listen-DV4BO4km.webp        100.51 kB
+dist/assets/bg-BrpKB4lx.webp                  100.85 kB
+dist/assets/bg-Co8pMlh4.webp                  102.33 kB
+dist/assets/bg-BX5jW3pj.webp                  111.66 kB
+dist/assets/bg-fYJSmPkH.webp                  115.59 kB
+dist/assets/bg-CAEK8bIh.webp                  118.31 kB
+dist/assets/tree-tail-C_pTtFwe.webp           151.40 kB
+dist/assets/index-G5E1YY-k.css                 22.95 kB │ gzip:  5.50 kB
+dist/assets/index-D2eS7U_E.js                 248.97 kB │ gzip: 77.21 kB
+[32m✓ built in 172ms[39m
+PWA v1.3.0
+mode      generateSW
+precache  125 entries (5888.47 KiB)
+files generated
+  dist/sw.js
+  dist/workbox-9c191d2f.js
+real	0m11.760s
+user	0m0.000s
+sys	0m0.000s
+commit exit=0
+56bd1a5 Add local pre-commit gates and first unit tests
