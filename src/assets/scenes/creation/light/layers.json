@@ -1,0 +1,10 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 86916,
+    "source": "design/pipeline/raw/creation/light/bg.png"
+  },
+  "cutouts": {}
+}

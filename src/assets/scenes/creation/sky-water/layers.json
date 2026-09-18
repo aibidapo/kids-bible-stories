@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 42986,
+    "source": "design/pipeline/raw/creation/sky-water/bg.png"
+  },
+  "cutouts": {
+    "cloud": {
+      "file": "cloud.webp",
+      "w": 415,
+      "h": 260,
+      "trim": [
+        208,
+        83,
+        1168,
+        685
+      ],
+      "source": "design/pipeline/raw/creation/sky-water/cloud.png",
+      "bytes": 12962
+    },
+    "calm-wave": {
+      "file": "calm-wave.webp",
+      "w": 697,
+      "h": 220,
+      "trim": [
+        99,
+        211,
+        1277,
+        583
+      ],
+      "source": "design/pipeline/raw/creation/sky-water/calm-wave.png",
+      "bytes": 15268
+    }
+  }
+}

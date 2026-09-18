@@ -1,0 +1,84 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 84706,
+    "source": "design/pipeline/raw/creation/land/bg.png"
+  },
+  "cutouts": {
+    "fruit-tree": {
+      "file": "fruit-tree.webp",
+      "w": 744,
+      "h": 900,
+      "trim": [
+        45,
+        141,
+        835,
+        1097
+      ],
+      "source": "design/pipeline/raw/creation/land/fruit-tree.png",
+      "bytes": 98748,
+      "body": {
+        "file": "fruit-tree-body.webp",
+        "bytes": 19452
+      },
+      "tail": {
+        "file": "fruit-tree-tail.webp",
+        "w": 744,
+        "h": 564,
+        "ox": 0,
+        "oy": 0,
+        "root": "tl",
+        "polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            744,
+            0
+          ],
+          [
+            744,
+            560
+          ],
+          [
+            470,
+            560
+          ],
+          [
+            470,
+            470
+          ],
+          [
+            280,
+            470
+          ],
+          [
+            280,
+            560
+          ],
+          [
+            0,
+            560
+          ]
+        ],
+        "bytes": 80804
+      }
+    },
+    "flowers": {
+      "file": "flowers.webp",
+      "w": 337,
+      "h": 260,
+      "trim": [
+        308,
+        98,
+        1036,
+        660
+      ],
+      "source": "design/pipeline/raw/creation/land/flowers.png",
+      "bytes": 34638
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 52910,
+    "source": "design/pipeline/raw/creation/creatures/bg.png"
+  },
+  "cutouts": {
+    "dolphin": {
+      "file": "dolphin.webp",
+      "w": 373,
+      "h": 320,
+      "trim": [
+        201,
+        113,
+        999,
+        798
+      ],
+      "source": "design/pipeline/raw/creation/creatures/dolphin.png",
+      "bytes": 15828
+    }
+  }
+}

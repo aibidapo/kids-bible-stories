@@ -1,0 +1,24 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 111666,
+    "source": "design/pipeline/raw/creation/people/bg.png"
+  },
+  "cutouts": {
+    "adam-eve": {
+      "file": "adam-eve.webp",
+      "w": 653,
+      "h": 765,
+      "trim": [
+        269,
+        67,
+        922,
+        832
+      ],
+      "source": "design/pipeline/raw/creation/people/adam-eve.png",
+      "bytes": 58634
+    }
+  }
+}
