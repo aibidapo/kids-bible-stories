@@ -176,15 +176,30 @@ export function BirdsAndFish() {
       <Bird kind="blue" x={540} y={110} size={0.26} motion="a-flutter" delay={-4} />
       <Bird kind="gold" x={760} y={200} size={0.24} motion="a-flutter" delay={-8} flip />
       <Bird kind="dove" x={400} y={240} size={0.26} motion="a-flutter" delay={-2} />
-      {/* the dolphin leaps in an arc; at rest it sits at the top of the leap */}
-      <g transform="translate(560 320)">
+      {/* the dolphin leaps just clear of the surface; at rest it sits at the top of the leap */}
+      <g transform="translate(560 400)">
         <g className="a-leap">
-          <image href={dolphinImg} x={-L.dolphin.w * 0.22} y={-L.dolphin.h * 0.22} width={L.dolphin.w * 0.44} height={L.dolphin.h * 0.44} />
-          <g transform={`translate(${-L.dolphin.w * 0.22} ${-L.dolphin.h * 0.22}) scale(0.44)`}>
+          <image href={dolphinImg} x={-L.dolphin.w * 0.2} y={-L.dolphin.h * 0.2} width={L.dolphin.w * 0.4} height={L.dolphin.h * 0.4} />
+          <g transform={`translate(${-L.dolphin.w * 0.2} ${-L.dolphin.h * 0.2}) scale(0.4)`}>
             <Eyelids {...EYES.dolphin} w={0} h={0} delay={1.8} />
           </g>
         </g>
       </g>
+      {/* splashes at the launch and the plunge, timed to the leap; hidden at rest */}
+      {[
+        { x: 320, delay: 0 },
+        { x: 800, delay: -0.55 },
+      ].map((sp) => (
+        <g key={sp.x} transform={`translate(${sp.x} 470)`}>
+          <g className="a-splash" opacity="0" style={{ animationDelay: `${sp.delay}s` }}>
+            <path d="M-40,0 Q-30,-40 -18,-8 Q-8,-56 0,-14 Q8,-56 18,-8 Q30,-40 40,0 Z" fill="#f4fbff" opacity="0.9" />
+            <circle cx="-34" cy="-46" r="4" fill="#ffffff" />
+            <circle cx="30" cy="-52" r="3" fill="#ffffff" />
+            <circle cx="4" cy="-64" r="3.5" fill="#ffffff" />
+            <ellipse cx="0" cy="2" rx="52" ry="7" fill="#f4fbff" opacity="0.7" />
+          </g>
+        </g>
+      ))}
       {/* each fish crosses on its own; flipped ones go the other way */}
       {fish(fishOrange, "fish-orange", 300, 470, 0.34, -3)}
       {fish(fishBlue, "fish-blue", 700, 430, 0.32, -12, true)}

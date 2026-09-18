@@ -602,28 +602,53 @@ svg [class*=" a-"] {
 
 /* A dolphin's leap: up out of the water in an arc and back in, then a rest under the surface. */
 @keyframes leap {
-  0%,
-  100% {
-    transform: translate(-260px, 70px) rotate(-28deg);
+  0% {
+    transform: translate(-240px, 80px) rotate(-30deg);
     opacity: 0;
   }
-  8% {
+  10% {
     opacity: 1;
   }
   50% {
-    transform: translate(0, -110px) rotate(0deg);
+    transform: translate(0, -60px) rotate(0deg);
     opacity: 1;
   }
-  92% {
+  90% {
     opacity: 1;
   }
   100% {
-    transform: translate(260px, 70px) rotate(28deg);
+    transform: translate(240px, 80px) rotate(30deg);
     opacity: 0;
   }
 }
 .a-leap {
   animation: leap 5.5s ease-in-out infinite;
+}
+
+/*
+ * A splash where the dolphin breaks the surface: hidden at rest
+ * (opacity="0"), it bursts up and fades over the first 14% of a cycle the
+ * same length as the leap; the scene delays two copies to the launch and the
+ * plunge.
+ */
+@keyframes splash {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  6% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  14% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+.a-splash {
+  animation: splash 5.5s ease-out infinite;
+  transform-origin: 50% 100%;
 }
 
 /*
