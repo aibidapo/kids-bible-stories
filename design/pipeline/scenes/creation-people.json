@@ -1,0 +1,16 @@
+{
+  "story": "creation",
+  "scene": "people",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The garden of Eden at golden afternoon: lush green meadow in the foreground, flowering bushes and tall leafy trees framing the left and right edges, a small clear stream at the right, gentle hills and a warm sky behind, fruit trees in the middle distance. Completely EMPTY: no animals, no people. Keep the centre of the meadow clear."
+  },
+  "cutouts": {
+    "adam-eve": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 800,
+      "prompt": "The first man and woman standing side by side holding hands, smiling, both with warm brown skin and dark hair, modestly dressed in simple leaf-green tunics, in the same soft layered cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

@@ -161,6 +161,7 @@ const STORIES = {
   noah: ['builds', 'two-by-two', 'flood', 'dove', 'rainbow'],
   david: ['shepherd', 'taunt', 'volunteers', 'stones', 'strike', 'victory'],
   jonah: ['running', 'storm', 'swallowed', 'prayer', 'nineveh'],
+  creation: ['light', 'sky-water', 'land', 'lights', 'creatures', 'people'],
 }
 const only = process.env.STORY ? [process.env.STORY] : Object.keys(STORIES)
 for (const story of only) {

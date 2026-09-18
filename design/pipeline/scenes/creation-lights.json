@@ -1,0 +1,22 @@
+{
+  "story": "creation",
+  "scene": "lights",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Twilight over a quiet landscape: rolling dark green-blue hills along the bottom quarter, above them a sky that shades from deep indigo at the top through violet to a warm peach glow at the horizon, scattered soft stars near the top. Completely EMPTY: no sun, no moon, no animals, no people. Keep the upper left and upper right of the sky clear."
+  },
+  "cutouts": {
+    "sun": {
+      "sheet": null,
+      "aspect": "1:1",
+      "max_h": 400,
+      "prompt": "A big warm smiling cartoon sun, a round golden disc with soft layered rays around it, gentle closed-eye smile, in the same soft layered cutout illustration style as the reference image. Whole sun, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "moon": {
+      "sheet": null,
+      "aspect": "1:1",
+      "max_h": 360,
+      "prompt": "A friendly crescent moon in pale cream and silver with a soft sleepy smiling face and a few tiny stars beside it, in the same soft layered cutout illustration style as the reference image. Whole moon, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

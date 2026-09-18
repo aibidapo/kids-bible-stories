@@ -1,0 +1,9 @@
+{
+  "story": "creation",
+  "scene": "light",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The very first light breaking into deep darkness: a swirling void of near-black indigo and violet at the edges, and from the centre a huge soft burst of warm golden-white light radiating outward in layered paper-cut rays, tiny sparks of light drifting near the burst, no ground, no sky, no objects. Keep the centre bright and clear."
+  },
+  "cutouts": {}
+}

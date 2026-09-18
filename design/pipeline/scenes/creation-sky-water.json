@@ -1,0 +1,22 @@
+{
+  "story": "creation",
+  "scene": "sky-water",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The sky separated from the waters on a bright morning: a vast clear blue sky filling the top two thirds with soft white layered clouds, a calm wide sea filling the bottom third with gentle rippled waves and light sparkling on the water, a thin bright horizon line, no land. Completely EMPTY: no birds, no fish, no boats. Keep the horizon clear."
+  },
+  "cutouts": {
+    "cloud": {
+      "sheet": null,
+      "aspect": "16:9",
+      "max_h": 260,
+      "prompt": "One fluffy white cumulus cloud with soft layered edges and a faint warm underside, in the same soft layered cutout illustration style as the reference image. Whole cloud, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "calm-wave": {
+      "sheet": null,
+      "aspect": "16:9",
+      "max_h": 220,
+      "prompt": "A long low gentle blue sea wave with a soft white foam edge, seen from the side, wide and calm, in the same soft layered cutout illustration style as the reference image. Only the one wave, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}
