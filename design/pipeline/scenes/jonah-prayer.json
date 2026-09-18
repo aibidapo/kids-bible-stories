@@ -1,0 +1,22 @@
+{
+  "story": "jonah",
+  "scene": "prayer",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Inside the belly of a giant fish: curved ribbed pink-and-purple walls arching overhead like a cave, a shallow pool on the floor, a small round patch of soft light glowing at the top centre where a little daylight seeps in, a few bits of seaweed and an old fish skeleton in a corner, dim and cosy rather than scary. Completely EMPTY: no people, no living fish. Keep the floor centre clear."
+  },
+  "cutouts": {
+    "jonah-pray": {
+      "sheet": "jonah",
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The character from the second reference image, Jonah, kneeling facing the viewer with hands clasped in prayer at his chest, face lifted upward, eyes open, humble hopeful expression, cloak damp and rumpled. Full figure including knees, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "little-fish": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 200,
+      "prompt": "One small friendly yellow fish with big eyes, seen from the side facing right, in the same soft cutout illustration style as the reference image. Whole fish, centred, on a flat solid bright green background (#00ff00), no water, no other objects."
+    }
+  }
+}

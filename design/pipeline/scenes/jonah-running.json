@@ -1,0 +1,28 @@
+{
+  "story": "jonah",
+  "scene": "running",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "A busy ancient seaport at Joppa in bright morning light: a stone quay in the foreground, blue sea to the right, a sandstone harbour town with flat roofs climbing a hill at the left, a few wooden crates and coiled ropes on the quay, gulls-free clear sky. Completely EMPTY: no people, no animals, no boats, no ships. Keep the quay at the centre and the water at the right clear."
+  },
+  "cutouts": {
+    "jonah-walk": {
+      "sheet": "jonah",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Jonah, walking briskly to the right in side view with a bundle on a stick over his shoulder, glancing back over his other shoulder with a guilty, worried expression. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "ship": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "An ancient wooden sailing ship with a single mast and a large cream square sail, a curved prow, oars along the side, seen from the side facing right, in the same soft cutout illustration style as the reference image. Whole ship including the hull bottom, centred, on a flat solid bright green background (#00ff00), no water, no cast shadow, no other objects."
+    },
+    "sailors": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "Two ancient sailors in short tunics and head cloths standing on a quay, one waving to beckon, one carrying a sack, cheerful, in the same soft cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

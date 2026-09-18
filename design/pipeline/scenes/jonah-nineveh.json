@@ -1,0 +1,22 @@
+{
+  "story": "jonah",
+  "scene": "nineveh",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "The great city of Nineveh: massive sandstone walls with a tall arched gate at centre-right, towers and ziggurats rising behind, a wide dusty road leading to the gate in the foreground, palm trees at the far right, warm late-afternoon sky. Completely EMPTY: no people, no animals. Keep the road at the centre and left clear."
+  },
+  "cutouts": {
+    "jonah-preach": {
+      "sheet": "jonah",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The character from the second reference image, Jonah, standing in three-quarter view facing right, one arm raised high with a pointing finger, mouth open mid-speech, earnest expression. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "crowd-listen": {
+      "sheet": null,
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Four people of ancient Nineveh in colourful robes and head wraps, standing close together and listening intently with worried, thoughtful faces, one with a hand to his mouth, one holding a child's hand, in the same soft cutout illustration style as the reference image. Full figures, centred as one group, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

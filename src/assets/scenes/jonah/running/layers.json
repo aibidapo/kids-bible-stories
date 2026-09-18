@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 67148,
+    "source": "design/pipeline/raw/jonah/running/bg.png"
+  },
+  "cutouts": {
+    "jonah-walk": {
+      "file": "jonah-walk.webp",
+      "w": 513,
+      "h": 900,
+      "trim": [
+        148,
+        90,
+        733,
+        1117
+      ],
+      "source": "design/pipeline/raw/jonah/running/jonah-walk.png",
+      "bytes": 60356
+    },
+    "ship": {
+      "file": "ship.webp",
+      "w": 780,
+      "h": 700,
+      "trim": [
+        209,
+        87,
+        1014,
+        809
+      ],
+      "source": "design/pipeline/raw/jonah/running/ship.png",
+      "bytes": 56190
+    },
+    "sailors": {
+      "file": "sailors.webp",
+      "w": 690,
+      "h": 600,
+      "trim": [
+        199,
+        87,
+        1055,
+        831
+      ],
+      "source": "design/pipeline/raw/jonah/running/sailors.png",
+      "bytes": 58308
+    }
+  }
+}

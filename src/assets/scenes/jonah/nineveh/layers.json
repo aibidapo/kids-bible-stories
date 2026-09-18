@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 72036,
+    "source": "design/pipeline/raw/jonah/nineveh/bg.png"
+  },
+  "cutouts": {
+    "jonah-preach": {
+      "file": "jonah-preach.webp",
+      "w": 516,
+      "h": 900,
+      "trim": [
+        205,
+        79,
+        811,
+        1137
+      ],
+      "source": "design/pipeline/raw/jonah/nineveh/jonah-preach.png",
+      "bytes": 49628
+    },
+    "crowd-listen": {
+      "file": "crowd-listen.webp",
+      "w": 880,
+      "h": 700,
+      "trim": [
+        145,
+        96,
+        1078,
+        838
+      ],
+      "source": "design/pipeline/raw/jonah/nineveh/crowd-listen.png",
+      "bytes": 100512
+    }
+  }
+}

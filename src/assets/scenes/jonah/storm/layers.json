@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 102336,
+    "source": "design/pipeline/raw/jonah/storm/bg.png"
+  },
+  "cutouts": {
+    "ship-storm": {
+      "file": "ship-storm.webp",
+      "w": 686,
+      "h": 700,
+      "trim": [
+        266,
+        91,
+        978,
+        818
+      ],
+      "source": "design/pipeline/raw/jonah/storm/ship-storm.png",
+      "bytes": 76846
+    },
+    "sailors-afraid": {
+      "file": "sailors-afraid.webp",
+      "w": 596,
+      "h": 500,
+      "trim": [
+        100,
+        0,
+        1085,
+        826
+      ],
+      "source": "design/pipeline/raw/jonah/storm/sailors-afraid.png",
+      "bytes": 57702
+    },
+    "jonah-point-self": {
+      "file": "jonah-point-self.webp",
+      "w": 307,
+      "h": 700,
+      "trim": [
+        216,
+        80,
+        680,
+        1137
+      ],
+      "source": "design/pipeline/raw/jonah/storm/jonah-point-self.png",
+      "bytes": 42460
+    }
+  }
+}

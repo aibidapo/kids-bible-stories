@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 88760,
+    "source": "design/pipeline/raw/jonah/prayer/bg.png"
+  },
+  "cutouts": {
+    "jonah-pray": {
+      "file": "jonah-pray.webp",
+      "w": 581,
+      "h": 800,
+      "trim": [
+        76,
+        81,
+        822,
+        1108
+      ],
+      "source": "design/pipeline/raw/jonah/prayer/jonah-pray.png",
+      "bytes": 49404
+    },
+    "little-fish": {
+      "file": "little-fish.webp",
+      "w": 243,
+      "h": 200,
+      "trim": [
+        241,
+        153,
+        959,
+        744
+      ],
+      "source": "design/pipeline/raw/jonah/prayer/little-fish.png",
+      "bytes": 9498
+    }
+  }
+}

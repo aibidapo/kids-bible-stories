@@ -1,0 +1,22 @@
+{
+  "story": "jonah",
+  "scene": "swallowed",
+  "background": {
+    "aspect": "16:9",
+    "prompt": "Underwater in a deep blue sea: shafts of pale light falling from the wavy surface at the top, darker blue toward the bottom, a few rising bubbles, a sandy floor with some seaweed at the very bottom, a school of tiny silver fish in the distance. Completely EMPTY of large creatures: no big fish, no whale, no people. Keep the centre clear."
+  },
+  "cutouts": {
+    "great-fish": {
+      "sheet": null,
+      "aspect": "16:9",
+      "max_h": 600,
+      "prompt": "An enormous friendly deep-blue and teal fish, whale-sized, seen from the side facing left with its huge mouth wide open showing a pink tongue and no sharp teeth, big round eye, sweeping tail fin, in the same soft cutout illustration style as the reference image. Whole fish, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no other objects."
+    },
+    "jonah-fall": {
+      "sheet": "jonah",
+      "aspect": "3:4",
+      "max_h": 700,
+      "prompt": "The character from the second reference image, Jonah, tumbling through water with arms and legs flailing, cloak billowing, eyes wide and cheeks puffed, seen from the side facing right. Full figure, centred, on a flat solid bright green background (#00ff00), no water, no bubbles, no cast shadow, no other objects."
+    }
+  }
+}

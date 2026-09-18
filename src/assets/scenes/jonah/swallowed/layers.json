@@ -1,0 +1,37 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 84922,
+    "source": "design/pipeline/raw/jonah/swallowed/bg.png"
+  },
+  "cutouts": {
+    "great-fish": {
+      "file": "great-fish.webp",
+      "w": 1044,
+      "h": 600,
+      "trim": [
+        164,
+        77,
+        1238,
+        694
+      ],
+      "source": "design/pipeline/raw/jonah/swallowed/great-fish.png",
+      "bytes": 61372
+    },
+    "jonah-fall": {
+      "file": "jonah-fall.webp",
+      "w": 846,
+      "h": 690,
+      "trim": [
+        23,
+        265,
+        869,
+        955
+      ],
+      "source": "design/pipeline/raw/jonah/swallowed/jonah-fall.png",
+      "bytes": 56372
+    }
+  }
+}
