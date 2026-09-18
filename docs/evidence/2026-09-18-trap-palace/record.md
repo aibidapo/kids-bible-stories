@@ -45,3 +45,32 @@ officials) are unchanged.
 - No human review yet of the new background against the rest of the story
   (den and prays pages are plainer stone; the palace is now the richest
   room in the book, which fits the story).
+
+## Round 2: elegant throne and seated courtiers
+
+User: "Make it richer with a more elegant throne and other officials seated
+around the throne; both male and female courtiers." Background kept.
+
+- `king-throne` regenerated from the king sheet: tall arched back with a
+  sunburst crest, winged-lion armrests, lapis and ruby inlay, red velvet.
+  Old raw kept locally as `king-throne-v1.png`.
+- Two new sheet-less layers, `courtiers-left` (woman in teal with a veil,
+  man in purple with a tall hat) and `courtiers-right` (man in navy with gold
+  trim, woman in rose with a jewelled headband), each a seated pair on a
+  gilded bench, 4:3, max height 560.
+- First `courtiers-right` had the man in a **dark green robe**; the chroma
+  key ate it (`cutouts-round-1.png`, right pair). Regenerated in navy; raw
+  kept locally as `courtiers-right-v1-green.png`. Rule added to the pipeline
+  README: never green clothing or props.
+- Full pipeline run this time (`gen_scene_layers`, `cutout`, `pack`), so
+  `layers.json` is tool-written. Scene total 415 KB (budget 450); background
+  139 KB; `courtiers-left` 82 KB, 2 KB over the per-cutout guideline,
+  accepted as for the Noah family.
+- Composition: courtiers on the dais either side of the throne at (590, 400)
+  and (855, 402), scale 0.32 (first pass 0.27 read small next to the seated
+  king), drawn before the throne so it covers their inner edges, slow
+  breathing offset 1.1 s and 2.3 s. King and officials unchanged from round 1.
+- Sidecars: `king-throne-sidecar.json`, `courtiers-left-sidecar.json`,
+  `courtiers-right-sidecar.json`. Final render `trap-after-court.png`.
+- Browser (fresh context, bundle from this build): king hotspot lands on the
+  king with the new throne; `trap-court-phone.png`.

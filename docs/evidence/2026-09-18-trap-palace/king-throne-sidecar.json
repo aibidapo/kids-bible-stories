@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "The king from the second reference image, seated on a magnificent golden throne: tall arched back with a sunburst crest, winged-lion armrests, lapis-blue and ruby inlay, deep red velvet cushions, facing the viewer, leaning slightly forward with a worried, uncertain expression, one hand raised as if about to agree to something. Whole figure and whole throne visible, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg",
+    "design/characters/king.png"
+  ],
+  "aspect": "3:4",
+  "size": "1K",
+  "generated": "2026-09-18T21:44:35+00:00"
+}

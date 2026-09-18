@@ -24,7 +24,8 @@ enabled (image models have zero free-tier quota).
 3. `cutout.py <story> <scene>` — chroma-keys the flat green field from each
    character (no learned matte: rembg ghosted figures standing behind others),
    softens and despills the edge, trims, caps height, writes WebP with alpha
-   into `src/assets/scenes/<story>/<scene>/`.
+   into `src/assets/scenes/<story>/<scene>/`. Never ask for green clothing or
+   props: the key eats them (a dark green robe came out full of holes).
 4. `pack.py <story> <scene>` — background cropped to 16:10, resized to
    1600×1000, WebP q80, plus `layers.json` with sizes, byte counts and sources.
    A manifest may set `"background": {"reuse": "<story>/<scene>/bg.webp"}` to

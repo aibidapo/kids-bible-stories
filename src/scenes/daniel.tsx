@@ -20,6 +20,8 @@ import trapBg from "../assets/scenes/daniel/trap/bg.webp";
 import trapKing from "../assets/scenes/daniel/trap/king-throne.webp";
 import trapOfficialScroll from "../assets/scenes/daniel/trap/official-scroll.webp";
 import trapOfficialPoint from "../assets/scenes/daniel/trap/official-point.webp";
+import trapCourtiersLeft from "../assets/scenes/daniel/trap/courtiers-left.webp";
+import trapCourtiersRight from "../assets/scenes/daniel/trap/courtiers-right.webp";
 import angelLayers from "../assets/scenes/daniel/angel/layers.json";
 import angelBody from "../assets/scenes/daniel/angel/angel-body.webp";
 import angelWingL from "../assets/scenes/daniel/angel/angel-wing-l.webp";
@@ -101,6 +103,29 @@ export function TheTrap() {
   return (
     <>
       <Backdrop src={trapBg} />
+      {/* courtiers seated on the dais either side of the throne, behind it */}
+      <SoftShadow x={590} y={400} rx={90} ry={10} opacity={0.35} />
+      <Layer
+        src={trapCourtiersLeft}
+        w={L["courtiers-left"].w}
+        h={L["courtiers-left"].h}
+        x={590}
+        y={400}
+        scale={0.32}
+        className="a-breathe-slow"
+        delay={1.1}
+      />
+      <SoftShadow x={855} y={402} rx={90} ry={10} opacity={0.35} />
+      <Layer
+        src={trapCourtiersRight}
+        w={L["courtiers-right"].w}
+        h={L["courtiers-right"].h}
+        x={855}
+        y={402}
+        scale={0.32}
+        className="a-breathe-slow"
+        delay={2.3}
+      />
       <SoftShadow x={712} y={392} rx={100} ry={14} opacity={0.4} />
       <Layer
         src={trapKing}

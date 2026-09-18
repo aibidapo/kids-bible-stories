@@ -9,16 +9,16 @@
   "cutouts": {
     "king-throne": {
       "file": "king-throne.webp",
-      "w": 487,
+      "w": 510,
       "h": 700,
       "trim": [
-        91,
-        88,
-        806,
+        75,
+        92,
+        820,
         1115
       ],
       "source": "design/pipeline/raw/daniel/trap/king-throne.png",
-      "bytes": 55916
+      "bytes": 61014
     },
     "official-scroll": {
       "file": "official-scroll.webp",
@@ -45,6 +45,32 @@
       ],
       "source": "design/pipeline/raw/daniel/trap/official-point.png",
       "bytes": 43178
+    },
+    "courtiers-left": {
+      "file": "courtiers-left.webp",
+      "w": 605,
+      "h": 560,
+      "trim": [
+        169,
+        61,
+        1028,
+        856
+      ],
+      "source": "design/pipeline/raw/daniel/trap/courtiers-left.png",
+      "bytes": 84090
+    },
+    "courtiers-right": {
+      "file": "courtiers-right.webp",
+      "w": 558,
+      "h": 560,
+      "trim": [
+        246,
+        100,
+        953,
+        809
+      ],
+      "source": "design/pipeline/raw/daniel/trap/courtiers-right.png",
+      "bytes": 49454
     }
   }
 }

@@ -12,7 +12,11 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Daniel page 2 palace regenerated, richer and more royal** (background
+Latest: **Daniel page 2: grander throne and seated courtiers** (round 2 on the
+same page: `king-throne` regenerated, two new seated pairs `courtiers-left` /
+`courtiers-right` on the dais; a green robe got chroma-keyed once, regenerated
+in navy, README rule added; scene 415 KB). Round 1 was the **palace background
+regenerated, richer and more royal** (background
 only: marble and gilded lotus columns, crimson carpet, blue-gold tile, banners,
 lamp stands; king moved up onto the new dais, king hotspot moved). Evidence:
 `docs/evidence/2026-09-18-trap-palace/record.md` (before/after renders, phone
@@ -106,7 +110,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 4. Next Steps
 
-- [ ] **User reviews the new palace** on `#/story/daniel/1`.
+- [ ] **User reviews the throne room** on `#/story/daniel/1` (throne, courtiers, background).
 - [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.
 - [ ] **User reviews the angel wing beat** on `#/story/daniel/3` (phone); depth and speed are two numbers in `motion.css`.
 - [ ] **User reviews** each story from its record's `story-sheet.png` and
