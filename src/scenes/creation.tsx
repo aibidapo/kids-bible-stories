@@ -177,7 +177,7 @@ export function BirdsAndFish() {
       <Bird kind="gold" x={760} y={200} size={0.24} motion="a-flutter" delay={-8} flip />
       <Bird kind="dove" x={400} y={240} size={0.26} motion="a-flutter" delay={-2} />
       {/* the dolphin leaps just clear of the surface; at rest it sits at the top of the leap */}
-      <g transform="translate(560 400)">
+      <g transform="translate(560 350)">
         <g className="a-leap">
           <image href={dolphinImg} x={-L.dolphin.w * 0.2} y={-L.dolphin.h * 0.2} width={L.dolphin.w * 0.4} height={L.dolphin.h * 0.4} />
           <g transform={`translate(${-L.dolphin.w * 0.2} ${-L.dolphin.h * 0.2}) scale(0.4)`}>
@@ -190,7 +190,7 @@ export function BirdsAndFish() {
         { x: 320, delay: 0 },
         { x: 800, delay: -0.55 },
       ].map((sp) => (
-        <g key={sp.x} transform={`translate(${sp.x} 470)`}>
+        <g key={sp.x} transform={`translate(${sp.x} 352)`}>
           <g className="a-splash" opacity="0" style={{ animationDelay: `${sp.delay}s` }}>
             <path d="M-40,0 Q-30,-40 -18,-8 Q-8,-56 0,-14 Q8,-56 18,-8 Q30,-40 40,0 Z" fill="#f4fbff" opacity="0.9" />
             <circle cx="-34" cy="-46" r="4" fill="#ffffff" />
