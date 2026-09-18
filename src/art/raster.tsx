@@ -20,6 +20,8 @@ export interface LayerProps {
   /** Mirror horizontally so the figure faces the other way. */
   flip?: boolean;
   className?: string;
+  /** Seconds to offset the motion class's cycle. */
+  delay?: number;
   opacity?: number;
   children?: ReactNode;
 }
@@ -33,13 +35,14 @@ export function Layer({
   scale = 1,
   flip = false,
   className,
+  delay,
   opacity,
   children,
 }: LayerProps) {
   const sx = flip ? -scale : scale;
   return (
     <g transform={`translate(${x} ${y}) scale(${sx} ${scale})`}>
-      <g className={className}>
+      <g className={className} style={delay ? { animationDelay: `${delay}s` } : undefined}>
         <image href={src} x={-w / 2} y={-h} width={w} height={h} opacity={opacity} />
         {children}
       </g>
@@ -47,29 +50,9 @@ export function Layer({
   );
 }
 
-/**
- * A detached tail (see design/pipeline/split_tail.py) drawn in the same local
- * space as its body's Layer, so the two line up pixel for pixel at rest. The
- * flick class pivots on the tail box's root corner; render this before the
- * body so the body covers the join.
- */
-export function Tail({
-  src,
-  tw,
-  th,
-  ox,
-  oy,
-  w,
-  h,
-  x,
-  y,
-  scale = 1,
-  flip = false,
-  root,
-  delay = 0,
-}: {
+export interface PartProps {
   src: string;
-  /** Tail image size and its offset inside the original cutout. */
+  /** Part image size and its offset inside the original cutout. */
   tw: number;
   th: number;
   ox: number;
@@ -81,15 +64,93 @@ export function Tail({
   y: number;
   scale?: number;
   flip?: boolean;
-  root: "tl" | "tr";
-  /** Seconds to offset the flick cycle so lions don't twitch together. */
+  /** Motion class; its pivot must be declared in motion.css. */
+  className: string;
+  /** Seconds to offset the cycle so parts don't move in unison. */
   delay?: number;
-}) {
+}
+
+/**
+ * A part split off a cutout (see design/pipeline/split_tail.py) drawn in the
+ * same local space as its body's Layer, so the two line up pixel for pixel at
+ * rest, with its own motion class. Render it before or after the body
+ * depending on which should cover the join.
+ */
+export function Part({ src, tw, th, ox, oy, w, h, x, y, scale = 1, flip = false, className, delay = 0 }: PartProps) {
   const sx = flip ? -scale : scale;
   return (
     <g transform={`translate(${x} ${y}) scale(${sx} ${scale})`}>
-      <g className={root === "tr" ? "a-tail-flick-tr" : "a-tail-flick-tl"} style={{ animationDelay: `${delay}s` }}>
+      <g className={className} style={{ animationDelay: `${delay}s` }}>
         <image href={src} x={ox - w / 2} y={oy - h} width={tw} height={th} />
+      </g>
+    </g>
+  );
+}
+
+/** A tail: a Part that flicks about its root corner. Render before the body. */
+export function Tail({ root, ...rest }: Omit<PartProps, "className"> & { root: "tl" | "tr" }) {
+  return <Part {...rest} className={root === "tr" ? "a-tail-flick-tr" : "a-tail-flick-tl"} />;
+}
+
+export interface Frame {
+  src: string;
+  w: number;
+  h: number;
+  /** Anchor point in the frame's own pixels; frames are aligned on it. */
+  ax: number;
+  ay: number;
+  /** viewBox units per frame pixel. */
+  s: number;
+}
+
+/**
+ * Two-frame flipbook (wings up / wings down) aligned on a shared anchor such
+ * as the eye, so the swap reads as a flap, not a jump. Frame A rests visible
+ * so Calm mode shows one clean pose. The outer group positions; `motion` is
+ * the class on the group the frames sit in (a glide or drift path).
+ */
+export function Flipbook({
+  a,
+  b,
+  x,
+  y,
+  flip = false,
+  motion,
+  delay = 0,
+}: {
+  a: Frame;
+  b: Frame;
+  x: number;
+  y: number;
+  flip?: boolean;
+  motion?: string;
+  delay?: number;
+}) {
+  const sx = flip ? -1 : 1;
+  const style = { animationDelay: `${delay}s` };
+  return (
+    <g transform={`translate(${x} ${y}) scale(${sx} 1)`}>
+      <g className={motion} style={style}>
+        <image
+          href={a.src}
+          x={-a.ax * a.s}
+          y={-a.ay * a.s}
+          width={a.w * a.s}
+          height={a.h * a.s}
+          opacity="1"
+          className="a-frame-a"
+          style={style}
+        />
+        <image
+          href={b.src}
+          x={-b.ax * b.s}
+          y={-b.ay * b.s}
+          width={b.w * b.s}
+          height={b.h * b.s}
+          opacity="0"
+          className="a-frame-b"
+          style={style}
+        />
       </g>
     </g>
   );

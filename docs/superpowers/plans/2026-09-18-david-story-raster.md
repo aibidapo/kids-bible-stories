@@ -43,3 +43,35 @@ Then typecheck, `check:motion`, compare loop (≤ 4 cycles), hotspots in `src/da
 - Whirling sling: a continuous rotate of a raster loop about the hand. If the split polygon clips the arm, the arm rotates too. Keep the polygon to the loop and cords above the wrist; verify by scrubbing.
 - Goliath scale: 0.5 of a 1000-tall cutout is 500 units, 80% of the frame height. Tablet landscape crops the top 225, so his head is cut there. Acceptable for a giant; the phone shows him whole.
 - Verdict: proceed.
+
+## Addendum: user review round (2026-09-18)
+
+Requests: slain Goliath in the victory scene; soldiers taller than David;
+blinks on every character; richer shepherd scene (more sheep, realistic
+swaying tree and grass, coloured birds); a new scene showing the stone hit
+and Goliath going down; Goliath bigger and more formidable.
+
+Design, roasted inline:
+
+- **Strike scene** (`david/strike`, between stones and victory): reuses the
+  stones background and cutouts plus the fallen Goliath. One-shot 6 s beat:
+  the stone waits at the sling, flies to the forehead, the standing giant
+  staggers 30° about his feet, then crossfades into the fallen pose.
+  Attributes hold the outcome (stone hidden, standing hidden, fallen shown)
+  so Calm mode shows Goliath already down. A full 84° rigid topple was
+  rejected: a 600-unit giant cannot fall inside a 1000-wide frame, and a
+  rotated raster plank sinks its far corner into the ground.
+- **Blinks**: `design/pipeline/find_eyes.py` finds sclera blobs in the top of
+  each cutout and prints lid centres, radii and skin tone; two three-quarter
+  faces needed their far eye mirrored by hand. Verified by rendering every
+  page with lids forced visible.
+- **Shepherd**: background regenerated without a tree; tree as its own cutout
+  split into trunk and canopy (`split_tail.py` with a canopy polygon), canopy
+  on `a-sway-slow`; grass tufts on `a-sway` with staggered delays; three
+  birds as two-frame `Flipbook`s on `a-fly` / `a-flutter`; flock of seven.
+- **Goliath**: sheet regenerated (bulkier); the three Goliath layers
+  regenerated; scaled 0.6 in taunt and stones (600 units tall).
+- **Victory**: soldiers at 0.6 (352 tall) above David at 0.36 (324); fallen
+  Goliath in the foreground so the soldiers cannot hide him.
+- `raster.tsx` gains `Part` (generic split-off part), `Flipbook`, and a
+  `delay` prop on `Layer`; `Tail` wraps `Part`; Noah's dove uses `Flipbook`.

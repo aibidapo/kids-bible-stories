@@ -159,7 +159,7 @@ await shot({
 const STORIES = {
   daniel: ['prays', 'trap', 'den', 'angel', 'rejoice'],
   noah: ['builds', 'two-by-two', 'flood', 'dove', 'rainbow'],
-  david: ['shepherd', 'taunt', 'volunteers', 'stones', 'victory'],
+  david: ['shepherd', 'taunt', 'volunteers', 'stones', 'strike', 'victory'],
 }
 const only = process.env.STORY ? [process.env.STORY] : Object.keys(STORIES)
 for (const story of only) {

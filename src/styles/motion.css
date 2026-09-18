@@ -422,106 +422,63 @@ svg [class*=" a-"] {
 }
 
 @keyframes stone-fly {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(380px, -40px) scale(0.7);
-    opacity: 1;
-  }
-}
-.a-stone {
-  animation: stone-fly 2.6s cubic-bezier(0.3, 0, 0.7, 1) infinite;
-}
-
-/*
- * Eyelids. Drawn with opacity="0" so eyes rest open; the lid only appears for
- * a moment near the end of each cycle. Calm mode drops the animation and the
- * attribute value keeps the eyes open.
- */
-@keyframes blink {
   0%,
-  93%,
+  55% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(460px, -80px);
+  }
+  71%,
   100% {
     opacity: 0;
-  }
-  95%,
-  97% {
-    opacity: 1;
+    transform: translate(460px, -80px);
   }
 }
-.a-blink {
-  animation: blink 5.2s linear infinite;
+.a-stone-fly {
+  animation: stone-fly 6s linear both;
 }
-
-/*
- * Two-frame flipbook for raster wings: frame A is drawn with opacity="1" and
- * frame B with opacity="0", so Calm mode shows a single clean pose. Playing,
- * the two swap in hard steps.
- */
-@keyframes frame-a {
+@keyframes topple {
   0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes frame-b {
-  0%,
-  49% {
-    opacity: 0;
-  }
-  50%,
-  100% {
-    opacity: 1;
-  }
-}
-.a-frame-a {
-  animation: frame-a 0.36s steps(1, end) infinite;
-}
-.a-frame-b {
-  animation: frame-b 0.36s steps(1, end) infinite;
-}
-
-/*
- * Tail flick. Still for most of a nine-second cycle, then two quick swishes.
- * The tail is its own raster layer whose root sits at a corner of its box, so
- * one class per root corner keeps the pivot in this file (rule 2). Calm mode
- * drops the animation and the tail rests exactly where it was drawn.
- */
-@keyframes tail-flick {
-  0%,
-  78%,
-  100% {
+  70% {
     transform: rotate(0deg);
   }
+  82%,
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+.a-topple {
+  animation: topple 6s cubic-bezier(0.5, 0, 1, 1) both;
+  transform-origin: 50% 100%;
+}
+@keyframes stand-out {
+  0%,
   82% {
-    transform: rotate(-9deg);
+    opacity: 1;
   }
-  86% {
-    transform: rotate(7deg);
-  }
-  90% {
-    transform: rotate(-6deg);
-  }
-  94% {
-    transform: rotate(3deg);
+  94%,
+  100% {
+    opacity: 0;
   }
 }
-.a-tail-flick-tr {
-  animation: tail-flick 9s ease-in-out infinite;
-  transform-origin: 100% 0%;
+.a-stand-out {
+  animation: stand-out 6s linear both;
 }
-.a-tail-flick-tl {
-  animation: tail-flick 9s ease-in-out infinite;
-  transform-origin: 0% 0%;
+@keyframes land-in {
+  0%,
+  82% {
+    opacity: 0;
+  }
+  94%,
+  100% {
+    opacity: 1;
+  }
+}
+.a-land-in {
+  animation: land-in 6s linear both;
 }
 
 /*

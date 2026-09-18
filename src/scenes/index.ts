@@ -27,6 +27,7 @@ export const SCENE_ART: Record<string, SceneArt> = {
   "david/taunt": david.GoliathTaunts,
   "david/volunteers": david.DavidVolunteers,
   "david/stones": david.FiveSmoothStones,
+  "david/strike": david.TheStrike,
   "david/victory": david.Victory,
 
   "jonah/running": jonah.RunningAway,

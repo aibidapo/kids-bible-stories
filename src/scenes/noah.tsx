@@ -1,6 +1,6 @@
 import { Rain, Sparkle } from "../art/base";
 import { Grain, SoftShadow } from "../art/v2/effects";
-import { Backdrop, Layer } from "../art/raster";
+import { Backdrop, Flipbook, Layer } from "../art/raster";
 import buildsLayers from "../assets/scenes/noah/builds/layers.json";
 import buildsBg from "../assets/scenes/noah/builds/bg.webp";
 import buildsNoah from "../assets/scenes/noah/builds/noah-raise.webp";
@@ -30,38 +30,18 @@ import rainbowFamily from "../assets/scenes/noah/rainbow/family.webp";
 import rainbowNoah from "../assets/scenes/noah/rainbow/noah-look-up.webp";
 import type { SceneArtProps } from "../types";
 
-/**
- * A dove built from the two prays frames, flapping in place. Frames are
- * aligned on the eye and scaled to the same body size (see DanielPrays).
- */
+/** The two prays dove frames as a Flipbook, flapping in place. */
 function FlappingDove({ x, y, size = 1, flip = false }: { x: number; y: number; size?: number; flip?: boolean }) {
   const B = praysLayers.cutouts;
-  const up = { s: 0.25 * size, eye: [195, 122] as const };
-  const down = { s: 0.185 * size, eye: [247, 32] as const };
-  const sx = flip ? -1 : 1;
   return (
-    <g transform={`translate(${x} ${y}) scale(${sx} 1)`}>
-      <g className="a-float">
-        <image
-          href={birdUp}
-          x={-up.eye[0] * up.s}
-          y={-up.eye[1] * up.s}
-          width={B["bird-up"].w * up.s}
-          height={B["bird-up"].h * up.s}
-          opacity="1"
-          className="a-frame-a"
-        />
-        <image
-          href={birdDown}
-          x={-down.eye[0] * down.s}
-          y={-down.eye[1] * down.s}
-          width={B["bird-down"].w * down.s}
-          height={B["bird-down"].h * down.s}
-          opacity="0"
-          className="a-frame-b"
-        />
-      </g>
-    </g>
+    <Flipbook
+      a={{ src: birdUp, w: B["bird-up"].w, h: B["bird-up"].h, ax: 195, ay: 122, s: 0.25 * size }}
+      b={{ src: birdDown, w: B["bird-down"].w, h: B["bird-down"].h, ax: 247, ay: 32, s: 0.185 * size }}
+      x={x}
+      y={y}
+      flip={flip}
+      motion="a-float"
+    />
   );
 }
 

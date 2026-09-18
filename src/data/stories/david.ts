@@ -153,6 +153,38 @@ export const david: Story = {
       ],
     },
     {
+      id: "strike",
+      art: "david/strike",
+      text: {
+        little:
+          "David let the stone fly. WHAM! It hit Goliath right on the forehead, and down he went.",
+        big: "Goliath laughed at the boy with the stick. David answered that he came in the name of the Lord. Then he ran toward the giant, whirled the sling, and let one stone go. It struck Goliath square on the forehead, and the champion of the Philistines fell face-down in the dust.",
+      },
+      verse: "1 Samuel 17:49",
+      hotspots: [
+        {
+          id: "stone-hit",
+          x: 79,
+          y: 36,
+          size: 20,
+          label: "where the stone hit",
+          reward:
+            "One stone, one shot. The other four stayed in the bag.",
+          sound: "knock",
+          sticker: "One Stone",
+        },
+        {
+          id: "goliath-down",
+          x: 61,
+          y: 90,
+          size: 26,
+          label: "Goliath on the ground",
+          reward: "The biggest soldier in the valley, flat on his back.",
+          sound: "cheer",
+        },
+      ],
+    },
+    {
       id: "victory",
       art: "david/victory",
       text: {
@@ -164,7 +196,7 @@ export const david: Story = {
       hotspots: [
         {
           id: "david",
-          x: 40,
+          x: 30,
           y: 74,
           size: 22,
           label: "David",
@@ -175,9 +207,9 @@ export const david: Story = {
         },
         {
           id: "crowd",
-          x: 72,
-          y: 84,
-          size: 24,
+          x: 64,
+          y: 66,
+          size: 26,
           label: "the cheering army",
           reward:
             "The same soldiers who were too scared to move are now running down the hill.",
