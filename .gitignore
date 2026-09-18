@@ -6,3 +6,4 @@ scratch/
 .DS_Store
 .vite/
 tsconfig.tsbuildinfo
+.playwright-mcp/

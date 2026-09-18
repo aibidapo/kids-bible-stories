@@ -18,10 +18,16 @@ npm run build      # typecheck + production build into dist/
 npm run preview    # serve the built output
 npm run typecheck  # tsc -b
 npm run icons      # regenerate public/icons/*.png from scripts/generate-icons.mjs
+npm run check:motion   # hard-constraint lint: no a-* class on a transform'd element
+git config core.hooksPath .githooks   # once per clone: pre-commit runs check:motion + build
 ```
 
 There is no test suite. Verification is visual — see **Verifying changes** below.
 `npm run build` runs `tsc -b` first, so a type error fails the build.
+
+`.githooks/pre-commit` runs `check:motion` and `build` and refuses the commit on
+failure. Activate it once per clone with the command above. It does not lint,
+format, unit-test, or secret-scan; those gates are not installed yet.
 
 ## Hard constraints
 
@@ -131,7 +137,8 @@ node scripts/shoot.mjs
 Both write to `scratch/`, which is gitignored.
 
 `render-scenes.tsx` renders without CSS, so it **cannot** catch constraint 1
-above. Any change touching transforms or animation needs the browser
+above. `npm run check:motion` does catch it, mechanically, for every registered
+scene. Any change touching transforms or animation still needs the browser
 screenshots too.
 
 ## Conventions

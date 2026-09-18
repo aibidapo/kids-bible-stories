@@ -1,0 +1,9 @@
+#!/bin/sh
+# Local pre-commit gate. CI is a mirror of this, never a replacement.
+# Activate once per clone:  git config core.hooksPath .githooks
+# `npm run build` runs `tsc -b` first, so this is typecheck + build in one.
+set -e
+echo "pre-commit: motion constraints"
+npm run --silent check:motion
+echo "pre-commit: typecheck + build"
+npm run --silent build
