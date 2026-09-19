@@ -273,3 +273,24 @@ and the disciples from behind."
   the gull cross on `fly`. Rest points sit beside the heads, not on them.
 
 Render `storm-calm.png` and the stills replaced. Calls: 1.
+
+## Review round 8 (owner, 2026-09-19): page 5, birds facing forward
+
+"The birds flying towards should be facing forward. What we have now is
+birds dropping down."
+
+- Side-view frames on a descending path read as falling. Four new frames
+  generated: a bluebird and a red cardinal each seen head-on with wings
+  up and wings down (`calm-*-front-*.json`, 17–23 KB each,
+  `calm-front-birds-on-green.png`). `FrontBird` in `storm.tsx` flips
+  between them on the head anchor.
+- `swoop-far` flattened: the bird now starts as a speck almost at its
+  rest point (40 units higher, scale 0.08) and grows to full size, then
+  passes at 1.3 and fades, so the motion is toward the viewer rather than
+  down. The goldfinch side-view arrival is replaced by the head-on
+  bluebird; the red cardinal arrives head-on at the left; the side-view
+  bluebird still arrives from the right; the gull and another bluebird
+  cross. Gull rest point and hotspot moved to 14 %, 18 % clear of the
+  cardinal. Scene 390 KB.
+
+Render `storm-calm.png` and stills replaced. Calls: 4.

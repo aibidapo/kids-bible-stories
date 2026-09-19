@@ -46,6 +46,10 @@ import redbirdUp from "../assets/scenes/david/shepherd/redbird-up.webp";
 import redbirdDown from "../assets/scenes/david/shepherd/redbird-down.webp";
 import goldfinchUp from "../assets/scenes/david/shepherd/goldfinch-up.webp";
 import goldfinchDown from "../assets/scenes/david/shepherd/goldfinch-down.webp";
+import bluebirdFrontUp from "../assets/scenes/storm/calm/bluebird-front-up.webp";
+import bluebirdFrontDown from "../assets/scenes/storm/calm/bluebird-front-down.webp";
+import redbirdFrontUp from "../assets/scenes/storm/calm/redbird-front-up.webp";
+import redbirdFrontDown from "../assets/scenes/storm/calm/redbird-front-down.webp";
 import calmWave from "../assets/scenes/creation/sky-water/calm-wave.webp";
 import type { SceneArtProps } from "../types";
 
@@ -305,6 +309,49 @@ function SongBird({
       y={y}
       flip={flip}
       motion={motion}
+      delay={delay}
+    />
+  );
+}
+
+/** A bird seen head-on, flying straight at the viewer; frames aligned on the head. */
+function FrontBird({
+  kind,
+  x,
+  y,
+  s,
+  delay,
+}: {
+  kind: "blue" | "red";
+  x: number;
+  y: number;
+  s: number;
+  delay: number;
+}) {
+  const L = calmLayers.cutouts;
+  const up = kind === "blue" ? L["bluebird-front-up"] : L["redbird-front-up"];
+  const down = kind === "blue" ? L["bluebird-front-down"] : L["redbird-front-down"];
+  return (
+    <Flipbook
+      a={{
+        src: kind === "blue" ? bluebirdFrontUp : redbirdFrontUp,
+        w: up.w,
+        h: up.h,
+        ax: up.w * 0.5,
+        ay: up.h * 0.62,
+        s,
+      }}
+      b={{
+        src: kind === "blue" ? bluebirdFrontDown : redbirdFrontDown,
+        w: down.w,
+        h: down.h,
+        ax: down.w * 0.5,
+        ay: down.h * 0.38,
+        s,
+      }}
+      x={x}
+      y={y}
+      motion="a-swoop-far"
       delay={delay}
     />
   );
@@ -611,11 +658,11 @@ export function WhoIsThis({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={calmBg} />
-      <Gull x={220} y={150} s={0.2} delay={-9} flip />
+      <Gull x={140} y={110} s={0.2} delay={-9} flip />
       <SongBird kind="blue" x={560} y={88} s={0.2} motion="a-fly" delay={-15} />
       {/* birds arrive toward the men: two from specks over the far hills behind the boat, one from the right */}
-      <SongBird kind="red" x={250} y={198} s={0.24} motion="a-swoop-far" delay={-3} />
-      <SongBird kind="gold" x={585} y={200} s={0.22} motion="a-swoop-far" delay={-11} flip />
+      <FrontBird kind="red" x={215} y={215} s={0.3} delay={-3} />
+      <FrontBird kind="blue" x={585} y={200} s={0.28} delay={-11} />
       <SongBird kind="blue" x={760} y={190} s={0.2} motion="a-swoop-r" delay={-7} flip />
       <Ripple x={160} y={580} scale={0.56} delay={0} />
       <Ripple x={860} y={592} scale={0.42} delay={0} flip />

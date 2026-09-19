@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "A small red cardinal songbird with a crest and a black face patch in flight seen exactly from the FRONT, flying straight toward the viewer, head-on and symmetrical, eyes and beak facing the camera, both wings raised HIGH above the body mid-flap, tail hidden behind the body, soft feather detail, storybook style, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "1:1",
+  "size": "1K",
+  "generated": "2026-09-19T13:28:44+00:00"
+}

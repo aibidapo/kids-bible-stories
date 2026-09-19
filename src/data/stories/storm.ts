@@ -201,8 +201,8 @@ export const storm: Story = {
       hotspots: [
         {
           id: "gull",
-          x: 22,
-          y: 24,
+          x: 14,
+          y: 18,
           size: 14,
           label: "the seagull",
           reward: "When the storm ended, the birds came back.",

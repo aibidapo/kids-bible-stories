@@ -58,6 +58,58 @@
       ],
       "source": "design/pipeline/raw/storm/calm/disciples-amazed.png",
       "bytes": 71626
+    },
+    "bluebird-front-up": {
+      "file": "bluebird-front-up.webp",
+      "w": 390,
+      "h": 320,
+      "trim": [
+        153,
+        200,
+        872,
+        790
+      ],
+      "source": "design/pipeline/raw/storm/calm/bluebird-front-up.png",
+      "bytes": 23982
+    },
+    "bluebird-front-down": {
+      "file": "bluebird-front-down.webp",
+      "w": 356,
+      "h": 320,
+      "trim": [
+        184,
+        248,
+        840,
+        838
+      ],
+      "source": "design/pipeline/raw/storm/calm/bluebird-front-down.png",
+      "bytes": 21908
+    },
+    "redbird-front-up": {
+      "file": "redbird-front-up.webp",
+      "w": 326,
+      "h": 320,
+      "trim": [
+        109,
+        108,
+        910,
+        894
+      ],
+      "source": "design/pipeline/raw/storm/calm/redbird-front-up.png",
+      "bytes": 22760
+    },
+    "redbird-front-down": {
+      "file": "redbird-front-down.webp",
+      "w": 283,
+      "h": 320,
+      "trim": [
+        160,
+        115,
+        864,
+        912
+      ],
+      "source": "design/pipeline/raw/storm/calm/redbird-front-down.png",
+      "bytes": 17900
     }
   }
 }

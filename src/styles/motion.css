@@ -431,25 +431,25 @@ svg [class*=" a-"] {
 @keyframes swoop-far {
   0% {
     opacity: 0;
-    transform: translate(40px, -150px) scale(0.1);
+    transform: translate(10px, -40px) scale(0.08);
   }
   10% {
     opacity: 1;
   }
-  70% {
+  72% {
     opacity: 1;
     transform: translate(0, 0) scale(1);
   }
-  84% {
+  86% {
     opacity: 0;
-    transform: translate(-30px, 26px) scale(1.12);
+    transform: translate(-6px, 14px) scale(1.3);
   }
   100% {
     opacity: 0;
-    transform: translate(40px, -150px) scale(0.1);
+    transform: translate(10px, -40px) scale(0.08);
   }
 }
-/* A bird that starts as a speck over the far hills behind the figures and flies out toward them, growing as it comes. */
+/* A bird flying straight at the viewer: a speck over the far hills that grows into a head-on bird beside the figures, then passes. Use front-view frames. */
 .a-swoop-far {
   animation: swoop-far 16s ease-in infinite;
 }

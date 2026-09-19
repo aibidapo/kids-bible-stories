@@ -28,6 +28,26 @@
       "max_h": 600,
       "prompt": "Peter from the second reference image kneeling with his hands raised in amazement, and beside him a young clean-shaven fisherman in a sea-blue tunic (John) kneeling with a hand on his chest, both looking to the viewer's right in awe, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
       "sheet": "peter"
+    },
+    "bluebird-front-up": {
+      "aspect": "1:1",
+      "max_h": 320,
+      "prompt": "A small bluebird with a bright blue head and back and an orange breast in flight seen exactly from the FRONT, flying straight toward the viewer, head-on and symmetrical, eyes and beak facing the camera, both wings raised HIGH above the body mid-flap, tail hidden behind the body, soft feather detail, storybook style, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "bluebird-front-down": {
+      "aspect": "1:1",
+      "max_h": 320,
+      "prompt": "The SAME a small bluebird with a bright blue head and back and an orange breast in flight seen exactly from the FRONT, flying straight toward the viewer, head-on and symmetrical, eyes and beak facing the camera, both wings swept DOWN below the body mid-flap, same size and head position as the wings-up frame, soft feather detail, storybook style, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "redbird-front-up": {
+      "aspect": "1:1",
+      "max_h": 320,
+      "prompt": "A small red cardinal songbird with a crest and a black face patch in flight seen exactly from the FRONT, flying straight toward the viewer, head-on and symmetrical, eyes and beak facing the camera, both wings raised HIGH above the body mid-flap, tail hidden behind the body, soft feather detail, storybook style, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "redbird-front-down": {
+      "aspect": "1:1",
+      "max_h": 320,
+      "prompt": "The SAME a small red cardinal songbird with a crest and a black face patch in flight seen exactly from the FRONT, flying straight toward the viewer, head-on and symmetrical, eyes and beak facing the camera, both wings swept DOWN below the body mid-flap, same size and head position as the wings-up frame, soft feather detail, storybook style, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }
