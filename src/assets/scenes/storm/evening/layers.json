@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 126038,
+    "bytes": 153966,
     "source": "design/pipeline/raw/storm/evening/bg.png"
   },
   "cutouts": {
@@ -48,16 +48,16 @@
     },
     "boat-shore": {
       "file": "boat-shore.webp",
-      "w": 680,
-      "h": 500,
+      "w": 780,
+      "h": 579,
       "trim": [
-        243,
-        56,
-        1108,
-        692
+        221,
+        183,
+        1001,
+        762
       ],
       "source": "design/pipeline/raw/storm/evening/boat-shore.png",
-      "bytes": 53976
+      "bytes": 51652
     },
     "gull-up": {
       "file": "gull-up.webp",

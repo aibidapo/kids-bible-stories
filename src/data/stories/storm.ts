@@ -22,14 +22,14 @@ export const storm: Story = {
       },
       verse: "Mark 4:35–36",
       find: {
-        prompt: "Find the nets drying on the shore.",
+        prompt: "Find the fishing nets.",
         targets: ["nets"],
       },
       hotspots: [
         {
           id: "nets",
-          x: 72,
-          y: 44,
+          x: 47,
+          y: 60,
           size: 16,
           label: "the fishing nets",
           reward: "Peter and John were fishermen. This lake was their workplace.",
@@ -38,8 +38,8 @@ export const storm: Story = {
         },
         {
           id: "boat",
-          x: 72,
-          y: 84,
+          x: 70,
+          y: 80,
           size: 24,
           label: "the boat",
           reward:
@@ -72,8 +72,8 @@ export const storm: Story = {
       hotspots: [
         {
           id: "cushion",
-          x: 67,
-          y: 50,
+          x: 70,
+          y: 58,
           size: 22,
           label: "Jesus asleep",
           reward: "He was so tired he slept through the wind.",

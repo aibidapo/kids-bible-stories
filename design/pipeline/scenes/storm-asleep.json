@@ -4,7 +4,7 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "Open water on the Sea of Galilee at dusk with a storm building: dark grey-blue rolling water with white crests, a bank of heavy purple-black clouds rolling in from the right, the last gold light at the horizon on the left, spray, distant dark hills. The lower third is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+    "prompt": "Open water on the Sea of Galilee at dusk as a storm builds, seen from low on the water, richly detailed and realistic in a soft shaded storybook style: dark grey-blue rolling swells with white crests, foam streaks and flying spray in the foreground and middle distance, wind lines on the water, the last band of gold sunset light on the horizon at the left, and a towering bank of storm clouds rolling in from the right with real volume, soft lit edges, dark undersides, a grey curtain of distant rain beneath them. The far shore only as a thin dark line of hills on the horizon, NO rocks, NO cliffs, NO shore, NO wood and NO objects in the foreground: only water and sky. The lower third is water. Keep the centre clear. Atmospheric light, soft gradients, fine texture in the water. Completely EMPTY of people, animals and boats."
   },
   "cutouts": {
     "boat-back": {
@@ -18,10 +18,10 @@
       "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side: the hull and near gunwale with weathered planks, wood grain, nail heads, a coiled rope and a net over the rail, NO mast, NO far side, NO interior, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
     "jesus-asleep": {
-      "aspect": "4:3",
-      "max_h": 450,
-      "prompt": "Jesus from the second reference image, lying asleep on his side on a cushion, head on his hand, peaceful face, eyes closed, mantle drawn over him, seen from the side, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
-      "sheet": "jesus"
+      "sheet": "jesus",
+      "aspect": "16:9",
+      "max_h": 420,
+      "prompt": "Jesus from the second reference image, lying asleep on his side on a cushion, head resting on his hand, peaceful face, eyes closed, mantle drawn over him, seen exactly from the side, the ENTIRE figure from head to feet inside the frame with a clear margin all round, nothing cropped, richly detailed textured fabric with woven stripes, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
     "peter-row": {
       "aspect": "4:3",

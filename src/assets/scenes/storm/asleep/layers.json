@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 73692,
+    "bytes": 74220,
     "source": "design/pipeline/raw/storm/asleep/bg.png"
   },
   "cutouts": {
@@ -17,34 +17,34 @@
         1258,
         768
       ],
-      "source": "design/pipeline/raw/storm/calm/boat-back.png",
+      "source": "design/pipeline/raw/storm/asleep/boat-back.png",
       "bytes": 65598
     },
     "boat-hull": {
       "file": "boat-hull.webp",
-      "w": 836,
+      "w": 1037,
       "h": 450,
       "trim": [
-        0,
-        52,
-        1330,
-        768
+        124,
+        146,
+        1251,
+        635
       ],
       "source": "design/pipeline/raw/storm/asleep/boat-hull.png",
-      "bytes": 66962
+      "bytes": 61446
     },
     "jesus-asleep": {
       "file": "jesus-asleep.webp",
-      "w": 657,
-      "h": 450,
+      "w": 866,
+      "h": 420,
       "trim": [
-        0,
-        74,
-        1200,
-        896
+        38,
+        98,
+        1376,
+        747
       ],
       "source": "design/pipeline/raw/storm/asleep/jesus-asleep.png",
-      "bytes": 67344
+      "bytes": 71684
     },
     "peter-row": {
       "file": "peter-row.webp",

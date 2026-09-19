@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Open water on the Sea of Galilee at dusk as a storm builds, seen from low on the water, richly detailed and realistic in a soft shaded storybook style: dark grey-blue rolling swells with white crests, foam streaks and flying spray in the foreground and middle distance, wind lines on the water, the last band of gold sunset light on the horizon at the left, and a towering bank of storm clouds rolling in from the right with real volume, soft lit edges, dark undersides, a grey curtain of distant rain beneath them. The far shore only as a thin dark line of hills on the horizon, NO rocks, NO cliffs, NO shore, NO wood and NO objects in the foreground: only water and sky. The lower third is water. Keep the centre clear. Atmospheric light, soft gradients, fine texture in the water. Completely EMPTY of people, animals and boats.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T12:04:42+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Jesus from the second reference image, lying asleep on his side on a cushion, head resting on his hand, peaceful face, eyes closed, mantle drawn over him, seen exactly from the side, the ENTIRE figure from head to feet inside the frame with a clear margin all round, nothing cropped, richly detailed textured fabric with woven stripes, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg",
+    "design/characters/jesus.png"
+  ],
+  "aspect": "16:9",
+  "size": "1K",
+  "generated": "2026-09-19T12:04:58+00:00"
+}

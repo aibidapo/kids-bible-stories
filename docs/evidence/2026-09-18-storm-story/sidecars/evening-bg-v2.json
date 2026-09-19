@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "The stony shore of the Sea of Galilee at sunset, seen straight on, richly detailed and realistic in a soft shaded storybook style: a pebble beach of wet rounded stones with reflections in the foreground, small waves lapping and leaving foam lines, a short stone jetty at the left, fishing nets drying on weathered wooden posts with coarse rope, a clay jar, a basket of fresh fish, a coil of rope and an oar, tufts of dry grass between the stones. On the lake: four or five wooden Galilee fishing boats at different distances, some moored near the shore with furled cream sails and lanterns, some sailing far off with full sails catching the last light, each with its reflection in the water, no people in them. Across the lake low hills with a small village of flat-roofed stone houses and a few lit windows, the water gold and rose with rippled reflections, a sky of orange, rose and violet with layered streaks of cloud, a few birds far off. Named materials with visible texture: weathered wood grain, rough stone, coarse sail cloth, wet rope, woven basket. Foreground, midground and background layers, soft cast shadows and atmospheric light. Keep the centre and right foreground clear of boats and objects for figures. Completely EMPTY of people and animals.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T12:00:58+00:00"
+}

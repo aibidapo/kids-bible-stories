@@ -120,3 +120,43 @@ Findings and fixes, renders and stills in this folder replaced:
 Checks after the round: 155 tests, `tsc -b` clean, 38 scenes motion-clean,
 five renders re-read, 15 browser stills reshot (phone, tablet, first
 hotspot). Budgets unchanged (no asset changed).
+
+## Review round 2 (owner, 2026-09-19): pages 1 and 2
+
+Page 1 (shore): "birds flying backwards, boat broken in the centre and too
+small, richer environment and boats on the water".
+
+- The gulls face left and the `fly` path runs left to right; both gulls
+  now `flip`, so they fly beak first.
+- The first boat cutout had a gap at the mast and a small hull; the second
+  had a sail cut flat by the frame top. Third generation asks for a boat
+  small in its frame with a furled sail and clear space above the mast;
+  it came back whole (780×579, 50 KB) and sits at scale 0.68, hull as tall
+  as the men. Sidecar `evening-boat-shore-v2.json`.
+- Background regenerated at 2K with a stone jetty, a hillside village with
+  lit windows, four moored and sailing boats with reflections, drying nets,
+  jar, basket, oar and grass (`evening-bg-v2.json`). 150 KB after pack;
+  scene 445 KB. Nets hotspot moved to the nets John carries (the drying
+  nets are at the left edge, inside the phone crop line).
+
+Page 2 (asleep): "Jesus cut in half, boat cut in half, waves and boat out
+of sync, cloud and rocks unrealistic".
+
+- Both cuts were frame edges: the near hull's stern and the lying figure's
+  feet had overflowed their generation frames and ended in the same flat
+  vertical line. The hull is now the calm page's whole hull (in the packed
+  assets and the raw folder); Jesus regenerated at 16:9 with "the entire
+  figure inside the frame" (866×420, 70 KB, `asleep-jesus-asleep-v2.json`),
+  lying on the cushion inside the boat at scale 0.36. Cushion hotspot
+  70 %, 58 %.
+- Background regenerated: open water only, no rocks or shore, storm bank
+  with volume and a distant rain curtain (`asleep-bg-v2.json`, 72 KB).
+  Scene 385 KB.
+- Wave sync: side waves on every boat page now share the boat's heave class
+  and phase, and the front wave sits inside the boat's heave group so it
+  rises and falls with the hull (`Ripple` gained a `cls` prop; `Wave`
+  already had one). Applied to asleep, afraid, peace and calm.
+
+Renders `storm-evening.png`, `storm-asleep.png` and the stills replaced;
+cutout sheets `*-cutouts-on-green-v2.png`. Calls this round: 5 (one boat
+attempt discarded). 155 tests, 38 scenes motion-clean.
