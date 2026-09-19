@@ -287,7 +287,7 @@ export function BornInAStable({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={stableBg} />
-      <HolyGlow x={440} y={470} r={240} />
+      <HolyGlow x={520} y={470} r={240} />
       <SoftShadow x={150} y={608} rx={150} ry={16} opacity={0.4} />
       <Layer
         src={stableOx}
@@ -299,14 +299,14 @@ export function BornInAStable({ found }: SceneArtProps) {
         className="a-breathe-slow"
         delay={1.5}
       />
-      <SoftShadow x={840} y={596} rx={100} ry={14} opacity={0.4} />
+      <SoftShadow x={880} y={606} rx={90} ry={13} opacity={0.4} />
       <Layer
         src={stableDonkey}
         w={L.donkey.w}
         h={L.donkey.h}
-        x={845}
+        x={880}
         y={606}
-        scale={0.56}
+        scale={0.5}
         className="a-breathe-slow"
         delay={0.7}
       />
@@ -320,12 +320,12 @@ export function BornInAStable({ found }: SceneArtProps) {
         scale={0.42}
         className="a-breathe"
       />
-      <SoftShadow x={610} y={598} rx={80} ry={12} opacity={0.4} />
+      <SoftShadow x={725} y={598} rx={80} ry={12} opacity={0.4} />
       <Layer
         src={stableJoseph}
         w={L["joseph-stand"].w}
         h={L["joseph-stand"].h}
-        x={610}
+        x={725}
         y={598}
         scale={0.52}
         className="a-breathe"
@@ -344,10 +344,10 @@ export function BornInAStable({ found }: SceneArtProps) {
           delay={1.7}
         />
       </Layer>
-      <SoftShadow x={440} y={575} rx={110} ry={12} opacity={0.35} />
-      <Layer src={stableBaby} w={L.baby.w} h={L.baby.h} x={440} y={578} scale={0.46} />
-      <Motes x={440} top={200} bottom={560} spread={220} />
-      {found.includes("baby") && <Sparkle x={440} y={380} s={1.8} />}
+      <SoftShadow x={520} y={580} rx={125} ry={12} opacity={0.35} />
+      <Layer src={stableBaby} w={L.baby.w} h={L.baby.h} x={520} y={580} scale={0.5} />
+      <Motes x={520} top={200} bottom={560} spread={220} />
+      {found.includes("baby") && <Sparkle x={520} y={370} s={1.8} />}
       <Grain opacity={0.05} />
     </>
   );

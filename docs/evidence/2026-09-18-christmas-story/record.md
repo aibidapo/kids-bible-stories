@@ -165,3 +165,8 @@ the credit outage, then done). Motion check 33 clean; 148 tests.
   frame: the left wing goes from 150×213 px at rest to 126×260 px at
   mid-beat. Chrome applies 3D transforms to SVG groups; a browser that does
   not shows the spread pose. `gabriel-midbeat-phone.png` replaced.
+- **Page 3 "move the lamp to Joseph's left":** the lamp is part of the
+  background, so Joseph stepped right of it (x 610 → 725) and the donkey
+  over (x 880, scale 0.5). That uncovered the background's empty trough, so
+  the baby's manger now covers it end to end (x 440 → 520, scale 0.5),
+  glow, motes and hotspot (52 %, 82 %) with it. `christmas-stable.png` replaced.

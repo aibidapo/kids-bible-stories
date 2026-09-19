@@ -115,8 +115,8 @@ export const christmas: Story = {
       hotspots: [
         {
           id: "baby",
-          x: 44,
-          y: 84,
+          x: 52,
+          y: 82,
           size: 22,
           label: "baby Jesus",
           reward: "The King of kings, asleep in a feeding trough.",
