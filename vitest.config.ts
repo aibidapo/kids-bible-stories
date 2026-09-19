@@ -19,7 +19,7 @@ export default defineConfig({
       // Ratchet: set at the measured floor after each test-adding commit and only ever
       // raised. Widening the include set (components, hooks on 2026-09-18) resets the
       // floor for the new set; a number may only drop when the set grows.
-      thresholds: { lines: 100, branches: 93, functions: 98.5, statements: 99 },
+      thresholds: { lines: 100, branches: 94, functions: 98.8, statements: 99 },
     },
   },
 });
