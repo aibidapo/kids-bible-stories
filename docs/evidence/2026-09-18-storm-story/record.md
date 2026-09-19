@@ -231,3 +231,25 @@ look like they are still falling."
   in Calm mode, like the wild-night page.
 
 Render `storm-peace.png` and `peace-phone.png` replaced. Calls: 1.
+
+## Review round 6 (owner, 2026-09-19): page 5
+
+"Waves superimposed on rocks and wood; only one bird flying, the others
+static; make the background more realistic; other coloured birds flying
+through, some flying towards Jesus and the disciples."
+
+- Background regenerated with "NO birds, NO rocks, NO wood, NO shore":
+  glassy dawn water with long reflections, lifting mist, layered hills
+  with olive groves and a stone village, clearing sky with fading stars
+  (`calm-bg-v2.json`, 52 KB). Scene 294 KB. The painted static birds are
+  gone with it; every bird on the page is now animated.
+- Birds: the gull and a bluebird cross on the `fly` path; a red bird and a
+  goldfinch arrive from far off toward the boat on two new paths
+  (`swoop-l`, `swoop-r` in `motion.css`): they fade in small and distant,
+  grow to full size as they reach the men, then pass behind and fade.
+  The goldfinch is flipped so it faces the boat from the right. The bird
+  frames are David's hill songbirds (`SongBird` helper in `storm.tsx`,
+  eye anchors as in `david.tsx`). In Calm mode each bird rests at full
+  size at its arrival point.
+
+Render `storm-calm.png` and the stills replaced. Calls: 1.

@@ -386,6 +386,56 @@ svg [class*=" a-"] {
   transform-origin: 0% 35%;
 }
 
+@keyframes swoop-l {
+  0% {
+    opacity: 0;
+    transform: translate(-360px, -150px) scale(0.3);
+  }
+  8% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  82% {
+    opacity: 0;
+    transform: translate(70px, 30px) scale(1.06);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-360px, -150px) scale(0.3);
+  }
+}
+@keyframes swoop-r {
+  0% {
+    opacity: 0;
+    transform: translate(360px, -150px) scale(0.3);
+  }
+  8% {
+    opacity: 1;
+  }
+  68% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  82% {
+    opacity: 0;
+    transform: translate(-70px, 30px) scale(1.06);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(360px, -150px) scale(0.3);
+  }
+}
+/* A bird arriving from far off toward the figures, growing as it comes, then passing behind them. Rests at full size in Calm mode. */
+.a-swoop-l {
+  animation: swoop-l 15s ease-in-out infinite;
+}
+.a-swoop-r {
+  animation: swoop-r 15s ease-in-out infinite;
+}
+
 @keyframes flutter {
   0% {
     transform: translate(0, 0);

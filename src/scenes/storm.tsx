@@ -39,6 +39,13 @@ import calmDisciples from "../assets/scenes/storm/calm/disciples-amazed.webp";
 import jonahStormLayers from "../assets/scenes/jonah/storm/layers.json";
 import stormWave from "../assets/scenes/jonah/storm/wave.webp";
 import skyWaterLayers from "../assets/scenes/creation/sky-water/layers.json";
+import shepherdLayers from "../assets/scenes/david/shepherd/layers.json";
+import bluebirdUp from "../assets/scenes/david/shepherd/bluebird-up.webp";
+import bluebirdDown from "../assets/scenes/david/shepherd/bluebird-down.webp";
+import redbirdUp from "../assets/scenes/david/shepherd/redbird-up.webp";
+import redbirdDown from "../assets/scenes/david/shepherd/redbird-down.webp";
+import goldfinchUp from "../assets/scenes/david/shepherd/goldfinch-up.webp";
+import goldfinchDown from "../assets/scenes/david/shepherd/goldfinch-down.webp";
 import calmWave from "../assets/scenes/creation/sky-water/calm-wave.webp";
 import type { SceneArtProps } from "../types";
 
@@ -257,6 +264,47 @@ function Gull({
       y={y}
       flip={flip}
       motion="a-fly"
+      delay={delay}
+    />
+  );
+}
+
+/** The songbirds from David's hill, two frames each, aligned on the eye. All three cutouts face right. */
+const SONGBIRDS = {
+  blue: { up: bluebirdUp, down: bluebirdDown, upEye: [205, 85], downEye: [240, 50] },
+  red: { up: redbirdUp, down: redbirdDown, upEye: [185, 95], downEye: [215, 50] },
+  gold: { up: goldfinchUp, down: goldfinchDown, upEye: [188, 100], downEye: [245, 45] },
+} as const;
+
+function SongBird({
+  kind,
+  x,
+  y,
+  s,
+  motion,
+  delay,
+  flip = false,
+}: {
+  kind: keyof typeof SONGBIRDS;
+  x: number;
+  y: number;
+  s: number;
+  motion: string;
+  delay: number;
+  flip?: boolean;
+}) {
+  const b = SONGBIRDS[kind];
+  const L = shepherdLayers.cutouts;
+  const up = L[`${kind === "blue" ? "bluebird" : kind === "red" ? "redbird" : "goldfinch"}-up`];
+  const down = L[`${kind === "blue" ? "bluebird" : kind === "red" ? "redbird" : "goldfinch"}-down`];
+  return (
+    <Flipbook
+      a={{ src: b.up, w: up.w, h: up.h, ax: b.upEye[0], ay: b.upEye[1], s }}
+      b={{ src: b.down, w: down.w, h: down.h, ax: b.downEye[0], ay: b.downEye[1], s }}
+      x={x}
+      y={y}
+      flip={flip}
+      motion={motion}
       delay={delay}
     />
   );
@@ -564,6 +612,10 @@ export function WhoIsThis({ found }: SceneArtProps) {
     <>
       <Backdrop src={calmBg} />
       <Gull x={220} y={150} s={0.2} delay={-9} flip />
+      <SongBird kind="blue" x={560} y={88} s={0.2} motion="a-fly" delay={-15} />
+      {/* two birds come in from far off toward the boat, one from each side */}
+      <SongBird kind="red" x={245} y={188} s={0.24} motion="a-swoop-l" delay={-3} />
+      <SongBird kind="gold" x={730} y={195} s={0.22} motion="a-swoop-r" delay={-10} flip />
       <Ripple x={160} y={580} scale={0.56} delay={0} />
       <Ripple x={860} y={592} scale={0.42} delay={0} flip />
       <g className="a-heave-slow">
