@@ -157,3 +157,11 @@ the credit outage, then done). Motion check 33 clean; 148 tests.
   the shoulders (tips now level with the top of the head, span 266 px on a
   477 px phone frame); the dove's path moved up to y 95 from the door
   side. `gabriel-midbeat-phone.png`.
+- **"The wings move in and out, not forwards and backwards":** a flat
+  foreshortening does read as in-and-out. `a-wing-flap-l/-r` now swing the
+  wing on a vertical hinge at the shoulder with perspective
+  (`perspective(600px) rotateY(∓34deg)` plus a 2° tilt), so the tip comes
+  toward the viewer and grows as it sweeps forward. Measured on the phone
+  frame: the left wing goes from 150×213 px at rest to 126×260 px at
+  mid-beat. Chrome applies 3D transforms to SVG groups; a browser that does
+  not shows the spread pose. `gabriel-midbeat-phone.png` replaced.

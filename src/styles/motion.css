@@ -353,26 +353,28 @@ svg [class*=" a-"] {
   transform-origin: 0% 35%;
 }
 
-/* Gentle forward-and-back flap for a wing split off its body: a slight
-   foreshortening toward the shoulder (the wing sweeps a little forward) with
-   a small rise and fall of the tip. Rest is the spread pose, so Calm mode
-   shows the wings open. */
+/* Forward-and-back flap for a wing split off its body: the wing swings on
+   a vertical hinge at the shoulder with perspective, so the tip comes toward
+   the viewer (grows) as it sweeps forward, instead of merely narrowing.
+   Chrome applies 3D transforms to SVG groups; a browser that does not simply
+   shows the spread pose. Rest is the spread pose, so Calm mode shows the
+   wings open. */
 @keyframes wing-flap-l {
   0%,
   100% {
-    transform: rotate(3deg) scaleX(1);
+    transform: perspective(600px) rotateY(0deg) rotate(2deg);
   }
   50% {
-    transform: rotate(-4deg) scaleX(0.82);
+    transform: perspective(600px) rotateY(-34deg) rotate(-2deg);
   }
 }
 @keyframes wing-flap-r {
   0%,
   100% {
-    transform: rotate(-3deg) scaleX(1);
+    transform: perspective(600px) rotateY(0deg) rotate(-2deg);
   }
   50% {
-    transform: rotate(4deg) scaleX(0.82);
+    transform: perspective(600px) rotateY(34deg) rotate(2deg);
   }
 }
 .a-wing-flap-l {

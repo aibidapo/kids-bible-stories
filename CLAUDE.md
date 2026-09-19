@@ -91,7 +91,10 @@ This bug hid a whole cast of characters once. It did not show up in
 `transform-origin` is resolved against the element's own bounding box. Declare
 pivots there as percentages (`50% 100%` for something that sways from its base),
 never as user-space coordinates in a component's inline `style`. A pivot in user
-units breaks the moment a scene places the part somewhere else.
+units breaks the moment a scene places the part somewhere else. 3D transforms
+(`perspective`, `rotateY`) work on SVG groups in Chrome and are used for the
+Christmas angels' wing hinge; keep the rest pose 2D so other browsers degrade
+to a still wing.
 
 ## Layout
 
