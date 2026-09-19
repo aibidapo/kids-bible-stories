@@ -12,7 +12,14 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Church pilot prep (roadmap phase 5).** Opt-in Group pilot log
+Latest: **The First Christmas (roadmap phase 4, story 1)**: six rich pages
+(2K backgrounds, 25 cutouts, five new sheets), story data, scenes,
+registered; 148 tests, 33 scenes motion-clean, precache 7.84 MB. **Gemini
+prepaid credit is exhausted**: two regenerations pending (frameless Mary on
+the wise-men page, faceless gifts), and stories 2–5 wait for a top-up.
+Evidence: `docs/evidence/2026-09-18-christmas-story/record.md`.
+
+Before that: **Church pilot prep (roadmap phase 5).** Opt-in Group pilot log
 (`src/lib/pilotLog.ts`, Settings section, four call sites; counts per day,
 copy-out only, off by default), leader documents in `docs/pilot/`. Owner
 confirmed the order 2a → 5 → 4 → 6 → 7; 2a licensing still parked, pilot runs
@@ -149,7 +156,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the church-pilot-prep commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the christmas-story commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -165,6 +172,9 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [ ] **User reviews Family time** with the checklist in `docs/evidence/2026-09-18-family-devotional/content-review.md`; translation notice done (NIV).
 - [x] Phase 0 skipped by the owner (churches requested the product); kit kept for pilot sessions.
 - [x] Order confirmed 2a → 5 → 4 → 6 → 7 ("proceed", 2026-09-18).
+- [ ] **Owner reviews The First Christmas** (`docs/evidence/2026-09-18-christmas-story/christmas-*.png`, then `#/story/christmas/0`).
+- [ ] **Owner tops up Gemini credit**; then regenerate `christmas/wisemen` `mary-child` (no doorway) and decide on a gifts layer.
+- [ ] **Owner decides how Jesus is drawn** from story 2 (calming the storm) onward.
 - [ ] **Owner starts the pilot**: pick two or three groups, install on their tablets, switch on Group pilot, hand over `docs/pilot/`. Four weeks.
 - [ ] 2a licensing still parked; the pilot's no-redistribution note stands in for it.
 - [ ] Roadmap revised after a roast: **phase 0 discovery (interviews, no code) blocks phases 3+**; then 2a licensing (owner), 2b tablet crop, 2c CI and component coverage; phase 3 is the distribution decision. See `docs/roadmap.md`.

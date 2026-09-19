@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Character sheet for joseph: a kind man in his thirties with a short dark beard, earth-brown robe and ochre overcoat with a striped red-and-cream sash, a cream head cloth, carpenter's hands, richly detailed, textured fabric with embroidered hems and visible stitching, layered paper-cutout depth. Full figure, standing, facing the viewer, neutral friendly expression, arms relaxed, centred, on a flat, solid, bright green background (#00ff00), no floor, no shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "3:4",
+  "size": "1K",
+  "generated": "2026-09-19T00:36:20+00:00"
+}

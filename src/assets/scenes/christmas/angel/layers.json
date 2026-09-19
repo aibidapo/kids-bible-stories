@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 90318,
+    "source": "design/pipeline/raw/christmas/angel/bg.png"
+  },
+  "cutouts": {
+    "mary-kneel": {
+      "file": "mary-kneel.webp",
+      "w": 623,
+      "h": 800,
+      "trim": [
+        57,
+        97,
+        840,
+        1103
+      ],
+      "source": "design/pipeline/raw/christmas/angel/mary-kneel.png",
+      "bytes": 49098
+    },
+    "gabriel": {
+      "file": "gabriel.webp",
+      "w": 668,
+      "h": 900,
+      "trim": [
+        102,
+        139,
+        794,
+        1071
+      ],
+      "source": "design/pipeline/raw/christmas/angel/gabriel.png",
+      "bytes": 70008
+    },
+    "dove": {
+      "file": "dove.webp",
+      "w": 257,
+      "h": 300,
+      "trim": [
+        145,
+        112,
+        831,
+        912
+      ],
+      "source": "design/pipeline/raw/christmas/angel/dove.png",
+      "bytes": 15360
+    }
+  }
+}

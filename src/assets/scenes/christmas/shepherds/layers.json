@@ -1,0 +1,76 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 83018,
+    "source": "design/pipeline/raw/christmas/shepherds/bg.png"
+  },
+  "cutouts": {
+    "shepherd-kneel": {
+      "file": "shepherd-kneel.webp",
+      "w": 626,
+      "h": 800,
+      "trim": [
+        25,
+        47,
+        820,
+        1063
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/shepherd-kneel.png",
+      "bytes": 74552
+    },
+    "shepherd-old": {
+      "file": "shepherd-old.webp",
+      "w": 546,
+      "h": 800,
+      "trim": [
+        43,
+        67,
+        801,
+        1178
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/shepherd-old.png",
+      "bytes": 62096
+    },
+    "angel-host": {
+      "file": "angel-host.webp",
+      "w": 654,
+      "h": 900,
+      "trim": [
+        102,
+        139,
+        794,
+        1091
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/angel-host.png",
+      "bytes": 75224
+    },
+    "sheep-a": {
+      "file": "sheep-a.webp",
+      "w": 527,
+      "h": 450,
+      "trim": [
+        188,
+        103,
+        1012,
+        807
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/sheep-a.png",
+      "bytes": 28388
+    },
+    "sheep-b": {
+      "file": "sheep-b.webp",
+      "w": 581,
+      "h": 400,
+      "trim": [
+        140,
+        131,
+        1061,
+        765
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/sheep-b.png",
+      "bytes": 28830
+    }
+  }
+}

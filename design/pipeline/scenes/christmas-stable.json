@@ -1,0 +1,38 @@
+{
+  "story": "christmas",
+  "scene": "stable",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The inside of a stable at night: rough stone walls and a low timber roof with visible beams, straw on the floor, a wooden feeding trough at centre (EMPTY, no baby, no cloth), hay bales stacked at left, a wooden ladder, a hanging oil lamp casting warm gold light, a water bucket and a coiled rope, a doorway at right open to a deep blue starry sky with one bright star shining straight down over the stable. Keep the floor around the trough clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+  },
+  "cutouts": {
+    "baby": {
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "A newborn baby wrapped snugly in cream swaddling cloth with a soft woven texture, lying on a bed of golden straw in a small wooden manger, eyes closed, peaceful, tiny hand visible, seen from slightly above, soft golden glow around the manger, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "mary-sit": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Mary from the second reference image, sitting on a low straw bale, leaning forward toward the viewer's right with hands clasped, tender loving smile, veil falling forward, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "mary"
+    },
+    "joseph-stand": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Joseph from the second reference image, standing with a hand on his chest and the other resting on a staff, looking down and to the left with a proud gentle smile, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "joseph"
+    },
+    "ox": {
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "A brown ox lying down on straw, side view facing left, head turned toward the viewer, big gentle dark eyes, curved horns, soft hide texture, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "donkey": {
+      "aspect": "4:3",
+      "max_h": 550,
+      "prompt": "A grey donkey standing, side view facing right, long soft ears, kind eyes, a woven saddle blanket, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

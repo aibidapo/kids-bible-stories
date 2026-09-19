@@ -4,9 +4,10 @@ import { noah } from "./stories/noah";
 import { david } from "./stories/david";
 import { jonah } from "./stories/jonah";
 import { daniel } from "./stories/daniel";
+import { christmas } from "./stories/christmas";
 
 /** Library order. New stories are added here and nowhere else. */
-export const STORIES: Story[] = [creation, noah, david, jonah, daniel];
+export const STORIES: Story[] = [creation, noah, david, jonah, daniel, christmas];
 
 export function getStory(id: string): Story | undefined {
   return STORIES.find((s) => s.id === id);

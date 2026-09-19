@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 125132,
+    "source": "design/pipeline/raw/christmas/journey/bg.png"
+  },
+  "cutouts": {
+    "joseph-lead": {
+      "file": "joseph-lead.webp",
+      "w": 460,
+      "h": 800,
+      "trim": [
+        183,
+        86,
+        799,
+        1158
+      ],
+      "source": "design/pipeline/raw/christmas/journey/joseph-lead.png",
+      "bytes": 51562
+    },
+    "mary-donkey": {
+      "file": "mary-donkey.webp",
+      "w": 638,
+      "h": 700,
+      "trim": [
+        250,
+        66,
+        987,
+        875
+      ],
+      "source": "design/pipeline/raw/christmas/journey/mary-donkey.png",
+      "bytes": 58788
+    },
+    "innkeeper": {
+      "file": "innkeeper.webp",
+      "w": 669,
+      "h": 800,
+      "trim": [
+        80,
+        128,
+        860,
+        1061
+      ],
+      "source": "design/pipeline/raw/christmas/journey/innkeeper.png",
+      "bytes": 58462
+    }
+  }
+}

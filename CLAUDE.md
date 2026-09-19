@@ -5,7 +5,7 @@ Guidance for Claude Code working in this repository.
 ## What this is
 
 An interactive illustrated Bible storybook for children, as an installable,
-offline-capable PWA. React + TypeScript + Vite. 5 stories, 27 animated scenes, all layered raster art.
+offline-capable PWA. React + TypeScript + Vite. 6 stories, 33 animated scenes, all layered raster art.
 
 The audience is 3–12 year olds, served by a single story set with a **Little /
 Big** reading-level switch. Every piece of prose has to work at both levels.
@@ -104,7 +104,7 @@ src/
     raster.tsx  Backdrop / Layer / Part / Tail / Flipbook / Eyelids: raster cutouts inside the SVG stage
     v2/effects.tsx  LightShaft, Motes, Grain, SoftShadow (tone.ts backs its gradients)
   assets/scenes/<story>/<scene>/   bg.webp, <layer>.webp, layers.json (shipped)
-  scenes/       27 scenes across five stories; index.ts maps string key -> component
+  scenes/       33 scenes across six stories; index.ts maps string key -> component
   data/
     stories.ts        library order + derived sticker total
     stories/*.ts      one file per story: prose, hotspots, quiz, memory verse

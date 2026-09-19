@@ -27,7 +27,7 @@ if wanted("bg"):
         print("skip bg (exists)")
     else:
         bg = manifest["background"]
-        print(generate(bg["prompt"], [STYLE_REF], out, aspect=bg.get("aspect", "16:9")))
+        print(generate(bg["prompt"], [STYLE_REF], out, aspect=bg.get("aspect", "16:9"), size=bg.get("size", "1K")))
 
 for name, spec in manifest["cutouts"].items():
     if not wanted(name):
@@ -41,4 +41,4 @@ for name, spec in manifest["cutouts"].items():
     refs = [STYLE_REF]
     if spec.get("sheet"):
         refs.append(ROOT / "design/characters" / f"{spec['sheet']}.png")
-    print(generate(spec["prompt"], refs, out, aspect=spec.get("aspect", "3:4")))
+    print(generate(spec["prompt"], refs, out, aspect=spec.get("aspect", "3:4"), size=spec.get("size", "1K")))

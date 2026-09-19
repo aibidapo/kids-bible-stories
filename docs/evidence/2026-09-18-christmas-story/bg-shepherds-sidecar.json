@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Rolling hills outside Bethlehem at night: dark green-grey grass with scattered rocks and wild thyme, a low stone sheepfold wall at right, a small campfire with a ring of stones at centre-left glowing orange, a leather water skin and a wooden bowl beside it, olive trees on the ridge, the town's tiny lamplit windows far below at left, a vast deep blue sky full of stars with a soft aurora-like glow opening at the top centre. Keep the centre foreground clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T00:43:52+00:00"
+}

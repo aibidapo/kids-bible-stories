@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "The inside of a stable at night: rough stone walls and a low timber roof with visible beams, straw on the floor, a wooden feeding trough at centre (EMPTY, no baby, no cloth), hay bales stacked at left, a wooden ladder, a hanging oil lamp casting warm gold light, a water bucket and a coiled rope, a doorway at right open to a deep blue starry sky with one bright star shining straight down over the stable. Keep the floor around the trough clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T00:41:52+00:00"
+}

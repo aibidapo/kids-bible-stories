@@ -4,6 +4,7 @@ import * as noah from "./noah";
 import * as david from "./david";
 import * as jonah from "./jonah";
 import * as daniel from "./daniel";
+import * as christmas from "./christmas";
 
 /**
  * Story data refers to art by string key rather than importing components, so
@@ -41,6 +42,12 @@ export const SCENE_ART: Record<string, SceneArt> = {
   "daniel/den": daniel.IntoTheDen,
   "daniel/angel": daniel.AngelShutsTheMouths,
   "daniel/rejoice": daniel.TheKingRejoices,
+  "christmas/angel": christmas.AngelVisitsMary,
+  "christmas/journey": christmas.NoRoomAtTheInn,
+  "christmas/stable": christmas.BornInAStable,
+  "christmas/shepherds": christmas.ShepherdsAndAngels,
+  "christmas/visit": christmas.TheShepherdsVisit,
+  "christmas/wisemen": christmas.TheWiseMen,
 };
 
 export function getSceneArt(key: string): SceneArt | undefined {

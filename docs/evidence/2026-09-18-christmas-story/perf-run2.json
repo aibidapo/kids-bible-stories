@@ -1,0 +1,25 @@
+{
+  "cpu": 4,
+  "budgets": {
+    "coldLoadLcpMs": 1500,
+    "firstTapToPaintMs": 250,
+    "tapToPaintMs": 150,
+    "pageTurnMs": 300,
+    "quizTapMs": 150,
+    "frameMedianMs": 40,
+    "frameP95Ms": 80
+  },
+  "results": {
+    "coldLoadLcpMs": 844,
+    "bundle": "index-DDivc8dM.js",
+    "frames": {
+      "medianMs": 16.7,
+      "p95Ms": 16.7,
+      "animations": 43
+    },
+    "firstTapToPaintMs": 111,
+    "tapToPaintMs": 41,
+    "pageTurnMs": 207,
+    "quizTapMs": 53
+  }
+}

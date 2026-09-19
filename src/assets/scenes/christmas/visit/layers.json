@@ -1,0 +1,63 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 155108,
+    "source": "design/pipeline/raw/christmas/visit/bg.png"
+  },
+  "cutouts": {
+    "manger-family": {
+      "file": "manger-family.webp",
+      "w": 788,
+      "h": 700,
+      "trim": [
+        145,
+        49,
+        1055,
+        857
+      ],
+      "source": "design/pipeline/raw/christmas/visit/manger-family.png",
+      "bytes": 76222
+    },
+    "shepherd-gift": {
+      "file": "shepherd-gift.webp",
+      "w": 502,
+      "h": 800,
+      "trim": [
+        135,
+        80,
+        795,
+        1131
+      ],
+      "source": "design/pipeline/raw/christmas/visit/shepherd-gift.png",
+      "bytes": 64724
+    },
+    "shepherd-boy": {
+      "file": "shepherd-boy.webp",
+      "w": 357,
+      "h": 650,
+      "trim": [
+        205,
+        47,
+        820,
+        1166
+      ],
+      "source": "design/pipeline/raw/christmas/visit/shepherd-boy.png",
+      "bytes": 55034
+    },
+    "sheep-c": {
+      "file": "sheep-c.webp",
+      "w": 516,
+      "h": 450,
+      "trim": [
+        235,
+        152,
+        952,
+        777
+      ],
+      "source": "design/pipeline/raw/christmas/visit/sheep-c.png",
+      "bytes": 27324
+    }
+  }
+}

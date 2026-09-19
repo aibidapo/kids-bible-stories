@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "The inside of a humble home in Nazareth at golden late afternoon: whitewashed stone walls with a small arched window letting in warm slanting light, a low wooden table with a clay water jar and a bowl of figs, a woven rug on a stone floor, a spinning distaff and a basket of wool in a corner, an oil lamp on a wall niche, dried herbs hanging from a beam, a doorway at right showing a sunlit courtyard with an olive tree. Keep the centre-left floor clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T00:38:47+00:00"
+}

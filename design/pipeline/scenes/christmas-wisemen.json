@@ -1,0 +1,28 @@
+{
+  "story": "christmas",
+  "scene": "wisemen",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "A humble stone house in Bethlehem at dusk, seen straight on: a whitewashed wall with an arched doorway at centre with a wooden door open to a lamplit interior, a low wall with a clay jar, a palm tree at right, the town's flat rooftops at left, a desert road curving in from the right foreground with camel hoof prints, a violet and rose evening sky with one huge bright star with long rays directly above the house. Keep the foreground clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+  },
+  "cutouts": {
+    "wise-men": {
+      "aspect": "4:3",
+      "max_h": 750,
+      "prompt": "The three wise men from the second reference image, walking in a line toward the left, the first kneeling and holding out his ornate gift box, the second bowing with his gift, the third standing with his, robes rich with brocade and jewels, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "wise-men"
+    },
+    "mary-child": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Mary from the second reference image, standing in a doorway holding a toddler in a cream tunic on her hip, the child reaching out one hand with a curious smile, Mary smiling warmly, three-quarter view facing right, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "mary"
+    },
+    "camel": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "A tall camel standing, side view facing left, ornate red and gold saddle with tassels, patient sleepy expression, soft tan fur, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

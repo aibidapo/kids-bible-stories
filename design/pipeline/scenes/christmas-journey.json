@@ -1,0 +1,29 @@
+{
+  "story": "christmas",
+  "scene": "journey",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "A narrow street in Bethlehem at night, seen straight on: stacked flat-roofed stone houses with wooden shutters, warm lamplight glowing from small windows, an inn with a heavy wooden door and a lantern on a hook at centre-right, stone steps, hanging cloth awnings, a cat on a wall, clay pots by doorways, a deep blue starry sky with one bright star above the rooftops, a rising crescent moon. Keep the foreground street clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+  },
+  "cutouts": {
+    "joseph-lead": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Joseph from the second reference image, walking in three-quarter view facing right, holding a rope lead with one hand and gesturing toward a door with the other, tired but hopeful expression, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "joseph"
+    },
+    "mary-donkey": {
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Mary from the second reference image, seated side-saddle on a grey donkey with a woven saddle blanket, three-quarter view facing right, one hand resting on her rounded belly, calm tired smile, the donkey walking with soft ears and gentle eyes, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "mary"
+    },
+    "innkeeper": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The innkeeper from the second reference image, standing in his doorway holding up his oil lamp, three-quarter view facing left, apologetic shrug with one hand, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "innkeeper"
+    }
+  }
+}

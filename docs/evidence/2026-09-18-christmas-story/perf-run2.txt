@@ -1,0 +1,8 @@
+perf: build index-DDivc8dM.js, CPU 4x, Slow 4G, 390x844, 43 animations on the heaviest page
+perf: ok   cold load LCP (Slow 4G, no cache): 844 ms (budget 1500 ms)
+perf: ok   first tap to paint (hotspot, creates audio): 111 ms (budget 250 ms)
+perf: ok   tap to paint (hotspot, warm): 41 ms (budget 150 ms)
+perf: ok   page turn: 207 ms (budget 300 ms)
+perf: ok   quiz tap: 53 ms (budget 150 ms)
+perf: ok   frame median (heaviest page): 16.7 ms (budget 40 ms)
+perf: ok   frame p95 (heaviest page): 16.7 ms (budget 80 ms)

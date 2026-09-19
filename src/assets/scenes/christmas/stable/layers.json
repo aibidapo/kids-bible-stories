@@ -1,0 +1,76 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 107214,
+    "source": "design/pipeline/raw/christmas/stable/bg.png"
+  },
+  "cutouts": {
+    "baby": {
+      "file": "baby.webp",
+      "w": 489,
+      "h": 500,
+      "trim": [
+        248,
+        69,
+        952,
+        789
+      ],
+      "source": "design/pipeline/raw/christmas/stable/baby.png",
+      "bytes": 38832
+    },
+    "mary-sit": {
+      "file": "mary-sit.webp",
+      "w": 581,
+      "h": 800,
+      "trim": [
+        70,
+        109,
+        812,
+        1131
+      ],
+      "source": "design/pipeline/raw/christmas/stable/mary-sit.png",
+      "bytes": 61366
+    },
+    "joseph-stand": {
+      "file": "joseph-stand.webp",
+      "w": 390,
+      "h": 800,
+      "trim": [
+        228,
+        85,
+        752,
+        1161
+      ],
+      "source": "design/pipeline/raw/christmas/stable/joseph-stand.png",
+      "bytes": 50390
+    },
+    "ox": {
+      "file": "ox.webp",
+      "w": 765,
+      "h": 500,
+      "trim": [
+        114,
+        127,
+        1121,
+        785
+      ],
+      "source": "design/pipeline/raw/christmas/stable/ox.png",
+      "bytes": 51082
+    },
+    "donkey": {
+      "file": "donkey.webp",
+      "w": 479,
+      "h": 550,
+      "trim": [
+        269,
+        66,
+        933,
+        829
+      ],
+      "source": "design/pipeline/raw/christmas/stable/donkey.png",
+      "bytes": 34894
+    }
+  }
+}

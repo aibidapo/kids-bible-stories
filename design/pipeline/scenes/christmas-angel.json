@@ -1,0 +1,28 @@
+{
+  "story": "christmas",
+  "scene": "angel",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The inside of a humble home in Nazareth at golden late afternoon: whitewashed stone walls with a small arched window letting in warm slanting light, a low wooden table with a clay water jar and a bowl of figs, a woven rug on a stone floor, a spinning distaff and a basket of wool in a corner, an oil lamp on a wall niche, dried herbs hanging from a beam, a doorway at right showing a sunlit courtyard with an olive tree. Keep the centre-left floor clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+  },
+  "cutouts": {
+    "mary-kneel": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Mary from the second reference image, kneeling on one knee on the floor, one hand on her heart, looking up and to the right in wonder with a small brave smile, robes pooling around her, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "mary"
+    },
+    "gabriel": {
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The angel from the second reference image, standing tall with wings spread wide, one hand raised in greeting, the other open and welcoming, serene warm smile, glowing softly, robes flowing, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "angel"
+    },
+    "dove": {
+      "aspect": "1:1",
+      "max_h": 300,
+      "prompt": "A small white dove in flight, wings up mid-flap, three-quarter view, soft feather detail, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

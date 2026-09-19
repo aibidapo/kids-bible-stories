@@ -1,0 +1,50 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 89414,
+    "source": "design/pipeline/raw/christmas/wisemen/bg.png"
+  },
+  "cutouts": {
+    "wise-men": {
+      "file": "wise-men.webp",
+      "w": 980,
+      "h": 750,
+      "trim": [
+        68,
+        38,
+        1132,
+        852
+      ],
+      "source": "design/pipeline/raw/christmas/wisemen/wise-men.png",
+      "bytes": 137286
+    },
+    "mary-child": {
+      "file": "mary-child.webp",
+      "w": 418,
+      "h": 800,
+      "trim": [
+        170,
+        36,
+        766,
+        1176
+      ],
+      "source": "design/pipeline/raw/christmas/wisemen/mary-child.png",
+      "bytes": 48794
+    },
+    "camel": {
+      "file": "camel.webp",
+      "w": 649,
+      "h": 800,
+      "trim": [
+        97,
+        198,
+        792,
+        1055
+      ],
+      "source": "design/pipeline/raw/christmas/wisemen/camel.png",
+      "bytes": 67536
+    }
+  }
+}

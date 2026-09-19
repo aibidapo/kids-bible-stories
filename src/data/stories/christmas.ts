@@ -1,0 +1,331 @@
+import type { Story } from "../../types";
+
+export const christmas: Story = {
+  id: "christmas",
+  title: "The First Christmas",
+  blurb: "An angel’s message, a long road, a stable, and a star that led the way.",
+  reference: "Luke 1 – 2, Matthew 2",
+  lesson: {
+    little: "Jesus was born to be with us.",
+    big: "God’s biggest gift did not arrive in a palace. He came to a young family with nowhere to stay, and the first to hear were shepherds on a hillside.",
+  },
+  palette: { from: "#1b2a5e", to: "#f2c14e", ink: "#fff8ec" },
+  cover: "christmas/stable",
+  scenes: [
+    {
+      id: "angel",
+      art: "christmas/angel",
+      text: {
+        little:
+          "An angel came to Mary. “Do not be afraid. You will have a baby. His name is Jesus.”",
+        big: "In a small town called Nazareth lived a young woman named Mary. One day the angel Gabriel appeared in her home. “Do not be afraid, Mary,” he said. “God is pleased with you. You will have a son, and you are to call him Jesus. He will be great, and he will be called the Son of God.” Mary was amazed, but she said, “I am the Lord’s servant. May it be as you have said.”",
+      },
+      verse: "Luke 1:30–31",
+      find: {
+        prompt: "Find the angel who brought the message.",
+        targets: ["gabriel"],
+      },
+      hotspots: [
+        {
+          id: "gabriel",
+          x: 65,
+          y: 55,
+          size: 22,
+          label: "the angel Gabriel",
+          reward: "Gabriel means “God is my strength”. He brought the biggest news ever told.",
+          sound: "sparkle",
+          sticker: "Gabriel’s Message",
+        },
+        {
+          id: "mary",
+          x: 33,
+          y: 70,
+          size: 20,
+          label: "Mary",
+          reward: "Mary was afraid at first, then she said yes to God.",
+          sound: "chime",
+        },
+        {
+          id: "dove",
+          x: 85,
+          y: 35,
+          size: 14,
+          label: "the dove",
+          reward: "A dove came in through the sunlit door.",
+          sound: "bird",
+        },
+      ],
+    },
+    {
+      id: "journey",
+      art: "christmas/journey",
+      text: {
+        little:
+          "Mary and Joseph walked to Bethlehem. Every house was full. “No room!” said the innkeeper.",
+        big: "The emperor ordered everyone to go to their family’s town to be counted. So Joseph and Mary travelled all the way to Bethlehem, Mary riding on a donkey. When they arrived, the town was packed. Joseph knocked on door after door. At the inn, the innkeeper shook his head: “There is no room.” But he pointed to his stable out the back.",
+      },
+      verse: "Luke 2:4–5",
+      find: {
+        prompt: "Find the lantern by the inn door.",
+        targets: ["lantern"],
+      },
+      hotspots: [
+        {
+          id: "lantern",
+          x: 74,
+          y: 62,
+          size: 14,
+          label: "the lantern",
+          reward: "The lantern lit the way to the only place left: the stable.",
+          sound: "chime",
+          sticker: "No Room at the Inn",
+        },
+        {
+          id: "donkey",
+          x: 27,
+          y: 78,
+          size: 22,
+          label: "the donkey",
+          reward: "The donkey carried Mary the whole long way.",
+          sound: "whoosh",
+        },
+        {
+          id: "star",
+          x: 52,
+          y: 12,
+          size: 14,
+          label: "the star",
+          reward: "One star shone brighter than all the others that night.",
+          sound: "sparkle",
+        },
+      ],
+    },
+    {
+      id: "stable",
+      art: "christmas/stable",
+      text: {
+        little: "That night, baby Jesus was born. Mary wrapped him up and laid him in a manger.",
+        big: "In the stable, among the animals and the straw, Mary’s baby was born. She wrapped him snugly in cloths and laid him in a manger, the wooden trough the animals ate from, because there was no bed for him anywhere. Joseph kept watch. The ox and the donkey looked on. God’s Son had come into the world with the animals for company.",
+      },
+      verse: "Luke 2:7",
+      find: {
+        prompt: "Find baby Jesus in the manger.",
+        targets: ["baby"],
+      },
+      hotspots: [
+        {
+          id: "baby",
+          x: 44,
+          y: 84,
+          size: 22,
+          label: "baby Jesus",
+          reward: "The King of kings, asleep in a feeding trough.",
+          sound: "sparkle",
+          sticker: "Away in a Manger",
+        },
+        {
+          id: "ox",
+          x: 15,
+          y: 84,
+          size: 22,
+          label: "the ox",
+          reward: "The ox kept the stable warm.",
+          sound: "chime",
+        },
+        {
+          id: "lamp",
+          x: 44,
+          y: 24,
+          size: 14,
+          label: "the oil lamp",
+          reward: "One little lamp, and one big star outside.",
+          sound: "chime",
+        },
+      ],
+    },
+    {
+      id: "shepherds",
+      art: "christmas/shepherds",
+      text: {
+        little:
+          "Shepherds were out on the hills. An angel came! “Good news! A Saviour is born tonight!”",
+        big: "Out on the hills, shepherds were keeping watch over their sheep in the dark. Suddenly an angel stood before them and the glory of the Lord shone all around. They were terrified. “Do not be afraid,” the angel said. “I bring you good news of great joy for all people. Today in Bethlehem a Saviour has been born to you. He is the Messiah, the Lord. You will find him wrapped in cloths and lying in a manger.” Then the whole sky filled with angels singing, “Glory to God in the highest!”",
+      },
+      verse: "Luke 2:10–11",
+      find: {
+        prompt: "Find the sheep that is still asleep.",
+        targets: ["sheep-b"],
+      },
+      hotspots: [
+        {
+          id: "angel-host",
+          x: 52,
+          y: 42,
+          size: 24,
+          label: "the angel",
+          reward: "“Do not be afraid” is the first thing angels say.",
+          sound: "sparkle",
+          sticker: "Good News of Great Joy",
+        },
+        {
+          id: "sheep-b",
+          x: 88,
+          y: 88,
+          size: 18,
+          label: "the sleeping sheep",
+          reward: "This one slept through the whole thing.",
+          sound: "sheep",
+        },
+        {
+          id: "fire",
+          x: 31,
+          y: 60,
+          size: 16,
+          label: "the campfire",
+          reward: "The shepherds’ little fire, under a sky full of light.",
+          sound: "chime",
+        },
+      ],
+    },
+    {
+      id: "visit",
+      art: "christmas/visit",
+      text: {
+        little: "The shepherds ran to see. There was the baby, just as the angel had said!",
+        big: "The shepherds hurried down into Bethlehem and found Mary and Joseph, and the baby lying in the manger, exactly as the angel had said. They told everyone what they had heard, and everyone who listened was amazed. Mary kept all of it in her heart. The shepherds went back to their sheep praising God for everything they had seen.",
+      },
+      verse: "Luke 2:16–17",
+      find: {
+        prompt: "Find the shepherd’s gift.",
+        targets: ["lamb"],
+      },
+      hotspots: [
+        {
+          id: "lamb",
+          x: 65,
+          y: 83,
+          size: 18,
+          label: "the lamb",
+          reward: "A shepherd’s best gift: a lamb of his own.",
+          sound: "sheep",
+          sticker: "The Shepherds’ Visit",
+        },
+        {
+          id: "manger",
+          x: 42,
+          y: 86,
+          size: 22,
+          label: "the manger",
+          reward: "Exactly as the angel had said.",
+          sound: "sparkle",
+        },
+        {
+          id: "boy",
+          x: 86,
+          y: 80,
+          size: 16,
+          label: "the shepherd boy",
+          reward: "The youngest shepherd could hardly see over the fence.",
+          sound: "chime",
+        },
+      ],
+    },
+    {
+      id: "wisemen",
+      art: "christmas/wisemen",
+      text: {
+        little:
+          "Wise men followed a star from far away. They brought gifts for Jesus: gold, frankincense and myrrh.",
+        big: "Some time later, wise men from lands far to the east saw a new star rise and set out to follow it. It led them all the way to Bethlehem and stopped over the house where the child was. They bowed down and worshipped him, and opened their treasures: gold, frankincense and myrrh, gifts fit for a king. Then they went home by another road.",
+      },
+      verse: "Matthew 2:10–11",
+      find: {
+        prompt: "Find the gifts the wise men brought.",
+        targets: ["gifts"],
+      },
+      hotspots: [
+        {
+          id: "gifts",
+          x: 55,
+          y: 78,
+          size: 18,
+          label: "the gifts",
+          reward: "Gold for a king, frankincense for God, myrrh for a Saviour.",
+          sound: "sparkle",
+          sticker: "Gifts for the King",
+        },
+        {
+          id: "star",
+          x: 50,
+          y: 10,
+          size: 14,
+          label: "the star",
+          reward: "The star stopped right over the house.",
+          sound: "sparkle",
+        },
+        {
+          id: "camel",
+          x: 88,
+          y: 72,
+          size: 22,
+          label: "the camel",
+          reward: "Camels carried the wise men across the desert.",
+          sound: "whoosh",
+        },
+      ],
+    },
+  ],
+  quiz: [
+    {
+      question: "Where was baby Jesus laid?",
+      choices: ["In a manger", "In a golden cot", "In a boat"],
+      answerIndex: 0,
+      level: "little",
+    },
+    {
+      question: "Who heard the good news first?",
+      choices: ["The shepherds", "The king", "The innkeeper"],
+      answerIndex: 0,
+      level: "little",
+    },
+    {
+      question: "What did the wise men follow?",
+      choices: ["A star", "A map", "A river"],
+      answerIndex: 0,
+      level: "little",
+    },
+    {
+      question: "Why did Mary and Joseph go to Bethlehem?",
+      choices: [
+        "Everyone had to be counted in their family’s town",
+        "They were going on holiday",
+        "The innkeeper invited them",
+      ],
+      answerIndex: 0,
+      level: "big",
+    },
+    {
+      question: "What were the three gifts?",
+      choices: ["Gold, frankincense and myrrh", "Gold, silver and bronze", "Bread, wine and oil"],
+      answerIndex: 0,
+      level: "big",
+    },
+  ],
+  memoryVerse: {
+    text: "Today in the town of David a Savior has been born to you; he is the Messiah, the Lord.",
+    reference: "Luke 2:11",
+  },
+  devotional: {
+    question: {
+      little: "Who came to see baby Jesus?",
+      big: "The shepherds were the first to hear, and they were ordinary people working at night. Why do you think God told them first? Who would you have told?",
+    },
+    prayer: {
+      little:
+        "Dear God, thank you for sending Jesus. Thank you for the very first Christmas. Amen.",
+      big: "Dear God, thank you that Jesus came to a stable, not a palace, so that everyone could come to him. Help us to be like the shepherds and share the good news. Amen.",
+    },
+    activity:
+      "Make a star for your window or wall. Each evening this week, when you see it, say one thing you are thankful for.",
+  },
+};

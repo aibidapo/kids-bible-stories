@@ -1,0 +1,34 @@
+{
+  "story": "christmas",
+  "scene": "visit",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The stable seen from outside at night: a rough stone and timber stable with an open front under a thatched roof, warm lamplight spilling out onto packed earth and straw, a wooden fence and a water trough at left, an olive tree at right, the town's rooftops behind, a deep blue starry sky with one bright star directly above the roof and its light falling in a soft beam. The stable interior is EMPTY: no people, no animals, no manger. Keep the centre clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+  },
+  "cutouts": {
+    "manger-family": {
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Mary from the second reference image kneeling beside a wooden manger with a swaddled baby in golden straw, and Joseph (a kind bearded man in an earth-brown robe and cream head cloth) standing behind her with a hand on her shoulder, both smiling down at the baby, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "mary"
+    },
+    "shepherd-gift": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "The shepherd from the second reference image, kneeling with a small lamb held out as a gift in both hands, shy joyful smile, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "shepherd"
+    },
+    "shepherd-boy": {
+      "aspect": "3:4",
+      "max_h": 650,
+      "prompt": "A shepherd boy about ten years old in the same style as the second reference image, standing on tiptoe peeking with wide happy eyes, wool tunic, a small crook, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "shepherd"
+    },
+    "sheep-c": {
+      "aspect": "4:3",
+      "max_h": 450,
+      "prompt": "A fluffy white sheep standing, side view facing left, thick curly wool, dark face and legs, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

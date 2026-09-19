@@ -221,7 +221,16 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
 - **Done when:** download-a-story passes on both phones offline; five
   stories pass the same evidence gates as the current five; first-load on
   Fast 3G measured.
-- **Status:** not started.
+- **Spec:** `docs/superpowers/specs/2026-09-18-life-of-jesus-design.md`
+- **Evidence:** `docs/evidence/2026-09-18-christmas-story/record.md`
+- **Status:** started 2026-09-18 on the owner's instruction ("very rich and
+  detailed"). Story 1, The First Christmas, built: six pages, 2K
+  backgrounds, 25 cutouts, five new character sheets; in the app and under
+  the hook. **Blocked for further generation: Gemini prepaid credit
+  exhausted** (two regenerations pending). Order changed on purpose: two
+  stories before download-a-story so the richness is reviewable early;
+  the feature ships before story 3. Jesus-depiction decision still open
+  for story 2.
 
 ## Phase 5: Church and homeschool pilot, then edition
 
@@ -355,3 +364,5 @@ Kept here so the reasoning survives.
 - 2026-09-18: performance budgets: bundle gate in the hook, `npm run perf`
   interaction budgets, baseline recorded.
 - 2026-09-18: church pilot prep: Group pilot log (opt-in), leader documents.
+- 2026-09-18: phase 4 started; The First Christmas built (36 Gemini calls);
+  Gemini credit exhausted after the first pass.
