@@ -56,3 +56,11 @@ and date. Keep them; they are the provenance record.
 
 A scene is at most 450 KB: background ≤ 200 KB, each cutout ≤ 80 KB. `pack.py`
 prints the total. Lower `quality` before touching dimensions.
+
+## Style
+
+The look is defined in `design/style-bible.md`. `gen.py` prepends its style
+line to every prompt, sends the concept-6 reference with every call, and
+refuses a prompt that asks for realistic, photoreal, painterly or 3D output.
+Run `python design/pipeline/check_prompts.py` after editing a manifest; it
+checks every prompt without calling the API.

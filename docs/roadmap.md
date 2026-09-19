@@ -50,9 +50,16 @@ A phase with an unfilled cost line is not scheduled.
 3. Distribution model (a decision phase)
 4. Life of Jesus collection, with download-a-story
 5. Church and homeschool pilot, then edition
-6. Family profiles and parent PIN
-7. Professional narration
+6. Family profiles and parent PIN (plus name personalisation)
+7. Narration: loved-one recordings first, professional later
 8. Smaller additions
+9. Identity and keepsakes (style bible, print pages, gift editions, Spanish)
+
+Approved order after the 2026-09-19 outside review (owner: "approved"):
+style bible, loved-one narration, print stylesheet, name personalisation
+(inside 6), Life of Jesus stories 3 to 5, then export package, Spanish and
+gift editions after the pilot and the distribution decision. Each of these
+is roasted in phase 9 before it is built.
 
 Rationale (phase 0 skipped 2026-09-18, buyer = local churches by the
 owner's statement): the pilot should come before new content so the
@@ -294,47 +301,216 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
   named children). If phase 5 shows classroom use, that needs a separate
   "class mode" (no profiles, no stickers persisted, a leader reset), not
   this phase stretched.
+- **Name personalisation (approved 2026-09-19):** the child's first name,
+  typed once by a grown-up, stored locally, used in the Family time
+  question and prayer and on the sticker book. Name only: no avatar art,
+  no photo, and never inside a Bible scene. Folds into this phase's
+  profile record; until profiles exist it is one field in `store.ts`.
 - **Dependencies:** phase 0 (asked for?), phase 2c.
-- **Cost:** ~2 days × R. Gemini 0.
+- **Cost:** ~2 days × R, plus half a day for the name. Gemini 0.
 - **Done when:** migration tested both ways, profiles switch without
   reload, PIN gate rendered and tested.
 - **Status:** not started.
 
-## Phase 7: Professional narration
+## Phase 7: Narration, loved-one recordings first
 
-- **Goal:** a warm human narrator with word highlighting, device speech as
-  the fallback.
-- **Scope:** narrator recording or licensed TTS; forced alignment for word
-  timestamps; audio as a downloadable pack (reuses phase 4's
-  download-a-story) cached at runtime, never precached; `useNarration`
-  gains a second engine driven by timestamps, and `NarrationText`
-  highlighting must behave identically under both engines (one shared
-  highlight model, two drivers).
-- **Dependencies and decisions:** phase 0 (asked for, and would they
-  download a pack?); phase 4's download feature; a narrator contract or a
-  TTS licence; format choice (Opus plus AAC for Safari).
-- **Cost:** engineering ~4–5 days × R. Audio: ~25 minutes of finished
-  narration for the current ten reading-level variants; get a narrator
-  quote per finished minute and a TTS quote per character before
-  scheduling. Storage roughly 10 MB per pack.
-- **Done when:** a story plays with the pack offline after download and
-  falls back to device speech without it; highlighting identical under
-  both engines in a test.
-- **Status:** not started, lowest priority.
+- **Goal, part A (loved-one narration):** a parent or grandparent records
+  each page on the device; the child hears that voice on page open instead
+  of the device speech. Nothing leaves the device, no account, no upload.
+- **Scope A:** a record button per page in the player behind the grown-up
+  gate; `MediaRecorder` (Opus in Chrome and Android, AAC in Safari), one
+  clip per story page per voice stored in IndexedDB with a name for the
+  voice ("Grandma"); playback through an `<audio>` element on page open,
+  replacing `speechSynthesis` for that page; word highlighting off for
+  recorded pages (a recording has no timings), the text shown plainly;
+  Calm mode unaffected; delete and re-record; a size line in Settings.
+  Roughly 30 s per page at 32 kbps is about 120 KB, under 1 MB a story.
+- **Goal, part B (professional narration):** as before, a warm human
+  narrator with word highlighting, device speech as the fallback, audio as
+  a download pack. Kept as the later step; part A gives most of the
+  emotional value at a fraction of the cost.
+- **Dependencies and decisions:** part A needs only a voice name string
+  to start (profiles from phase 6 can own it later); microphone permission
+  wording; iOS `MediaRecorder` format check on a real phone. Part B
+  unchanged: narrator contract or TTS licence, forced alignment, format.
+- **Cost:** part A about 3 to 4 days of engineering, Gemini 0, no third
+  party. Part B as before (4 to 5 days plus audio).
+- **Done when (A):** record, play, delete on a page in Chrome and Safari;
+  the recording survives a reload and plays offline; speech falls back
+  when no recording exists; storage shown; tests cover the store and the
+  player switch with a fake recorder.
+- **Status:** part A approved 2026-09-19, roasted in phase 9, not started.
 
 ## Phase 8: Smaller additions
 
-- Spanish localisation. Cheaper than most, not free: hotspot labels, quiz
-  choices, devotionals and UI strings all need a locale key the story
-  files do not have today, and `speechSynthesis` Spanish voices vary by
-  device. ~3 days × R plus translation. Not started.
+- Spanish localisation: moved into phase 9, after the pilot.
 - Scripture text in-app from a public-domain translation for big readers.
   ~1 day × R. Not started.
-- Printable sticker sheet from the sticker book. ~1 day × R. Not started.
+- Printable sticker sheet from the sticker book: moved into phase 9's print pages.
 - First-run parent tour and install prompt. ~1 day × R. Not started.
 - More Old Testament stories (Moses, Joseph, Esther): same cost line as a
   phase-4 story each. Catalogue size is the first thing a buyer compares;
   phase 0 decides whether these come before or after the Jesus stories.
+
+## Phase 9: Identity and keepsakes
+
+Added 2026-09-19 from an outside review of the art and of ToonyStory
+(`docs/decisions/2026-09-19-identity-review.md`). The review's finding:
+the product's uniqueness is the whole interactive book, not any single
+picture, and the pictures were drifting from the paper-cutout reference
+toward generic 3D. The owner approved keeping richness and detail while
+pinning the paper style, and the feature order below. The roast of these
+plans is at the end of this phase.
+
+### 9a. Style bible (built 2026-09-19)
+
+- **Goal:** one look on every page, machine-enforced where it can be.
+- **Built:** `design/style-bible.md` (paper edges, grain, contact shadows,
+  one warm light, palette on the app's purple and gold, face and hand
+  rules, prompt vocabulary); a stronger style line in `gen.py`; `gen.py`
+  refuses a prompt that asks for realism, and
+  `python design/pipeline/check_prompts.py` checks every manifest (all
+  clean after a scrub of ten manifests). Existing pages stay until they
+  are regenerated for another reason; a style pass over Christmas and the
+  storm is the owner's call, about 40 Gemini calls.
+- **Interaction with the richness standard:** richness now means more
+  pieces and more printed detail; "as realistic as possible" is retired
+  by the owner's approval. `CLAUDE.md` updated.
+
+### 9b. Print pages
+
+- **Goal:** a memory-verse card and a story certificate a family can print
+  from the app, later a coloring page per scene.
+- **Scope:** a print stylesheet and a Print action on the quiz-done card
+  and the sticker book; verse card and certificate laid out from data
+  (story, verse, NIV notice, child's name when set, date); no new art.
+  Coloring pages wait for phase 2a (licensing) and cost one Gemini call
+  per scene for a line-art version.
+- **Cost:** about a day for cards and certificate; coloring pages about
+  38 calls plus a day.
+- **Done when:** both pages print at A4 and Letter from Chrome and Safari
+  with the NIV notice, and the sticker sheet prints from the book.
+- **Status:** approved, not started.
+
+### 9c. Family package export
+
+- **Goal:** move a child's progress and the family's recordings to a
+  grandparent's device without an account.
+- **Scope:** a single file (JSON plus audio, zipped) written through the
+  share sheet or a download, and an import on the settings sheet; local
+  only, no encryption claims beyond what the file system gives.
+- **Dependencies:** phase 7 part A (the recordings are the point); iOS
+  file handling checked on a real phone.
+- **Cost:** about 2 days.
+- **Status:** approved for after narration, not started.
+
+### 9d. Spanish
+
+- **Goal:** the whole experience in Spanish: prose at both levels,
+  hotspots, quizzes, devotionals, verse text (a licensed Spanish
+  translation to choose), device speech in Spanish.
+- **Scope:** a locale key on story data and UI strings; translation by a
+  person with theological review; per story, so it ships story by story.
+- **Dependencies:** the pilot's answer on which stories families use;
+  verse licensing for the Spanish text.
+- **Cost:** about 3 days plus translation and review per story.
+- **Status:** approved for after the pilot, not started.
+
+### 9e. Gift editions
+
+- **Goal:** packaging with a clear buying occasion: Christmas, Easter,
+  baptism, birthday, bedtime.
+- **Scope:** curated story sets on the library and a landing page; no new
+  code beyond a collection label on story data and a filter.
+- **Dependencies:** phase 3 (whether anything is sold) and the pilot.
+- **Cost:** about a day plus copy.
+- **Status:** approved for after the distribution decision, not started.
+
+### Not adopted from the review
+
+Fifteen selectable art styles (one look is the point); AI-written Bible
+retellings without human review; uploading children's photos; putting the
+child inside a Bible scene.
+
+### Roast of the phase 9 plans (2026-09-19)
+
+**Loved-one narration (7A)**
+
+- Buyer (4): a grandparent will not find a record button hidden behind a
+  grown-up gate on each page. Pivot: one "Record this story" flow from
+  the story's library card that walks through the pages, with the page
+  text on screen to read from; the per-page button stays as the
+  re-record path.
+- Architect (4): iOS Safari's `MediaRecorder` produces `audio/mp4`, Chrome
+  produces `audio/webm;codecs=opus`, and a recording made on one device
+  must play on the other for the export package to mean anything. Pivot:
+  store the blob with its MIME type, play through `<audio>` which decodes
+  both, and test both formats on real devices before 9c.
+- Architect (3): a recording, device speech and the sound effects can
+  overlap. The narration hook already cancels speech on unmount and page
+  change; the audio engine must join that same lifecycle (one narration
+  controller with two engines), or a voice keeps talking over the next
+  page, the bug the codebase already names.
+- Architect (3): IndexedDB, not `localStorage`, for blobs; private
+  browsing and full quotas must fail softly as the store already does.
+  Storage is reported in Settings so a full phone is explainable.
+- Buyer (2): word highlighting off on recorded pages loses the read-along
+  cue for early readers. Accepted for part A; part B's forced alignment
+  is the fix, and a per-page sentence highlight driven by the clip's
+  duration is a cheap middle step to try.
+- CFO (1): no cost beyond engineering.
+- Verdict: proceed-with-changes (story-level record flow, MIME kept, one
+  narration controller).
+
+**Print pages (9b)**
+
+- Architect (3): printing from a PWA on iOS goes through the share sheet
+  and loses `@page` sizes; the layout must survive both A4 and Letter
+  with generous margins rather than pixel-fit. Pivot: one print stylesheet
+  tested in Chrome and Safari at both sizes, no absolute positioning.
+- Buyer (2): a certificate with no name on it is weak; ship it after the
+  name field, or with a blank line to hand-write. Pivot: blank line until
+  the name exists.
+- Content (3): the verse card shows NIV text, so the Biblica notice must
+  print with it; the same rule as on screen.
+- Verdict: proceed-with-changes (after the name field or with a blank
+  line; NIV notice on the card).
+
+**Name personalisation (in 6)**
+
+- Buyer (3): the name lands in prayers, so a typo or a nickname a child
+  dislikes reads out loud every night. Pivot: editable from Settings, and
+  the device voice's pronunciation of the name previewed there.
+- Architect (2): one field in `store.ts` now becomes a profile field
+  later; write the migration test when profiles land, not now.
+- Verdict: proceed.
+
+**Family package export (9c)**
+
+- Architect (4): a file with audio in it can reach tens of megabytes; iOS
+  share-sheet limits and the download path differ by browser. Pivot: cap
+  the package at the recordings for one voice, stream the zip, and test
+  on real phones before calling it done.
+- Buyer (3): "encrypted" would be an overclaim; say "a file on your
+  phone, share it as you would a photo". Pivot: no encryption claim.
+- Verdict: proceed-with-changes, only after 7A ships and real-device
+  checks exist.
+
+**Spanish (9d)**
+
+- CFO (4): the translation, not the code, is the cost: 38 pages at two
+  levels, hotspots, quizzes, devotionals, plus a licensed Spanish verse
+  text. Pivot: one story first, priced, before the rest.
+- Content (4): human translation with theological review, never machine
+  output shipped as-is.
+- Verdict: rethink until the pilot names the audience; then one story.
+
+**Gift editions (9e)**
+
+- Buyer (3): a "collection" is only a buying occasion if something is
+  sold; until phase 3 decides, it is a library filter. Pivot: wait for
+  phase 3.
+- Verdict: proceed later.
 
 ## Review findings (2026-09-18 roast of the first draft)
 
@@ -385,3 +561,7 @@ Kept here so the reasoning survives.
   owner's richness standard recorded in `CLAUDE.md`.
 - 2026-09-19: download-a-story built; precache line lowered to 6 MB, per-story
   line 3 MB; library cards are rendered stills.
+- 2026-09-19: outside review of art and ToonyStory; owner approved keeping
+  richness while pinning the paper style, and the order style bible,
+  loved-one narration, print pages, name, stories 3 to 5, then export,
+  Spanish, gift editions. Phase 9 added and roasted; style bible built.

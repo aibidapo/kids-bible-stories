@@ -9,3 +9,4 @@ tsconfig.tsbuildinfo
 .playwright-mcp/
 design/pipeline/raw/
 coverage
+__pycache__/

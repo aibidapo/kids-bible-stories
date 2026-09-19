@@ -21,11 +21,37 @@ ROOT = Path(__file__).resolve().parents[2]
 STYLE_REF = ROOT / "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
 MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3-pro-image-preview")
 
+# The look, in the words the model responds to; the full standard is design/style-bible.md.
 STYLE_LINE = (
-    "Match the illustration style of the first reference image exactly: soft "
-    "shaded rounded forms, layered paper-cutout depth, warm rim light, subtle "
-    "paper grain, big friendly eyes, no black outlines. Children's storybook."
+    "Match the illustration style of the first reference image exactly: a soft-shaded "
+    "PAPER CUTOUT storybook. Every figure, prop and background plane is a cut piece of "
+    "card with a crisp silhouette, a hairline of lighter paper thickness along its edge "
+    "and a small soft contact shadow on the layer beneath; backgrounds are three to five "
+    "stacked paper planes; textures are printed flat on the paper; fine paper grain "
+    "overall. Rounded forms with gentle airbrushed shading, big round friendly eyes, "
+    "simple mitten hands, no black outlines, no hard highlights, no photographic "
+    "texture. One warm key light with a cool violet fill and a warm rim. "
+    "Rich in detail, never realistic."
 )
+
+# Words that pull the model away from the paper look. A prompt using one is refused,
+# so drift cannot come back quietly through a manifest edit.
+FORBIDDEN_WORDS = (
+    "realistic",
+    "photoreal",
+    "painterly",
+    "3d render",
+    "cgi",
+    "cinematic",
+    "depth of field",
+    "no cartoon outlines",
+)
+
+
+def check_prompt(prompt: str) -> list[str]:
+    """The forbidden words a prompt uses, lower-cased, in order of appearance."""
+    low = prompt.lower()
+    return [w for w in FORBIDDEN_WORDS if w in low]
 
 
 _client: genai.Client | None = None
@@ -44,6 +70,9 @@ def client() -> genai.Client:
 
 
 def generate(prompt: str, refs: list[Path], out: Path, aspect: str = "16:9", size: str = "1K") -> Path:
+    bad = check_prompt(prompt)
+    if bad:
+        sys.exit(f"{out.name}: prompt uses {', '.join(bad)}; see design/style-bible.md")
     contents: list = [f"{STYLE_LINE}\n\n{prompt}"] + [Image.open(r) for r in refs]
     parts = None
     for attempt in range(3):

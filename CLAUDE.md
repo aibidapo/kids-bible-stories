@@ -163,14 +163,17 @@ from the sidecars. The pipeline README is `design/pipeline/README.md`.
 Every story is raster now. The vector figure, animal and prop kits are gone;
 `src/art/base.tsx` keeps the overlay primitives scenes still use.
 
-**Richness standard (owner, 2026-09-18).** Every new or regenerated scene
-must be very rich, detailed and as realistic as possible while staying in
-the storybook style. In practice: backgrounds generated at 2K; prompts that
-name materials and textures and ask for several depth layers with
-incidental details, soft cast shadows and atmospheric light; props and
+**Richness standard (owner, 2026-09-18; amended 2026-09-19).** Every new
+or regenerated scene must be very rich and detailed **in the paper-cutout
+style** of `design/style-bible.md`. Richness means more cut pieces and more
+printed detail, never realism: backgrounds generated at 2K as stacked paper
+planes; prompts that name materials and textures printed on the paper and
+ask for incidental details, contact shadows and one warm light; props and
 animals as their own layers; blinks on faces; "inanimate, no faces" on
-objects; never green props. Meet the budget by re-encoding, not by
-dropping detail. The Christmas story is the reference for the level.
+objects; never green props. `gen.py` refuses prompts that ask for
+realistic, photoreal, painterly or 3D output, and
+`python design/pipeline/check_prompts.py` checks every manifest. Meet the
+budget by re-encoding, not by dropping detail.
 
 ## Adding a story
 

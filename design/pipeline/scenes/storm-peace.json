@@ -4,7 +4,7 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "The Sea of Galilee at the moment a storm breaks, seen from low on the water, richly detailed and realistic in a soft shaded storybook style: the black storm clouds tearing open at the top centre with a wide shaft of warm gold light falling onto the water, the clouds with real volume and lit edges, the waves settling from rough to gentle swells with the last foam streaks, the wet air glowing with mist and light, thin veils of distant rain under the far clouds at the sides, a faint rainbow at the right. NO raindrops drawn in the foreground, NO rocks, NO wood, NO planks, NO rope, NO shore, NO objects anywhere: only water, cloud, light and sky. The lower third is water. Keep the centre clear. Atmospheric light, fine texture in the water and cloud. Completely EMPTY of people, animals and boats."
+    "prompt": "The Sea of Galilee at the moment a storm breaks, seen from low on the water, richly detailed in the paper-cutout storybook style: the black storm clouds tearing open at the top centre with a wide shaft of warm gold light falling onto the water, the clouds with real volume and lit edges, the waves settling from rough to gentle swells with the last foam streaks, the wet air glowing with mist and light, thin veils of distant rain under the far clouds at the sides, a faint rainbow at the right. NO raindrops drawn in the foreground, NO rocks, NO wood, NO planks, NO rope, NO shore, NO objects anywhere: only water, cloud, light and sky. The lower third is water. Keep the centre clear. Atmospheric light, fine texture in the water and cloud. Completely EMPTY of people, animals and boats."
   },
   "cutouts": {
     "boat-back": {
