@@ -3,35 +3,35 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 166074,
+    "bytes": 107228,
     "source": "design/pipeline/raw/storm/afraid/bg.png"
   },
   "cutouts": {
-    "boat-back-tilt": {
-      "file": "boat-back-tilt.webp",
-      "w": 598,
-      "h": 550,
+    "boat-back": {
+      "file": "boat-back.webp",
+      "w": 766,
+      "h": 500,
       "trim": [
-        331,
-        28,
-        1043,
-        683
+        120,
+        25,
+        1258,
+        768
       ],
-      "source": "design/pipeline/raw/storm/afraid/boat-back-tilt.png",
-      "bytes": 61442
+      "source": "design/pipeline/raw/storm/afraid/boat-back.png",
+      "bytes": 65598
     },
-    "boat-hull-tilt": {
-      "file": "boat-hull-tilt.webp",
-      "w": 794,
+    "boat-hull": {
+      "file": "boat-hull.webp",
+      "w": 1037,
       "h": 450,
       "trim": [
-        228,
-        113,
-        1146,
-        633
+        124,
+        146,
+        1251,
+        635
       ],
-      "source": "design/pipeline/raw/storm/afraid/boat-hull-tilt.png",
-      "bytes": 43038
+      "source": "design/pipeline/raw/storm/afraid/boat-hull.png",
+      "bytes": 61446
     },
     "jesus-waking": {
       "file": "jesus-waking.webp",

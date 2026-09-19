@@ -4,18 +4,18 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "The Sea of Galilee in a violent night storm: towering black-green waves with white foam, driving rain, a black sky split by lightning, spray flying, no horizon visible. The lower half is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+    "prompt": "The Sea of Galilee in a violent night storm, seen from low on the water, richly detailed and realistic in a soft shaded storybook style: towering dark green-black waves with white foam crests and blown spray, driving rain in slanting sheets, a black sky of heavy rolling clouds with real volume lit from within by a distant fork of lightning at the top left, no horizon visible, wind streaks on the water. NO wood, NO planks, NO rope, NO debris, NO rocks and NO objects anywhere: only water, rain, cloud and lightning. The lower half is water. Keep the centre clear. Atmospheric light, fine texture in the water and cloud. Completely EMPTY of people, animals and boats."
   },
   "cutouts": {
-    "boat-back-tilt": {
+    "boat-back": {
       "aspect": "16:9",
-      "max_h": 550,
-      "prompt": "A plain wooden Galilee fishing boat, an inanimate object with NO face, NO eyes, NO expression, the FAR side only seen from the side, tilted a little to the left as if on a wave, the far gunwale, a mast with a torn flapping cream sail, ropes flying, weathered planks, NO near side, NO hull front, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+      "max_h": 500,
+      "prompt": "The FAR side only of a wooden Galilee fishing boat seen from the side: the far gunwale, the mast with a furled cream sail, ropes and a lantern, weathered planks with wood grain, NO near side, NO hull front, so figures can sit in front of it, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
-    "boat-hull-tilt": {
+    "boat-hull": {
       "aspect": "16:9",
       "max_h": 450,
-      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side, tilted a little to the left as if on a wave, hull and near gunwale with weathered planks, water pouring over the rail, NO mast, NO far side, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side: the hull and near gunwale with weathered planks, wood grain, nail heads, a coiled rope and a net over the rail, NO mast, NO far side, NO interior, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
     "jesus-waking": {
       "aspect": "4:3",

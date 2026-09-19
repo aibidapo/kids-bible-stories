@@ -192,3 +192,26 @@ the main boat; houses more realistic; boat bigger relative to the men."
 
 Render `storm-evening.png` and the two stills replaced. Calls this round:
 2. 155 tests, `tsc -b` clean, 38 scenes motion-clean.
+
+## Review round 4 (owner, 2026-09-19): page 3
+
+"Jesus not properly situated in the boat; items in the image not
+realistic; the mast not properly situated."
+
+- The page had its own separately generated tilted halves
+  (`boat-back-tilt`, `boat-hull-tilt`), whose mast, bow post and rail
+  never lined up with each other, and Jesus sat past the near hull's
+  stern. Both tilt cutouts are dropped from the manifest and the assets.
+  The page now uses the same whole two-part boat as the other pages (calm
+  far side and hull, copied into the raw folder) inside one positioning
+  group `rotate(-7 500 600)`, with the heave, rock and shake classes on
+  groups inside it (constraint 1 holds; `check:motion` 38 clean). Jesus
+  seated at x 640 inside the hull.
+- Background regenerated with "NO wood, NO planks, NO rope, NO debris":
+  water, rain, volumetric cloud and one painted fork of lightning
+  (`afraid-bg-v2.json`, 104 KB). Scene 372 KB.
+- Peter and Jesus hotspots retuned to the faces (46 %, 46 % and 61 %,
+  46 %).
+
+Render `storm-afraid.png`, stills `afraid-phone.png` and
+`afraid-hotspot-tablet.png` replaced. Calls this round: 1.

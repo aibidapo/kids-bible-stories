@@ -18,8 +18,8 @@ import asleepPeter from "../assets/scenes/storm/asleep/peter-row.webp";
 import asleepJohn from "../assets/scenes/storm/asleep/john-bail.webp";
 import afraidLayers from "../assets/scenes/storm/afraid/layers.json";
 import afraidBg from "../assets/scenes/storm/afraid/bg.webp";
-import afraidBoatBack from "../assets/scenes/storm/afraid/boat-back-tilt.webp";
-import afraidBoatHull from "../assets/scenes/storm/afraid/boat-hull-tilt.webp";
+import afraidBoatBack from "../assets/scenes/storm/afraid/boat-back.webp";
+import afraidBoatHull from "../assets/scenes/storm/afraid/boat-hull.webp";
 import afraidJesus from "../assets/scenes/storm/afraid/jesus-waking.webp";
 import afraidPeter from "../assets/scenes/storm/afraid/peter-afraid.webp";
 import afraidJohn from "../assets/scenes/storm/afraid/john-afraid.webp";
@@ -402,66 +402,74 @@ export function TheWildNight({ found }: SceneArtProps) {
       <Lightning delay={0.8} x={-120} y={30} s={0.55} />
       <Wave x={130} y={540} scale={0.72} cls="a-heave" delay={0} />
       <Wave x={890} y={565} scale={0.52} cls="a-heave" delay={0} flip />
-      <g className="a-heave">
-        <g className="a-rock">
-          <g className="a-shake">
-            <Layer
-              src={afraidBoatBack}
-              w={L["boat-back-tilt"].w}
-              h={L["boat-back-tilt"].h}
-              x={520}
-              y={535}
-              scale={0.8}
-            />
-            <Layer
-              src={afraidJohn}
-              w={L["john-afraid"].w}
-              h={L["john-afraid"].h}
-              x={370}
-              y={478}
-              scale={0.44}
-              className="a-breathe"
-            >
-              <Lids name="john-afraid" w={L["john-afraid"].w} h={L["john-afraid"].h} delay={1.9} />
-            </Layer>
-            <Layer
-              src={afraidPeter}
-              w={L["peter-afraid"].w}
-              h={L["peter-afraid"].h}
-              x={520}
-              y={478}
-              scale={0.44}
-              className="a-breathe"
-              delay={0.4}
-            >
-              <Lids
-                name="peter-afraid"
+      {/* the whole boat, pitched bow-down on the wave: one rotate on a positioning group, the motion classes inside it */}
+      <g transform="rotate(-7 500 600)">
+        <g className="a-heave">
+          <g className="a-rock">
+            <g className="a-shake">
+              <Layer
+                src={afraidBoatBack}
+                w={L["boat-back"].w}
+                h={L["boat-back"].h}
+                x={500}
+                y={540}
+                scale={0.62}
+              />
+              <Layer
+                src={afraidJohn}
+                w={L["john-afraid"].w}
+                h={L["john-afraid"].h}
+                x={370}
+                y={478}
+                scale={0.44}
+                className="a-breathe"
+              >
+                <Lids
+                  name="john-afraid"
+                  w={L["john-afraid"].w}
+                  h={L["john-afraid"].h}
+                  delay={1.9}
+                />
+              </Layer>
+              <Layer
+                src={afraidPeter}
                 w={L["peter-afraid"].w}
                 h={L["peter-afraid"].h}
-                delay={0.5}
+                x={520}
+                y={478}
+                scale={0.44}
+                className="a-breathe"
+                delay={0.4}
+              >
+                <Lids
+                  name="peter-afraid"
+                  w={L["peter-afraid"].w}
+                  h={L["peter-afraid"].h}
+                  delay={0.5}
+                />
+              </Layer>
+              <Layer
+                src={afraidJesus}
+                w={L["jesus-waking"].w}
+                h={L["jesus-waking"].h}
+                x={640}
+                y={482}
+                scale={0.44}
+                className="a-breathe-slow"
+                delay={1}
               />
-            </Layer>
-            <Layer
-              src={afraidJesus}
-              w={L["jesus-waking"].w}
-              h={L["jesus-waking"].h}
-              x={670}
-              y={478}
-              scale={0.44}
-              className="a-breathe-slow"
-              delay={1}
-            />
-            <Layer
-              src={afraidBoatHull}
-              w={L["boat-hull-tilt"].w}
-              h={L["boat-hull-tilt"].h}
-              x={500}
-              y={600}
-              scale={0.62}
-            />
+              <Layer
+                src={afraidBoatHull}
+                w={L["boat-hull"].w}
+                h={L["boat-hull"].h}
+                x={500}
+                y={600}
+                scale={0.62}
+              />
+            </g>
           </g>
+          <Wave x={460} y={645} scale={0.5} cls="" delay={0} />
         </g>
-        <Wave x={460} y={645} scale={0.5} cls="" delay={0} />
       </g>
       <Rain count={120} seed={7} />
       {found.includes("lightning") && <Sparkle x={240} y={110} s={2} />}

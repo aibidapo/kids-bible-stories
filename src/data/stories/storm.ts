@@ -125,8 +125,8 @@ export const storm: Story = {
         },
         {
           id: "peter",
-          x: 52,
-          y: 44,
+          x: 46,
+          y: 46,
           size: 20,
           label: "Peter",
           reward: "Peter had fished this lake all his life. He had never been this frightened.",
@@ -134,8 +134,8 @@ export const storm: Story = {
         },
         {
           id: "jesus",
-          x: 67,
-          y: 44,
+          x: 61,
+          y: 46,
           size: 20,
           label: "Jesus waking",
           reward: "He woke calmly, as if he already knew what he would do.",
