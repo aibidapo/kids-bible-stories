@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Stage } from "./Stage";
 import { StoryUnavailable } from "./StoryUnavailable";
 import { getSceneArt, loadStory } from "../scenes";
+import { useDownloads } from "../lib/downloads";
 import { NarrationText } from "./NarrationText";
 import { useNarration } from "../hooks/useNarration";
 import { foundIn, markCompleted, useProgress } from "../lib/store";
@@ -37,6 +38,16 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
       live = false;
     };
   }, [story.id]);
+
+  // Offline with a story that is not fully on the device: the chunk may be
+  // cached from an earlier visit while pictures are not, so do not show a
+  // stage with holes in it.
+  const status = useDownloads()[story.id]?.status;
+  const offline =
+    typeof navigator !== "undefined" &&
+    navigator.onLine === false &&
+    (status === "none" || status === "partial");
+  const unavailable = art === "missing" || offline;
 
   const scene = story.scenes[index];
   const text = scene.text[progress.mode];
@@ -132,7 +143,7 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
         </button>
       </header>
 
-      {art === "missing" ? (
+      {unavailable ? (
         <StoryUnavailable onHome={onHome} />
       ) : (
         <Stage storyId={story.id} scene={scene} onSticker={setSticker} />

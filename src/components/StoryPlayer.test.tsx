@@ -173,6 +173,33 @@ describe("StoryPlayer narration", () => {
 });
 
 describe("story art loading", () => {
+  it("shows the not-on-this-device page offline when the story is only partly on the device", async () => {
+    const { loadStory } = await import("../scenes");
+    const downloads = await import("../lib/downloads");
+    await loadStory("daniel");
+    downloads.resetDownloads();
+    Object.defineProperty(globalThis, "caches", {
+      value: {
+        open: async () => ({
+          match: async (u: string) => (u === "/d1" ? new Response("x") : undefined),
+        }),
+      },
+      configurable: true,
+    });
+    await act(() =>
+      downloads.refresh({ daniel: { files: ["/d1", "/d2"], bytes: 10 } }, "creation"),
+    );
+    const online = vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
+    render(<StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    expect(screen.getByText("This story is not on this device yet.")).toBeTruthy();
+    online.mockReturnValue(true);
+    cleanup();
+    render(<StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    expect(screen.queryByText("This story is not on this device yet.")).toBeNull();
+    online.mockRestore();
+    downloads.resetDownloads();
+  });
+
   it("renders the stage once the story's chunk has loaded, and starts ready when the art is already registered", async () => {
     const { loadStory } = await import("../scenes");
     await loadStory("daniel");

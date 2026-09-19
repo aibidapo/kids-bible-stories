@@ -1,11 +1,14 @@
 import { STORIES, TOTAL_STICKERS } from "../data/stories";
 import { useProgress } from "../lib/store";
+import { download, useDownloads, type DownloadState } from "../lib/downloads";
 import type { Story } from "../types";
 
 interface Props {
   onOpen: (story: Story) => void;
   onStickers: () => void;
   onSettings: () => void;
+  /** Bytes per downloadable story, from story-assets.json, for the Download label. */
+  storySizes?: Record<string, number>;
 }
 
 /**
@@ -26,8 +29,78 @@ function CardArt({ storyId }: { storyId: string }) {
   );
 }
 
-export function Library({ onOpen, onStickers, onSettings }: Props) {
+function megabytes(bytes: number): string {
+  return `${Math.max(0.1, Math.round((bytes / 1024 / 1024) * 10) / 10)} MB`;
+}
+
+/**
+ * The row under a card that says whether the story is on this device and
+ * lets a grown-up fetch it. Its button is separate from the card so a
+ * mis-tap never opens the story, and every failure has a visible state.
+ */
+function DownloadRow({
+  storyId,
+  state,
+  bytes,
+}: {
+  storyId: string;
+  state?: DownloadState;
+  bytes: number;
+}) {
+  if (!state || state.status === "unknown" || state.status === "unsupported") return null;
+  const retry = (
+    <button type="button" className="btn card__download-btn" onClick={() => download(storyId)}>
+      Try again
+    </button>
+  );
+  switch (state.status) {
+    case "builtin":
+    case "ready":
+      return (
+        <p className="card__download">
+          <span className="card__download-tick" aria-hidden="true">
+            ✓
+          </span>{" "}
+          On this device
+        </p>
+      );
+    case "downloading":
+      return (
+        <p className="card__download" role="status">
+          Downloading, {state.done} of {state.total}
+        </p>
+      );
+    case "no-space":
+      return (
+        <p className="card__download card__download--warn">
+          Not enough space on this device {retry}
+        </p>
+      );
+    case "error":
+      return <p className="card__download card__download--warn">Download failed {retry}</p>;
+    default:
+      return (
+        <p className="card__download">
+          {state.status === "partial" && (
+            <span className="card__download-note">
+              {state.done} of {state.total} files here
+            </span>
+          )}
+          <button
+            type="button"
+            className="btn card__download-btn"
+            onClick={() => download(storyId)}
+          >
+            Download, {megabytes(bytes)}
+          </button>
+        </p>
+      );
+  }
+}
+
+export function Library({ onOpen, onStickers, onSettings, storySizes = {} }: Props) {
   const progress = useProgress();
+  const downloads = useDownloads();
 
   return (
     <div className="library">
@@ -103,6 +176,11 @@ export function Library({ onOpen, onStickers, onSettings }: Props) {
                   </span>
                 </span>
               </button>
+              <DownloadRow
+                storyId={story.id}
+                state={downloads[story.id]}
+                bytes={storySizes[story.id] ?? 0}
+              />
             </li>
           );
         })}

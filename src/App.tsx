@@ -8,6 +8,8 @@ import { Settings } from "./components/Settings";
 import { getStory } from "./data/stories";
 import { useProgress } from "./lib/store";
 import { setMuted } from "./lib/sound";
+import { loadManifest, refresh, type StoryAssetsManifest } from "./lib/downloads";
+import { STORIES } from "./data/stories";
 import type { Story } from "./types";
 
 type Route =
@@ -57,6 +59,20 @@ export default function App() {
   const progress = useProgress();
   const [route, setRoute] = useState<Route>(() => parse(window.location.hash));
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [manifest, setManifest] = useState<StoryAssetsManifest>({});
+
+  // Which stories are on this device: read the build's file list once, then the cache.
+  useEffect(() => {
+    let live = true;
+    loadManifest().then((m) => {
+      if (!live) return;
+      setManifest(m);
+      void refresh(m, STORIES[0].id);
+    });
+    return () => {
+      live = false;
+    };
+  }, []);
 
   useEffect(() => {
     const onHash = () => setRoute(parse(window.location.hash));
@@ -81,6 +97,8 @@ export default function App() {
   );
   const home = useCallback(() => navigate({ view: "library" }), [navigate]);
 
+  const sizes = Object.fromEntries(Object.entries(manifest).map(([id, s]) => [id, s.bytes]));
+
   let content;
   if (route.view === "stickers") {
     content = <StickerBook onBack={home} />;
@@ -92,6 +110,7 @@ export default function App() {
           onOpen={openStory}
           onStickers={() => navigate({ view: "stickers" })}
           onSettings={() => setSettingsOpen(true)}
+          storySizes={sizes}
         />
       );
     } else if (route.view === "quiz") {
@@ -122,6 +141,7 @@ export default function App() {
         onOpen={openStory}
         onStickers={() => navigate({ view: "stickers" })}
         onSettings={() => setSettingsOpen(true)}
+        storySizes={sizes}
       />
     );
   }
