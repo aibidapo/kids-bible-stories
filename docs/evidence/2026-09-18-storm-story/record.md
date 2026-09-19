@@ -87,7 +87,7 @@ rail.
 | Browser, phone | afraid page mid-flash with rain and hotspot rings; peace page | `afraid-phone.png`, `peace-phone.png` |
 | Browser, tablet | asleep page letterboxed; evening and calm with the sticker hotspot found | `asleep-tablet.png`, `evening-hotspot-tablet.png`, `calm-hotspot-tablet.png` |
 | Bundle budgets | 88.1 KB gzip, 9.92 MB precache | `check:bundle` in the hook |
-| Performance budgets | **not verified**: both runs (`perf-run1.txt`, `perf-run2.txt`) ran with the host at 100 % CPU from unrelated applications; frame median on the unchanged heaviest page doubled (16.7 → 33 ms), first tap 338/367 ms and page turn 407/416 ms over budget, cold LCP 2632 ms then 568 ms. Rerun on an idle host before claiming the budgets hold; nothing in this story touches the JS bundle beyond one scene module | `perf-run1.txt`, `perf-run2.txt` |
+| Performance budgets | **not verified**: both runs (`perf-run1.txt`, `perf-run2.txt`) ran with the host at 100 % CPU from unrelated applications; frame median on the unchanged heaviest page doubled (16.7 → 33 ms), first tap 338/367 ms and page turn 407/416 ms over budget, cold LCP 2632 ms then 568 ms. Run 3 after the push (`perf-run3.txt`, load still 51–99 %): LCP 484 ms, page turn 196 ms, quiz tap 126 ms, warm tap 79 ms within budget; first tap 276 ms (budget 250) still over; frame median 33.3 ms with p95 33.8 ms, a flat 30 fps that looks like a vsync cap of this headless Chrome instance rather than paint work (the baseline 16.7 ms came from a different launch). Rerun on an idle host from the documented launch line before claiming the budgets hold; nothing in this story touches the JS bundle beyond one scene module | `perf-run1.txt`, `perf-run2.txt`, `perf-run3.txt` |
 
 ## Gaps
 

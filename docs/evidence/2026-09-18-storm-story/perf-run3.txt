@@ -1,0 +1,8 @@
+perf: build index-6QNKtt85.js, CPU 4x, Slow 4G, 390x844, 43 animations on the heaviest page
+perf: ok   cold load LCP (Slow 4G, no cache): 484 ms (budget 1500 ms)
+perf: OVER first tap to paint (hotspot, creates audio): 276 ms (budget 250 ms)
+perf: ok   tap to paint (hotspot, warm): 79 ms (budget 150 ms)
+perf: ok   page turn: 196 ms (budget 300 ms)
+perf: ok   quiz tap: 126 ms (budget 150 ms)
+perf: ok   frame median (heaviest page): 33.3 ms (budget 40 ms)
+perf: ok   frame p95 (heaviest page): 33.8 ms (budget 80 ms)
