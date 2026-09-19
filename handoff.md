@@ -16,7 +16,12 @@ Latest: **The First Christmas (roadmap phase 4, story 1)**: six rich pages
 (2K backgrounds, 25 cutouts, five new sheets), story data, scenes,
 registered; 148 tests, 33 scenes motion-clean, precache ~7.9 MB. Credit ran
 out after the first pass, was topped up, and the two regenerations (frameless
-Mary, faceless gifts) landed; the wise-men page is final.
+Mary, faceless gifts) landed. Then one owner review round: both angels
+split into body + wings-only cutouts with the Daniel wing beat, blinks on
+eleven faces, richer 2K backgrounds on pages 3, 4, 5, 6, a flock of six and
+a pulsing campfire, twinkling stars, a swaying olive tree, doves flapping
+on the fly path, Mary with a baby on the last page. Story 2.2 MB, precache
+8.17 MB.
 Evidence: `docs/evidence/2026-09-18-christmas-story/record.md`.
 
 Before that: **Church pilot prep (roadmap phase 5).** Opt-in Group pilot log
@@ -156,7 +161,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the christmas-story commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the christmas-review-round commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,

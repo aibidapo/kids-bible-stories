@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 155108,
+    "bytes": 108304,
     "source": "design/pipeline/raw/christmas/visit/bg.png"
   },
   "cutouts": {
@@ -58,6 +58,19 @@
       ],
       "source": "design/pipeline/raw/christmas/visit/sheep-c.png",
       "bytes": 27324
+    },
+    "olive-tree": {
+      "file": "olive-tree.webp",
+      "w": 574,
+      "h": 640,
+      "trim": [
+        33,
+        138,
+        862,
+        1063
+      ],
+      "source": "design/pipeline/raw/christmas/visit/olive-tree.png",
+      "bytes": 114116
     }
   }
 }

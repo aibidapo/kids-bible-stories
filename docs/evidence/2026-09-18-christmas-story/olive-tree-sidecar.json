@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "A single olive tree with a gnarled textured trunk and a full crown of silvery-green leaves on slender branches, night lighting with cool blue rim light, richly detailed, seen straight on. Whole tree from roots to crown, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "3:4",
+  "size": "1K",
+  "generated": "2026-09-19T01:44:37+00:00"
+}

@@ -1,11 +1,11 @@
 {
   "model": "gemini-3-pro-image-preview",
-  "prompt": "A humble stone house in Bethlehem at dusk, seen straight on: a whitewashed wall with an arched doorway at centre with a wooden door open to a lamplit interior, a low wall with a clay jar, a palm tree at right, the town's flat rooftops at left, a desert road curving in from the right foreground with camel hoof prints, a violet and rose evening sky with one huge bright star with long rays directly above the house. Keep the foreground clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "prompt": "A humble stone house in Bethlehem at dusk, seen straight on: a whitewashed wall with an arched doorway at centre and a weathered wooden door standing open to a lamplit interior, a low wall with clay jars, a palm tree at right, and behind and to the left the houses of Bethlehem drawn realistically: flat-roofed stone and mud-brick homes with wooden shutters, outside stairs, rooftop awnings, hanging cloth, small lamplit windows, receding up a hillside with real depth and perspective, a desert road curving in from the right foreground with camel hoof prints, a violet and rose evening sky with one huge bright star with long rays directly above the house. Keep the foreground clear. Richly detailed and more realistic: named materials with visible texture (whitewashed stone with cracks and moss, mud-brick, weathered timber doors with iron studs, packed earth with hoof prints), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric evening light. Completely EMPTY of people and animals.",
   "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
   "references": [
     "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
   ],
   "aspect": "16:9",
   "size": "2K",
-  "generated": "2026-09-19T00:47:42+00:00"
+  "generated": "2026-09-19T01:47:19+00:00"
 }

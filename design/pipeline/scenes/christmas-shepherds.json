@@ -4,7 +4,7 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "Rolling hills outside Bethlehem at night: dark green-grey grass with scattered rocks and wild thyme, a low stone sheepfold wall at right, a small campfire with a ring of stones at centre-left glowing orange, a leather water skin and a wooden bowl beside it, olive trees on the ridge, the town's tiny lamplit windows far below at left, a vast deep blue sky full of stars with a soft aurora-like glow opening at the top centre. Keep the centre foreground clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+    "prompt": "Rolling hills outside Bethlehem at night, seen straight on: grass in dark greens and greys with wild thyme, small white flowers and lichen-covered rocks, olive trees with textured bark on the ridges, a low dry-stone sheepfold with a wooden gate at right, a campfire with glowing embers in a ring of stones at centre-left, a leather water skin, a wooden bowl and a shepherd's staff leaning on a rock beside it, a winding path, the town's tiny lamplit windows far below at left, a vast deep-blue sky dense with twinkling stars and a faint milky way, a soft warm glow opening at the top right of the sky. Keep the centre foreground clear. Richly detailed and more realistic: named materials with visible texture (rough-hewn stone with moss and cracks, weathered timber with wood grain, straw with individual strands catching the light, woven wool, hammered brass), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people and animals."
   },
   "cutouts": {
     "shepherd-kneel": {
@@ -19,12 +19,6 @@
       "prompt": "An older shepherd in the same style as the second reference image, grey beard, sitting on a rock with a lamb in his lap, looking up open-mouthed in wonder, wool cloak, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
       "sheet": "shepherd"
     },
-    "angel-host": {
-      "aspect": "3:4",
-      "max_h": 900,
-      "prompt": "The angel from the second reference image, hovering in the air with wings spread wide and arms open, joyful, robes glowing, light radiating, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
-      "sheet": "angel"
-    },
     "sheep-a": {
       "aspect": "4:3",
       "max_h": 450,
@@ -34,6 +28,22 @@
       "aspect": "4:3",
       "max_h": 400,
       "prompt": "A fluffy white sheep lying down, side view facing left, thick curly wool, dark face, sleepy eyes, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "angel-host-body": {
+      "sheet": "angel",
+      "aspect": "3:4",
+      "max_h": 900,
+      "prompt": "The angel from the second reference image drawn WITHOUT wings (no wings at all, plain back), hovering with arms open wide and low, joyful open-mouthed smile, robes glowing and flowing, richly detailed, textured fabric with embroidered hems. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "angel-host-wings": {
+      "aspect": "4:3",
+      "max_h": 700,
+      "prompt": "Only a pair of large white feathered angel wings, spread wide and symmetrical as seen from the front, joined at the centre by a small feathered shoulder piece, soft layered feathers with warm rim light, richly detailed. NO body, NO head, NO figure, NO robe: wings only, the space between and below the wings empty. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "campfire": {
+      "aspect": "4:3",
+      "max_h": 400,
+      "prompt": "A small shepherds' campfire: burning logs in a ring of grey stones with orange and yellow flames and glowing embers, a few sparks, warm light on the stones, richly detailed, seen straight on. NO faces. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }

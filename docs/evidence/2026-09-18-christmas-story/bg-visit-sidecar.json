@@ -1,11 +1,11 @@
 {
   "model": "gemini-3-pro-image-preview",
-  "prompt": "The stable seen from outside at night: a rough stone and timber stable with an open front under a thatched roof, warm lamplight spilling out onto packed earth and straw, a wooden fence and a water trough at left, an olive tree at right, the town's rooftops behind, a deep blue starry sky with one bright star directly above the roof and its light falling in a soft beam. The stable interior is EMPTY: no people, no animals, no manger. Keep the centre clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "prompt": "The stable seen from outside at night, seen straight on: a rough stone and timber stable with an open front under a thatched roof, warm lamplight spilling out onto packed earth and straw, a wooden fence and a water trough at left, a low stone wall at right, behind it the houses of Bethlehem drawn realistically: flat-roofed stone and mud-brick homes with wooden shutters, outside stairs, rooftop awnings and small lamplit windows, receding up a hillside with depth, a deep blue starry sky with one bright star directly above the roof and its light falling in a soft beam. NO tree in the picture. The stable interior is EMPTY: no people, no animals, no manger. Keep the centre clear. Richly detailed and more realistic: named materials with visible texture (rough stone with moss and cracks, weathered timber with wood grain, thatch with individual straws, packed earth), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people and animals.",
   "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
   "references": [
     "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
   ],
   "aspect": "16:9",
   "size": "2K",
-  "generated": "2026-09-19T00:45:54+00:00"
+  "generated": "2026-09-19T01:44:23+00:00"
 }

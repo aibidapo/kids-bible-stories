@@ -94,3 +94,60 @@ no faces" (672×350, 50 KB) and is back as its own layer and hotspot
 `gifts-sidecar.json`; render `christmas-wisemen.png` replaced; browser
 still `wisemen-hotspot-phone.png`. Motion 33 clean, data tests pass.
 Total calls for the story: 38.
+
+## Review round 1 (owner, 2026-09-18 evening)
+
+Requests and what was done, all six renders replaced in this folder:
+
+- **Angel wings beat slowly on every page with an angel** (pages 1 and 4),
+  like the Daniel angel. Polygon splits of the winged cutouts left wing
+  pixels behind the arms (reverted). Instead each angel is now a wingless
+  body plus a wings-only cutout, the wings split down the middle into two
+  `Part`s on `a-wing-l` / `a-wing-r` behind the body, all inside one
+  floating group (`WingedAngel` in `christmas.tsx`). Old winged cutouts
+  removed from the manifests and assets. Sidecars `gabriel-body`,
+  `gabriel-wings`.
+- **Page 3 (stable) richer and more realistic, Joseph and the donkey
+  bigger.** Background regenerated at 2K with named textures (moss, wood
+  grain, straw strands, cobwebs, saddle, tools); Joseph 0.42 → 0.52,
+  donkey 0.42 → 0.56, ox and Mary up a step. Sidecar `bg-stable`.
+- **Page 4 (shepherds): angel moved to the right, more sheep, twinkling
+  stars, richer scenery, and the campfire back.** Background regenerated
+  (milky way, lichen rocks, thyme, sheepfold gate); the flock is now six
+  from the three sheep cutouts at different sizes and facings; `Stars`
+  overlay (70, staggered twinkle); the new background lost the campfire,
+  so a `campfire` cutout was generated and pulses softly between the two
+  shepherds, hotspot restored. Scene held under budget by re-encoding the
+  background (q66) and two cutouts (q74): 427 KB shipped.
+- **Blinks across the scenes.** `Eyelids` on Mary (page 1), Gabriel,
+  Joseph and the innkeeper (page 2), Joseph (page 3), both shepherds and
+  the angel (page 4), the shepherd boy (page 5), Mary and the child
+  (page 6); eye points from `find_eyes.py` where it was reliable, read off
+  the sheets otherwise; staggered delays.
+- **Page 5 (visit): stars twinkle one by one, realistic houses, leaves
+  sway.** Background regenerated with the houses drawn realistically and
+  no tree; an `olive-tree` cutout sways on `a-sway-slow`; `Stars` overlay.
+  Tree capped at 640 px and re-encoded to fit: 435 KB shipped.
+- **Page 6 (wise men): realistic houses, a baby not a toddler, a dove.**
+  Background regenerated; `mary-child` regenerated as Mary holding a
+  swaddled newborn; Mary moved left (x 458 → 420) out of the kneeling
+  king's overlap; a dove flies across on the `a-fly` path, flapping
+  between page 1's wings-up frame and a new `dove-down` frame.
+- **Doves flap and fly on every page that has one:** page 1's dove is now
+  the same two-frame flipbook on the fly path.
+- **Page 3 "lamp missing":** the lamp is in the new background beside
+  Joseph; the hotspot ring was still at the old lamp's spot. Moved.
+
+Shipped bytes after the round: angel 311, journey 287, stable 366,
+shepherds 427, visit 435, wisemen 394 KB; story 2.2 MB; precache 8.17 MB.
+Gemini calls this round: 12 (two backgrounds and two layers refused during
+the credit outage, then done). Motion check 33 clean; 148 tests.
+- **Wings "going in and out" instead of up and down:** the Christmas angels
+  had inherited the forward-and-back beat (`a-wing-l` / `a-wing-r`, a
+  scaleX foreshortening) made for the Daniel angel on request. New classes
+  `a-wing-flap-l` / `a-wing-flap-r` give a gentle forward-and-back flap: a
+  slight foreshortening (scaleX 1 → 0.82) with a small tip rise and fall
+  (±3–4°), 3.6 s; both Christmas angels use them (the owner asked for
+  "slightly flapping forward and backwards" after a pure up-and-down try). Daniel's
+  angel keeps the forward-and-back beat. `shepherds-midbeat-phone.png`
+  (wings scrubbed to mid-beat).

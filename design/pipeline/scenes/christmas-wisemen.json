@@ -4,7 +4,7 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "A humble stone house in Bethlehem at dusk, seen straight on: a whitewashed wall with an arched doorway at centre with a wooden door open to a lamplit interior, a low wall with a clay jar, a palm tree at right, the town's flat rooftops at left, a desert road curving in from the right foreground with camel hoof prints, a violet and rose evening sky with one huge bright star with long rays directly above the house. Keep the foreground clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals."
+    "prompt": "A humble stone house in Bethlehem at dusk, seen straight on: a whitewashed wall with an arched doorway at centre and a weathered wooden door standing open to a lamplit interior, a low wall with clay jars, a palm tree at right, and behind and to the left the houses of Bethlehem drawn realistically: flat-roofed stone and mud-brick homes with wooden shutters, outside stairs, rooftop awnings, hanging cloth, small lamplit windows, receding up a hillside with real depth and perspective, a desert road curving in from the right foreground with camel hoof prints, a violet and rose evening sky with one huge bright star with long rays directly above the house. Keep the foreground clear. Richly detailed and more realistic: named materials with visible texture (whitewashed stone with cracks and moss, mud-brick, weathered timber doors with iron studs, packed earth with hoof prints), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric evening light. Completely EMPTY of people and animals."
   },
   "cutouts": {
     "wise-men": {
@@ -16,7 +16,7 @@
     "mary-child": {
       "aspect": "3:4",
       "max_h": 800,
-      "prompt": "Mary from the second reference image, standing and holding a toddler in a cream tunic on her hip, the child reaching out one hand with a curious smile, Mary smiling warmly, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching. NO doorway, NO frame, NO wall: just the two figures. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "prompt": "Mary from the second reference image, standing and holding a small swaddled BABY (a newborn wrapped in cream cloth, tiny face and one little hand showing) cradled in her arms, Mary smiling down warmly, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching. NO doorway, NO frame, NO wall. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
       "sheet": "mary"
     },
     "camel": {

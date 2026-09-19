@@ -1,6 +1,6 @@
 {
   "model": "gemini-3-pro-image-preview",
-  "prompt": "Mary from the second reference image, standing and holding a toddler in a cream tunic on her hip, the child reaching out one hand with a curious smile, Mary smiling warmly, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching. NO doorway, NO frame, NO wall: just the two figures. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "prompt": "Mary from the second reference image, standing and holding a small swaddled BABY (a newborn wrapped in cream cloth, tiny face and one little hand showing) cradled in her arms, Mary smiling down warmly, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching. NO doorway, NO frame, NO wall. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
   "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
   "references": [
     "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg",
@@ -8,5 +8,5 @@
   ],
   "aspect": "3:4",
   "size": "1K",
-  "generated": "2026-09-19T01:22:42+00:00"
+  "generated": "2026-09-19T01:47:35+00:00"
 }

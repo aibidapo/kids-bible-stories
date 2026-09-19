@@ -29,7 +29,7 @@ export const christmas: Story = {
         {
           id: "gabriel",
           x: 65,
-          y: 55,
+          y: 52,
           size: 22,
           label: "the angel Gabriel",
           reward: "Gabriel means “God is my strength”. He brought the biggest news ever told.",
@@ -134,8 +134,8 @@ export const christmas: Story = {
         },
         {
           id: "lamp",
-          x: 44,
-          y: 24,
+          x: 65,
+          y: 36,
           size: 14,
           label: "the oil lamp",
           reward: "One little lamp, and one big star outside.",
@@ -159,8 +159,8 @@ export const christmas: Story = {
       hotspots: [
         {
           id: "angel-host",
-          x: 52,
-          y: 42,
+          x: 78,
+          y: 40,
           size: 24,
           label: "the angel",
           reward: "“Do not be afraid” is the first thing angels say.",
@@ -178,12 +178,21 @@ export const christmas: Story = {
         },
         {
           id: "fire",
-          x: 31,
-          y: 60,
+          x: 33,
+          y: 90,
           size: 16,
           label: "the campfire",
           reward: "The shepherds’ little fire, under a sky full of light.",
           sound: "chime",
+        },
+        {
+          id: "lamb",
+          x: 23,
+          y: 76,
+          size: 16,
+          label: "the old shepherd’s lamb",
+          reward: "This little one slept in the old shepherd’s lap through all the singing.",
+          sound: "sheep",
         },
       ],
     },
@@ -203,7 +212,7 @@ export const christmas: Story = {
         {
           id: "lamb",
           x: 65,
-          y: 83,
+          y: 72,
           size: 18,
           label: "the lamb",
           reward: "A shepherd’s best gift: a lamb of his own.",
@@ -212,8 +221,8 @@ export const christmas: Story = {
         },
         {
           id: "manger",
-          x: 42,
-          y: 86,
+          x: 44,
+          y: 83,
           size: 22,
           label: "the manger",
           reward: "Exactly as the angel had said.",
@@ -222,7 +231,7 @@ export const christmas: Story = {
         {
           id: "boy",
           x: 86,
-          y: 80,
+          y: 78,
           size: 16,
           label: "the shepherd boy",
           reward: "The youngest shepherd could hardly see over the fence.",

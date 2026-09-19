@@ -1,11 +1,11 @@
 {
   "model": "gemini-3-pro-image-preview",
-  "prompt": "The inside of a stable at night: rough stone walls and a low timber roof with visible beams, straw on the floor, a wooden feeding trough at centre (EMPTY, no baby, no cloth), hay bales stacked at left, a wooden ladder, a hanging oil lamp casting warm gold light, a water bucket and a coiled rope, a doorway at right open to a deep blue starry sky with one bright star shining straight down over the stable. Keep the floor around the trough clear. Richly detailed: named materials and textures (rough stone, carved wood, woven wool, straw, hammered brass, clay jars), foreground, midground and background layers with small incidental details, atmospheric light. Completely EMPTY of people and animals.",
+  "prompt": "The inside of a stable at night, seen straight on: rough stone walls with moss in the cracks and a low timber roof with heavy beams and cobwebs in the corners, deep straw on the floor, a wooden feeding trough at centre (EMPTY, no baby, no cloth), stacked hay bales and a wooden ladder at left, a saddle and coiled rope on a beam, farm tools and clay jars along the walls, a water bucket, a hanging brass lantern casting warm gold light and soft shadows, a doorway at right open to a deep blue starry sky with one bright star shining straight down over the stable and a hint of Bethlehem's rooftops. Keep the floor around the trough clear. Richly detailed and more realistic: named materials with visible texture (rough-hewn stone with moss and cracks, weathered timber with wood grain, straw with individual strands catching the light, woven wool, hammered brass), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people and animals.",
   "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
   "references": [
     "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
   ],
   "aspect": "16:9",
   "size": "2K",
-  "generated": "2026-09-19T00:41:52+00:00"
+  "generated": "2026-09-19T01:41:16+00:00"
 }

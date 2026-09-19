@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "A small white dove in flight, the SAME dove as a wings-up frame, now with wings swept DOWN below the body mid-flap, three-quarter view facing right, soft feather detail, same size and pose of body and head. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "1:1",
+  "size": "1K",
+  "generated": "2026-09-19T01:53:43+00:00"
+}

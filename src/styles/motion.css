@@ -353,6 +353,37 @@ svg [class*=" a-"] {
   transform-origin: 0% 35%;
 }
 
+/* Gentle forward-and-back flap for a wing split off its body: a slight
+   foreshortening toward the shoulder (the wing sweeps a little forward) with
+   a small rise and fall of the tip. Rest is the spread pose, so Calm mode
+   shows the wings open. */
+@keyframes wing-flap-l {
+  0%,
+  100% {
+    transform: rotate(3deg) scaleX(1);
+  }
+  50% {
+    transform: rotate(-4deg) scaleX(0.82);
+  }
+}
+@keyframes wing-flap-r {
+  0%,
+  100% {
+    transform: rotate(-3deg) scaleX(1);
+  }
+  50% {
+    transform: rotate(4deg) scaleX(0.82);
+  }
+}
+.a-wing-flap-l {
+  animation: wing-flap-l 3.6s ease-in-out infinite;
+  transform-origin: 100% 35%;
+}
+.a-wing-flap-r {
+  animation: wing-flap-r 3.6s ease-in-out infinite;
+  transform-origin: 0% 35%;
+}
+
 @keyframes flutter {
   0% {
     transform: translate(0, 0);

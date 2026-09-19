@@ -227,7 +227,9 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
   detailed"). Story 1, The First Christmas, built: six pages, 2K
   backgrounds, 25 cutouts, five new character sheets; in the app and under
   the hook; credit ran out after the first pass, was topped up, and the two
-  pending regenerations landed. Order changed on purpose: two
+  pending regenerations landed; one owner review round applied (angel
+  wings, blinks, richer backgrounds on three pages, flock, campfire,
+  swaying tree, flying doves, baby on the last page). Order changed on purpose: two
   stories before download-a-story so the richness is reviewable early;
   the feature ships before story 3. Jesus-depiction decision still open
   for story 2.

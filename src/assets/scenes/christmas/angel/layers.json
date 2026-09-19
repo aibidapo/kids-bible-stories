@@ -20,19 +20,6 @@
       "source": "design/pipeline/raw/christmas/angel/mary-kneel.png",
       "bytes": 49098
     },
-    "gabriel": {
-      "file": "gabriel.webp",
-      "w": 668,
-      "h": 900,
-      "trim": [
-        102,
-        139,
-        794,
-        1071
-      ],
-      "source": "design/pipeline/raw/christmas/angel/gabriel.png",
-      "bytes": 70008
-    },
     "dove": {
       "file": "dove.webp",
       "w": 257,
@@ -45,6 +32,105 @@
       ],
       "source": "design/pipeline/raw/christmas/angel/dove.png",
       "bytes": 15360
+    },
+    "gabriel-body": {
+      "file": "gabriel-body.webp",
+      "w": 548,
+      "h": 900,
+      "trim": [
+        162,
+        139,
+        730,
+        1071
+      ],
+      "source": "design/pipeline/raw/christmas/angel/gabriel-body.png",
+      "bytes": 62784
+    },
+    "gabriel-wings": {
+      "file": "gabriel-wings.webp",
+      "w": 1011,
+      "h": 700,
+      "trim": [
+        59,
+        74,
+        1141,
+        823
+      ],
+      "source": "design/pipeline/raw/christmas/angel/gabriel-wings.png",
+      "bytes": 86694,
+      "body": {
+        "file": "gabriel-wings-body.webp",
+        "bytes": 2728
+      },
+      "parts": {
+        "wing-l": {
+          "file": "gabriel-wings-wing-l.webp",
+          "w": 509,
+          "h": 700,
+          "ox": 0,
+          "oy": 0,
+          "root": "tr",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              505,
+              0
+            ],
+            [
+              505,
+              700
+            ],
+            [
+              0,
+              700
+            ]
+          ],
+          "bytes": 42176
+        },
+        "wing-r": {
+          "file": "gabriel-wings-wing-r.webp",
+          "w": 507,
+          "h": 698,
+          "ox": 504,
+          "oy": 0,
+          "root": "tl",
+          "polygon": [
+            [
+              505,
+              0
+            ],
+            [
+              1011,
+              0
+            ],
+            [
+              1011,
+              700
+            ],
+            [
+              505,
+              700
+            ]
+          ],
+          "bytes": 41570
+        }
+      }
+    },
+    "dove-down": {
+      "file": "dove-down.webp",
+      "w": 311,
+      "h": 300,
+      "trim": [
+        228,
+        145,
+        873,
+        768
+      ],
+      "source": "design/pipeline/raw/christmas/angel/dove-down.png",
+      "bytes": 17582
     }
   }
 }

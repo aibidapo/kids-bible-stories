@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 89414,
+    "bytes": 104928,
     "source": "design/pipeline/raw/christmas/wisemen/bg.png"
   },
   "cutouts": {
@@ -22,16 +22,16 @@
     },
     "mary-child": {
       "file": "mary-child.webp",
-      "w": 344,
+      "w": 330,
       "h": 800,
       "trim": [
-        218,
-        77,
-        686,
-        1164
+        220,
+        81,
+        665,
+        1159
       ],
       "source": "design/pipeline/raw/christmas/wisemen/mary-child.png",
-      "bytes": 45444
+      "bytes": 42564
     },
     "camel": {
       "file": "camel.webp",

@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 83018,
+    "bytes": 118362,
     "source": "design/pipeline/raw/christmas/shepherds/bg.png"
   },
   "cutouts": {
@@ -18,7 +18,7 @@
         1063
       ],
       "source": "design/pipeline/raw/christmas/shepherds/shepherd-kneel.png",
-      "bytes": 74552
+      "bytes": 55232
     },
     "shepherd-old": {
       "file": "shepherd-old.webp",
@@ -31,20 +31,7 @@
         1178
       ],
       "source": "design/pipeline/raw/christmas/shepherds/shepherd-old.png",
-      "bytes": 62096
-    },
-    "angel-host": {
-      "file": "angel-host.webp",
-      "w": 654,
-      "h": 900,
-      "trim": [
-        102,
-        139,
-        794,
-        1091
-      ],
-      "source": "design/pipeline/raw/christmas/shepherds/angel-host.png",
-      "bytes": 75224
+      "bytes": 44096
     },
     "sheep-a": {
       "file": "sheep-a.webp",
@@ -71,6 +58,105 @@
       ],
       "source": "design/pipeline/raw/christmas/shepherds/sheep-b.png",
       "bytes": 28830
+    },
+    "angel-host-body": {
+      "file": "angel-host-body.webp",
+      "w": 619,
+      "h": 900,
+      "trim": [
+        132,
+        139,
+        765,
+        1060
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/angel-host-body.png",
+      "bytes": 57842
+    },
+    "angel-host-wings": {
+      "file": "angel-host-wings.webp",
+      "w": 965,
+      "h": 700,
+      "trim": [
+        41,
+        41,
+        1159,
+        852
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/angel-host-wings.png",
+      "bytes": 81682,
+      "body": {
+        "file": "angel-host-wings-body.webp",
+        "bytes": 2586
+      },
+      "parts": {
+        "wing-l": {
+          "file": "angel-host-wings-wing-l.webp",
+          "w": 486,
+          "h": 700,
+          "ox": 0,
+          "oy": 0,
+          "root": "tr",
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              482,
+              0
+            ],
+            [
+              482,
+              700
+            ],
+            [
+              0,
+              700
+            ]
+          ],
+          "bytes": 40528
+        },
+        "wing-r": {
+          "file": "angel-host-wings-wing-r.webp",
+          "w": 484,
+          "h": 700,
+          "ox": 481,
+          "oy": 0,
+          "root": "tl",
+          "polygon": [
+            [
+              482,
+              0
+            ],
+            [
+              965,
+              0
+            ],
+            [
+              965,
+              700
+            ],
+            [
+              482,
+              700
+            ]
+          ],
+          "bytes": 39114
+        }
+      }
+    },
+    "campfire": {
+      "file": "campfire.webp",
+      "w": 428,
+      "h": 400,
+      "trim": [
+        263,
+        138,
+        936,
+        767
+      ],
+      "source": "design/pipeline/raw/christmas/shepherds/campfire.png",
+      "bytes": 24964
     }
   }
 }
