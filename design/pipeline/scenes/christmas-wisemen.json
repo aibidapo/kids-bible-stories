@@ -16,13 +16,18 @@
     "mary-child": {
       "aspect": "3:4",
       "max_h": 800,
-      "prompt": "Mary from the second reference image, standing in a doorway holding a toddler in a cream tunic on her hip, the child reaching out one hand with a curious smile, Mary smiling warmly, three-quarter view facing right, richly detailed, textured fabric with embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "prompt": "Mary from the second reference image, standing and holding a toddler in a cream tunic on her hip, the child reaching out one hand with a curious smile, Mary smiling warmly, three-quarter view facing left, richly detailed, textured fabric with embroidered hems and visible stitching. NO doorway, NO frame, NO wall: just the two figures. Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
       "sheet": "mary"
     },
     "camel": {
       "aspect": "3:4",
       "max_h": 800,
       "prompt": "A tall camel standing, side view facing left, ornate red and gold saddle with tassels, patient sleepy expression, soft tan fur, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "gifts": {
+      "aspect": "4:3",
+      "max_h": 350,
+      "prompt": "Three ornate gifts side by side on the ground, plain inanimate objects with NO faces, NO eyes and NO expressions: a golden chest with a domed lid and jewelled clasps, a brass censer on chains with a thin curl of fragrant smoke, and a carved dark-wood box with a small glass jar of myrrh beside it, gleaming, richly detailed. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     }
   }
 }

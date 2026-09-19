@@ -226,8 +226,8 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
 - **Status:** started 2026-09-18 on the owner's instruction ("very rich and
   detailed"). Story 1, The First Christmas, built: six pages, 2K
   backgrounds, 25 cutouts, five new character sheets; in the app and under
-  the hook. **Blocked for further generation: Gemini prepaid credit
-  exhausted** (two regenerations pending). Order changed on purpose: two
+  the hook; credit ran out after the first pass, was topped up, and the two
+  pending regenerations landed. Order changed on purpose: two
   stories before download-a-story so the richness is reviewable early;
   the feature ships before story 3. Jesus-depiction decision still open
   for story 2.

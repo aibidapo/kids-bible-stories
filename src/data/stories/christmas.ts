@@ -240,14 +240,14 @@ export const christmas: Story = {
       },
       verse: "Matthew 2:10–11",
       find: {
-        prompt: "Find the gifts the wise men brought.",
+        prompt: "Find the three gifts.",
         targets: ["gifts"],
       },
       hotspots: [
         {
           id: "gifts",
-          x: 55,
-          y: 78,
+          x: 56,
+          y: 92,
           size: 18,
           label: "the gifts",
           reward: "Gold for a king, frankincense for God, myrrh for a Saviour.",

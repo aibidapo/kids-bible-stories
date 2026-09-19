@@ -36,6 +36,7 @@ import wisemenBg from "../assets/scenes/christmas/wisemen/bg.webp";
 import wisemenMen from "../assets/scenes/christmas/wisemen/wise-men.webp";
 import wisemenMary from "../assets/scenes/christmas/wisemen/mary-child.webp";
 import wisemenCamel from "../assets/scenes/christmas/wisemen/camel.webp";
+import wisemenGifts from "../assets/scenes/christmas/wisemen/gifts.webp";
 import type { SceneArtProps } from "../types";
 
 /** Nazareth: Gabriel tells Mary. Late sun through the window, a dove at the door. */
@@ -332,16 +333,14 @@ export function TheWiseMen({ found }: SceneArtProps) {
         className="a-breathe-slow"
         delay={1.3}
       />
-      {/* Mary's cutout carries its own stone doorway; scaled so it stands in for the
-          background's door (a regeneration without the frame is pending API credit). */}
-      <SoftShadow x={458} y={552} rx={90} ry={11} opacity={0.4} />
+      <SoftShadow x={458} y={550} rx={70} ry={11} opacity={0.4} />
       <Layer
         src={wisemenMary}
         w={L["mary-child"].w}
         h={L["mary-child"].h}
         x={458}
-        y={550}
-        scale={0.56}
+        y={548}
+        scale={0.42}
         className="a-breathe"
       />
       <SoftShadow x={660} y={604} rx={200} ry={16} opacity={0.4} />
@@ -355,7 +354,8 @@ export function TheWiseMen({ found }: SceneArtProps) {
         className="a-breathe-slow"
         delay={0.4}
       />
-      {found.includes("gifts") && <Sparkle x={560} y={470} s={1.6} />}
+      <Layer src={wisemenGifts} w={L.gifts.w} h={L.gifts.h} x={560} y={620} scale={0.4} />
+      {found.includes("gifts") && <Sparkle x={560} y={540} s={1.6} />}
       <Grain opacity={0.05} />
     </>
   );

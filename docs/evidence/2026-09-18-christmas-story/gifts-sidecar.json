@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Three ornate gifts side by side on the ground, plain inanimate objects with NO faces, NO eyes and NO expressions: a golden chest with a domed lid and jewelled clasps, a brass censer on chains with a thin curl of fragrant smoke, and a carved dark-wood box with a small glass jar of myrrh beside it, gleaming, richly detailed. Centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "4:3",
+  "size": "1K",
+  "generated": "2026-09-19T01:22:57+00:00"
+}

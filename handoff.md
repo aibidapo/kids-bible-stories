@@ -14,9 +14,9 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 Latest: **The First Christmas (roadmap phase 4, story 1)**: six rich pages
 (2K backgrounds, 25 cutouts, five new sheets), story data, scenes,
-registered; 148 tests, 33 scenes motion-clean, precache 7.84 MB. **Gemini
-prepaid credit is exhausted**: two regenerations pending (frameless Mary on
-the wise-men page, faceless gifts), and stories 2–5 wait for a top-up.
+registered; 148 tests, 33 scenes motion-clean, precache ~7.9 MB. Credit ran
+out after the first pass, was topped up, and the two regenerations (frameless
+Mary, faceless gifts) landed; the wise-men page is final.
 Evidence: `docs/evidence/2026-09-18-christmas-story/record.md`.
 
 Before that: **Church pilot prep (roadmap phase 5).** Opt-in Group pilot log
@@ -173,7 +173,6 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [x] Phase 0 skipped by the owner (churches requested the product); kit kept for pilot sessions.
 - [x] Order confirmed 2a → 5 → 4 → 6 → 7 ("proceed", 2026-09-18).
 - [ ] **Owner reviews The First Christmas** (`docs/evidence/2026-09-18-christmas-story/christmas-*.png`, then `#/story/christmas/0`).
-- [ ] **Owner tops up Gemini credit**; then regenerate `christmas/wisemen` `mary-child` (no doorway) and decide on a gifts layer.
 - [ ] **Owner decides how Jesus is drawn** from story 2 (calming the storm) onward.
 - [ ] **Owner starts the pilot**: pick two or three groups, install on their tablets, switch on Group pilot, hand over `docs/pilot/`. Four weeks.
 - [ ] 2a licensing still parked; the pilot's no-redistribution note stands in for it.

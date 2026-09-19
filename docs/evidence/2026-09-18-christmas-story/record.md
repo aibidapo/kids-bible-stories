@@ -76,10 +76,21 @@ credit returns.
 
 ## Gaps
 
-- **Gemini credit exhausted.** Two regenerations pending (frameless Mary
-  for the wise-men page; gifts without faces if a separate gifts hotspot
-  is wanted). Stories 2–5 cannot start until the owner tops up.
+- Credit restored and the two regenerations done (follow-up below).
 - No human review of the six pages yet (`christmas-*.png`, then the app).
 - The Jesus-depiction decision for story 2 onward is still the owner's.
 - Download-a-story ships before story 3 (precache would pass 12 MB).
 - Real-device check open, as for every story.
+
+## Follow-up: credit restored, two regenerations done
+
+The owner topped up the Gemini prepay; the API kept answering 429 for
+about twenty minutes, then the retry loop succeeded (21:2x). `mary-child`
+regenerated without a doorway (344×800, 44 KB) and stands in the
+background's doorway at scale 0.42; `gifts` regenerated with "inanimate,
+no faces" (672×350, 50 KB) and is back as its own layer and hotspot
+(56 %, 92 %) in front of the kneeling king. Scene 382 KB. Cutouts on green
+`wisemen-regenerated-cutouts.png`; sidecars `mary-child-sidecar.json`,
+`gifts-sidecar.json`; render `christmas-wisemen.png` replaced; browser
+still `wisemen-hotspot-phone.png`. Motion 33 clean, data tests pass.
+Total calls for the story: 38.

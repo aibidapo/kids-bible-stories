@@ -22,16 +22,16 @@
     },
     "mary-child": {
       "file": "mary-child.webp",
-      "w": 418,
+      "w": 344,
       "h": 800,
       "trim": [
-        170,
-        36,
-        766,
-        1176
+        218,
+        77,
+        686,
+        1164
       ],
       "source": "design/pipeline/raw/christmas/wisemen/mary-child.png",
-      "bytes": 48794
+      "bytes": 45444
     },
     "camel": {
       "file": "camel.webp",
@@ -45,6 +45,19 @@
       ],
       "source": "design/pipeline/raw/christmas/wisemen/camel.png",
       "bytes": 67536
+    },
+    "gifts": {
+      "file": "gifts.webp",
+      "w": 672,
+      "h": 350,
+      "trim": [
+        82,
+        192,
+        1128,
+        737
+      ],
+      "source": "design/pipeline/raw/christmas/wisemen/gifts.png",
+      "bytes": 51698
     }
   }
 }
