@@ -1,12 +1,14 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import { STORIES, getStory } from "./stories";
-import { getSceneArt } from "../scenes";
+import { getSceneArt, loadAllStories } from "../scenes";
 
 /**
  * Invariants the app relies on but TypeScript cannot express. A broken one
  * shows up as a blank stage, an untappable hotspot or an unanswerable quiz.
  */
 describe("story library", () => {
+  beforeAll(() => loadAllStories());
+
   it("has unique story ids and getStory finds each one", () => {
     const ids = STORIES.map((s) => s.id);
     expect(new Set(ids).size).toBe(ids.length);

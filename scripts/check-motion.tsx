@@ -10,7 +10,9 @@
  * pre-commit hook.
  */
 import { createElement } from "react";
-import { SCENE_ART } from "../src/scenes/index";
+import { SCENE_ART, loadAllStories } from "../src/scenes/index";
+
+await loadAllStories();
 
 // Production React skips the dev-only casing warnings for SVG elements like
 // <linearGradient>, which would otherwise drown the report. react-dom picks

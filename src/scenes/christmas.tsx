@@ -46,7 +46,7 @@ import wisemenMen from "../assets/scenes/christmas/wisemen/wise-men.webp";
 import wisemenMary from "../assets/scenes/christmas/wisemen/mary-child.webp";
 import wisemenCamel from "../assets/scenes/christmas/wisemen/camel.webp";
 import wisemenGifts from "../assets/scenes/christmas/wisemen/gifts.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 type Wings = {
   w: number;
@@ -673,3 +673,13 @@ export function TheWiseMen({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "christmas/angel": AngelVisitsMary,
+  "christmas/journey": NoRoomAtTheInn,
+  "christmas/stable": BornInAStable,
+  "christmas/shepherds": ShepherdsAndAngels,
+  "christmas/visit": TheShepherdsVisit,
+  "christmas/wisemen": TheWiseMen,
+};

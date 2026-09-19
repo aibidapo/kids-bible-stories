@@ -51,7 +51,7 @@ import bluebirdFrontDown from "../assets/scenes/storm/calm/bluebird-front-down.w
 import redbirdFrontUp from "../assets/scenes/storm/calm/redbird-front-up.webp";
 import redbirdFrontDown from "../assets/scenes/storm/calm/redbird-front-down.webp";
 import calmWave from "../assets/scenes/creation/sky-water/calm-wave.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** Eye centres per cutout, in cutout pixels, read off the packed art. Closed-eyed poses have none. */
 const EYES: Record<string, { points: [number, number][]; rx: number; ry: number; tone: string }> = {
@@ -720,3 +720,12 @@ export function WhoIsThis({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "storm/evening": SettingOut,
+  "storm/asleep": AsleepInTheStern,
+  "storm/afraid": TheWildNight,
+  "storm/peace": QuietBeStill,
+  "storm/calm": WhoIsThis,
+};

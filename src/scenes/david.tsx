@@ -36,7 +36,7 @@ import victoryDavid from "../assets/scenes/david/victory/david-victory.webp";
 import victoryArmy from "../assets/scenes/david/victory/army-cheer.webp";
 import victoryGoliath from "../assets/scenes/david/victory/goliath-fallen.webp";
 import victoryRunners from "../assets/scenes/david/victory/soldiers-run.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** Eye points and lid tones come from design/pipeline/find_eyes.py. */
 const EYES = {
@@ -584,3 +584,13 @@ export function Victory() {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "david/shepherd": ShepherdBoy,
+  "david/taunt": GoliathTaunts,
+  "david/volunteers": DavidVolunteers,
+  "david/stones": FiveSmoothStones,
+  "david/strike": TheStrike,
+  "david/victory": Victory,
+};

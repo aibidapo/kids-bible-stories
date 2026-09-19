@@ -36,7 +36,7 @@ import rejoiceDaniel from "../assets/scenes/daniel/rejoice/daniel-raise.webp";
 import rejoiceKing from "../assets/scenes/daniel/rejoice/king-run.webp";
 import rejoiceCrowd from "../assets/scenes/daniel/rejoice/crowd.webp";
 import { SoftShadow } from "../art/v2/effects";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** Three times a day, at the open window. */
 export function DanielPrays({ found }: SceneArtProps) {
@@ -500,3 +500,12 @@ export function TheKingRejoices({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "daniel/prays": DanielPrays,
+  "daniel/trap": TheTrap,
+  "daniel/den": IntoTheDen,
+  "daniel/angel": AngelShutsTheMouths,
+  "daniel/rejoice": TheKingRejoices,
+};

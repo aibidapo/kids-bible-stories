@@ -1,60 +1,48 @@
 import type { SceneArt } from "../types";
-import * as creation from "./creation";
-import * as noah from "./noah";
-import * as david from "./david";
-import * as jonah from "./jonah";
-import * as daniel from "./daniel";
-import * as christmas from "./christmas";
-import * as storm from "./storm";
+
+type SceneModule = { SCENES: Record<string, SceneArt> };
 
 /**
- * Story data refers to art by string key rather than importing components, so
- * a new story is a data file plus a few entries here — no wiring anywhere else.
+ * One loader per story. Each is a dynamic import, so Vite emits one chunk per
+ * story and the story's art only reaches the device when the story is opened
+ * or downloaded (see `src/lib/downloads.ts`). A new story is one line here
+ * plus a `SCENES` export in its module.
  */
-export const SCENE_ART: Record<string, SceneArt> = {
-  "creation/light": creation.LetThereBeLight,
-  "creation/sky-water": creation.SkyAndWater,
-  "creation/land": creation.LandAndPlants,
-  "creation/lights": creation.SunMoonStars,
-  "creation/creatures": creation.BirdsAndFish,
-  "creation/people": creation.AnimalsAndPeople,
-
-  "noah/builds": noah.NoahBuilds,
-  "noah/two-by-two": noah.TwoByTwo,
-  "noah/flood": noah.TheFlood,
-  "noah/dove": noah.DoveReturns,
-  "noah/rainbow": noah.TheRainbow,
-
-  "david/shepherd": david.ShepherdBoy,
-  "david/taunt": david.GoliathTaunts,
-  "david/volunteers": david.DavidVolunteers,
-  "david/stones": david.FiveSmoothStones,
-  "david/strike": david.TheStrike,
-  "david/victory": david.Victory,
-
-  "jonah/running": jonah.RunningAway,
-  "jonah/storm": jonah.TheStorm,
-  "jonah/swallowed": jonah.SwallowedWhole,
-  "jonah/prayer": jonah.PrayerInsideTheFish,
-  "jonah/nineveh": jonah.Nineveh,
-
-  "daniel/prays": daniel.DanielPrays,
-  "daniel/trap": daniel.TheTrap,
-  "daniel/den": daniel.IntoTheDen,
-  "daniel/angel": daniel.AngelShutsTheMouths,
-  "daniel/rejoice": daniel.TheKingRejoices,
-  "christmas/angel": christmas.AngelVisitsMary,
-  "christmas/journey": christmas.NoRoomAtTheInn,
-  "christmas/stable": christmas.BornInAStable,
-  "christmas/shepherds": christmas.ShepherdsAndAngels,
-  "christmas/visit": christmas.TheShepherdsVisit,
-  "christmas/wisemen": christmas.TheWiseMen,
-  "storm/evening": storm.SettingOut,
-  "storm/asleep": storm.AsleepInTheStern,
-  "storm/afraid": storm.TheWildNight,
-  "storm/peace": storm.QuietBeStill,
-  "storm/calm": storm.WhoIsThis,
+const STORY_MODULES: Record<string, () => Promise<SceneModule>> = {
+  creation: () => import("./creation"),
+  noah: () => import("./noah"),
+  david: () => import("./david"),
+  jonah: () => import("./jonah"),
+  daniel: () => import("./daniel"),
+  christmas: () => import("./christmas"),
+  storm: () => import("./storm"),
 };
+
+/** Art by key, filled as story modules load. Story data refers to art by these string keys. */
+export const SCENE_ART: Record<string, SceneArt> = {};
+
+const loaded = new Map<string, Promise<void>>();
+
+/** Loads a story's scene module once and registers its art. Rejects for an unknown story or when the chunk cannot be fetched. */
+export function loadStory(storyId: string): Promise<void> {
+  const pending = loaded.get(storyId);
+  if (pending) return pending;
+  const loader = Object.prototype.hasOwnProperty.call(STORY_MODULES, storyId)
+    ? STORY_MODULES[storyId]
+    : undefined;
+  if (!loader) return Promise.reject(new Error(`unknown story: ${storyId}`));
+  const p = loader().then((m) => {
+    Object.assign(SCENE_ART, m.SCENES);
+  });
+  p.catch(() => loaded.delete(storyId));
+  loaded.set(storyId, p);
+  return p;
+}
+
+/** Every story at once, for scripts and tests. */
+export async function loadAllStories(): Promise<void> {
+  await Promise.all(Object.keys(STORY_MODULES).map(loadStory));
+}
 
 export function getSceneArt(key: string): SceneArt | undefined {
   // Own-property check so a key like "constructor" cannot reach the prototype.

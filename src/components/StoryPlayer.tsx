@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Stage } from "./Stage";
+import { StoryUnavailable } from "./StoryUnavailable";
+import { getSceneArt, loadStory } from "../scenes";
 import { NarrationText } from "./NarrationText";
 import { useNarration } from "../hooks/useNarration";
 import { foundIn, markCompleted, useProgress } from "../lib/store";
@@ -19,6 +21,22 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
   const progress = useProgress();
   const narration = useNarration();
   const [sticker, setSticker] = useState<string | null>(null);
+  // The story's art lives in its own chunk; "missing" means it could not be
+  // fetched, which offline means the story is not on this device.
+  const [art, setArt] = useState<"loading" | "ready" | "missing">(() =>
+    getSceneArt(story.scenes[0].art) ? "ready" : "loading",
+  );
+
+  useEffect(() => {
+    let live = true;
+    loadStory(story.id).then(
+      () => live && setArt("ready"),
+      () => live && setArt("missing"),
+    );
+    return () => {
+      live = false;
+    };
+  }, [story.id]);
 
   const scene = story.scenes[index];
   const text = scene.text[progress.mode];
@@ -114,7 +132,11 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
         </button>
       </header>
 
-      <Stage storyId={story.id} scene={scene} onSticker={setSticker} />
+      {art === "missing" ? (
+        <StoryUnavailable onHome={onHome} />
+      ) : (
+        <Stage storyId={story.id} scene={scene} onSticker={setSticker} />
+      )}
 
       <section className="player__text">
         {quest && (

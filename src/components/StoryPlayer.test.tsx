@@ -171,3 +171,51 @@ describe("StoryPlayer narration", () => {
     expect(spoken[0].text).toBe(daniel.scenes[1].text.little);
   });
 });
+
+describe("story art loading", () => {
+  it("renders the stage once the story's chunk has loaded, and starts ready when the art is already registered", async () => {
+    const { loadStory } = await import("../scenes");
+    await loadStory("daniel");
+    const { unmount } = render(
+      <StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />,
+    );
+    expect(document.querySelector(".stage__svg")).toBeTruthy();
+    expect(screen.queryByText("This story is not on this device yet.")).toBeNull();
+    unmount();
+  });
+
+  it("ignores a load that settles after the player has unmounted", async () => {
+    vi.resetModules();
+    let settle: () => void = () => {};
+    vi.doMock("../scenes", () => ({
+      getSceneArt: () => undefined,
+      loadStory: () =>
+        new Promise<void>((_r, reject) => (settle = () => reject(new Error("late")))),
+    }));
+    const { StoryPlayer: Player } = await import("./StoryPlayer");
+    const { unmount } = render(
+      <Player story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />,
+    );
+    unmount();
+    await act(async () => {
+      settle();
+    });
+    expect(screen.queryByText("This story is not on this device yet.")).toBeNull();
+    vi.doUnmock("../scenes");
+  });
+
+  it("shows the not-on-this-device page when the story's chunk cannot be loaded", async () => {
+    vi.resetModules();
+    vi.doMock("../scenes", () => ({
+      getSceneArt: () => undefined,
+      loadStory: () => Promise.reject(new Error("offline")),
+    }));
+    const { StoryPlayer: Player } = await import("./StoryPlayer");
+    const onHome = vi.fn();
+    render(<Player story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={onHome} />);
+    expect(await screen.findByText("This story is not on this device yet.")).toBeTruthy();
+    fireEvent.click(screen.getAllByRole("button", { name: "Back to the stories" })[1]);
+    expect(onHome).toHaveBeenCalled();
+    vi.doUnmock("../scenes");
+  });
+});

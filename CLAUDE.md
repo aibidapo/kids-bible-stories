@@ -25,6 +25,7 @@ npm run format:check
 npm run secrets    # staged-diff credential scan (scripts/check-secrets.mjs)
 npm run audit      # npm audit --audit-level=high; needs the network, "unreachable" means unknown, never clean
 npm run icons      # regenerate public/icons/*.png from scripts/generate-icons.mjs
+npm run covers     # regenerate public/covers/*.webp, the library card stills
 npm run check:motion   # hard-constraint lint: no a-* class on a transform'd element
 npm run check:bundle   # JS gzip <= 100 KB and precache <= 12 MB, after a build (in the hook)
 npm run perf           # interaction and load budgets on the preview build, 4x CPU + Slow 4G (on demand)
@@ -107,7 +108,7 @@ src/
     raster.tsx  Backdrop / Layer / Part / Tail / Flipbook / Eyelids: raster cutouts inside the SVG stage
     v2/effects.tsx  LightShaft, Motes, Grain, SoftShadow (tone.ts backs its gradients)
   assets/scenes/<story>/<scene>/   bg.webp, <layer>.webp, layers.json (shipped)
-  scenes/       38 scenes across seven stories; index.ts maps string key -> component
+  scenes/       38 scenes across seven stories, one chunk each; index.ts loads a story on demand
   data/
     stories.ts        library order + derived sticker total
     stories/*.ts      one file per story: prose, hotspots, quiz, memory verse
@@ -169,7 +170,10 @@ dropping detail. The Christmas story is the reference for the level.
 1. Write scenes in `src/scenes/<story>.tsx`, composing `Backdrop` and `Layer`
    from `src/art/raster.tsx` with light, motes and grain from
    `src/art/v2/effects.tsx`.
-2. Register each scene under a string key in `src/scenes/index.ts`.
+2. Export the scenes by string key from the module (`export const SCENES`)
+   and add one loader line for the story in `src/scenes/index.ts`; the
+   registry loads a story's chunk on demand. Run `npm run covers` so the
+   library card has its still (`public/covers/<id>.webp`, committed).
 3. Write `src/data/stories/<story>.ts` — prose at **both** reading levels,
    hotspots, optional find-game, quiz questions tagged `little` or `big`, a
    memory verse, and a `devotional` (question and prayer at both levels, one

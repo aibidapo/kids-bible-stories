@@ -1,4 +1,3 @@
-import { getSceneArt } from "../scenes";
 import { STORIES, TOTAL_STICKERS } from "../data/stories";
 import { useProgress } from "../lib/store";
 import type { Story } from "../types";
@@ -9,18 +8,21 @@ interface Props {
   onSettings: () => void;
 }
 
-function CardArt({ artKey }: { artKey: string }) {
-  const Art = getSceneArt(artKey);
-  if (!Art) return null;
+/**
+ * A still of the story's cover scene, rendered by `npm run covers` and
+ * shipped in the app shell, so the library shows every story offline even
+ * when the story's own art is not on the device yet.
+ */
+function CardArt({ storyId }: { storyId: string }) {
   return (
-    <svg
+    <img
       className="card__art"
-      viewBox="0 0 1000 625"
-      preserveAspectRatio="xMidYMid slice"
-      aria-hidden="true"
-    >
-      <Art active={false} animate found={[]} />
-    </svg>
+      src={`${import.meta.env.BASE_URL}covers/${storyId}.webp`}
+      alt=""
+      width={640}
+      height={400}
+      loading="lazy"
+    />
   );
 }
 
@@ -81,7 +83,7 @@ export function Library({ onOpen, onStickers, onSettings }: Props) {
                 onClick={() => onOpen(story)}
               >
                 <span className="card__frame">
-                  <CardArt artKey={story.cover} />
+                  <CardArt storyId={story.id} />
                   {done && (
                     <span className="card__badge" aria-hidden="true">
                       ✓

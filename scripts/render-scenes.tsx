@@ -10,7 +10,9 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import sharp from "sharp";
 import { createElement } from "react";
-import { SCENE_ART } from "../src/scenes/index";
+import { SCENE_ART, loadAllStories } from "../src/scenes/index";
+
+await loadAllStories();
 import { inlinePng } from "./lib/inline-png";
 
 const OUT = process.env.OUT_DIR ?? "scratch/scenes";

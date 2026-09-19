@@ -9,7 +9,9 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { createElement } from "react";
 import sharp from "sharp";
-import { SCENE_ART } from "../src/scenes/index";
+import { SCENE_ART, loadAllStories } from "../src/scenes/index";
+
+await loadAllStories();
 import { inlinePng } from "./lib/inline-png";
 
 process.env.NODE_ENV = "production";

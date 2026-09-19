@@ -28,7 +28,7 @@ import ninLayers from "../assets/scenes/jonah/nineveh/layers.json";
 import ninBg from "../assets/scenes/jonah/nineveh/bg.webp";
 import ninJonah from "../assets/scenes/jonah/nineveh/jonah-preach.webp";
 import ninCrowd from "../assets/scenes/jonah/nineveh/crowd-listen.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** Eye points from design/pipeline/find_eyes.py; noise blobs dropped, far eyes mirrored by hand. */
 const EYES = {
@@ -429,3 +429,12 @@ export function Nineveh({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "jonah/running": RunningAway,
+  "jonah/storm": TheStorm,
+  "jonah/swallowed": SwallowedWhole,
+  "jonah/prayer": PrayerInsideTheFish,
+  "jonah/nineveh": Nineveh,
+};

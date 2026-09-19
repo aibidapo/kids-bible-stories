@@ -268,6 +268,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .card__badge {
@@ -524,6 +525,29 @@ body {
   font-weight: 700;
   font-size: clamp(0.9rem, 2.2vw, 1.02rem);
   text-align: center;
+}
+
+/* The stage frame carrying a message instead of art (story not on the device). */
+.stage__frame--message {
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(160deg, #2b1b56, #12345a);
+  color: var(--ink, #fff8ec);
+}
+
+.unavailable__title {
+  margin: 0;
+  font-size: clamp(1.2rem, 3.4vw, 1.7rem);
+  font-weight: 700;
+}
+
+.unavailable__text {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  opacity: 0.9;
 }
 
 .stage__bubble {

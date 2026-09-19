@@ -50,7 +50,7 @@ import giraffes from "../assets/scenes/noah/two-by-two/giraffes.webp";
 import elephants from "../assets/scenes/noah/two-by-two/elephants.webp";
 import zebras from "../assets/scenes/noah/two-by-two/zebras.webp";
 import lionsPair from "../assets/scenes/noah/two-by-two/lions.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** Eye points from design/pipeline/find_eyes.py. */
 const EYES = {
@@ -594,3 +594,13 @@ export function AnimalsAndPeople({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "creation/light": LetThereBeLight,
+  "creation/sky-water": SkyAndWater,
+  "creation/land": LandAndPlants,
+  "creation/lights": SunMoonStars,
+  "creation/creatures": BirdsAndFish,
+  "creation/people": AnimalsAndPeople,
+};

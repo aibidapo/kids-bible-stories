@@ -28,7 +28,7 @@ import rainbowLayers from "../assets/scenes/noah/rainbow/layers.json";
 import rainbowBg from "../assets/scenes/noah/rainbow/bg.webp";
 import rainbowFamily from "../assets/scenes/noah/rainbow/family.webp";
 import rainbowNoah from "../assets/scenes/noah/rainbow/noah-look-up.webp";
-import type { SceneArtProps } from "../types";
+import type { SceneArt, SceneArtProps } from "../types";
 
 /** The two prays dove frames as a Flipbook, flapping in place. */
 function FlappingDove({
@@ -264,3 +264,12 @@ export function TheRainbow({ found }: SceneArtProps) {
     </>
   );
 }
+
+/** Scene art by key; the registry in `index.ts` loads this module on demand. */
+export const SCENES: Record<string, SceneArt> = {
+  "noah/builds": NoahBuilds,
+  "noah/two-by-two": TwoByTwo,
+  "noah/flood": TheFlood,
+  "noah/dove": DoveReturns,
+  "noah/rainbow": TheRainbow,
+};
