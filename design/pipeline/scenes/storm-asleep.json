@@ -1,0 +1,39 @@
+{
+  "story": "storm",
+  "scene": "asleep",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "Open water on the Sea of Galilee at dusk with a storm building: dark grey-blue rolling water with white crests, a bank of heavy purple-black clouds rolling in from the right, the last gold light at the horizon on the left, spray, distant dark hills. The lower third is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+  },
+  "cutouts": {
+    "boat-back": {
+      "aspect": "16:9",
+      "max_h": 500,
+      "prompt": "The FAR side only of a wooden Galilee fishing boat seen from the side: the far gunwale, the mast with a furled cream sail, ropes and a lantern, weathered planks with wood grain, NO near side, NO hull front, so figures can sit in front of it, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "boat-hull": {
+      "aspect": "16:9",
+      "max_h": 450,
+      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side: the hull and near gunwale with weathered planks, wood grain, nail heads, a coiled rope and a net over the rail, NO mast, NO far side, NO interior, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "jesus-asleep": {
+      "aspect": "4:3",
+      "max_h": 450,
+      "prompt": "Jesus from the second reference image, lying asleep on his side on a cushion, head on his hand, peaceful face, eyes closed, mantle drawn over him, seen from the side, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "jesus"
+    },
+    "peter-row": {
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "Peter from the second reference image, seated and pulling hard on a long wooden oar with both hands, side view facing left, straining, upper body and legs visible, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "peter"
+    },
+    "john-bail": {
+      "aspect": "4:3",
+      "max_h": 550,
+      "prompt": "John from the second reference image, crouching and bailing water with a wooden bucket, side view facing left, worried face, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "john"
+    }
+  }
+}

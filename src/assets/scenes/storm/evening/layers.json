@@ -1,0 +1,89 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 126038,
+    "source": "design/pipeline/raw/storm/evening/bg.png"
+  },
+  "cutouts": {
+    "jesus-invite": {
+      "file": "jesus-invite.webp",
+      "w": 461,
+      "h": 800,
+      "trim": [
+        213,
+        60,
+        850,
+        1165
+      ],
+      "source": "design/pipeline/raw/storm/evening/jesus-invite.png",
+      "bytes": 62904
+    },
+    "peter-push": {
+      "file": "peter-push.webp",
+      "w": 681,
+      "h": 800,
+      "trim": [
+        51,
+        114,
+        896,
+        1106
+      ],
+      "source": "design/pipeline/raw/storm/evening/peter-push.png",
+      "bytes": 67268
+    },
+    "john-nets": {
+      "file": "john-nets.webp",
+      "w": 504,
+      "h": 800,
+      "trim": [
+        60,
+        66,
+        752,
+        1164
+      ],
+      "source": "design/pipeline/raw/storm/evening/john-nets.png",
+      "bytes": 84774
+    },
+    "boat-shore": {
+      "file": "boat-shore.webp",
+      "w": 680,
+      "h": 500,
+      "trim": [
+        243,
+        56,
+        1108,
+        692
+      ],
+      "source": "design/pipeline/raw/storm/evening/boat-shore.png",
+      "bytes": 53976
+    },
+    "gull-up": {
+      "file": "gull-up.webp",
+      "w": 316,
+      "h": 300,
+      "trim": [
+        140,
+        120,
+        890,
+        831
+      ],
+      "source": "design/pipeline/raw/storm/evening/gull-up.png",
+      "bytes": 18200
+    },
+    "gull-down": {
+      "file": "gull-down.webp",
+      "w": 367,
+      "h": 300,
+      "trim": [
+        135,
+        244,
+        915,
+        882
+      ],
+      "source": "design/pipeline/raw/storm/evening/gull-down.png",
+      "bytes": 17738
+    }
+  }
+}

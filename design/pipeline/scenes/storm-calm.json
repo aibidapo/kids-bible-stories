@@ -1,0 +1,33 @@
+{
+  "story": "storm",
+  "scene": "calm",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The Sea of Galilee flat calm after a storm at dawn: glassy pale-blue water with soft reflections, mist lifting, a clearing sky of pink and gold with the last stars fading, distant green hills, a few gulls far off. The lower third is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+  },
+  "cutouts": {
+    "boat-back": {
+      "aspect": "16:9",
+      "max_h": 500,
+      "prompt": "The FAR side only of a wooden Galilee fishing boat seen from the side: the far gunwale, the mast with a furled cream sail, ropes and a lantern, weathered planks with wood grain, NO near side, NO hull front, so figures can sit in front of it, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "boat-hull": {
+      "aspect": "16:9",
+      "max_h": 450,
+      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side: the hull and near gunwale with weathered planks, wood grain, nail heads, a coiled rope and a net over the rail, NO mast, NO far side, NO interior, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "jesus-seated": {
+      "aspect": "4:3",
+      "max_h": 550,
+      "prompt": "Jesus from the second reference image, seated calmly on the boat's bench, hands resting on his knees, gentle smile, three-quarter view facing left, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "jesus"
+    },
+    "disciples-amazed": {
+      "aspect": "4:3",
+      "max_h": 600,
+      "prompt": "Peter from the second reference image kneeling with his hands raised in amazement, and beside him a young clean-shaven fisherman in a sea-blue tunic (John) kneeling with a hand on his chest, both looking to the viewer's right in awe, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "peter"
+    }
+  }
+}

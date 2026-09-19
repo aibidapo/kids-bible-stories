@@ -1,0 +1,63 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 63122,
+    "source": "design/pipeline/raw/storm/calm/bg.png"
+  },
+  "cutouts": {
+    "boat-back": {
+      "file": "boat-back.webp",
+      "w": 766,
+      "h": 500,
+      "trim": [
+        120,
+        25,
+        1258,
+        768
+      ],
+      "source": "design/pipeline/raw/storm/calm/boat-back.png",
+      "bytes": 65598
+    },
+    "boat-hull": {
+      "file": "boat-hull.webp",
+      "w": 1037,
+      "h": 450,
+      "trim": [
+        124,
+        146,
+        1251,
+        635
+      ],
+      "source": "design/pipeline/raw/storm/calm/boat-hull.png",
+      "bytes": 61446
+    },
+    "jesus-seated": {
+      "file": "jesus-seated.webp",
+      "w": 653,
+      "h": 550,
+      "trim": [
+        135,
+        69,
+        1085,
+        869
+      ],
+      "source": "design/pipeline/raw/storm/calm/jesus-seated.png",
+      "bytes": 49428
+    },
+    "disciples-amazed": {
+      "file": "disciples-amazed.webp",
+      "w": 749,
+      "h": 600,
+      "trim": [
+        101,
+        73,
+        1077,
+        855
+      ],
+      "source": "design/pipeline/raw/storm/calm/disciples-amazed.png",
+      "bytes": 71626
+    }
+  }
+}

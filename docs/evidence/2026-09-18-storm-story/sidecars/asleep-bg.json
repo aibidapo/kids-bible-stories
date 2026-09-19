@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Open water on the Sea of Galilee at dusk with a storm building: dark grey-blue rolling water with white crests, a bank of heavy purple-black clouds rolling in from the right, the last gold light at the horizon on the left, spray, distant dark hills. The lower third is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T02:38:05+00:00"
+}

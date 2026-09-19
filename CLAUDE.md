@@ -5,7 +5,7 @@ Guidance for Claude Code working in this repository.
 ## What this is
 
 An interactive illustrated Bible storybook for children, as an installable,
-offline-capable PWA. React + TypeScript + Vite. 6 stories, 33 animated scenes, all layered raster art.
+offline-capable PWA. React + TypeScript + Vite. 7 stories, 38 animated scenes, all layered raster art.
 
 The audience is 3–12 year olds, served by a single story set with a **Little /
 Big** reading-level switch. Every piece of prose has to work at both levels.
@@ -107,7 +107,7 @@ src/
     raster.tsx  Backdrop / Layer / Part / Tail / Flipbook / Eyelids: raster cutouts inside the SVG stage
     v2/effects.tsx  LightShaft, Motes, Grain, SoftShadow (tone.ts backs its gradients)
   assets/scenes/<story>/<scene>/   bg.webp, <layer>.webp, layers.json (shipped)
-  scenes/       33 scenes across six stories; index.ts maps string key -> component
+  scenes/       38 scenes across seven stories; index.ts maps string key -> component
   data/
     stories.ts        library order + derived sticker total
     stories/*.ts      one file per story: prose, hotspots, quiz, memory verse
@@ -150,6 +150,15 @@ from the sidecars. The pipeline README is `design/pipeline/README.md`.
 
 Every story is raster now. The vector figure, animal and prop kits are gone;
 `src/art/base.tsx` keeps the overlay primitives scenes still use.
+
+**Richness standard (owner, 2026-09-18).** Every new or regenerated scene
+must be very rich, detailed and as realistic as possible while staying in
+the storybook style. In practice: backgrounds generated at 2K; prompts that
+name materials and textures and ask for several depth layers with
+incidental details, soft cast shadows and atmospheric light; props and
+animals as their own layers; blinks on faces; "inanimate, no faces" on
+objects; never green props. Meet the budget by re-encoding, not by
+dropping detail. The Christmas story is the reference for the level.
 
 ## Adding a story
 
@@ -216,7 +225,7 @@ them, and after install the service worker answers every request, so
 per-device property and is held by two gates:
 
 - `npm run check:bundle` in the hook: main JS gzip <= 100 KB (76.8 KB
-  today), precache total <= 12 MB (5.97 MB today). Lower a budget when the
+  today), precache total <= 12 MB (9.92 MB today). Lower a budget when the
   app slims; raising one needs a written reason in `docs/roadmap.md`.
 - `npm run perf` on demand, before a release and after any scene, animation
   or player change: 4x CPU and Slow 4G on the production build, phone

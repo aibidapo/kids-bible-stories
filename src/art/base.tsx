@@ -302,17 +302,20 @@ export function Rain({
   );
 }
 
-export function Lightning({ delay = 0 }: { delay?: number }) {
+export function Lightning({ delay = 0, x = 0 }: { delay?: number; x?: number }) {
   return (
     <g className="a-flash" style={{ animationDelay: `${delay}s` }}>
       <rect x="0" y="0" width={VB.w} height={VB.h} fill="#ffffff" opacity="0.5" />
-      <path
-        d="M520,40 L470,210 L540,200 L470,380 L600,180 L525,190 L575,40 Z"
-        fill="#fff8c4"
-        stroke="#ffffff"
-        strokeWidth="4"
-        strokeLinejoin="round"
-      />
+      {/* The bolt is drawn around x=535; `x` slides it sideways while the flash still covers the whole sky. */}
+      <g transform={`translate(${x} 0)`}>
+        <path
+          d="M520,40 L470,210 L540,200 L470,380 L600,180 L525,190 L575,40 Z"
+          fill="#fff8c4"
+          stroke="#ffffff"
+          strokeWidth="4"
+          strokeLinejoin="round"
+        />
+      </g>
     </g>
   );
 }

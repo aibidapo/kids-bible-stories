@@ -1,0 +1,76 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 73692,
+    "source": "design/pipeline/raw/storm/asleep/bg.png"
+  },
+  "cutouts": {
+    "boat-back": {
+      "file": "boat-back.webp",
+      "w": 766,
+      "h": 500,
+      "trim": [
+        120,
+        25,
+        1258,
+        768
+      ],
+      "source": "design/pipeline/raw/storm/calm/boat-back.png",
+      "bytes": 65598
+    },
+    "boat-hull": {
+      "file": "boat-hull.webp",
+      "w": 836,
+      "h": 450,
+      "trim": [
+        0,
+        52,
+        1330,
+        768
+      ],
+      "source": "design/pipeline/raw/storm/asleep/boat-hull.png",
+      "bytes": 66962
+    },
+    "jesus-asleep": {
+      "file": "jesus-asleep.webp",
+      "w": 657,
+      "h": 450,
+      "trim": [
+        0,
+        74,
+        1200,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/asleep/jesus-asleep.png",
+      "bytes": 67344
+    },
+    "peter-row": {
+      "file": "peter-row.webp",
+      "w": 800,
+      "h": 600,
+      "trim": [
+        7,
+        64,
+        1117,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/asleep/peter-row.png",
+      "bytes": 62574
+    },
+    "john-bail": {
+      "file": "john-bail.webp",
+      "w": 640,
+      "h": 550,
+      "trim": [
+        70,
+        27,
+        1045,
+        865
+      ],
+      "source": "design/pipeline/raw/storm/asleep/john-bail.png",
+      "bytes": 58900
+    }
+  }
+}

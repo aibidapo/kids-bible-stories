@@ -1,0 +1,76 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 88650,
+    "source": "design/pipeline/raw/storm/peace/bg.png"
+  },
+  "cutouts": {
+    "boat-back": {
+      "file": "boat-back.webp",
+      "w": 766,
+      "h": 500,
+      "trim": [
+        120,
+        25,
+        1258,
+        768
+      ],
+      "source": "design/pipeline/raw/storm/calm/boat-back.png",
+      "bytes": 65598
+    },
+    "boat-hull": {
+      "file": "boat-hull.webp",
+      "w": 1018,
+      "h": 450,
+      "trim": [
+        91,
+        133,
+        1286,
+        661
+      ],
+      "source": "design/pipeline/raw/storm/peace/boat-hull.png",
+      "bytes": 76226
+    },
+    "jesus-command": {
+      "file": "jesus-command.webp",
+      "w": 448,
+      "h": 800,
+      "trim": [
+        63,
+        60,
+        683,
+        1166
+      ],
+      "source": "design/pipeline/raw/storm/peace/jesus-command.png",
+      "bytes": 74074
+    },
+    "peter-watch": {
+      "file": "peter-watch.webp",
+      "w": 694,
+      "h": 550,
+      "trim": [
+        0,
+        46,
+        1073,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/peace/peter-watch.png",
+      "bytes": 46512
+    },
+    "john-watch": {
+      "file": "john-watch.webp",
+      "w": 499,
+      "h": 500,
+      "trim": [
+        180,
+        74,
+        1000,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/peace/john-watch.png",
+      "bytes": 35712
+    }
+  }
+}

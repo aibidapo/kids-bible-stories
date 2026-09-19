@@ -1,0 +1,44 @@
+{
+  "story": "storm",
+  "scene": "evening",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The stony shore of the Sea of Galilee at sunset, seen straight on: a pebble beach with wet stones in the foreground, small waves lapping, fishing nets drying on wooden posts, a clay jar and a basket of fish, low hills across the lake, the water gold and rose, a sky of orange and violet with streaks of cloud, a few distant sails far off. Keep the centre and right foreground clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+  },
+  "cutouts": {
+    "jesus-invite": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Jesus from the second reference image, standing on the shore, one arm stretched out toward the water inviting, warm calm smile, three-quarter view facing right, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "jesus"
+    },
+    "peter-push": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Peter from the second reference image, leaning forward pushing a boat with both hands, three-quarter view facing right, determined friendly face, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "peter"
+    },
+    "john-nets": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "John from the second reference image, carrying a bundle of fishing nets over one shoulder, walking right, eager smile, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "john"
+    },
+    "boat-shore": {
+      "aspect": "16:9",
+      "max_h": 500,
+      "prompt": "A wooden Galilee fishing boat seen from the side, resting at the water's edge, mast with a furled cream sail, weathered planks with wood grain, oars, a net over the rail, whole boat visible, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "gull-up": {
+      "aspect": "1:1",
+      "max_h": 300,
+      "prompt": "A seagull in flight, wings raised up mid-flap, side view facing left, white and grey feathers, yellow beak, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "gull-down": {
+      "aspect": "1:1",
+      "max_h": 300,
+      "prompt": "The SAME seagull in flight, wings swept down below the body mid-flap, side view facing left, same size and head position, white and grey feathers, yellow beak, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    }
+  }
+}

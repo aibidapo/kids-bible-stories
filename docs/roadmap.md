@@ -10,6 +10,10 @@ end): discovery and distribution are now phases of their own, every phase
 carries a cost line, and nothing paid is scheduled before a buyer has been
 found.
 
+Standing instruction from the owner (2026-09-18): every scene very rich,
+detailed and as realistic as possible within the storybook style; see the
+richness standard in `CLAUDE.md`. Applies to every phase that makes art.
+
 Constraints every phase inherits (from `CLAUDE.md`): offline PWA, no network
 calls, no accounts, no analytics, progress in localStorage only; stories are
 data and the player is generic; every piece of prose at both reading levels;
@@ -231,8 +235,13 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
   wings, blinks, richer backgrounds on three pages, flock, campfire,
   swaying tree, flying doves, baby on the last page). Order changed on purpose: two
   stories before download-a-story so the richness is reviewable early;
-  the feature ships before story 3. Jesus-depiction decision still open
-  for story 2.
+  the feature ships before story 3. Jesus depicted face-on in the book's
+  style (`docs/decisions/2026-09-18-jesus-depiction.md`). Story 2, Jesus
+  Calms the Storm, built 2026-09-18: five pages, three new sheets (Jesus,
+  Peter, John), two-part boats so the crew sits inside, lightning, rain,
+  heaving waves, blinks; evidence
+  `docs/evidence/2026-09-18-storm-story/record.md`. Precache 9.92 MB of
+  12: download-a-story is next, before story 3.
 
 ## Phase 5: Church and homeschool pilot, then edition
 
@@ -368,3 +377,5 @@ Kept here so the reasoning survives.
 - 2026-09-18: church pilot prep: Group pilot log (opt-in), leader documents.
 - 2026-09-18: phase 4 started; The First Christmas built (36 Gemini calls);
   Gemini credit exhausted after the first pass.
+- 2026-09-18: story 2, Jesus Calms the Storm, built (23 Gemini calls);
+  owner's richness standard recorded in `CLAUDE.md`.

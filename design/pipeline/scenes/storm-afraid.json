@@ -1,0 +1,39 @@
+{
+  "story": "storm",
+  "scene": "afraid",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The Sea of Galilee in a violent night storm: towering black-green waves with white foam, driving rain, a black sky split by lightning, spray flying, no horizon visible. The lower half is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+  },
+  "cutouts": {
+    "boat-back-tilt": {
+      "aspect": "16:9",
+      "max_h": 550,
+      "prompt": "A plain wooden Galilee fishing boat, an inanimate object with NO face, NO eyes, NO expression, the FAR side only seen from the side, tilted a little to the left as if on a wave, the far gunwale, a mast with a torn flapping cream sail, ropes flying, weathered planks, NO near side, NO hull front, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "boat-hull-tilt": {
+      "aspect": "16:9",
+      "max_h": 450,
+      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side, tilted a little to the left as if on a wave, hull and near gunwale with weathered planks, water pouring over the rail, NO mast, NO far side, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "jesus-waking": {
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "Jesus from the second reference image, sitting up from sleep, one hand rubbing his eyes, calm unhurried expression, seen from the side facing left, upper body, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "jesus"
+    },
+    "peter-afraid": {
+      "aspect": "4:3",
+      "max_h": 550,
+      "prompt": "Peter from the second reference image, gripping the boat's rail with one hand and reaching toward the viewer's left with the other, shouting, frightened wide eyes, upper body, side view facing left, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "peter"
+    },
+    "john-afraid": {
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "John from the second reference image, crouched low clinging to a rope with both hands, soaked, frightened face, side view facing left, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "john"
+    }
+  }
+}

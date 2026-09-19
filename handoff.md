@@ -12,7 +12,19 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **The First Christmas (roadmap phase 4, story 1)**: six rich pages
+Latest: **Jesus Calms the Storm (roadmap phase 4, story 2)**: five pages
+(`storm/evening..calm`), three new sheets (Jesus face-on per
+`docs/decisions/2026-09-18-jesus-depiction.md`, Peter, John), two-part
+boats with the crew inside on `a-heave`/`a-rock`, lightning with a new
+`x` offset, rain, Jonah and creation waves, gull flipbook, blinks on 12
+faces; 155 tests, 38 scenes motion-clean, precache 9.92 MB, bundle 88.1 KB.
+Owner's standing instruction recorded in `CLAUDE.md` (richness standard),
+roadmap and memory: every scene very rich, detailed and as realistic as
+possible within the storybook style. Perf budgets **unverified** (host at
+100 % CPU from other apps during both runs). Evidence:
+`docs/evidence/2026-09-18-storm-story/record.md`.
+
+Before that: **The First Christmas (roadmap phase 4, story 1)**: six rich pages
 (2K backgrounds, 25 cutouts, five new sheets), story data, scenes,
 registered; 148 tests, 33 scenes motion-clean, precache ~7.9 MB. Credit ran
 out after the first pass, was topped up, and the two regenerations (frameless
@@ -178,7 +190,11 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [x] Phase 0 skipped by the owner (churches requested the product); kit kept for pilot sessions.
 - [x] Order confirmed 2a → 5 → 4 → 6 → 7 ("proceed", 2026-09-18).
 - [ ] **Owner reviews The First Christmas** (`docs/evidence/2026-09-18-christmas-story/christmas-*.png`, then `#/story/christmas/0`).
-- [ ] **Owner decides how Jesus is drawn** from story 2 (calming the storm) onward.
+- [x] Jesus drawn face-on ("1 default", 2026-09-18).
+- [ ] **Owner reviews Jesus Calms the Storm** (`docs/evidence/2026-09-18-storm-story/storm-*.png`, then `#/story/storm/0`).
+- [ ] **Rerun `npm run perf` on an idle host** (both storm-session runs had the CPU at 100 % from other apps); record in the storm evidence.
+- [ ] **Download-a-story before story 3** (precache 9.92 MB of 12): library card states, explicit download, quota check, offline message, iOS eviction test on real phones.
+- [ ] Story 3 Good Samaritan, 4 Easter, 5 Pentecost, each to the richness standard in `CLAUDE.md`.
 - [ ] **Owner starts the pilot**: pick two or three groups, install on their tablets, switch on Group pilot, hand over `docs/pilot/`. Four weeks.
 - [ ] 2a licensing still parked; the pilot's no-redistribution note stands in for it.
 - [ ] Roadmap revised after a roast: **phase 0 discovery (interviews, no code) blocks phases 3+**; then 2a licensing (owner), 2b tablet crop, 2c CI and component coverage; phase 3 is the distribution decision. See `docs/roadmap.md`.

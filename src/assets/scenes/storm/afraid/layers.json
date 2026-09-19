@@ -1,0 +1,76 @@
+{
+  "background": {
+    "file": "bg.webp",
+    "w": 1600,
+    "h": 1000,
+    "bytes": 166074,
+    "source": "design/pipeline/raw/storm/afraid/bg.png"
+  },
+  "cutouts": {
+    "boat-back-tilt": {
+      "file": "boat-back-tilt.webp",
+      "w": 598,
+      "h": 550,
+      "trim": [
+        331,
+        28,
+        1043,
+        683
+      ],
+      "source": "design/pipeline/raw/storm/afraid/boat-back-tilt.png",
+      "bytes": 61442
+    },
+    "boat-hull-tilt": {
+      "file": "boat-hull-tilt.webp",
+      "w": 794,
+      "h": 450,
+      "trim": [
+        228,
+        113,
+        1146,
+        633
+      ],
+      "source": "design/pipeline/raw/storm/afraid/boat-hull-tilt.png",
+      "bytes": 43038
+    },
+    "jesus-waking": {
+      "file": "jesus-waking.webp",
+      "w": 473,
+      "h": 500,
+      "trim": [
+        191,
+        60,
+        982,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/afraid/jesus-waking.png",
+      "bytes": 46094
+    },
+    "peter-afraid": {
+      "file": "peter-afraid.webp",
+      "w": 753,
+      "h": 550,
+      "trim": [
+        32,
+        43,
+        1200,
+        896
+      ],
+      "source": "design/pipeline/raw/storm/afraid/peter-afraid.png",
+      "bytes": 53656
+    },
+    "john-afraid": {
+      "file": "john-afraid.webp",
+      "w": 567,
+      "h": 500,
+      "trim": [
+        151,
+        0,
+        1139,
+        872
+      ],
+      "source": "design/pipeline/raw/storm/afraid/john-afraid.png",
+      "bytes": 47776
+    }
+  }
+}

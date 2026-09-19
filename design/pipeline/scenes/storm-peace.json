@@ -1,0 +1,39 @@
+{
+  "story": "storm",
+  "scene": "peace",
+  "background": {
+    "aspect": "16:9",
+    "size": "2K",
+    "prompt": "The Sea of Galilee as a storm breaks: the black clouds tearing open at the top centre with a wide shaft of warm gold light falling on the water, the waves settling from rough to gentle, rain ending, wet air glowing, a rainbow hint at the right. The lower third is water. Keep the centre clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats."
+  },
+  "cutouts": {
+    "boat-back": {
+      "aspect": "16:9",
+      "max_h": 500,
+      "prompt": "The FAR side only of a wooden Galilee fishing boat seen from the side: the far gunwale, the mast with a furled cream sail, ropes and a lantern, weathered planks with wood grain, NO near side, NO hull front, so figures can sit in front of it, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "boat-hull": {
+      "aspect": "16:9",
+      "max_h": 450,
+      "prompt": "The NEAR side only of a wooden Galilee fishing boat seen from the side: the hull and near gunwale with weathered planks, wood grain, nail heads, a coiled rope and a net over the rail, NO mast, NO far side, NO interior, Full figure, centred, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
+    },
+    "jesus-command": {
+      "aspect": "3:4",
+      "max_h": 800,
+      "prompt": "Jesus from the second reference image, standing tall with one hand raised palm out toward the viewer's left, calm authority, mantle stirred by wind, three-quarter view facing left, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "jesus"
+    },
+    "peter-watch": {
+      "aspect": "4:3",
+      "max_h": 550,
+      "prompt": "Peter from the second reference image, kneeling and looking up in astonishment, mouth open, one hand on the boat's rail, side view facing right, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "peter"
+    },
+    "john-watch": {
+      "aspect": "4:3",
+      "max_h": 500,
+      "prompt": "John from the second reference image, sitting and staring up in wonder, hands clasped, side view facing right, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+      "sheet": "john"
+    }
+  }
+}

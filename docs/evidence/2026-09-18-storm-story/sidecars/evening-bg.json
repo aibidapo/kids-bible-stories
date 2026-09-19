@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "The stony shore of the Sea of Galilee at sunset, seen straight on: a pebble beach with wet stones in the foreground, small waves lapping, fishing nets drying on wooden posts, a clay jar and a basket of fish, low hills across the lake, the water gold and rose, a sky of orange and violet with streaks of cloud, a few distant sails far off. Keep the centre and right foreground clear. Richly detailed and realistic: named materials with visible texture (weathered wood grain, rough stone, coarse sail cloth, wet rope), foreground, midground and background layers with small incidental details, soft cast shadows and atmospheric light. Completely EMPTY of people, animals and boats.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg"
+  ],
+  "aspect": "16:9",
+  "size": "2K",
+  "generated": "2026-09-19T02:35:44+00:00"
+}
