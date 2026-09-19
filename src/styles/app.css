@@ -1073,6 +1073,33 @@ body {
   line-height: 1.4;
 }
 
+.sheet__pilot label {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+.sheet__pilot input {
+  margin-top: 4px;
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.sheet__pilot span {
+  display: grid;
+  gap: 2px;
+}
+.sheet__pilot small {
+  opacity: 0.75;
+  line-height: 1.35;
+}
+.sheet__pilot-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
 .sheet__notice {
   margin-top: 18px;
   padding-top: 14px;

@@ -113,6 +113,8 @@ src/
   lib/
     sound.ts    every sound effect, synthesised with Web Audio
     store.ts    progress in localStorage, via useSyncExternalStore
+    pilotLog.ts opt-in per-day usage counts for group pilots; copy-out only
+    quiz.ts, devotional.ts  pure helpers for the quiz shuffle and the Family time script
   styles/
     motion.css  every animation + the Calm-mode kill switch
     app.css     design tokens and UI
@@ -244,7 +246,12 @@ classes only, no JavaScript per frame.
 - **The quiz cannot be failed.** Wrong answers grey out with a gentle sound; only
   first-time-right answers score. Never add a fail state or a buzzer.
 - **No network calls, no analytics, no account.** Progress is localStorage only.
-  Keep it that way — the users are children.
+  Keep it that way — the users are children. The one counting feature,
+  the Group pilot log (`src/lib/pilotLog.ts`), is off by default, counts
+  only pages, hotspots, quizzes and Family time per day with no identities
+  or times, keeps its own storage key, and leaves the device only when a
+  grown-up presses Copy log. Do not add an event to it without updating the
+  switch's wording in Settings.
 - **Routing is hash-based** (`#/story/<id>/<n>`, `/quiz`, `/family`) so the phone back button pages
   back through the book. Do not swap in a history router without solving that.
 

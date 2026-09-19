@@ -1,0 +1,4 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/lib/pilotLog.test.ts > pilotLog > is off by default and records nothing until enabled
+Error: Cannot find module '/src/lib/pilotLog' imported from C:/Users/aibid/PROJECTS/KIDS BIBLE STORIES/src/lib/pilotLog.test.ts
+vitest exit=1

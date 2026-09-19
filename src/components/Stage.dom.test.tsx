@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Stage } from "./Stage";
 import { daniel } from "../data/stories/daniel";
 import { foundIn, resetProgress, setMutedPref, useProgress } from "../lib/store";
@@ -36,5 +36,21 @@ describe("Stage taps", () => {
   it("describes the picture for screen readers with the little text", () => {
     render(<Stage storyId="daniel" scene={scene} onSticker={() => {}} />);
     expect(screen.getByRole("img", { name: scene.text.little })).toBeTruthy();
+  });
+});
+
+describe("Stage bubble", () => {
+  it("hides the reward again after six seconds", () => {
+    vi.useFakeTimers();
+    const scene = daniel.scenes.find((s) => s.id === "den")!;
+    const spot = scene.hotspots![0];
+    render(<Stage storyId="daniel" scene={scene} onSticker={() => {}} />);
+    fireEvent.click(screen.getByRole("button", { name: `Find ${spot.label}` }));
+    expect(screen.getByText(spot.reward)).toBeTruthy();
+    act(() => {
+      vi.advanceTimersByTime(6100);
+    });
+    expect(screen.queryByText(spot.reward)).toBeNull();
+    vi.useRealTimers();
   });
 });

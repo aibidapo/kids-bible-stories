@@ -248,7 +248,13 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
   story, ongoing. Third-party: printing if physical, licence wording.
 - **Done when (pilot):** written findings from each group with the
   measurement chosen above.
-- **Status:** not started.
+- **Evidence:** `docs/evidence/2026-09-18-church-pilot-prep/record.md`
+- **Status:** pilot prep built 2026-09-18 on the owner's "proceed":
+  measurement option (a) implemented as the opt-in Group pilot log in
+  Settings (counts per day, copy-out only); leader documents in
+  `docs/pilot/` (README, one page for the room, feedback form). Licensing
+  (2a) still parked, so the pilot runs as free access with a
+  no-redistribution note. Not yet started with a group.
 
 ## Phase 6: Family profiles and parent PIN
 
@@ -348,3 +354,4 @@ Kept here so the reasoning survives.
   NIV notice added to Settings and beside each verse.
 - 2026-09-18: performance budgets: bundle gate in the hook, `npm run perf`
   interaction budgets, baseline recorded.
+- 2026-09-18: church pilot prep: Group pilot log (opt-in), leader documents.

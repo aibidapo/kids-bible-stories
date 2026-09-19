@@ -1,0 +1,6 @@
+      Tests  142 passed (142)
+Statements   : 98.98% ( 490/495 )
+Branches     : 93.02% ( 240/258 )
+Functions    : 98.59% ( 140/142 )
+Lines        : 100% ( 425/425 )
+exit=0

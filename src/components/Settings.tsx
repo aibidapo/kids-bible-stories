@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   setCalm,
   setMode,
@@ -9,6 +9,7 @@ import {
 } from "../lib/store";
 import { setMuted } from "../lib/sound";
 import { SCRIPTURE_NOTICE } from "../data/scripture";
+import { clear as clearPilot, exportText, isEnabled, setEnabled } from "../lib/pilotLog";
 
 /**
  * The grown-up panel. Deliberately plain and text-heavy so it reads as "not for
@@ -17,6 +18,35 @@ import { SCRIPTURE_NOTICE } from "../data/scripture";
  */
 export function Settings({ onClose }: { onClose: () => void }) {
   const p = useProgress();
+  const [pilot, setPilot] = useState(isEnabled);
+  const [copied, setCopied] = useState(false);
+
+  function togglePilot(on: boolean) {
+    setEnabled(on);
+    setPilot(on);
+  }
+
+  async function copyLog() {
+    const text = exportText();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      // No clipboard permission: fall back to a selectable box the grown-up can copy from.
+      const box = document.createElement("textarea");
+      box.value = text;
+      document.body.appendChild(box);
+      box.select();
+      document.execCommand?.("copy");
+      box.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
+  }
+
+  function clearLog() {
+    clearPilot();
+    setPilot(false);
+  }
 
   useEffect(() => {
     setMuted(p.muted);
@@ -111,6 +141,35 @@ export function Settings({ onClose }: { onClose: () => void }) {
             </label>
           </li>
         </ul>
+
+        <fieldset className="sheet__group sheet__pilot">
+          <legend>Group pilot</legend>
+          <label>
+            <input
+              type="checkbox"
+              checked={pilot}
+              onChange={(e) => togglePilot(e.target.checked)}
+            />
+            <span>
+              <strong>Keep a usage count on this device</strong>
+              <small>
+                For church and homeschool pilots. Counts pages opened, things found, quizzes
+                finished and Family time cards opened, per day. No names, no times, nothing leaves
+                this device unless you copy it.
+              </small>
+            </span>
+          </label>
+          {pilot && (
+            <div className="sheet__pilot-actions">
+              <button type="button" className="btn" onClick={copyLog}>
+                {copied ? "Copied" : "Copy log"}
+              </button>
+              <button type="button" className="btn" onClick={clearLog}>
+                Clear log
+              </button>
+            </div>
+          )}
+        </fieldset>
 
         <section className="sheet__notice" aria-label="Scripture">
           <h3>Scripture</h3>

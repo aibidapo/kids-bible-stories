@@ -4,6 +4,7 @@ import { NarrationText } from "./NarrationText";
 import { useNarration } from "../hooks/useNarration";
 import { foundIn, markCompleted, useProgress } from "../lib/store";
 import { play } from "../lib/sound";
+import { record as recordPilot } from "../lib/pilotLog";
 import type { Story } from "../types";
 
 interface Props {
@@ -42,6 +43,11 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
     // so this deliberately keys off the scene and the settings that matter.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story.id, index, progress.mode, progress.narrate, progress.muted]);
+
+  // Group pilot count (off unless a grown-up switched it on): once per page arrival.
+  useEffect(() => {
+    recordPilot("page", `${story.id}/${index}`);
+  }, [story.id, index]);
 
   useEffect(() => {
     if (!sticker) return;

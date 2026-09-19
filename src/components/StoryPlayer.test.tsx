@@ -1,6 +1,6 @@
 // @vitest-environment happy-dom
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, renderHook, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, renderHook, screen } from "@testing-library/react";
 import { StoryPlayer } from "./StoryPlayer";
 import { daniel } from "../data/stories/daniel";
 import {
@@ -95,5 +95,79 @@ describe("StoryPlayer", () => {
     render(<StoryPlayer story={daniel} index={den} onIndex={noop} onQuiz={noop} onHome={noop} />);
     fireEvent.click(screen.getByRole("button", { name: `Find ${spot.label}` }));
     expect(document.querySelector(".sticker-pop")!.textContent).toContain(spot.sticker);
+  });
+});
+
+describe("StoryPlayer, group pilot", () => {
+  it("counts a page arrival only while the pilot switch is on", async () => {
+    const log = await import("../lib/pilotLog");
+    log.clear();
+    render(<StoryPlayer story={daniel} index={2} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    expect(log.summary()).toEqual([]);
+    cleanup();
+    log.setEnabled(true);
+    render(<StoryPlayer story={daniel} index={2} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    expect(log.summary().map((c) => `${c.kind}:${c.key}:${c.count}`)).toEqual(["page:daniel/2:1"]);
+    log.clear();
+  });
+});
+
+function fakeSpeech() {
+  const spoken: { text: string; rate: number }[] = [];
+  const synth = {
+    getVoices: () => [],
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    cancel: vi.fn(),
+    speak: vi.fn((u: { text: string; rate: number }) => spoken.push(u)),
+  };
+  class Utterance {
+    text: string;
+    rate = 1;
+    pitch = 1;
+    onstart: unknown = null;
+    onend: unknown = null;
+    onerror: unknown = null;
+    onboundary: unknown = null;
+    constructor(text: string) {
+      this.text = text;
+    }
+  }
+  Object.assign(window, { speechSynthesis: synth, SpeechSynthesisUtterance: Utterance });
+  return { synth, spoken };
+}
+
+describe("StoryPlayer narration", () => {
+  afterEach(() => {
+    // Unmount while the fake engine still exists: the hook removes its listener on teardown.
+    cleanup();
+    delete (window as unknown as { speechSynthesis?: unknown }).speechSynthesis;
+    delete (window as unknown as { SpeechSynthesisUtterance?: unknown }).SpeechSynthesisUtterance;
+    vi.useRealTimers();
+  });
+
+  it("reads a new page aloud after a short pause while narration is on", () => {
+    vi.useFakeTimers();
+    const { spoken } = fakeSpeech();
+    setNarrate(true);
+    setMutedPref(false);
+    render(<StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    expect(spoken).toHaveLength(0);
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
+    expect(spoken).toHaveLength(1);
+    expect(spoken[0].text).toBe(daniel.scenes[0].text.little);
+    expect(spoken[0].rate).toBe(0.82);
+  });
+
+  it("reads the page on demand from the speaker button", () => {
+    const { spoken } = fakeSpeech();
+    render(<StoryPlayer story={daniel} index={1} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    const read = screen.getByRole("button", { name: "Read this page to me" }) as HTMLButtonElement;
+    expect(read.disabled).toBe(false);
+    fireEvent.click(read);
+    expect(spoken).toHaveLength(1);
+    expect(spoken[0].text).toBe(daniel.scenes[1].text.little);
   });
 });

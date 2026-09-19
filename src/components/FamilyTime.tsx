@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useNarration } from "../hooks/useNarration";
+import { record as recordPilot } from "../lib/pilotLog";
 import { FAMILY_HEADINGS, readAloudScript } from "../lib/devotional";
 import { SCRIPTURE_ABBREVIATION } from "../data/scripture";
 import { useProgress } from "../lib/store";
@@ -18,6 +20,10 @@ export function FamilyTime({ story, onDone }: Props) {
   const { mode } = useProgress();
   const narration = useNarration();
   const d = story.devotional;
+
+  useEffect(() => {
+    recordPilot("family", story.id);
+  }, [story.id]);
 
   function readAloud() {
     if (narration.speaking) narration.stop();

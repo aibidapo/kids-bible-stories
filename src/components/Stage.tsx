@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getSceneArt } from "../scenes";
 import { play } from "../lib/sound";
+import { record as recordPilot } from "../lib/pilotLog";
 import { foundIn, recordFound, useProgress } from "../lib/store";
 import type { Scene } from "../types";
 
@@ -38,6 +39,7 @@ export function Stage({ storyId, scene, onSticker }: StageProps) {
     if (!spot) return;
     play(spot.sound ?? "chime");
     const earned = recordFound(storyId, scene.id, spot.id, spot.sticker);
+    recordPilot("hotspot", `${storyId}/${scene.id}/${spot.id}`);
     setBubble({ id: spot.id, text: spot.reward });
     window.clearTimeout(timer.current);
     timer.current = window.setTimeout(() => setBubble(null), 6000);

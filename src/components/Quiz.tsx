@@ -3,6 +3,7 @@ import { shuffleChoices } from "../lib/quiz";
 import { SCRIPTURE_ABBREVIATION } from "../data/scripture";
 import { playCorrect, playTryAgain } from "../lib/sound";
 import { recordQuiz, useProgress } from "../lib/store";
+import { record as recordPilot } from "../lib/pilotLog";
 import type { Story } from "../types";
 
 interface Props {
@@ -45,6 +46,7 @@ export function Quiz({ story, onDone, onFamily }: Props) {
       if (next >= questions.length) {
         const score = firstTry + (wrong.length === 0 ? 1 : 0);
         recordQuiz(story.id, score);
+        recordPilot("quiz", story.id);
         setFinished(true);
       } else {
         setIndex(next);

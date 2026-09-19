@@ -12,7 +12,15 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Performance budgets.** `npm run check:bundle` in the hook (JS gzip
+Latest: **Church pilot prep (roadmap phase 5).** Opt-in Group pilot log
+(`src/lib/pilotLog.ts`, Settings section, four call sites; counts per day,
+copy-out only, off by default), leader documents in `docs/pilot/`. Owner
+confirmed the order 2a → 5 → 4 → 6 → 7; 2a licensing still parked, pilot runs
+as free access with a no-redistribution note. Evidence:
+`docs/evidence/2026-09-18-church-pilot-prep/record.md`. Next: the owner
+recruits two or three groups and installs on their tablets.
+
+Before that: **Performance budgets.** `npm run check:bundle` in the hook (JS gzip
 <= 100 KB, precache <= 12 MB; 76.8 KB and 5.97 MB today) and `npm run perf`
 on demand (4x CPU, Slow 4G: LCP 748 ms, warm tap 44 ms, page turn 164 ms,
 quiz tap 53 ms, frame median 16.7 ms, all within budget). Scaling with
@@ -141,7 +149,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 ## 3. Current State
 
-- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the performance-budgets commit.
+- **Git Branch:** `main`, pushed to origin through `f5a4bf0`; HEAD is the church-pilot-prep commit.
 - **Uncommitted changes:** none. `coverage/` is generated and gitignored.
 - **Environment / key config:** Node v24.13.0, npm 11.6.2, Vite 8.3.0,
   Vitest 5.0.1, ESLint 9.39.5, Prettier 3.9.8; Python 3.14 with google-genai,
@@ -156,7 +164,9 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 
 - [ ] **User reviews Family time** with the checklist in `docs/evidence/2026-09-18-family-devotional/content-review.md`; translation notice done (NIV).
 - [x] Phase 0 skipped by the owner (churches requested the product); kit kept for pilot sessions.
-- [ ] **Owner confirms the order** 2a → 5 → 4 → 6 → 7 and decides 2a (licensing incl. classroom display) so the church pilot can start.
+- [x] Order confirmed 2a → 5 → 4 → 6 → 7 ("proceed", 2026-09-18).
+- [ ] **Owner starts the pilot**: pick two or three groups, install on their tablets, switch on Group pilot, hand over `docs/pilot/`. Four weeks.
+- [ ] 2a licensing still parked; the pilot's no-redistribution note stands in for it.
 - [ ] Roadmap revised after a roast: **phase 0 discovery (interviews, no code) blocks phases 3+**; then 2a licensing (owner), 2b tablet crop, 2c CI and component coverage; phase 3 is the distribution decision. See `docs/roadmap.md`.
 - [ ] **User reviews the throne room** on `#/story/daniel/1` (throne, courtiers, background).
 - [ ] Pipeline: `pack.py --bg-only` so a background can be redone without a cutout run.
