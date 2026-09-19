@@ -253,3 +253,23 @@ through, some flying towards Jesus and the disciples."
   size at its arrival point.
 
 Render `storm-calm.png` and the stills replaced. Calls: 1.
+
+## Review round 7 (owner, 2026-09-19): page 5 again
+
+"Background more realistic and detailed; some birds flying towards Jesus
+and the disciples from behind."
+
+- Background regenerated with a painterly-realism brief: mirror
+  reflections, fine ripples, mist, terraced hills with olive groves and
+  cypress, a limestone village with a jetty and a smoke column, rays
+  through the mist, no foreground objects (`calm-bg-v3.json`, 64 KB).
+  Scene 306 KB.
+- New path `swoop-far` in `motion.css`: the bird starts as a speck over
+  the far hills behind the boat (scale 0.1, above and slightly right of
+  its rest point), flies out toward the men growing to full size, passes
+  on and fades, then repeats. The red bird and the goldfinch ride it, drawn
+  behind the boat group so they arrive from behind the figures; a
+  bluebird still arrives from the right on `swoop-r`; another bluebird and
+  the gull cross on `fly`. Rest points sit beside the heads, not on them.
+
+Render `storm-calm.png` and the stills replaced. Calls: 1.

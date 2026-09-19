@@ -613,9 +613,10 @@ export function WhoIsThis({ found }: SceneArtProps) {
       <Backdrop src={calmBg} />
       <Gull x={220} y={150} s={0.2} delay={-9} flip />
       <SongBird kind="blue" x={560} y={88} s={0.2} motion="a-fly" delay={-15} />
-      {/* two birds come in from far off toward the boat, one from each side */}
-      <SongBird kind="red" x={245} y={188} s={0.24} motion="a-swoop-l" delay={-3} />
-      <SongBird kind="gold" x={730} y={195} s={0.22} motion="a-swoop-r" delay={-10} flip />
+      {/* birds arrive toward the men: two from specks over the far hills behind the boat, one from the right */}
+      <SongBird kind="red" x={250} y={198} s={0.24} motion="a-swoop-far" delay={-3} />
+      <SongBird kind="gold" x={585} y={200} s={0.22} motion="a-swoop-far" delay={-11} flip />
+      <SongBird kind="blue" x={760} y={190} s={0.2} motion="a-swoop-r" delay={-7} flip />
       <Ripple x={160} y={580} scale={0.56} delay={0} />
       <Ripple x={860} y={592} scale={0.42} delay={0} flip />
       <g className="a-heave-slow">

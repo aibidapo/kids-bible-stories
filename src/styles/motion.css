@@ -428,6 +428,31 @@ svg [class*=" a-"] {
     transform: translate(360px, -150px) scale(0.3);
   }
 }
+@keyframes swoop-far {
+  0% {
+    opacity: 0;
+    transform: translate(40px, -150px) scale(0.1);
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  84% {
+    opacity: 0;
+    transform: translate(-30px, 26px) scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(40px, -150px) scale(0.1);
+  }
+}
+/* A bird that starts as a speck over the far hills behind the figures and flies out toward them, growing as it comes. */
+.a-swoop-far {
+  animation: swoop-far 16s ease-in infinite;
+}
 /* A bird arriving from far off toward the figures, growing as it comes, then passing behind them. Rests at full size in Calm mode. */
 .a-swoop-l {
   animation: swoop-l 15s ease-in-out infinite;
