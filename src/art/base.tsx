@@ -302,12 +302,22 @@ export function Rain({
   );
 }
 
-export function Lightning({ delay = 0, x = 0 }: { delay?: number; x?: number }) {
+export function Lightning({
+  delay = 0,
+  x = 0,
+  y = 0,
+  s = 1,
+}: {
+  delay?: number;
+  x?: number;
+  y?: number;
+  s?: number;
+}) {
   return (
     <g className="a-flash" style={{ animationDelay: `${delay}s` }}>
       <rect x="0" y="0" width={VB.w} height={VB.h} fill="#ffffff" opacity="0.5" />
-      {/* The bolt is drawn around x=535; `x` slides it sideways while the flash still covers the whole sky. */}
-      <g transform={`translate(${x} 0)`}>
+      {/* The bolt is drawn at x 470-600, y 40-380; `x`, `y` and `s` move and size it while the flash still covers the whole sky. */}
+      <g transform={`translate(${x} ${y}) scale(${s})`}>
         <path
           d="M520,40 L470,210 L540,200 L470,380 L600,180 L525,190 L575,40 Z"
           fill="#fff8c4"

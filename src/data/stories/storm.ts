@@ -38,7 +38,7 @@ export const storm: Story = {
         },
         {
           id: "boat",
-          x: 68,
+          x: 72,
           y: 84,
           size: 24,
           label: "the boat",
@@ -72,8 +72,8 @@ export const storm: Story = {
       hotspots: [
         {
           id: "cushion",
-          x: 66,
-          y: 46,
+          x: 67,
+          y: 50,
           size: 22,
           label: "Jesus asleep",
           reward: "He was so tired he slept through the wind.",
@@ -116,7 +116,7 @@ export const storm: Story = {
         {
           id: "lightning",
           x: 24,
-          y: 26,
+          y: 20,
           size: 18,
           label: "the lightning",
           reward: "Crash! The whole sky lit up.",

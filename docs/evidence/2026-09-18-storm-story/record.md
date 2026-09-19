@@ -97,3 +97,26 @@ rail.
 - Real-device check open, as for every story.
 - `scripts/shoot.mjs` page map now includes `christmas` and `storm`; it is
   hand-maintained (parity debt noted in the roadmap review findings).
+
+## Roast round (owner: "roast all the scenes and fix all identified issues")
+
+Findings and fixes, renders and stills in this folder replaced:
+
+- **Page 2, Jesus half outside the hull (severity 4).** The sleeping figure
+  extended past the stern into open water. Flipped so the body lies into
+  the boat with the head at the stern, raised so the cushion shows above
+  the rail (x 618, y 448, scale 0.42); John moved left so his face is not
+  under the mantle. Cushion hotspot 67 %, 50 %.
+- **Page 1, toy boat (3).** Boat 0.5 → 0.72 at x 710; Jesus moved left so
+  his inviting hand clears John's nets; crew respaced. Boat hotspot 72 %.
+- **Page 3, oversized vector bolt (3).** `Lightning` gained `y` and `s`;
+  the bolt is now 0.55 scale, top left of the mast (x -120, y 30). The
+  flash still covers the sky. Jonah unchanged at the defaults. Lightning
+  hotspot 24 %, 20 %.
+- **Page 5, bench legs above the rail (2).** Seated Jesus lowered 22 units.
+- **All boat pages, mirrored identical side waves (2).** Left and right
+  waves now differ in scale (0.6/0.42, 0.72/0.52) and height.
+
+Checks after the round: 155 tests, `tsc -b` clean, 38 scenes motion-clean,
+five renders re-read, 15 browser stills reshot (phone, tablet, first
+hotspot). Budgets unchanged (no asset changed).

@@ -268,34 +268,34 @@ export function SettingOut({ found }: SceneArtProps) {
       <Backdrop src={eveningBg} />
       <Gull x={640} y={150} s={0.22} delay={-4} />
       <Gull x={760} y={110} s={0.16} delay={-13} />
-      <SoftShadow x={680} y={598} rx={200} ry={16} opacity={0.35} />
+      <SoftShadow x={710} y={612} rx={250} ry={18} opacity={0.35} />
       <Layer
         src={eveningBoat}
         w={L["boat-shore"].w}
         h={L["boat-shore"].h}
-        x={680}
-        y={598}
-        scale={0.5}
+        x={710}
+        y={612}
+        scale={0.72}
         className="a-rock"
       />
-      <SoftShadow x={300} y={604} rx={80} ry={13} opacity={0.4} />
+      <SoftShadow x={260} y={604} rx={80} ry={13} opacity={0.4} />
       <Layer
         src={eveningJesus}
         w={L["jesus-invite"].w}
         h={L["jesus-invite"].h}
-        x={300}
+        x={260}
         y={604}
         scale={0.42}
         className="a-breathe"
       >
         <Lids name="jesus-invite" w={L["jesus-invite"].w} h={L["jesus-invite"].h} delay={0.3} />
       </Layer>
-      <SoftShadow x={440} y={608} rx={80} ry={13} opacity={0.4} />
+      <SoftShadow x={470} y={608} rx={80} ry={13} opacity={0.4} />
       <Layer
         src={eveningJohn}
         w={L["john-nets"].w}
         h={L["john-nets"].h}
-        x={440}
+        x={470}
         y={608}
         scale={0.4}
         className="a-breathe"
@@ -303,12 +303,12 @@ export function SettingOut({ found }: SceneArtProps) {
       >
         <Lids name="john-nets" w={L["john-nets"].w} h={L["john-nets"].h} delay={2.6} />
       </Layer>
-      <SoftShadow x={560} y={612} rx={90} ry={13} opacity={0.4} />
+      <SoftShadow x={590} y={612} rx={90} ry={13} opacity={0.4} />
       <Layer
         src={eveningPeter}
         w={L["peter-push"].w}
         h={L["peter-push"].h}
-        x={560}
+        x={590}
         y={612}
         scale={0.4}
         className="a-breathe-slow"
@@ -328,8 +328,8 @@ export function AsleepInTheStern({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={asleepBg} />
-      <Wave x={160} y={560} scale={0.55} cls="a-heave-slow" delay={0} />
-      <Wave x={860} y={570} scale={0.5} cls="a-heave-slow" delay={2.4} flip />
+      <Wave x={150} y={560} scale={0.6} cls="a-heave-slow" delay={0} />
+      <Wave x={880} y={585} scale={0.42} cls="a-heave-slow" delay={2.4} flip />
       <g className="a-heave">
         <g className="a-rock">
           <Layer
@@ -355,7 +355,7 @@ export function AsleepInTheStern({ found }: SceneArtProps) {
             src={asleepJohn}
             w={L["john-bail"].w}
             h={L["john-bail"].h}
-            x={520}
+            x={492}
             y={488}
             scale={0.44}
             className="a-breathe"
@@ -367,9 +367,10 @@ export function AsleepInTheStern({ found }: SceneArtProps) {
             src={asleepJesus}
             w={L["jesus-asleep"].w}
             h={L["jesus-asleep"].h}
-            x={630}
-            y={450}
+            x={618}
+            y={448}
             scale={0.42}
+            flip
             className="a-breathe-slow"
             delay={1.4}
           />
@@ -396,9 +397,9 @@ export function TheWildNight({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={afraidBg} />
-      <Lightning delay={0.8} x={-290} />
-      <Wave x={140} y={540} scale={0.7} cls="a-heave" delay={0.3} />
-      <Wave x={880} y={550} scale={0.65} cls="a-heave" delay={1.8} flip />
+      <Lightning delay={0.8} x={-120} y={30} s={0.55} />
+      <Wave x={130} y={540} scale={0.72} cls="a-heave" delay={0.3} />
+      <Wave x={890} y={565} scale={0.52} cls="a-heave" delay={1.8} flip />
       <g className="a-heave">
         <g className="a-rock">
           <g className="a-shake">
@@ -476,8 +477,8 @@ export function QuietBeStill({ found }: SceneArtProps) {
       <g opacity="0.5">
         <LightShaft x={500} top={0} topWidth={140} bottomSpread={420} floorY={560} />
       </g>
-      <Ripple x={150} y={575} scale={0.55} delay={0} />
-      <Ripple x={860} y={580} scale={0.5} delay={2} flip />
+      <Ripple x={140} y={575} scale={0.6} delay={0} />
+      <Ripple x={880} y={590} scale={0.42} delay={2} flip />
       <g className="a-heave-slow">
         <Layer
           src={peaceBoatBack}
@@ -551,8 +552,8 @@ export function WhoIsThis({ found }: SceneArtProps) {
     <>
       <Backdrop src={calmBg} />
       <Gull x={220} y={150} s={0.2} delay={-9} flip />
-      <Ripple x={170} y={580} scale={0.5} delay={0.5} />
-      <Ripple x={840} y={585} scale={0.5} delay={2.5} flip />
+      <Ripple x={160} y={580} scale={0.56} delay={0.5} />
+      <Ripple x={860} y={592} scale={0.42} delay={2.5} flip />
       <g className="a-heave-slow">
         <Layer
           src={calmBoatBack}
@@ -583,7 +584,7 @@ export function WhoIsThis({ found }: SceneArtProps) {
           w={L["jesus-seated"].w}
           h={L["jesus-seated"].h}
           x={650}
-          y={480}
+          y={502}
           scale={0.46}
           className="a-breathe-slow"
           delay={1}
