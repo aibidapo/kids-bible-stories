@@ -14,6 +14,19 @@ describe("story library", () => {
     expect(getStory("not-a-story")).toBeUndefined();
   });
 
+  it("uses plain punctuation: no em-dashes anywhere in story prose", () => {
+    const seen: string[] = [];
+    const walk = (v: unknown, path: string) => {
+      if (typeof v === "string") {
+        if (v.includes("—")) seen.push(path);
+      } else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${path}[${i}]`));
+      else if (v && typeof v === "object")
+        for (const [k, x] of Object.entries(v)) walk(x, `${path}.${k}`);
+    };
+    for (const story of STORIES) walk(story, story.id);
+    expect(seen).toEqual([]);
+  });
+
   for (const story of STORIES) {
     describe(story.id, () => {
       it("registers its cover and every scene's art", () => {
