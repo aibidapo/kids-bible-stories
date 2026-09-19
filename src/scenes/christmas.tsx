@@ -166,8 +166,8 @@ export function AngelVisitsMary({ found }: SceneArtProps) {
         x={650}
         y={585}
         scale={0.52}
-        wingScale={0.4}
-        wingY={440}
+        wingScale={0.5}
+        wingY={468}
         eyes={{
           points: [
             [236, 126],
@@ -197,8 +197,8 @@ export function AngelVisitsMary({ found }: SceneArtProps) {
           ay: L["dove-down"].h * 0.45,
           s: 0.23,
         }}
-        x={640}
-        y={190}
+        x={900}
+        y={95}
         flip
         motion="a-fly"
         delay={-14}

@@ -151,3 +151,9 @@ the credit outage, then done). Motion check 33 clean; 148 tests.
   "slightly flapping forward and backwards" after a pure up-and-down try). Daniel's
   angel keeps the forward-and-back beat. `shepherds-midbeat-phone.png`
   (wings scrubbed to mid-beat).
+- **Page 1 wings "still need tuning":** they sat small and low (tips at
+  shoulder height; the original design rose past the head) and the dove's
+  flight path crossed Gabriel's face. Wings 0.4 → 0.5 with the joint at
+  the shoulders (tips now level with the top of the head, span 266 px on a
+  477 px phone frame); the dove's path moved up to y 95 from the door
+  side. `gabriel-midbeat-phone.png`.
