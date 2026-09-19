@@ -12,7 +12,18 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Jesus Calms the Storm (roadmap phase 4, story 2)**: five pages
+Latest: **Storm story owner review, eight rounds (2026-09-19).** Every
+page reworked on the owner's notes: page 1 gulls forward (a `Flipbook`
+bug: the mirror sat on the positioning group and reversed the flight
+path; fixed for the whole book), whole boat, realistic village, Peter
+without a boat fragment; page 2 whole hull and whole sleeping Jesus,
+open-water storm; page 3 one whole boat rotated, Jesus inside, no debris;
+page 4 water-only background with falling rain; page 5 realistic dawn,
+head-on bird frames arriving toward the viewer on `swoop-far`, side birds
+on `swoop-r`. Waves share each boat's heave phase. Evidence rounds 2–8 in
+`docs/evidence/2026-09-18-storm-story/record.md`. Precache 9.79 MB.
+
+Before that: **Jesus Calms the Storm (roadmap phase 4, story 2)**: five pages
 (`storm/evening..calm`), three new sheets (Jesus face-on per
 `docs/decisions/2026-09-18-jesus-depiction.md`, Peter, John), two-part
 boats with the crew inside on `a-heave`/`a-rock`, lightning with a new
@@ -191,7 +202,7 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [x] Order confirmed 2a → 5 → 4 → 6 → 7 ("proceed", 2026-09-18).
 - [ ] **Owner reviews The First Christmas** (`docs/evidence/2026-09-18-christmas-story/christmas-*.png`, then `#/story/christmas/0`).
 - [x] Jesus drawn face-on ("1 default", 2026-09-18).
-- [ ] **Owner reviews Jesus Calms the Storm** (`docs/evidence/2026-09-18-storm-story/storm-*.png`, then `#/story/storm/0`).
+- [x] Owner reviewed Jesus Calms the Storm, eight rounds applied (2026-09-19); further notes welcome.
 - [ ] **Rerun `npm run perf` on an idle host** (both storm-session runs had the CPU at 100 % from other apps); record in the storm evidence.
 - [ ] **Download-a-story before story 3** (precache 9.92 MB of 12): library card states, explicit download, quota check, offline message, iOS eviction test on real phones.
 - [ ] Story 3 Good Samaritan, 4 Easter, 5 Pentecost, each to the richness standard in `CLAUDE.md`.
