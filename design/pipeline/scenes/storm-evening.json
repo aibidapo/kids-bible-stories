@@ -4,7 +4,7 @@
   "background": {
     "aspect": "16:9",
     "size": "2K",
-    "prompt": "The stony shore of the Sea of Galilee at sunset, seen straight on, richly detailed and realistic in a soft shaded storybook style: a pebble beach of wet rounded stones with reflections in the foreground, small waves lapping and leaving foam lines, a short stone jetty at the left, fishing nets drying on weathered wooden posts with coarse rope, a clay jar, a basket of fresh fish, a coil of rope and an oar, tufts of dry grass between the stones. On the lake: four or five wooden Galilee fishing boats at different distances, some moored near the shore with furled cream sails and lanterns, some sailing far off with full sails catching the last light, each with its reflection in the water, no people in them. Across the lake low hills with a small village of flat-roofed stone houses and a few lit windows, the water gold and rose with rippled reflections, a sky of orange, rose and violet with layered streaks of cloud, a few birds far off. Named materials with visible texture: weathered wood grain, rough stone, coarse sail cloth, wet rope, woven basket. Foreground, midground and background layers, soft cast shadows and atmospheric light. Keep the centre and right foreground clear of boats and objects for figures. Completely EMPTY of people and animals."
+    "prompt": "The stony shore of the Sea of Galilee at sunset, seen straight on, richly detailed and realistic in a soft shaded storybook style: a pebble beach of wet rounded stones with reflections in the foreground, small waves lapping and leaving foam lines, a short stone jetty at the left, fishing nets drying on weathered wooden posts with coarse rope, a clay jar, a basket of fresh fish, a coil of rope and an oar, tufts of dry grass between the stones. On the hillside across the bay at the left, a realistic first-century Galilean fishing village: rough limestone houses with correct proportions and perspective, flat roofs with low parapets and outside stairs, lime-washed walls with sun-warmed shadows, small deep-set windows with warm lamplight, wooden doors, terraces stepping up the slope with olive trees, fig trees and stone walls between them, smoke from one chimney, all softly lit by the sunset. On the lake: four or five wooden Galilee fishing boats at different distances, some moored near the shore with furled cream sails and lanterns, some sailing far off with full sails catching the last light, each with its reflection in the water, no people in them. Low hills beyond, the water gold and rose with rippled reflections, a sky of orange, rose and violet with layered streaks of cloud, a few birds far off. Named materials with visible texture: weathered wood grain, rough limestone, coarse sail cloth, wet rope, woven basket. Foreground, midground and background layers, soft cast shadows and atmospheric light. Painterly realism, no cartoon outlines. Keep the centre and right foreground clear of boats and objects for figures. Completely EMPTY of people and animals."
   },
   "cutouts": {
     "jesus-invite": {
@@ -14,10 +14,10 @@
       "sheet": "jesus"
     },
     "peter-push": {
+      "sheet": "peter",
       "aspect": "3:4",
       "max_h": 800,
-      "prompt": "Peter from the second reference image, leaning forward pushing a boat with both hands, three-quarter view facing right, determined friendly face, richly detailed, textured fabric with woven stripes, embroidered hems and visible stitching, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
-      "sheet": "peter"
+      "prompt": "Peter from the second reference image, leaning forward with both arms stretched out in front of him and both palms open and pressed forward as if pushing something heavy that is NOT in the picture, three-quarter view facing right, determined friendly face, full figure from head to sandals, richly detailed textured fabric with woven stripes, embroidered hems and visible stitching. NO boat, NO wood, NO plank, NO object of any kind in his hands or in front of him, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects."
     },
     "john-nets": {
       "aspect": "3:4",

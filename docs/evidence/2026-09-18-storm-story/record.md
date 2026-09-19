@@ -160,3 +160,35 @@ of sync, cloud and rocks unrealistic".
 Renders `storm-evening.png`, `storm-asleep.png` and the stills replaced;
 cutout sheets `*-cutouts-on-green-v2.png`. Calls this round: 5 (one boat
 attempt discarded). 155 tests, 38 scenes motion-clean.
+
+## Review round 3 (owner, 2026-09-19): page 1 again
+
+"Gulls still flying backwards; a disciple holds a broken piece of boat over
+the main boat; houses more realistic; boat bigger relative to the men."
+
+- **Gulls: component bug.** `Flipbook` applied `flip` on the outer
+  positioning group, so the mirror also reversed the motion path: a
+  flipped bird faced right and travelled left. The mirror now sits inside
+  the motion group (`src/art/raster.tsx`), so every path keeps its own
+  direction and `flip` only turns the bird. Every flight path in
+  `motion.css` moves rightwards; checked each flipbook bird's facing after
+  the fix: Christmas doves face right (no flip), creation red bird, blue
+  bird and dove face right, the goldfinch cutout faces right (creation
+  people page, fly path, no flip), David's bluebird faces right. The
+  flipped goldfinches on creation creatures and David's hill are on the
+  short `flutter` hover, where facing does not read as travel. Storm gulls
+  face left in their cutouts and are flipped, so they now fly beak first.
+- **Broken boat piece:** the first `peter-push` came with a fragment of
+  bow in his hands. Regenerated with "both palms pressed forward, NO boat,
+  NO object" (`evening-peter-push-v3.json`, 576×800, 55 KB); his palms
+  now rest on the real boat's rail.
+- **Houses:** background regenerated with a realistic first-century
+  village brief (limestone walls, flat roofs with parapets and outside
+  stairs, terraces, olive and fig trees, lamplight, painterly realism)
+  (`evening-bg-v3.json`, 166 KB). Scene 449 KB.
+- **Boat size:** scale 0.68 → 0.9, hull rail at the men's chest height,
+  stern runs off the right edge on purpose. Gull rest positions moved to
+  the clear sky above the yard; gull hotspot 38 %, 15 %.
+
+Render `storm-evening.png` and the two stills replaced. Calls this round:
+2. 155 tests, `tsc -b` clean, 38 scenes motion-clean.

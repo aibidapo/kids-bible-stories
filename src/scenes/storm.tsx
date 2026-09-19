@@ -268,16 +268,16 @@ export function SettingOut({ found }: SceneArtProps) {
   return (
     <>
       <Backdrop src={eveningBg} />
-      <Gull x={640} y={150} s={0.22} delay={-4} flip />
-      <Gull x={760} y={110} s={0.16} delay={-13} flip />
-      <SoftShadow x={700} y={615} rx={280} ry={18} opacity={0.35} />
+      <Gull x={380} y={92} s={0.22} delay={-4} flip />
+      <Gull x={520} y={58} s={0.16} delay={-13} flip />
+      <SoftShadow x={690} y={612} rx={340} ry={20} opacity={0.35} />
       <Layer
         src={eveningBoat}
         w={L["boat-shore"].w}
         h={L["boat-shore"].h}
-        x={700}
-        y={615}
-        scale={0.68}
+        x={690}
+        y={612}
+        scale={0.9}
         className="a-rock"
       />
       <SoftShadow x={300} y={604} rx={80} ry={13} opacity={0.4} />

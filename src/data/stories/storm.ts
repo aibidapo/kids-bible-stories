@@ -48,8 +48,8 @@ export const storm: Story = {
         },
         {
           id: "gull",
-          x: 64,
-          y: 24,
+          x: 38,
+          y: 15,
           size: 14,
           label: "the seagull",
           reward: "Gulls follow the fishing boats hoping for scraps.",

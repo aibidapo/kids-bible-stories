@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 153966,
+    "bytes": 170090,
     "source": "design/pipeline/raw/storm/evening/bg.png"
   },
   "cutouts": {
@@ -22,16 +22,16 @@
     },
     "peter-push": {
       "file": "peter-push.webp",
-      "w": 681,
+      "w": 576,
       "h": 800,
       "trim": [
-        51,
-        114,
-        896,
-        1106
+        75,
+        90,
+        828,
+        1136
       ],
       "source": "design/pipeline/raw/storm/evening/peter-push.png",
-      "bytes": 67268
+      "bytes": 55320
     },
     "john-nets": {
       "file": "john-nets.webp",

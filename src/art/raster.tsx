@@ -121,7 +121,10 @@ export interface Frame {
  * Two-frame flipbook (wings up / wings down) aligned on a shared anchor such
  * as the eye, so the swap reads as a flap, not a jump. Frame A rests visible
  * so Calm mode shows one clean pose. The outer group positions; `motion` is
- * the class on the group the frames sit in (a glide or drift path).
+ * the class on the group the frames sit in (a glide or drift path); `flip`
+ * mirrors the frames inside that group, so a mirrored bird still travels
+ * the path's own direction (every path in motion.css moves rightwards, so
+ * flip a cutout drawn facing left).
  */
 export function Flipbook({
   a,
@@ -143,28 +146,30 @@ export function Flipbook({
   const sx = flip ? -1 : 1;
   const style = { animationDelay: `${delay}s` };
   return (
-    <g transform={`translate(${x} ${y}) scale(${sx} 1)`}>
+    <g transform={`translate(${x} ${y})`}>
       <g className={motion} style={style}>
-        <image
-          href={a.src}
-          x={-a.ax * a.s}
-          y={-a.ay * a.s}
-          width={a.w * a.s}
-          height={a.h * a.s}
-          opacity="1"
-          className="a-frame-a"
-          style={style}
-        />
-        <image
-          href={b.src}
-          x={-b.ax * b.s}
-          y={-b.ay * b.s}
-          width={b.w * b.s}
-          height={b.h * b.s}
-          opacity="0"
-          className="a-frame-b"
-          style={style}
-        />
+        <g transform={`scale(${sx} 1)`}>
+          <image
+            href={a.src}
+            x={-a.ax * a.s}
+            y={-a.ay * a.s}
+            width={a.w * a.s}
+            height={a.h * a.s}
+            opacity="1"
+            className="a-frame-a"
+            style={style}
+          />
+          <image
+            href={b.src}
+            x={-b.ax * b.s}
+            y={-b.ay * b.s}
+            width={b.w * b.s}
+            height={b.h * b.s}
+            opacity="0"
+            className="a-frame-b"
+            style={style}
+          />
+        </g>
       </g>
     </g>
   );

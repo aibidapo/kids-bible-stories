@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3-pro-image-preview",
+  "prompt": "Peter from the second reference image, leaning forward with both arms stretched out in front of him and both palms open and pressed forward as if pushing something heavy that is NOT in the picture, three-quarter view facing right, determined friendly face, full figure from head to sandals, richly detailed textured fabric with woven stripes, embroidered hems and visible stitching. NO boat, NO wood, NO plank, NO object of any kind in his hands or in front of him, on a flat solid bright green background (#00ff00), no floor, no cast shadow, no other objects.",
+  "style_line": "Match the illustration style of the first reference image exactly: soft shaded rounded forms, layered paper-cutout depth, warm rim light, subtle paper grain, big friendly eyes, no black outlines. Children's storybook.",
+  "references": [
+    "design/concept-art/style-samples/6-blend-soft-shaded-cutout.jpg",
+    "design/characters/peter.png"
+  ],
+  "aspect": "3:4",
+  "size": "1K",
+  "generated": "2026-09-19T12:18:29+00:00"
+}
