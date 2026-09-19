@@ -128,7 +128,7 @@ export function Quiz({ story, onDone, onFamily }: Props) {
           </li>
         ))}
       </ul>
-      {wrong.length > 0 && <p className="quiz__nudge">Not that one — have another go!</p>}
+      {wrong.length > 0 && <p className="quiz__nudge">Not that one. Have another go!</p>}
     </div>
   );
 }

@@ -7,7 +7,7 @@ export const noah: Story = {
   reference: "Genesis 6 – 9",
   lesson: {
     little: "God keeps his promises.",
-    big: "Noah did a strange, slow, unpopular thing because God asked him to — and God kept every promise he made in return.",
+    big: "Noah did a strange, slow, unpopular thing because God asked him to, and God kept every promise he made in return.",
   },
   palette: { from: "#1f6a9e", to: "#6fc2b0", ink: "#fff8ec" },
   cover: "noah/rainbow",
@@ -17,7 +17,7 @@ export const noah: Story = {
       art: "noah/builds",
       text: {
         little: "God told Noah to build a great big boat. Noah got his hammer and began.",
-        big: "The world had grown cruel, and it grieved God to see it. But there was one man who still walked with him. God told Noah to build an enormous boat — an ark — and gave him the measurements. So Noah began, though there was no sea in sight.",
+        big: "The world had grown cruel, and it grieved God to see it. But there was one man who still walked with him. God told Noah to build an enormous boat, an ark, and gave him the measurements. So Noah began, though there was no sea in sight.",
       },
       verse: "Genesis 6:14",
       hotspots: [
@@ -48,8 +48,8 @@ export const noah: Story = {
       art: "noah/two-by-two",
       text: {
         little:
-          "The animals came two by two. Big ones, small ones, tall ones, small ones — all the way in!",
-        big: "Then the animals came. Two of every kind walked, crawled, slithered and flew up the ramp — lions beside lambs, elephants beside doves — and Noah’s family went in with them. When everyone was aboard, God shut the door.",
+          "The animals came two by two. Big ones and small ones, tall ones and short ones, all the way in!",
+        big: "Then the animals came. Two of every kind walked, crawled, slithered and flew up the ramp, lions beside lambs and elephants beside doves, and Noah’s family went in with them. When everyone was aboard, God shut the door.",
       },
       verse: "Genesis 7:9",
       find: { prompt: "Can you find the two doves?", targets: ["doves"] },
@@ -70,7 +70,7 @@ export const noah: Story = {
           y: 84,
           size: 22,
           label: "the elephants",
-          reward: "Two of every kind — which means two of the very largest kind, too.",
+          reward: "Two of every kind, which means two of the very largest kind too.",
           sound: "chime",
         },
       ],
@@ -81,7 +81,7 @@ export const noah: Story = {
       text: {
         little:
           "Then it rained and rained and rained. The water lifted the boat up high. Inside, everyone was safe.",
-        big: "The rain fell for forty days and forty nights, and the deep waters rose until even the mountains disappeared. The ark did not sink. It floated — lifted higher by the very thing that covered everything else.",
+        big: "The rain fell for forty days and forty nights, and the deep waters rose until even the mountains disappeared. The ark did not sink. It floated, lifted higher by the same water that covered everything else.",
       },
       verse: "Genesis 7:17",
       hotspots: [
@@ -110,7 +110,7 @@ export const noah: Story = {
       art: "noah/dove",
       text: {
         little: "Noah sent a little dove to look. She came back with a green leaf. Land!",
-        big: "When the rain stopped, Noah opened a window and sent out a dove. The first time she found nowhere to land and came home. Seven days later he sent her again — and she returned with a fresh olive leaf in her beak. Somewhere out there, trees were growing again.",
+        big: "When the rain stopped, Noah opened a window and sent out a dove. The first time she found nowhere to land and came home. Seven days later he sent her again, and she returned with a fresh olive leaf in her beak. Somewhere out there, trees were growing again.",
       },
       verse: "Genesis 8:11",
       find: { prompt: "What is the dove carrying?", targets: ["leaf"] },
@@ -142,11 +142,11 @@ export const noah: Story = {
       text: {
         little:
           "Everyone came out onto the dry ground. God put a rainbow in the sky. It was a promise.",
-        big: "Out they all came onto the dry, clean earth. And God made a promise: never again would he flood the whole world. He set a rainbow in the clouds as the sign of it — so that every time the rain clears, the sky itself remembers.",
+        big: "Out they all came onto the dry, clean earth. And God made a promise: never again would he flood the whole world. He set a rainbow in the clouds as the sign of it, so that every time the rain clears we can remember the promise.",
       },
       verse: "Genesis 9:13",
       find: {
-        prompt: "Tap the rainbow — God’s promise.",
+        prompt: "Tap the rainbow, God’s promise.",
         targets: ["rainbow"],
       },
       hotspots: [

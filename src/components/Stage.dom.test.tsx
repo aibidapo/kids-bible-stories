@@ -26,10 +26,10 @@ describe("Stage taps", () => {
     expect(onSticker).toHaveBeenCalledWith(withSticker.sticker);
     const p = renderHook(() => useProgress()).result.current;
     expect(foundIn(p, "daniel", scene.id)).toContain(withSticker.id);
-    expect(screen.getByRole("button", { name: `${withSticker.label} — found` })).toBeTruthy();
+    expect(screen.getByRole("button", { name: `${withSticker.label}, found` })).toBeTruthy();
 
     // A second tap on the same spot still shows the reward but earns nothing new.
-    fireEvent.click(screen.getByRole("button", { name: `${withSticker.label} — found` }));
+    fireEvent.click(screen.getByRole("button", { name: `${withSticker.label}, found` }));
     expect(onSticker).toHaveBeenCalledTimes(1);
   });
 

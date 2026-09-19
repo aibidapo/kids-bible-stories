@@ -108,8 +108,8 @@ export function Library({ onOpen, onStickers, onSettings }: Props) {
 
       <p className="library__footnote">
         {progress.mode === "little"
-          ? "Little mode — short words, read aloud."
-          : "Big mode — longer story, verses and harder questions."}{" "}
+          ? "Little mode: short words, read aloud."
+          : "Big mode: longer story, verses and harder questions."}{" "}
         <button type="button" className="linkish" onClick={onSettings}>
           Change
         </button>

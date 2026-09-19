@@ -178,7 +178,7 @@ export function Settings({ onClose }: { onClose: () => void }) {
 
         <div className="sheet__danger">
           <p>
-            Progress is saved on this device only — there is no account and no tracking. Clearing it
+            Progress is saved on this device only. There is no account and no tracking. Clearing it
             cannot be undone.
           </p>
           <button

@@ -75,7 +75,7 @@ export function Stage({ storyId, scene, onSticker }: StageProps) {
                   width: `${h.size ?? 18}%`,
                 }}
                 onClick={() => tap(h.id)}
-                aria-label={isFound ? `${h.label} — found` : `Find ${h.label}`}
+                aria-label={isFound ? `${h.label}, found` : `Find ${h.label}`}
               >
                 <span className="hotspot__ring" aria-hidden="true" />
                 <span className="hotspot__tick" aria-hidden="true">

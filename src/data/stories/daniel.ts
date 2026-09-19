@@ -7,7 +7,7 @@ export const daniel: Story = {
   reference: "Daniel 6",
   lesson: {
     little: "God looks after us, even in scary places.",
-    big: "Daniel could have prayed quietly with the shutters closed and nobody would have known. He kept the window open — and God met him in the den.",
+    big: "Daniel could have prayed quietly with the shutters closed and nobody would have known. He kept the window open, and God met him in the den.",
   },
   palette: { from: "#4a2b7a", to: "#e0b35e", ink: "#fff8ec" },
   cover: "daniel/angel",
@@ -17,7 +17,7 @@ export const daniel: Story = {
       art: "daniel/prays",
       text: {
         little: "Daniel loved God. Three times every day he opened his window and prayed.",
-        big: "Daniel worked for the king of Persia, and he was so good at his job that the king planned to put him in charge of the whole kingdom. Three times a day, every day, Daniel knelt at his upstairs window — the one that faced Jerusalem — and prayed. Everyone knew it.",
+        big: "Daniel worked for the king of Persia, and he was so good at his job that the king planned to put him in charge of the whole kingdom. Three times a day, every day, Daniel knelt at his upstairs window, the one that faced Jerusalem, and prayed. Everyone knew it.",
       },
       verse: "Daniel 6:10",
       find: {
@@ -31,7 +31,7 @@ export const daniel: Story = {
           y: 38,
           size: 24,
           label: "the open window",
-          reward: "The window faced Jerusalem — his home, far away. He never closed it.",
+          reward: "The window faced Jerusalem, his home far away. He never closed it.",
           sound: "sparkle",
           sticker: "The Open Window",
         },
@@ -52,7 +52,7 @@ export const daniel: Story = {
       text: {
         little:
           "Some men were jealous of Daniel. They tricked the king into making a rule: “Only pray to the king!”",
-        big: "The other officials were jealous, and they could not find a single thing wrong with Daniel — so they went after the one thing they knew he would not give up. They flattered the king into signing a law: for thirty days, anyone who prayed to anyone but the king would be thrown to the lions. The king signed it before he understood what he had done.",
+        big: "The other officials were jealous, and they could not find a single thing wrong with Daniel, so they went after the one thing they knew he would not give up. They flattered the king into signing a law: for thirty days, anyone who prayed to anyone but the king would be thrown to the lions. The king signed it before he understood what he had done.",
       },
       verse: "Daniel 6:7",
       hotspots: [
@@ -115,7 +115,7 @@ export const daniel: Story = {
       text: {
         little:
           "But God sent an angel. The angel shut the lions’ mouths. Daniel was safe all night long.",
-        big: "God sent an angel, and the angel shut the lions’ mouths. All night the lions lay down around Daniel like enormous sleeping cats, and Daniel — who had been thrown into a pit to die — slept better than the king did.",
+        big: "God sent an angel, and the angel shut the lions’ mouths. All night the lions lay down around Daniel like enormous sleeping cats, and Daniel, who had been thrown into a pit to die, slept better than the king did.",
       },
       verse: "Daniel 6:22",
       find: {
@@ -152,7 +152,7 @@ export const daniel: Story = {
       text: {
         little:
           "In the morning the king ran to the den. “Daniel!” he called. “I am here!” said Daniel. Everybody cheered!",
-        big: "At first light the king ran — ran — to the den and shouted down into the dark. And a voice came back up: “O king, live for ever! My God sent his angel. I am not hurt.” They lifted Daniel out without a scratch on him, and the king wrote to every nation in his empire about the God who rescues.",
+        big: "At first light the king ran all the way to the den and shouted down into the dark. And a voice came back up: “O king, live for ever! My God sent his angel. I am not hurt.” They lifted Daniel out without a scratch on him, and the king wrote to every nation in his empire about the God who rescues.",
       },
       verse: "Daniel 6:23",
       hotspots: [
@@ -193,7 +193,7 @@ export const daniel: Story = {
     },
     {
       question: "Who kept Daniel safe all night?",
-      choices: ["God sent an angel", "The king’s soldiers", "Nobody — he hid"],
+      choices: ["God sent an angel", "The king’s soldiers", "Nobody, he hid"],
       answerIndex: 0,
       level: "little",
     },

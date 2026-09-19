@@ -6,7 +6,7 @@ export const jonah: Story = {
   blurb: "A man runs the wrong way, and gets a very damp second chance.",
   reference: "Jonah 1 – 3",
   lesson: {
-    little: "You cannot run away from God — and he still wants you back.",
+    little: "You cannot run away from God, and he still wants you back.",
     big: "Jonah ran in the opposite direction and God went after him anyway. Second chances are not a reward for getting it right the first time.",
   },
   palette: { from: "#12557f", to: "#f0913c", ink: "#fff8ec" },
@@ -18,7 +18,7 @@ export const jonah: Story = {
       text: {
         little:
           "God said, “Jonah, go to the city of Nineveh.” But Jonah did not want to. He got on a boat going the other way.",
-        big: "God told Jonah to go east to Nineveh and warn the people there. Jonah did not want to — those were not his people, and he did not think they deserved a warning. So he walked down to the harbour, paid his fare, and boarded a ship sailing as far west as ships went.",
+        big: "God told Jonah to go east to Nineveh and warn the people there. Jonah did not want to. Those were not his people, and he did not think they deserved a warning. So he walked down to the harbour, paid his fare, and boarded a ship sailing as far west as ships went.",
       },
       verse: "Jonah 1:3",
       find: {
@@ -86,7 +86,7 @@ export const jonah: Story = {
       art: "jonah/swallowed",
       text: {
         little:
-          "Down, down, down went Jonah. Then a very big fish came along — and swallowed him whole!",
+          "Down, down, down went Jonah. Then a very big fish came along and swallowed him whole!",
         big: "Jonah sank into the dark green water, and that should have been the end of the story. But God had prepared a great fish, and it swallowed Jonah whole. He was alive, in the dark, inside a fish, for three days and three nights.",
       },
       verse: "Jonah 1:17",
@@ -120,7 +120,7 @@ export const jonah: Story = {
       text: {
         little:
           "It was dark inside the fish. Jonah said sorry to God and asked for help. God heard him.",
-        big: "Inside the fish, in the dark, Jonah prayed — and it is one of the most honest prayers in the Bible. “I called out of my distress, and you answered me.” He was not rescued from the trouble. He was met inside it. On the third day, the fish put him back on dry land.",
+        big: "Inside the fish, in the dark, Jonah prayed, and it is one of the most honest prayers in the Bible. “I called out of my distress, and you answered me.” God had not taken him out of the trouble yet, but God was with him in it. On the third day, the fish put him back on dry land.",
       },
       verse: "Jonah 2:2",
       find: {
@@ -153,8 +153,8 @@ export const jonah: Story = {
       id: "nineveh",
       art: "jonah/nineveh",
       text: {
-        little: "This time Jonah went to Nineveh. He told everyone about God — and they listened!",
-        big: "Jonah walked into Nineveh at last and delivered his message. And to his complete astonishment, the whole city listened — from the king on his throne down to the smallest child. God forgave them. Jonah, honestly, sulked about it. God was kind to him too.",
+        little: "This time Jonah went to Nineveh. He told everyone about God, and they listened!",
+        big: "Jonah walked into Nineveh at last and delivered his message. And to his complete astonishment, the whole city listened, from the king on his throne down to the smallest child. God forgave them. Jonah, honestly, sulked about it. God was kind to him too.",
       },
       verse: "Jonah 3:5",
       hotspots: [
@@ -164,7 +164,7 @@ export const jonah: Story = {
           y: 32,
           size: 28,
           label: "the city of Nineveh",
-          reward: "Nineveh was huge — it took three days just to walk across it.",
+          reward: "Nineveh was huge. It took three days just to walk across it.",
           sound: "cheer",
           sticker: "Nineveh Listens",
         },

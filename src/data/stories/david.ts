@@ -30,7 +30,7 @@ export const david: Story = {
           size: 22,
           label: "the sheep",
           reward:
-            "Looking after sheep is how David learned to be brave — long before anyone was watching.",
+            "Looking after sheep is how David learned to be brave, long before anyone was watching.",
           sound: "sheep",
           sticker: "Shepherd Boy",
         },
@@ -52,7 +52,7 @@ export const david: Story = {
       text: {
         little:
           "A giant called Goliath shouted at God’s people every day. Everyone was scared of him.",
-        big: "For forty days a Philistine champion called Goliath came out and roared across the valley: “Send me one man! Let us settle it!” He was over nine feet tall and armoured head to foot. Every soldier in Israel’s army heard him — and every one of them stayed exactly where he was.",
+        big: "For forty days a Philistine champion called Goliath came out and roared across the valley: “Send me one man! Let us settle it!” He was over nine feet tall and armoured head to foot. Every soldier in Israel’s army heard him, and every one of them stayed exactly where he was.",
       },
       verse: "1 Samuel 17:11",
       hotspots: [
@@ -73,7 +73,7 @@ export const david: Story = {
           y: 78,
           size: 22,
           label: "Israel's army",
-          reward: "A whole army, all trained, all armed — and all frightened.",
+          reward: "A whole army, trained and armed, and every man in it frightened.",
           sound: "chime",
         },
       ],
@@ -84,7 +84,7 @@ export const david: Story = {
       text: {
         little:
           "David said, “I will go!” The king gave him heavy armour. It was far too big, so David took it off.",
-        big: "David came to the camp with bread for his brothers, heard the giant shouting, and said, “I will go.” King Saul tried to dress him in the royal armour, but David could barely walk in it. So he took it off — and went as himself.",
+        big: "David came to the camp with bread for his brothers, heard the giant shouting, and said, “I will go.” King Saul tried to dress him in the royal armour, but David could barely walk in it. So he took it off and went as himself.",
       },
       verse: "1 Samuel 17:39",
       find: {
@@ -120,7 +120,7 @@ export const david: Story = {
       text: {
         little:
           "David picked five smooth stones from the stream. He put one in his sling and swung it round and round.",
-        big: "David chose five smooth stones from the brook and walked out into the valley. Goliath laughed at him. David answered, “You come with a sword and a spear — I come in the name of the Lord.” Then he ran towards him, and slung the stone.",
+        big: "David chose five smooth stones from the brook and walked out into the valley. Goliath laughed at him. David answered, “You come with a sword and a spear. I come in the name of the Lord.” Then he ran towards him, and slung the stone.",
       },
       verse: "1 Samuel 17:45",
       find: {
@@ -186,7 +186,7 @@ export const david: Story = {
       art: "david/victory",
       text: {
         little: "Down went the giant! Everyone cheered for the brave shepherd boy.",
-        big: "The stone flew true, and the giant fell. The armies of Israel erupted. The boy nobody had bothered to call in from the sheep field had done what no soldier there dared to do — and he never once claimed the credit for it.",
+        big: "The stone flew true, and the giant fell. The armies of Israel erupted. The boy nobody had bothered to call in from the sheep field had done what no soldier there dared to do, and he never once claimed the credit for it.",
       },
       verse: "1 Samuel 17:50",
       hotspots: [

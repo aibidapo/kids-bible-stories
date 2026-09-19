@@ -6,7 +6,7 @@ export const creation: Story = {
   blurb: "Seven days, and a whole world made out of nothing.",
   reference: "Genesis 1 – 2",
   lesson: {
-    little: "God made everything — and God made you.",
+    little: "God made everything, and God made you.",
     big: "The world is not an accident. God made it on purpose, called it good, and trusted people to take care of it.",
   },
   palette: { from: "#2b1b56", to: "#f0913c", ink: "#fff8ec" },
@@ -18,7 +18,7 @@ export const creation: Story = {
       text: {
         little:
           "At the very beginning, everything was dark. God said, “Let there be light!” And light shone.",
-        big: "Before there was anything at all, there was God. The world had no shape and no light — only deep water and deeper darkness. Then God spoke: “Let there be light.” And there was light, and God saw that the light was good.",
+        big: "Before there was anything at all, there was God. The world had no shape and no light, only deep water and deeper darkness. Then God spoke: “Let there be light.” And there was light, and God saw that the light was good.",
       },
       verse: "Genesis 1:3",
       hotspots: [
@@ -50,7 +50,7 @@ export const creation: Story = {
           y: 20,
           size: 22,
           label: "the clouds",
-          reward: "Clouds are water too — carried up high and floating over our heads.",
+          reward: "Clouds are water too, carried up high and floating over our heads.",
           sound: "chime",
         },
         {
@@ -70,7 +70,7 @@ export const creation: Story = {
       text: {
         little:
           "God pushed the water back. Dry land came up. Then grass and flowers and trees grew everywhere.",
-        big: "God gathered the seas into one place so that dry ground appeared. Then he filled the land with living things that grow — grass, flowers, and trees heavy with fruit, each one carrying seeds so more could grow after it.",
+        big: "God gathered the seas into one place so that dry ground appeared. Then he filled the land with living things that grow: grass, flowers, and trees heavy with fruit, each one carrying seeds so more could grow after it.",
       },
       verse: "Genesis 1:11",
       find: {
@@ -85,7 +85,7 @@ export const creation: Story = {
           size: 24,
           label: "the fruit tree",
           reward:
-            "Inside every piece of fruit are seeds — tiny instructions for growing a whole new tree.",
+            "Inside every piece of fruit are seeds, tiny instructions for growing a whole new tree.",
           sound: "chime",
           sticker: "Fruit Tree",
         },
@@ -120,7 +120,7 @@ export const creation: Story = {
           y: 28,
           size: 22,
           label: "the sun",
-          reward: "The sun is a star — the closest one to us, and the reason the day is warm.",
+          reward: "The sun is a star. It is the closest one to us, and the reason the day is warm.",
           sound: "sparkle",
           sticker: "The Sun",
         },
@@ -183,7 +183,7 @@ export const creation: Story = {
           y: 88,
           size: 20,
           label: "the lion",
-          reward: "Every animal you can think of — and lots you cannot — came from this day.",
+          reward: "Every animal you can think of, and lots you cannot, came from this day.",
           sound: "roar",
         },
         {
@@ -202,7 +202,7 @@ export const creation: Story = {
           y: 70,
           size: 22,
           label: "the first people",
-          reward: "People were made last — and made like God, to look after everything else.",
+          reward: "People were made last, and made like God, to look after everything else.",
           sound: "cheer",
           sticker: "Made in His Image",
         },
