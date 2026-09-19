@@ -10,7 +10,8 @@ import { join } from "node:path";
 
 const DIST = "dist";
 const BUDGET_JS_GZIP = 100 * 1024;
-const BUDGET_PRECACHE = 12 * 1024 * 1024;
+const BUDGET_PRECACHE = 6 * 1024 * 1024; // the shell, the covers and the first story
+const BUDGET_STORY = 3 * 1024 * 1024; // the largest downloadable story
 
 const assets = readdirSync(join(DIST, "assets"));
 const js = assets.find((f) => /^index-.*\.js$/.test(f));
@@ -32,6 +33,10 @@ for (const url of urls) {
   }
 }
 
+// story-assets.json is emitted by the build (scripts/lib/story-assets.ts): files and bytes per downloadable story.
+const stories = JSON.parse(readFileSync(join(DIST, "story-assets.json"), "utf8"));
+const largest = Object.entries(stories).sort((a, b) => b[1].bytes - a[1].bytes)[0];
+
 const kb = (n) => `${(n / 1024).toFixed(1)} KB`;
 const mb = (n) => `${(n / 1024 / 1024).toFixed(2)} MB`;
 const rows = [
@@ -41,6 +46,12 @@ const rows = [
     mb(precache),
     mb(BUDGET_PRECACHE),
     precache <= BUDGET_PRECACHE,
+  ],
+  [
+    `largest downloadable story (${largest[0]}, ${Object.keys(stories).length} stories)`,
+    mb(largest[1].bytes),
+    mb(BUDGET_STORY),
+    largest[1].bytes <= BUDGET_STORY,
   ],
 ];
 let ok = true;
