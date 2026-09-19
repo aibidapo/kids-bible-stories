@@ -3,6 +3,7 @@ import { Stage } from "./Stage";
 import { StoryUnavailable } from "./StoryUnavailable";
 import { getSceneArt, loadStory } from "../scenes";
 import { useDownloads } from "../lib/downloads";
+import { useOnline } from "../hooks/useOnline";
 import { NarrationText } from "./NarrationText";
 import { useNarration } from "../hooks/useNarration";
 import { foundIn, markCompleted, useProgress } from "../lib/store";
@@ -43,10 +44,8 @@ export function StoryPlayer({ story, index, onIndex, onQuiz, onHome }: Props) {
   // cached from an earlier visit while pictures are not, so do not show a
   // stage with holes in it.
   const status = useDownloads()[story.id]?.status;
-  const offline =
-    typeof navigator !== "undefined" &&
-    navigator.onLine === false &&
-    (status === "none" || status === "partial");
+  const online = useOnline();
+  const offline = !online && (status === "none" || status === "partial");
   const unavailable = art === "missing" || offline;
 
   const scene = story.scenes[index];

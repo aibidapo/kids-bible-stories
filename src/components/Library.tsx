@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { STORIES, TOTAL_STICKERS } from "../data/stories";
 import { useProgress } from "../lib/store";
-import { download, useDownloads, type DownloadState } from "../lib/downloads";
+import { download, rescan, useDownloads, type DownloadState } from "../lib/downloads";
 import type { Story } from "../types";
 
 interface Props {
@@ -101,6 +102,11 @@ function DownloadRow({
 export function Library({ onOpen, onStickers, onSettings, storySizes = {} }: Props) {
   const progress = useProgress();
   const downloads = useDownloads();
+
+  // Pages read online are kept by the service worker, so the rows are re-read each time the library opens.
+  useEffect(() => {
+    void rescan();
+  }, []);
 
   return (
     <div className="library">

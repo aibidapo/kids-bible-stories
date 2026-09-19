@@ -54,10 +54,9 @@ describe("collectStoryAssets", () => {
       "/assets/stories/jonah/wave-c.webp",
       "/assets/stories/storm/bg-a.webp",
       "/assets/stories/storm/scene-2.js",
-      "/assets/wave-3.js",
     ]);
-    // 1000 + 200 + 300 art bytes + 100 + 100 chunk bytes
-    expect(out.storm.bytes).toBe(1700);
+    // 1000 + 200 + 300 art bytes + the 100-byte scene chunk; the shared wave chunk is precached
+    expect(out.storm.bytes).toBe(1600);
   });
 
   it("leaves the first story out because its files are precached", () => {
@@ -91,20 +90,17 @@ describe("collectStoryAssets", () => {
     };
     const out = collectStoryAssets(odd, "creation");
     expect(out.noah.files).toEqual([
-      "/assets/a-5.js",
-      "/assets/b-6.js",
-      "/assets/c-7.js",
-      "/assets/lost.webp",
       "/assets/stories/noah/note.json",
       "/assets/stories/noah/scene-9.js",
     ]);
-    // 3 (scene) + 3 x 100 (shared chunks) + 2 (the json); the lost asset has no size to count
-    expect(out.noah.bytes).toBe(305);
+    // 3 (scene) + 2 (the json); shared chunks and the lost asset outside the stories folder are not listed
+    expect(out.noah.bytes).toBe(5);
   });
 
-  it("does not list the entry chunk or the same file twice", () => {
+  it("does not list the entry chunk, precached shared chunks or the same file twice", () => {
     const out = collectStoryAssets(bundle, "creation");
     expect(out.storm.files).not.toContain("/assets/index-1.js");
+    expect(out.storm.files).not.toContain("/assets/wave-3.js");
     expect(new Set(out.storm.files).size).toBe(out.storm.files.length);
   });
 });

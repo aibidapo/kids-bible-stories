@@ -14,6 +14,13 @@ import { useSyncExternalStore } from "react";
 
 /** Must match the runtime cache name in vite.config.ts. */
 export const STORIES_CACHE = "stories";
+/**
+ * A chunk fetched by the browser as a module carries an Origin header and the
+ * server answers with `Vary: Origin`; a bare-URL match would then miss it. The
+ * files are immutable and hashed, so the URL alone identifies them. The
+ * service worker's route ignores Vary for the same reason.
+ */
+const MATCH: CacheQueryOptions = { ignoreVary: true };
 const IN_FLIGHT = 4;
 
 export interface StoryAssets {
@@ -42,6 +49,7 @@ export interface DownloadState {
 
 let state: Record<string, DownloadState> = {};
 let manifest: StoryAssetsManifest = {};
+let builtin = "";
 let manifestPromise: Promise<StoryAssetsManifest> | undefined;
 /** Stories with a download running, held synchronously so a second tap during the checks is ignored. */
 const inFlight = new Set<string>();
@@ -71,6 +79,7 @@ export function useDownloads(): Record<string, DownloadState> {
 export function resetDownloads() {
   state = {};
   manifest = {};
+  builtin = "";
   manifestPromise = undefined;
   inFlight.clear();
 }
@@ -109,6 +118,7 @@ export function loadManifest(): Promise<StoryAssetsManifest> {
 /** Re-reads the cache for every story in the manifest. `firstStory` is always built in. */
 export async function refresh(next: StoryAssetsManifest, firstStory: string): Promise<void> {
   manifest = next;
+  builtin = firstStory;
   const api = cacheApi();
   const cache = api ? await api.open(STORIES_CACHE) : undefined;
   const result: Record<string, DownloadState> = {
@@ -119,7 +129,9 @@ export async function refresh(next: StoryAssetsManifest, firstStory: string): Pr
       result[id] = { status: "unsupported", done: 0, total: story.files.length };
       continue;
     }
-    const hits = await Promise.all(story.files.map(async (f) => Boolean(await cache.match(f))));
+    const hits = await Promise.all(
+      story.files.map(async (f) => Boolean(await cache.match(f, MATCH))),
+    );
     result[id] = {
       status: summarize(hits),
       done: hits.filter(Boolean).length,
@@ -128,6 +140,11 @@ export async function refresh(next: StoryAssetsManifest, firstStory: string): Pr
   }
   state = result;
   emit();
+}
+
+/** Re-reads the cache with the manifest already loaded; the library calls this when it opens, since pages read online land in the cache too. */
+export function rescan(): Promise<void> {
+  return builtin ? refresh(manifest, builtin) : Promise.resolve();
 }
 
 async function fetchInto(cache: Cache, url: string): Promise<void> {
@@ -166,7 +183,7 @@ async function run(storyId: string, story: StoryAssets, current: DownloadState):
 
   const cache = await api.open(STORIES_CACHE);
   const missing: string[] = [];
-  for (const f of story.files) if (!(await cache.match(f))) missing.push(f);
+  for (const f of story.files) if (!(await cache.match(f, MATCH))) missing.push(f);
   let done = story.files.length - missing.length;
   set(storyId, { status: "downloading", done, total: story.files.length });
 

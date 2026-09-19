@@ -27,7 +27,7 @@ npm run audit      # npm audit --audit-level=high; needs the network, "unreachab
 npm run icons      # regenerate public/icons/*.png from scripts/generate-icons.mjs
 npm run covers     # regenerate public/covers/*.webp, the library card stills
 npm run check:motion   # hard-constraint lint: no a-* class on a transform'd element
-npm run check:bundle   # JS gzip <= 100 KB and precache <= 12 MB, after a build (in the hook)
+npm run check:bundle   # JS gzip <= 100 KB, precache <= 6 MB, largest story <= 3 MB, after a build (in the hook)
 npm run perf           # interaction and load budgets on the preview build, 4x CPU + Slow 4G (on demand)
 git config core.hooksPath .githooks   # once per clone: activates the pre-commit gate
 ```
@@ -141,9 +141,20 @@ Still no other media: **sound** is synthesised in `src/lib/sound.ts`,
 **narration** uses the device's `speechSynthesis`, and there are no font files.
 
 Budget: a scene is at most **450 KB** (background ≤ 200 KB, each cutout
-≤ 80 KB), recorded in its `layers.json`. Everything precaches for offline use.
-If the book outgrows ~12 MB, switch workbox to precache the first story and
-runtime-cache the rest.
+≤ 80 KB), recorded in its `layers.json`.
+
+**Download-a-story.** The app shell, the covers and the first story in
+`STORIES` are precached; every other story is one Vite chunk plus its art
+under `assets/stories/<id>/`, left out of the precache and fetched on
+demand into a cache named `stories`. Pages read online are kept by the
+service worker; the library's Download button (`src/lib/downloads.ts`)
+fetches the whole story from `story-assets.json`, which the build writes
+from the bundle graph (`scripts/lib/story-assets.ts`), so art borrowed
+from another story is listed too. Offline, a story that is not fully on
+the device shows the not-on-this-device page instead of a stage with
+holes. Both cache sides ignore `Vary` because module requests carry an
+Origin header. `FIRST_STORY` in `vite.config.ts` must stay the first entry
+of `STORIES`; a test checks it.
 
 Every generated asset has a JSON sidecar (model, prompt, references, date).
 Raw generations under `design/pipeline/raw/` are not committed; regenerate
@@ -228,9 +239,11 @@ them, and after install the service worker answers every request, so
 "load" is the host's problem and per-user cost is zero. Response time is a
 per-device property and is held by two gates:
 
-- `npm run check:bundle` in the hook: main JS gzip <= 100 KB (76.8 KB
-  today), precache total <= 12 MB (9.92 MB today). Lower a budget when the
-  app slims; raising one needs a written reason in `docs/roadmap.md`.
+- `npm run check:bundle` in the hook: main JS gzip <= 100 KB (68.8 KB
+  today), precache total <= 6 MB (1.32 MB today: shell, covers, first
+  story), largest downloadable story <= 3 MB (Christmas, 2.19 MB). Lower a
+  budget when the app slims; raising one needs a written reason in
+  `docs/roadmap.md`.
 - `npm run perf` on demand, before a release and after any scene, animation
   or player change: 4x CPU and Slow 4G on the production build, phone
   viewport. Budgets: cold-load LCP <= 1500 ms, first tap to paint <= 250 ms

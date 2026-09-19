@@ -2,9 +2,12 @@
  * Which files each downloadable story needs, read from the build's own
  * bundle graph rather than a hand-kept list: a story's chunk, every asset
  * that chunk imports (including art borrowed from another story), and the
- * assets of any shared chunk it imports. The entry chunk is left out because
- * the app shell is always precached.
+ * assets of any shared chunk it imports. Only files under assets/stories/ are
+ * listed: everything else (the entry, shared chunks, the first story's art)
+ * is precached with the shell and is always on the device.
  */
+
+const DOWNLOADABLE = "assets/stories/";
 
 export interface ChunkLike {
   type: "chunk";
@@ -68,12 +71,13 @@ export function collectStoryAssets(bundle: BundleLike, firstStory: string): Stor
     };
     walk(item.fileName);
 
+    const downloadable = [...files].filter((f) => f.startsWith(DOWNLOADABLE)).sort();
     let bytes = 0;
-    for (const f of files) {
+    for (const f of downloadable) {
       const entry = bundle[f];
       if (entry) bytes += sizeOf(entry);
     }
-    out[story] = { files: [...files].sort().map((f) => `/${f}`), bytes };
+    out[story] = { files: downloadable.map((f) => `/${f}`), bytes };
   }
   return out;
 }

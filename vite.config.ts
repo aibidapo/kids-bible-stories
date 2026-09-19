@@ -72,7 +72,9 @@ export default defineConfig({
           {
             urlPattern: ({ url }) => url.pathname.includes("/assets/stories/"),
             handler: "CacheFirst",
-            options: { cacheName: "stories" },
+            // ignoreVary: a chunk the page downloaded with a bare request must serve a
+            // module import that carries an Origin header (the server sends Vary: Origin).
+            options: { cacheName: "stories", matchOptions: { ignoreVary: true } },
           },
         ],
       },

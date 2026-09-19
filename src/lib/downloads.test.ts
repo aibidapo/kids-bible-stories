@@ -7,6 +7,7 @@ import {
   hasSpace,
   loadManifest,
   refresh,
+  rescan,
   resetDownloads,
   summarize,
   useDownloads,
@@ -93,6 +94,19 @@ describe("summarize and hasSpace", () => {
     expect(hasSpace({}, 5000)).toBe(true);
     expect(hasSpace({ usage: 1000, quota: 100_000 }, 5000)).toBe(true);
     expect(hasSpace({ usage: 99_000, quota: 100_000 }, 5000)).toBe(false);
+  });
+});
+
+describe("rescan", () => {
+  it("does nothing before the first refresh, then re-reads the cache with the same manifest", async () => {
+    await rescan();
+    expect(state()).toEqual({});
+    await act(() => refresh(manifest, "creation"));
+    expect(state().daniel.status).toBe("none");
+    const cache = await caches.open(STORIES_CACHE);
+    await cache.put("/assets/stories/daniel/scene-3.js", new Response("x"));
+    await act(() => rescan());
+    expect(state().daniel.status).toBe("ready");
   });
 });
 

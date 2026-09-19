@@ -240,8 +240,12 @@ current five stories) → 4 → 6 → 7. Owner to confirm.
   Calms the Storm, built 2026-09-18: five pages, three new sheets (Jesus,
   Peter, John), two-part boats so the crew sits inside, lightning, rain,
   heaving waves, blinks; evidence
-  `docs/evidence/2026-09-18-storm-story/record.md`. Precache 9.92 MB of
-  12: download-a-story is next, before story 3.
+  `docs/evidence/2026-09-18-storm-story/record.md`. **Download-a-story
+  built 2026-09-19** (`docs/evidence/2026-09-19-download-a-story/record.md`):
+  the shell, covers and Creation precache (1.32 MB); each other story is
+  its own chunk and folder, fetched on demand or by the Download button,
+  with an honest offline page. Real-phone checks (iOS eviction) are the
+  owner's step. Story 3 next.
 
 ## Phase 5: Church and homeschool pilot, then edition
 
@@ -379,3 +383,5 @@ Kept here so the reasoning survives.
   Gemini credit exhausted after the first pass.
 - 2026-09-18: story 2, Jesus Calms the Storm, built (23 Gemini calls);
   owner's richness standard recorded in `CLAUDE.md`.
+- 2026-09-19: download-a-story built; precache line lowered to 6 MB, per-story
+  line 3 MB; library cards are rendered stills.

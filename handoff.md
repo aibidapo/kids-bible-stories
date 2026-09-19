@@ -12,7 +12,17 @@ secret scan or audit). The latest increment closes that gap with local gates.
 
 ## 2. Completed Work
 
-Latest: **Storm story owner review, eight rounds (2026-09-19).** Every
+Latest: **Download-a-story (roadmap phase 4 feature, 2026-09-19).** The
+shell, covers and Creation precache (1.32 MB); each other story is one
+chunk plus its art under `assets/stories/<id>/`, fetched on demand or by
+the Download button (`src/lib/downloads.ts`), with an honest offline page
+and an online hook. A build plugin derives each story's file list from
+the bundle graph (`story-assets.json`). Library cards are rendered stills
+(`npm run covers`). Budgets: precache 6 MB, story 3 MB. Browser checks
+passed in fresh contexts; real-phone checks (iOS eviction) open. Evidence
+`docs/evidence/2026-09-19-download-a-story/record.md`.
+
+Before that: **Storm story owner review, eight rounds (2026-09-19).** Every
 page reworked on the owner's notes: page 1 gulls forward (a `Flipbook`
 bug: the mirror sat on the positioning group and reversed the flight
 path; fixed for the whole book), whole boat, realistic village, Peter
@@ -204,7 +214,8 @@ after any stylesheet edit, run `document.getAnimations()` on a migrated page.
 - [x] Jesus drawn face-on ("1 default", 2026-09-18).
 - [x] Owner reviewed Jesus Calms the Storm, eight rounds applied (2026-09-19); further notes welcome.
 - [ ] **Rerun `npm run perf` on an idle host** (both storm-session runs had the CPU at 100 % from other apps); record in the storm evidence.
-- [ ] **Download-a-story before story 3** (precache 9.92 MB of 12): library card states, explicit download, quota check, offline message, iOS eviction test on real phones.
+- [x] Download-a-story built (2026-09-19).
+- [ ] **Owner tests download-a-story on a real iPhone and Android**: download Daniel, go offline, open it; leave the app unused for a week on iOS and check whether it survives eviction.
 - [ ] Story 3 Good Samaritan, 4 Easter, 5 Pentecost, each to the richness standard in `CLAUDE.md`.
 - [ ] **Owner starts the pilot**: pick two or three groups, install on their tablets, switch on Group pilot, hand over `docs/pilot/`. Four weeks.
 - [ ] 2a licensing still parked; the pilot's no-redistribution note stands in for it.

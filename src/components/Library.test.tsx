@@ -170,6 +170,16 @@ describe("Library download rows", () => {
     vi.unstubAllGlobals();
   });
 
+  it("re-reads the cache when it opens, so pages read online count", async () => {
+    Object.defineProperty(globalThis, "caches", { value: fakeCaches(["/d"]), configurable: true });
+    await act(() => downloads.refresh(manifest, "creation"));
+    render(
+      <Library onOpen={() => {}} onStickers={() => {}} onSettings={() => {}} storySizes={sizes} />,
+    );
+    await act(async () => {});
+    expect(screen.getAllByText(/On this device/)).toHaveLength(2);
+  });
+
   it("shows no row at all when the browser has no Cache API", async () => {
     Object.defineProperty(globalThis, "caches", { value: undefined, configurable: true });
     render(

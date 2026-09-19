@@ -89,12 +89,18 @@ describe("StoryPlayer", () => {
     ).toBe(true);
   });
 
-  it("pops a sticker banner when a hotspot earns one", () => {
+  it("pops a sticker banner when a hotspot earns one, and drops it after a few seconds", () => {
+    vi.useFakeTimers();
     const den = daniel.scenes.findIndex((s) => s.id === "prays");
     const spot = daniel.scenes[den].hotspots!.find((h) => h.sticker)!;
     render(<StoryPlayer story={daniel} index={den} onIndex={noop} onQuiz={noop} onHome={noop} />);
     fireEvent.click(screen.getByRole("button", { name: `Find ${spot.label}` }));
     expect(document.querySelector(".sticker-pop")!.textContent).toContain(spot.sticker);
+    act(() => {
+      vi.advanceTimersByTime(4300);
+    });
+    expect(document.querySelector(".sticker-pop")).toBeNull();
+    vi.useRealTimers();
   });
 });
 
@@ -192,10 +198,13 @@ describe("story art loading", () => {
     const online = vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
     render(<StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />);
     expect(screen.getByText("This story is not on this device yet.")).toBeTruthy();
-    online.mockReturnValue(true);
-    cleanup();
-    render(<StoryPlayer story={daniel} index={0} onIndex={noop} onQuiz={noop} onHome={noop} />);
+    // The connection comes back while the page is open: the stage appears without a reload.
+    act(() => {
+      online.mockReturnValue(true);
+      window.dispatchEvent(new Event("online"));
+    });
     expect(screen.queryByText("This story is not on this device yet.")).toBeNull();
+    expect(document.querySelector(".stage__svg")).toBeTruthy();
     online.mockRestore();
     downloads.resetDownloads();
   });

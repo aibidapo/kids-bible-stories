@@ -9,6 +9,10 @@ import { getSceneArt, loadAllStories } from "../scenes";
 describe("story library", () => {
   beforeAll(() => loadAllStories());
 
+  it("keeps Creation first: it is the story precached with the shell (FIRST_STORY in vite.config.ts)", () => {
+    expect(STORIES[0].id).toBe("creation");
+  });
+
   it("has unique story ids and getStory finds each one", () => {
     const ids = STORIES.map((s) => s.id);
     expect(new Set(ids).size).toBe(ids.length);
