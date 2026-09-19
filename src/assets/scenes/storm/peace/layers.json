@@ -3,7 +3,7 @@
     "file": "bg.webp",
     "w": 1600,
     "h": 1000,
-    "bytes": 88650,
+    "bytes": 65110,
     "source": "design/pipeline/raw/storm/peace/bg.png"
   },
   "cutouts": {
@@ -17,7 +17,7 @@
         1258,
         768
       ],
-      "source": "design/pipeline/raw/storm/calm/boat-back.png",
+      "source": "design/pipeline/raw/storm/peace/boat-back.png",
       "bytes": 65598
     },
     "boat-hull": {

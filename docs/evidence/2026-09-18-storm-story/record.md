@@ -215,3 +215,19 @@ realistic; the mast not properly situated."
 
 Render `storm-afraid.png`, stills `afraid-phone.png` and
 `afraid-hotspot-tablet.png` replaced. Calls this round: 1.
+
+## Review round 5 (owner, 2026-09-19): page 4
+
+"Waves superimposed on rocks and wood, not the water; make the raindrops
+look like they are still falling."
+
+- The background had painted rocks, planks and a coil of rope along the
+  bottom and static teardrop raindrops. Regenerated with "NO raindrops in
+  the foreground, NO rocks, NO wood, NO shore: only water, cloud, light
+  and sky" (`peace-bg-v2.json`, 63 KB). Scene 354 KB. The ripples now
+  sit on water.
+- The rain is the animated `Rain` overlay (45 drops, opacity 0.4, the
+  `rainfall` keyframes), so it falls in the browser and rests as a still
+  in Calm mode, like the wild-night page.
+
+Render `storm-peace.png` and `peace-phone.png` replaced. Calls: 1.

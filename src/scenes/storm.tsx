@@ -548,6 +548,8 @@ export function QuietBeStill({ found }: SceneArtProps) {
         />
         <Ripple x={470} y={640} scale={0.5} delay={0} cls="" />
       </g>
+      {/* the last of the rain, still falling, thin and outside the light shaft */}
+      <Rain count={45} seed={11} opacity={0.4} />
       <Motes x={500} top={40} bottom={560} spread={200} />
       {found.includes("light") && <Sparkle x={500} y={90} s={2.2} />}
       <Grain opacity={0.05} />
